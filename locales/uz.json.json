@@ -10,20 +10,20 @@
 {
   "general": {
     "password_page": {
-      "login_form_heading": "Влизане в магазина с парола:",
-      "login_password_button": "Влизане с парола",
-      "login_form_password_label": "Парола",
-      "login_form_password_placeholder": "Вашата парола",
-      "login_form_error": "Неправилна парола.",
-      "login_form_submit": "Въведете",
-      "admin_link_html": "Вие ли сте собственикът на магазина? <a href=\"/admin\" class=\"link underlined-link\">Влезте тук</a>",
-      "powered_by_shopify_html": "Този магазин ще се поддържа от {{ shopify }}"
+      "login_form_heading": "Do'konga parol bilan kirish:",
+      "login_password_button": "Parol bilan kirish",
+      "login_form_password_label": "Parol",
+      "login_form_password_placeholder": "Parolingiz",
+      "login_form_error": "Noto'g'ri parol!",
+      "login_form_submit": "Kirish",
+      "admin_link_html": "Do'kon egasisizmi? <a href=\"/admin\" class=\"link underlined-link\">Bu yerdan kiring</a>",
+      "powered_by_shopify_html": "Bu do'kon {{ shopify }} tomonidan quvvatlanadi"
     },
     "social": {
       "alt_text": {
-        "share_on_facebook": "Споделяне чрез Facebook",
-        "share_on_twitter": "Споделяне в X",
-        "share_on_pinterest": "Отбелязване в Pinterest"
+        "share_on_facebook": "Facebook'da ulashish",
+        "share_on_twitter": "X'da ulashish",
+        "share_on_pinterest": "Pinterest'ga qo'yish"
       },
       "links": {
         "twitter": "X (Twitter)",
@@ -37,501 +37,501 @@
         "tiktok": "TikTok"
       }
     },
-    "continue_shopping": "Продължете да пазарувате",
+    "continue_shopping": "Xaridni davom ettirish",
     "pagination": {
-      "label": "Страниране",
-      "page": "Страница {{ number }}",
-      "next": "Следваща страница",
-      "previous": "Предишна страница"
+      "label": "Sahifalar",
+      "page": "{{ number }}-sahifa",
+      "next": "Keyingi sahifa",
+      "previous": "Oldingi sahifa"
     },
     "search": {
-      "search": "Търсене",
-      "reset": "Изчисти думата за търсене"
+      "search": "Qidirish",
+      "reset": "Qidiruv so'zini tozalash"
     },
     "cart": {
-      "view": "Покажи количката ({{ count }})",
-      "item_added": "Артикулът е добавен в количката",
-      "view_empty_cart": "Покажи количката"
+      "view": "Savatni ko'rish ({{ count }})",
+      "view_empty_cart": "Savatni ko'rish",
+      "item_added": "Mahsulot savatingizga qo'shildi"
     },
     "share": {
-      "copy_to_clipboard": "Копиране на връзката",
-      "share_url": "Връзка",
-      "success_message": "Връзката е копирана в клипборда",
-      "close": "Затваряне на споделянето"
+      "close": "Ulashishni yopish",
+      "copy_to_clipboard": "Havolani nusxalash",
+      "share_url": "Havola",
+      "success_message": "Havola buferga nusxalandi"
     },
     "slider": {
-      "of": "от",
-      "next_slide": "Плъзгане надясно",
-      "previous_slide": "Плъзгане наляво",
-      "name": "Плъзгач"
+      "of": "dan",
+      "next_slide": "O'ngga surish",
+      "previous_slide": "Chapga surish",
+      "name": "Slayder"
     }
   },
   "newsletter": {
-    "label": "Имейл",
-    "success": "Благодарим, че се абонирахте",
-    "button_label": "Абониране"
+    "label": "Email",
+    "success": "Obuna bo'lganingiz uchun rahmat",
+    "button_label": "Obuna bo'lish"
   },
   "accessibility": {
-    "skip_to_text": "Преминаване към съдържанието",
-    "close": "Затваряне",
-    "unit_price_separator": "за",
-    "vendor": "Доставчик:",
-    "error": "Грешка",
-    "refresh_page": "При задаване на избор се опреснява цялата страница.",
+    "skip_to_text": "Kontentga o'tish",
+    "skip_to_product_info": "Mahsulot ma'lumotlariga o'tish",
+    "close": "Yopish",
+    "unit_price_separator": "har bir",
+    "vendor": "Ishlab chiqaruvchi:",
+    "error": "Xatolik",
+    "refresh_page": "Tanlovni o'zgartirish sahifani to'liq yangilaydi.",
     "link_messages": {
-      "new_window": "Отваря се в нов прозорец.",
-      "external": "Отваря външен уебсайт."
+      "new_window": "Yangi oynada ochiladi.",
+      "external": "Tashqi veb-saytni ochadi."
     },
-    "loading": "Зареждане...",
-    "skip_to_product_info": "Прескочи към информацията за продукта",
-    "total_reviews": "общ брой мнения",
-    "star_reviews_info": "{{ rating_value }} от {{ rating_max }} звезди",
-    "collapsible_content_title": "Съдържание, което може да се свива",
-    "complementary_products": "Допълващи продукти"
+    "loading": "Yuklanmoqda...",
+    "total_reviews": "jami sharhlar",
+    "star_reviews_info": "{{ rating_max }} yulduzdan {{ rating_value }}",
+    "collapsible_content_title": "Yig'iladigan kontent",
+    "complementary_products": "Qo'shimcha mahsulotlar"
   },
   "blogs": {
     "article": {
-      "blog": "Блог",
-      "read_more_title": "Прочетете още: {{ title }}",
+      "blog": "Blog",
+      "read_more_title": "Ko'proq o'qish: {{ title }}",
       "comments": {
-        "one": "{{ count }} коментар",
-        "other": "{{ count }} коментара"
+        "one": "{{ count }} sharh",
+        "other": "{{ count }} sharh"
       },
-      "moderated": "Имайте предвид, че коментарите трябва да бъдат одобрени, преди да се публикуват.",
-      "comment_form_title": "Оставяне на коментар",
-      "name": "Име",
-      "email": "Имейл",
-      "message": "Коментар",
-      "post": "Публикуване на коментар",
-      "back_to_blog": "Назад към блога",
-      "share": "Споделяне на тази статия",
-      "success": "Коментарът ви е публикуван успешно. Благодарим.",
-      "success_moderated": "Коментарът ви е изпратен успешно. Ще бъде публикуван след малко, тъй като блогът има модератор."
+      "moderated": "Iltimos, e'tibor bering, sharhlar nashr etilishidan oldin tasdiqlanishi kerak.",
+      "comment_form_title": "Sharh qoldirish",
+      "name": "Ism",
+      "email": "Email",
+      "message": "Sharh",
+      "post": "Sharh yuborish",
+      "back_to_blog": "Blogga qaytish",
+      "share": "Ushbu maqolani ulashish",
+      "success": "Sharhingiz muvaffaqiyatli yuborildi! Rahmat!",
+      "success_moderated": "Sharhingiz muvaffaqiyatli yuborildi. Blogimiz moderatsiyadan o'tgani uchun, uni tez orada nashr etamiz."
     }
   },
   "onboarding": {
-    "collection_title": "Име на вашата колекция",
-    "product_title": "Примерно название на продукт"
+    "product_title": "Misol mahsulot nomi",
+    "collection_title": "Kolleksiyangizning nomi"
   },
   "products": {
     "product": {
-      "add_to_cart": "Добавяне към количката",
-      "description": "Описание",
-      "on_sale": "Разпродажба",
+      "add_to_cart": "Savatga qo'shish",
+      "choose_options": "Variantlarni tanlash",
+      "choose_product_options": "{{ product_name }} uchun variantlarni tanlash",
+      "description": "Tavsif",
+      "inventory_in_stock": "Mavjud",
+      "inventory_in_stock_show_count": "{{ quantity }} dona mavjud",
+      "inventory_low_stock": "Kam qoldi",
+      "inventory_low_stock_show_count": "Kam qoldi: {{ quantity }} dona",
+      "inventory_out_of_stock": "Tugagan",
+      "inventory_out_of_stock_continue_selling": "Mavjud",
+      "sku": "Artikul",
+      "on_sale": "Chegirma",
+      "product_variants": "Mahsulot variantlari",
+      "media": {
+        "gallery_viewer": "Galereya ko'ruvchisi",
+        "load_image": "Galereyada {{ index }} rasmni yuklash",
+        "load_model": "Galereyada {{ index }} 3D modelni yuklash",
+        "load_video": "Galereyada {{ index }} videoni ijro etish",
+        "image_available": "{{ index }} rasm endi galereyada mavjud",
+        "open_media": "{{ index }} mediani modalda ochish",
+        "play_model": "3D Ko'ruvchini ijro etish",
+        "play_video": "Videoni ijro etish"
+      },
       "quantity": {
-        "label": "Количество",
-        "input_label": "Количество за {{ product }}",
-        "increase": "Увеличаване на количеството за {{ product }}",
-        "decrease": "Намаляване на количеството за {{ product }}",
-        "minimum_of": "Минимум: {{ quantity }}",
-        "maximum_of": "Максимум: {{ quantity }}",
-        "multiples_of": "Стъпки от {{ quantity }}",
-        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> в количката",
-        "note": "Преглед на правилата за количества",
-        "min_of": "Мин. {{ quantity }}",
-        "max_of": "Макс. {{ quantity }}"
+        "label": "Miqdor",
+        "input_label": "{{ product }} uchun miqdor",
+        "increase": "{{ product }} miqdorini oshirish",
+        "decrease": "{{ product }} miqdorini kamaytirish",
+        "minimum_of": "Minimal {{ quantity }}",
+        "maximum_of": "Maksimal {{ quantity }}",
+        "multiples_of": "{{ quantity }} ga karrali",
+        "min_of": "Min {{ quantity }}",
+        "max_of": "Maks {{ quantity }}",
+        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> savatda",
+        "note": "Miqdor qoidalarini ko'rish"
+      },
+      "volume_pricing": {
+        "title": "Hajmli narxlash",
+        "note": "Hajmli narxlash mavjud",
+        "minimum": "{{ quantity }}+",
+        "price_at_each_html": "{{ price }}/dona",
+        "price_range": "{{ minimum }} - {{ maximum }}"
+      },
+      "pickup_availability": {
+        "view_store_info": "Do'kon ma'lumotlarini ko'rish",
+        "check_other_stores": "Boshqa do'konlarda mavjudligini tekshirish",
+        "pick_up_available": "Olib ketish mumkin",
+        "pick_up_available_at_html": "<span class=\"color-foreground\">{{ location_name }}</span>dan olib ketish mumkin",
+        "pick_up_unavailable_at_html": "<span class=\"color-foreground\">{{ location_name }}</span>dan hozircha olib ketib bo'lmaydi",
+        "unavailable": "Olib ketish imkoniyatini yuklab bo'lmadi",
+        "refresh": "Yangilash"
       },
       "price": {
-        "from_price_html": "От {{ price }}",
-        "regular_price": "Обичайна цена",
-        "sale_price": "Цена при разпродажба",
-        "unit_price": "Единична цена"
+        "from_price_html": "{{ price }}dan",
+        "regular_price": "Oddiy narx",
+        "sale_price": "Chegirma narxi",
+        "unit_price": "Birlik narxi"
       },
-      "share": "Споделяне на този продукт",
-      "unavailable": "Неналично",
-      "vendor": "Доставчик",
-      "video_exit_message": "{{ title }} отваря видео на цял екран в същия прозорец.",
-      "xr_button": "Преглед във вашето пространство",
-      "xr_button_label": "При „Преглед във вашето пространство“ елементът се зарежда в прозорец с обогатена реалност.",
-      "sold_out": "Изчерпано",
-      "pickup_availability": {
-        "view_store_info": "Вижте информация за магазина",
-        "check_other_stores": "Проверка за наличност в други магазини",
-        "pick_up_available": "Възможност за взимане",
-        "pick_up_available_at_html": "Възможност за взимане от <span class=\"color-foreground\">{{ location_name }}</span>",
-        "pick_up_unavailable_at_html": "В момента няма възможност за взимане от <span class=\"color-foreground\">{{ location_name }}</span>",
-        "unavailable": "Не може да се зареди възможността за взимане",
-        "refresh": "Обнови"
-      },
-      "media": {
-        "open_media": "Отваряне на мултимедия {{ index }} в модален елемент",
-        "play_model": "Възпроизвеждане с 3D Viewer",
-        "play_video": "Възпроизвеждане на видеоклип",
-        "gallery_viewer": "Визуализатор на галерията",
-        "load_image": "Зареждане на изображение {{ index }} във визуализатора на галерията",
-        "load_model": "Зареждане на 3D модел {{ index }} във визуализатора на галерията",
-        "load_video": "Пускане на видео {{ index }} във визуализатора на галерията",
-        "image_available": "Изображение {{ index }} вече е налично във визуализатора на галерията"
-      },
-      "view_full_details": "Покажи пълните подробности",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Доставката</a> се изчислява при плащане.",
-      "choose_options": "Изберете опции",
-      "choose_product_options": "Изберете опции за {{ product_name }}",
-      "value_unavailable": "{{ option_value }} – неналично",
-      "variant_sold_out_or_unavailable": "Вариантът е изчерпан или неналичен.",
-      "inventory_in_stock": "В наличност",
-      "inventory_in_stock_show_count": "{{ quantity }} в наличност",
-      "inventory_low_stock": "Ниски наличности",
-      "inventory_low_stock_show_count": "Ниски наличности: остават {{ quantity }}",
-      "inventory_out_of_stock": "Изчерпано количество",
-      "inventory_out_of_stock_continue_selling": "В наличност",
-      "sku": "SKU",
-      "volume_pricing": {
-        "title": "Цени на едро",
-        "note": "Има възможност за цени на едро",
-        "minimum": "{{ quantity }}+",
-        "price_range": "{{ minimum }} – {{ maximum }}",
-        "price_at_each_html": "при {{ price }}/бр."
-      },
-      "product_variants": "Варианти на продукта",
-      "taxes_included": "С включени данъци.",
-      "duties_included": "С включено мито.",
-      "duties_and_taxes_included": "С включено мито и данъци."
+      "share": "Ushbu mahsulotni ulashish",
+      "sold_out": "Tugagan",
+      "unavailable": "Mavjud emas",
+      "vendor": "Ishlab chiqaruvchi",
+      "value_unavailable": "{{ option_value }} - Mavjud emas",
+      "variant_sold_out_or_unavailable": "Variant tugagan yoki mavjud emas",
+      "video_exit_message": "{{ title }} bir xil oynada to'liq ekranli videoni ochadi.",
+      "view_full_details": "To'liq ma'lumotlarni ko'rish",
+      "xr_button": "O'z maydoningizda ko'rish",
+      "xr_button_label": "O'z maydoningizda ko'rish, elementni kengaytirilgan haqiqat oynasida yuklaydi",
+      "taxes_included": "Soliqlar kiritilgan.",
+      "duties_included": "Bojlar kiritilgan.",
+      "duties_and_taxes_included": "Bojlar va soliqlar kiritilgan.",
+      "shipping_policy_html": "<a href=\"{{ link }}\">Yetkazib berish</a> to'lovda hisoblanadi."
     },
     "modal": {
-      "label": "Мултимедийна галерия"
+      "label": "Media galereyasi"
     },
     "facets": {
-      "apply": "Приложи",
-      "clear": "Изчисти",
-      "clear_all": "Премахване на всички",
-      "from": "От",
-      "filter_and_sort": "Филтриране и сортиране",
-      "filter_by_label": "Филтър:",
-      "filter_button": "Филтър",
+      "filter_and_operator_subtitle": "Barchasiga mos keladi",
+      "apply": "Qo'llash",
+      "clear": "Tozalash",
+      "clear_all": "Barchasini olib tashlash",
+      "from": "Dan",
+      "filter_and_sort": "Filtr va saralash",
+      "filter_by_label": "Filtr:",
+      "filter_button": "Filtr",
       "filters_selected": {
-        "one": "Избрани: {{ count }}",
-        "other": "Избрани: {{ count }}"
+        "one": "{{ count }} tanlangan",
+        "other": "{{ count }} tanlangan"
       },
-      "max_price": "Най-високата цена е {{ price }}",
+      "filter_selected_accessibility": "{{ type }} ({{ count }} filtr tanlangan)",
+      "show_more": "Ko'proq ko'rsatish",
+      "show_less": "Kamroq ko'rsatish",
+      "max_price": "Eng yuqori narx {{ price }}",
       "product_count": {
-        "one": "{{ product_count }} от {{ count }} продукт",
-        "other": "{{ product_count }} от {{ count }} продукта"
+        "one": "{{ count }} mahsulotdan {{ product_count }}",
+        "other": "{{ count }} mahsulotdan {{ product_count }}"
       },
       "product_count_simple": {
-        "one": "{{ count }} продукт",
-        "other": "{{ count }} продукта"
+        "one": "{{ count }} mahsulot",
+        "other": "{{ count }} mahsulot"
       },
-      "reset": "Нулиране",
-      "sort_button": "Сортиране",
-      "sort_by_label": "Сортиране по:",
-      "to": "Към",
-      "clear_filter": "Премахване на филтъра",
-      "filter_selected_accessibility": "{{ type }} ({{ count }} избрани филтъра)",
-      "show_more": "Покажи повече",
-      "show_less": "Покажи по-малко",
-      "filter_and_operator_subtitle": "Изрявняване за всички"
+      "reset": "Qayta tiklash",
+      "sort_button": "Saralash",
+      "sort_by_label": "Saralash:",
+      "to": "Gacha",
+      "clear_filter": "Filtrni olib tashlash"
     }
   },
   "templates": {
     "search": {
-      "no_results": "Няма резултати за „{{ terms }}“. Проверете начина на изписване или използвайте различна дума или фраза.",
-      "results_with_count": {
-        "one": "{{ count }} резултат",
-        "other": "{{ count }} резултата"
-      },
-      "title": "Резултати от търсенето",
-      "page": "Страница",
-      "products": "Продукти",
-      "search_for": "Търсене на „{{ terms }}“",
-      "results_with_count_and_term": {
-        "one": "Открит е {{ count }} резултат за „{{ terms }}“",
-        "other": "Открити са {{ count }} резултата за „{{ terms }}“"
-      },
+      "no_results": "{{ terms }} uchun natija topilmadi. Imloni tekshiring yoki boshqa so'z yoki iborani ishlatib ko'ring.",
+      "page": "Sahifa",
+      "products": "Mahsulotlar",
       "results_pages_with_count": {
-        "one": "{{ count }} страница",
-        "other": "{{ count }} страници"
+        "one": "{{ count }} sahifa",
+        "other": "{{ count }} sahifa"
       },
       "results_suggestions_with_count": {
-        "one": "{{ count }} предложениe",
-        "other": "{{ count }} предложения"
+        "one": "{{ count }} taklif",
+        "other": "{{ count }} taklif"
       },
       "results_products_with_count": {
-        "one": "{{ count }} продукт",
-        "other": "{{ count }} продукта"
+        "one": "{{ count }} mahsulot",
+        "other": "{{ count }} mahsulot"
       },
-      "suggestions": "Предложения",
-      "pages": "Страници"
+      "results_with_count": {
+        "one": "{{ count }} natija",
+        "other": "{{ count }} natija"
+      },
+      "results_with_count_and_term": {
+        "one": "{{ terms }} uchun {{ count }} natija topildi",
+        "other": "{{ terms }} uchun {{ count }} natija topildi"
+      },
+      "title": "Qidiruv natijalari",
+      "search_for": "{{ terms }} ni qidirish",
+      "suggestions": "Takliflar",
+      "pages": "Sahifalar"
     },
     "cart": {
-      "cart": "Количка"
+      "cart": "Savat"
     },
     "contact": {
       "form": {
-        "name": "Име",
-        "email": "Имейл",
-        "comment": "Коментар",
-        "send": "Изпрати",
-        "post_success": "Благодарим, че се свързахте с нас. Ще се свържем с вас възможно най-скоро.",
-        "error_heading": "Коригирайте следното:",
-        "phone": "Телефонен номер",
-        "title": "Формуляр за контакт"
+        "title": "Bog'lanish formasi",
+        "name": "Ism",
+        "email": "Email",
+        "phone": "Telefon raqami",
+        "comment": "Sharh",
+        "send": "Yuborish",
+        "post_success": "Biz bilan bog'langaningiz uchun rahmat. Imkon qadar tezroq javob beramiz.",
+        "error_heading": "Iltimos, quyidagilarni to'g'irlang:"
       }
     },
     "404": {
-      "title": "Страницата не е открита",
+      "title": "Sahifa topilmadi",
       "subtext": "404"
     }
   },
   "sections": {
+    "announcements": {
+      "previous_announcement": "Oldingi e'lon",
+      "next_announcement": "Keyingi e'lon",
+      "carousel": "Karusel",
+      "announcement": "E'lon",
+      "announcement_bar": "E'lon paneli"
+    },
     "header": {
-      "announcement": "Известие",
-      "menu": "Меню",
+      "announcement": "E'lon",
+      "menu": "Menyu",
       "cart_count": {
-        "one": "{{ count }} артикул",
-        "other": "{{ count }} артикула"
+        "one": "{{ count }} element",
+        "other": "{{ count }} element"
       }
     },
     "cart": {
-      "title": "Вашата количка",
-      "caption": "Артикули в количката",
-      "remove_title": "Премахване на {{ title }}",
-      "checkout": "Преминаване към плащане",
-      "empty": "Количката ви е празна.",
-      "cart_error": "При актуализирането на количката ви възникна грешка. Опитайте отново.",
-      "cart_quantity_error_html": "Можете да добавите само {{ quantity }} броя от този артикул в количката си.",
+      "title": "Sizning savatingiz",
+      "caption": "Savat elementlari",
+      "remove_title": "{{ title }}ni olib tashlash",
+      "estimated_total": "Taxminiy jami",
+      "new_estimated_total": "Yangi taxminiy jami",
+      "note": "Buyurtma bo'yicha maxsus ko'rsatmalar",
+      "checkout": "To'lash",
+      "empty": "Savatingiz bo'sh",
+      "cart_error": "Savatingizni yangilashda xatolik yuz berdi. Iltimos, qayta urinib ko'ring.",
+      "cart_quantity_error_html": "Siz ushbu mahsulotdan faqat {{ quantity }} dona qo'sha olasiz.",
+      "duties_and_taxes_included_shipping_at_checkout_with_policy_html": "Bojlar va soliqlar kiritilgan. Chegirmalar va <a href=\"{{ link }}\">yetkazib berish</a> to'lovda hisoblanadi.",
+      "duties_and_taxes_included_shipping_at_checkout_without_policy": "Bojlar va soliqlar kiritilgan. Chegirmalar va yetkazib berish to'lovda hisoblanadi.",
+      "taxes_included_shipping_at_checkout_with_policy_html": "Soliqlar kiritilgan. Chegirmalar va <a href=\"{{ link }}\">yetkazib berish</a> to'lovda hisoblanadi.",
+      "taxes_included_shipping_at_checkout_without_policy": "Soliqlar kiritilgan. Chegirmalar va yetkazib berish to'lovda hisoblanadi.",
+      "duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html": "Bojlar kiritilgan. Soliqlar, chegirmalar va <a href=\"{{ link }}\">yetkazib berish</a> to'lovda hisoblanadi.",
+      "duties_included_taxes_at_checkout_shipping_at_checkout_without_policy": "Bojlar kiritilgan. Soliqlar, chegirmalar va yetkazib berish to'lovda hisoblanadi.",
+      "taxes_at_checkout_shipping_at_checkout_with_policy_html": "Soliqlar, chegirmalar va <a href=\"{{ link }}\">yetkazib berish</a> to'lovda hisoblanadi.",
+      "taxes_at_checkout_shipping_at_checkout_without_policy": "Soliqlar, chegirmalar va yetkazib berish to'lovda hisoblanadi.",
       "headings": {
-        "product": "Продукт",
-        "price": "Цена",
-        "total": "Обща сума",
-        "quantity": "Количество",
-        "image": "Изображение на продукта"
+        "product": "Mahsulot",
+        "price": "Narx",
+        "total": "Jami",
+        "quantity": "Miqdor",
+        "image": "Mahsulot rasmi"
       },
-      "update": "Актуализиране",
-      "note": "Специални инструкции за поръчката",
+      "update": "Yangilash",
       "login": {
-        "title": "Имате профил?",
-        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Влезте</a> за по-бързо преминаване към плащане."
-      },
-      "estimated_total": "Очаквана обща сума",
-      "new_estimated_total": "Нова очаквана обща сума",
-      "duties_and_taxes_included_shipping_at_checkout_with_policy_html": "С включено мито и данъци. Отстъпките и <a href=\"{{ link }}\">доставката</a> се изчисляват при плащане.",
-      "duties_and_taxes_included_shipping_at_checkout_without_policy": "С включено мито и данъци. Отстъпките и доставката се изчисляват при плащане.",
-      "taxes_included_shipping_at_checkout_with_policy_html": "С включени данъци. Отстъпките и <a href=\"{{ link }}\">доставката</a> се изчисляват при плащане.",
-      "taxes_included_shipping_at_checkout_without_policy": "С включени данъци. Отстъпките и доставката се изчисляват при плащане.",
-      "duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html": "С включено мито. Данъците, отстъпките и <a href=\"{{ link }}\">доставката</a> се изчисляват при плащане.",
-      "duties_included_taxes_at_checkout_shipping_at_checkout_without_policy": "С включено мито. Данъците, отстъпките и доставката се изчисляват при плащане.",
-      "taxes_at_checkout_shipping_at_checkout_with_policy_html": "Данъците, отстъпките и <a href=\"{{ link }}\">доставката</a> се изчисляват при плащане.",
-      "taxes_at_checkout_shipping_at_checkout_without_policy": "Данъците, отстъпките и доставката се изчисляват при плащане."
+        "title": "Hisobingiz bormi?",
+        "paragraph_html": "Tezroq to'lash uchun <a href=\"{{ link }}\" class=\"link underlined-link\">kiring</a>."
+      }
     },
     "footer": {
-      "payment": "Начини на плащане"
+      "payment": "To'lov usullari"
     },
     "featured_blog": {
-      "view_all": "Покажи всички",
-      "onboarding_title": "Публикация в блог",
-      "onboarding_content": "Обобщете накратко блог публикацията"
+      "view_all": "Barchasini ko'rish",
+      "onboarding_title": "Blog maqolasi",
+      "onboarding_content": "Mijozlaringizga blog maqolangizning qisqacha mazmunini bering"
     },
     "featured_collection": {
-      "view_all": "Покажи всички",
-      "view_all_label": "Покажи всички продукти в колекция {{ collection_name }}"
+      "view_all": "Barchasini ko'rish",
+      "view_all_label": "{{ collection_name }} kolleksiyasidagi barcha mahsulotlarni ko'rish"
     },
     "collection_list": {
-      "view_all": "Покажи всички"
+      "view_all": "Barchasini ko'rish"
     },
     "collection_template": {
-      "title": "Колекция",
-      "empty": "Не са открити продукти",
-      "use_fewer_filters_html": "Използвайте по-малко филтри или <a class=\"{{ class }}\" href=\"{{ link }}\">премахнете всички</a>"
+      "empty": "Mahsulotlar topilmadi",
+      "title": "Kolleksiya",
+      "use_fewer_filters_html": "Kamroq filtr ishlatish yoki <a class=\"{{ class }}\" href=\"{{ link }}\">barchasini olib tashlash</a>"
     },
     "video": {
-      "load_video": "Зареждане на видео: {{ description }}"
+      "load_video": "Videoni yuklash: {{ description }}"
     },
     "slideshow": {
-      "load_slide": "Зареждане на слайд",
-      "previous_slideshow": "Предишен слайд",
-      "next_slideshow": "Следващ слайд",
-      "pause_slideshow": "Пауза на слайдшоуто",
-      "play_slideshow": "Възпроизвеждане на слайдшоу",
-      "carousel": "Въртележка",
-      "slide": "Слайд"
+      "load_slide": "Slaydni yuklash",
+      "previous_slideshow": "Oldingi slayd",
+      "next_slideshow": "Keyingi slayd",
+      "pause_slideshow": "Slayd-shouni to'xtatish",
+      "play_slideshow": "Slayd-shouni ijro etish",
+      "carousel": "Karusel",
+      "slide": "Slayd"
     },
     "page": {
-      "title": "Заглавие на страница"
-    },
-    "announcements": {
-      "previous_announcement": "Предишно известие",
-      "next_announcement": "Следващо известие",
-      "carousel": "Въртележка",
-      "announcement": "Известие",
-      "announcement_bar": "Лента с известия"
+      "title": "Sahifa sarlavhasi"
     },
     "quick_order_list": {
-      "product_total": "Междинна сума за продукти",
-      "view_cart": "Покажи количката",
-      "each": "{{ money }}/бр.",
-      "product": "Продукт",
-      "variant": "Вариант",
-      "variant_total": "Обща сума за варианта",
+      "product_total": "Mahsulot oraliq jami",
+      "view_cart": "Savatni ko'rish",
+      "each": "{{ money }}/dona",
+      "product": "Mahsulot",
+      "variant": "Variant",
+      "variant_total": "Variant jami",
       "items_added": {
-        "one": "{{ quantity }} артикул е добавен",
-        "other": "{{ quantity }} артикула са добавени"
+        "one": "{{ quantity }} element qo'shildi",
+        "other": "{{ quantity }} element qo'shildi"
       },
       "items_removed": {
-        "one": "{{ quantity }} артикул е премахнат",
-        "other": "{{ quantity }} артикула са премахнати"
+        "one": "{{ quantity }} element olib tashlandi",
+        "other": "{{ quantity }} element olib tashlandi"
       },
-      "product_variants": "Варианти на продукта",
-      "total_items": "Общо артикули",
-      "remove_all_items_confirmation": "Премахване на всички {{ quantity }} артикула от количката?",
-      "remove_all": "Премахване на всички",
-      "cancel": "Отказ",
-      "remove_all_single_item_confirmation": "Премахване на 1 артикул от количката?",
-      "min_error": "За този артикул има минимум от {{ min }}",
-      "max_error": "За този артикул има максимум от {{ max }}",
-      "step_error": "Можете да добавяте този артикул само на групи от {{ step }}"
+      "product_variants": "Mahsulot variantlari",
+      "total_items": "Jami elementlar",
+      "remove_all_single_item_confirmation": "Savatingizdan 1 elementni olib tashlamoqchimisiz?",
+      "remove_all_items_confirmation": "Savatingizdan barcha {{ quantity }} elementni olib tashlamoqchimisiz?",
+      "remove_all": "Barchasini olib tashlash",
+      "cancel": "Bekor qilish",
+      "min_error": "Bu element minimal {{ min }} donaga ega",
+      "max_error": "Bu element maksimal {{ max }} donaga ega",
+      "step_error": "Siz bu elementni faqat {{ step }} qadam bilan qo'sha olasiz"
     }
   },
   "localization": {
-    "country_label": "Държава/регион",
-    "language_label": "Език",
-    "update_language": "Актуализиране на езика",
-    "update_country": "Актуализиране на държава/регион",
-    "search": "Търсене",
-    "popular_countries_regions": "Популярни страни/региони",
-    "country_results_count": "Открити са {{ count }} страни/региона"
+    "country_label": "Mamlakat/hudud",
+    "language_label": "Til",
+    "update_language": "Tilni yangilash",
+    "update_country": "Mamlakat/hududni yangilash",
+    "search": "Qidirish",
+    "popular_countries_regions": "Mashhur mamlakatlar/hududlar",
+    "country_results_count": "{{ count }} mamlakat/hudud topildi"
   },
   "customer": {
-    "account_fallback": "Профил",
+    "account": {
+      "title": "Hisob",
+      "details": "Hisob ma'lumotlari",
+      "view_addresses": "Manzillarni ko'rish",
+      "return": "Hisob ma'lumotlariga qaytish"
+    },
+    "account_fallback": "Hisob",
     "activate_account": {
-      "subtext": "Създайте парола, за да активирате профила си.",
-      "password": "Парола",
-      "title": "Активиране на профил",
-      "password_confirm": "Потвърждаване на паролата",
-      "submit": "Активиране на профил",
-      "cancel": "Отхвърляне на поканата"
+      "title": "Hisobni faollashtirish",
+      "subtext": "Hisobingizni faollashtirish uchun parol yarating.",
+      "password": "Parol",
+      "password_confirm": "Parolni tasdiqlash",
+      "submit": "Hisobni faollashtirish",
+      "cancel": "Taklifni rad etish"
     },
     "addresses": {
-      "default": "По подразбиране",
-      "edit_address": "Редактиране на адрес",
-      "company": "Фирма",
-      "address1": "Адрес 1",
-      "address2": "Адрес 2",
-      "city": "Град",
-      "country": "Държава/регион",
-      "province": "Провинция",
-      "phone": "Телефон",
-      "set_default": "Задаване като адрес по подразбиране",
-      "cancel": "Отказ",
-      "edit": "Редактиране",
-      "delete": "Изтриване",
-      "delete_confirm": "Наистина ли искате да изтриете този адрес?",
-      "title": "Адреси",
-      "add_new": "Добавяне на нов адрес",
-      "first_name": "Собствено име",
-      "last_name": "Фамилно име",
-      "zip": "Пощенски код",
-      "add": "Добавяне на адрес",
-      "update": "Актуализиране на адрес"
+      "title": "Manzillar",
+      "default": "Asosiy",
+      "add_new": "Yangi manzil qo'shish",
+      "edit_address": "Manzilni tahrirlash",
+      "first_name": "Ism",
+      "last_name": "Familiya",
+      "company": "Kompaniya",
+      "address1": "Manzil 1",
+      "address2": "Manzil 2",
+      "city": "Shahar",
+      "country": "Mamlakat/hudud",
+      "province": "Viloyat",
+      "zip": "Pochta/ZIP kodi",
+      "phone": "Telefon",
+      "set_default": "Asosiy manzil sifatida belgilash",
+      "add": "Manzil qo'shish",
+      "update": "Manzilni yangilash",
+      "cancel": "Bekor qilish",
+      "edit": "Tahrirlash",
+      "delete": "O'chirish",
+      "delete_confirm": "Ushbu manzilni o'chirishni xohlaysizmi?"
     },
-    "log_in": "Влизане",
-    "log_out": "Излизане",
+    "log_in": "Kirish",
+    "log_out": "Chiqish",
     "login_page": {
-      "cancel": "Отказ",
-      "email": "Имейл",
-      "forgot_password": "Забравена парола?",
-      "guest_continue": "Напред",
-      "guest_title": "Продължаване като гост",
-      "password": "Парола",
-      "title": "Влизане",
-      "sign_in": "Влизане",
-      "submit": "Изпрати",
-      "create_account": "Създаване на профил",
-      "alternate_provider_separator": "или"
-    },
-    "orders": {
-      "order_number": "Поръчка",
-      "order_number_link": "Номер на поръчка: {{ number }}",
-      "date": "Дата",
-      "total": "Обща сума",
-      "none": "Все още не сте поръчвали.",
-      "title": "Хронология на поръчките",
-      "payment_status": "Статус на плащане",
-      "fulfillment_status": "Статус на изпълнение"
-    },
-    "recover_password": {
-      "title": "Подновяване на паролата",
-      "subtext": "Ще ви изпратим имейл, за да подновите паролата си",
-      "success": "Изпратихме ви имейл с връзка, чрез която да актуализирате паролата си."
-    },
-    "register": {
-      "email": "Имейл",
-      "password": "Парола",
-      "submit": "Създаване",
-      "title": "Създаване на профил",
-      "first_name": "Собствено име",
-      "last_name": "Фамилно име"
-    },
-    "reset_password": {
-      "title": "Подновяване на паролата за профила",
-      "subtext": "Въведете нова парола",
-      "password": "Парола",
-      "password_confirm": "Потвърждаване на паролата",
-      "submit": "Подновяване на паролата"
-    },
-    "account": {
-      "title": "Профил",
-      "details": "Информация за профила",
-      "view_addresses": "Покажи адресите",
-      "return": "Назад към информацията за профила"
+      "cancel": "Bekor qilish",
+      "create_account": "Hisob yaratish",
+      "email": "Email",
+      "forgot_password": "Parolingizni unutdingizmi?",
+      "guest_continue": "Davom etish",
+      "guest_title": "Mehmon sifatida davom etish",
+      "password": "Parol",
+      "title": "Kirish",
+      "sign_in": "Kirish",
+      "submit": "Yuborish",
+      "alternate_provider_separator": "yoki"
     },
     "order": {
-      "title": "Поръчка {{ name }}",
-      "date_html": "Направена на {{ date }}",
-      "cancelled_html": "Поръчката е анулирана на {{ date }}",
-      "cancelled_reason": "Причина: {{ reason }}",
-      "billing_address": "Адрес за фактуриране",
-      "payment_status": "Статус на плащане",
-      "shipping_address": "Адрес за доставка",
-      "fulfillment_status": "Статус на изпълнение",
-      "discount": "Отстъпка",
-      "shipping": "Доставка",
-      "tax": "Данъци",
-      "product": "Продукт",
-      "sku": "SKU",
-      "price": "Цена",
-      "quantity": "Количество",
-      "total": "Обща сума",
-      "fulfilled_at_html": "Изпълнена на: {{ date }}",
-      "track_shipment": "Проследяване на пратката",
-      "tracking_url": "Връзка за проследяване",
-      "tracking_company": "Превозвач",
-      "tracking_number": "Номер за проследяване",
-      "subtotal": "Междинна сума",
-      "total_duties": "Мито",
-      "total_refunded": "Възстановени"
+      "title": "{{ name }} buyurtmasi",
+      "date_html": "{{ date }}da berilgan",
+      "cancelled_html": "Buyurtma {{ date }}da bekor qilindi",
+      "cancelled_reason": "Sabab: {{ reason }}",
+      "billing_address": "Hisob-kitob manzili",
+      "payment_status": "To'lov holati",
+      "shipping_address": "Yetkazib berish manzili",
+      "fulfillment_status": "Bajarilish holati",
+      "discount": "Chegirma",
+      "shipping": "Yetkazib berish",
+      "tax": "Soliq",
+      "product": "Mahsulot",
+      "sku": "Artikul",
+      "price": "Narx",
+      "quantity": "Miqdor",
+      "total": "Jami",
+      "total_refunded": "Qaytarilgan",
+      "fulfilled_at_html": "{{ date }}da bajarilgan",
+      "track_shipment": "Jo'natmani kuzatish",
+      "tracking_url": "Kuzatuv havolasi",
+      "tracking_company": "Tashuvchi",
+      "tracking_number": "Kuzatuv raqami",
+      "subtotal": "Oraliq jami",
+      "total_duties": "Bojlar"
+    },
+    "orders": {
+      "title": "Buyurtmalar tarixi",
+      "order_number": "Buyurtma",
+      "order_number_link": "{{ number }} buyurtma raqami",
+      "date": "Sana",
+      "payment_status": "To'lov holati",
+      "fulfillment_status": "Bajarilish holati",
+      "total": "Jami",
+      "none": "Siz hali hech qanday buyurtma bermagansiz."
+    },
+    "recover_password": {
+      "title": "Parolingizni tiklang",
+      "subtext": "Parolingizni tiklash uchun sizga email yuboramiz",
+      "success": "Parolingizni yangilash havolasi bilan sizga email yubordik."
+    },
+    "register": {
+      "title": "Hisob yaratish",
+      "first_name": "Ism",
+      "last_name": "Familiya",
+      "email": "Email",
+      "password": "Parol",
+      "submit": "Yaratish"
+    },
+    "reset_password": {
+      "title": "Hisob parolini tiklash",
+      "subtext": "Yangi parol kiriting",
+      "password": "Parol",
+      "password_confirm": "Parolni tasdiqlash",
+      "submit": "Parolni tiklash"
     }
   },
   "gift_cards": {
     "issued": {
-      "title": "Това е остатъкът от вашия ваучер за подарък на стойност {{ value }} за {{ shop }}!",
-      "gift_card_code": "Код на ваучер за подарък",
-      "shop_link": "Посетете магазина онлайн",
-      "add_to_apple_wallet": "Добавяне към Apple Wallet",
-      "qr_image_alt": "QR код – сканирайте го, за да използвате ваучера за подарък",
-      "copy_code": "Копиране на кода на ваучер за подарък",
-      "expired": "Изтекъл",
-      "copy_code_success": "Кодът е копиран успешно",
-      "subtext": "Вашият ваучер за подарък",
-      "how_to_use_gift_card": "Използвайте ваучера за подарък онлайн или QR код в магазина",
-      "expiration_date": "Изтича на {{ expires_on }}"
+      "how_to_use_gift_card": "Sovg'a kartasi kodini onlayn yoki QR kodini do'konda ishlating",
+      "title": "Mana sizning {{ shop }} uchun {{ value }} sovg'a kartasi balansingiz!",
+      "subtext": "Sizning sovg'a kartangiz",
+      "gift_card_code": "Sovg'a kartasi kodi",
+      "shop_link": "Onlayn do'konni tashrif buyurish",
+      "add_to_apple_wallet": "Apple Wallet'ga qo'shish",
+      "qr_image_alt": "QR kod — sovg'a kartasini ishlatish uchun skanerlang",
+      "copy_code": "Sovg'a kartasi kodini nusxalash",
+      "expiration_date": "{{ expires_on }}da tugaydi",
+      "copy_code_success": "Kod muvaffaqiyatli nusxalandi",
+      "expired": "Muddati tugagan"
     }
   },
   "recipient": {
     "form": {
-      "checkbox": "Искам да изпратя като подарък",
-      "email_label": "Имейл на получателя",
-      "email": "Имейл",
-      "name_label": "Име на получателя (незадължително)",
-      "name": "Име",
-      "message_label": "Съобщение (незадължително)",
-      "message": "Съобщение",
-      "max_characters": "Макс. {{ max_chars }} знака",
-      "email_label_optional_for_no_js_behavior": "Имейл на получателя (незадължително)",
-      "send_on": "ГГГГ-ММ-ДД",
-      "send_on_label": "Изпращане на (незадължително)",
-      "expanded": "Формулярът за получател на ваучер за подарък е разгънат",
-      "collapsed": "Формулярът за получател на ваучер за подарък е свит"
+      "checkbox": "Buni sovg'a sifatida yubormoqchiman",
+      "expanded": "Sovg'a kartasi oluvchi formasi kengaytirilgan",
+      "collapsed": "Sovg'a kartasi oluvchi formasi yig'ilgan",
+      "email_label": "Oluvchi emaili",
+      "email_label_optional_for_no_js_behavior": "Oluvchi emaili (ixtiyoriy)",
+      "email": "Email",
+      "name_label": "Oluvchi ismi (ixtiyoriy)",
+      "name": "Ism",
+      "message_label": "Xabar (ixtiyoriy)",
+      "message": "Xabar",
+      "max_characters": "Maksimal {{ max_chars }} belgi",
+      "send_on": "YYYY-MM-DD",
+      "send_on_label": "Yuborish (ixtiyoriy)"
     }
   }
 }
