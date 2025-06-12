@@ -1,0 +1,31 @@
+{% comment %}
+  Global Quick Add Drawer
+  
+  This snippet creates a single global drawer that slides in from the right
+  side of the viewport when triggered by any product's quick add button.
+  
+  Usage:
+  Include this snippet in your layout file:
+  {% render 'quick-add-drawer-global' %}
+{% endcomment %}
+
+<quick-add-drawer id="QuickAddDrawer" class="quick-add-drawer">
+  <div class="quick-add-drawer__overlay"></div>
+  <div class="quick-add-drawer__content">
+    <div class="quick-add-drawer__header">
+      <button
+        type="button"
+        class="quick-add-drawer__close"
+        aria-label="{{ 'accessibility.close' | t }}"
+      >
+        {{- 'icon-close.svg' | inline_asset_content -}}
+      </button>
+    </div>
+    <div id="QuickAddDrawerInfo" class="quick-add-drawer__body">
+      <!-- Content will be loaded dynamically -->
+    </div>
+  </div>
+</quick-add-drawer>
+
+{{ 'quick-add-drawer.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'quick-add-drawer.js' | asset_url }}" defer="defer"></script> 
