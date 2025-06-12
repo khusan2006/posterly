@@ -20,18 +20,26 @@
             "text": "Welcome to our store",
             "link": ""
           }
+        },
+        "announcement_WGrinr": {
+          "type": "announcement",
+          "settings": {
+            "text": "get 5% discount here",
+            "link": ""
+          }
         }
       },
       "block_order": [
-        "announcement-bar-0"
+        "announcement-bar-0",
+        "announcement_WGrinr"
       ],
       "settings": {
-        "auto_rotate": false,
+        "auto_rotate": true,
         "change_slides_speed": 5,
         "color_scheme": "scheme-1",
         "show_line_separator": true,
-        "show_social": true,
-        "enable_country_selector": true,
+        "show_social": false,
+        "enable_country_selector": false,
         "enable_language_selector": true
       }
     },
