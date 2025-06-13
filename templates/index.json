@@ -67,16 +67,17 @@
     "rich_text": {
       "type": "rich-text",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "caption_xm6NgG": {
+          "type": "caption",
           "settings": {
-            "heading": "We believe a better experience comes from outdoor gear that strikes the optimal balance of weight, durability, and water protection.",
-            "heading_size": "h2"
+            "caption": "We believe a better experience comes from outdoor gear that strikes the optimal balance of weight, durability, and water protection.",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "large"
           }
         }
       },
       "block_order": [
-        "heading"
+        "caption_xm6NgG"
       ],
       "settings": {
         "desktop_content_position": "center",
