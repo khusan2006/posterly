@@ -13,6 +13,7 @@
   <div class="quick-add-drawer__overlay"></div>
   <div class="quick-add-drawer__content">
     <div class="quick-add-drawer__header">
+      <div class="quick-add-drawer__handle"></div>
       <button
         type="button"
         class="quick-add-drawer__close"
@@ -28,4 +29,5 @@
 </quick-add-drawer>
 
 {{ 'quick-add-drawer.css' | asset_url | stylesheet_tag }}
-<script src="{{ 'quick-add-drawer.js' | asset_url }}" defer="defer"></script> 
+<script src="{{ 'quick-add-drawer.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script> 
