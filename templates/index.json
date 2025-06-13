@@ -100,7 +100,7 @@
         "description_style": "body",
         "columns_desktop": 4,
         "enable_desktop_slider": false,
-        "full_width": true,
+        "full_width": false,
         "show_view_all": false,
         "view_all_style": "solid",
         "color_scheme": "scheme-1",
