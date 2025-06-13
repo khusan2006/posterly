@@ -402,6 +402,18 @@
         "label": "Color scheme",
         "has_cards_info": "To change the card color scheme, update your theme settings."
       },
+      "title_position": {
+        "options__1": {
+          "label": "left"
+        },
+        "options__2": {
+          "label": "center"
+        },
+        "options__3": {
+          "label": "right"
+        },
+        
+      },
       "heading_size": {
         "label": "Heading size",
         "options__1": {
@@ -738,10 +750,13 @@
       "settings": {
         "header_text": {
         "content": "Text"
-        },
+        },    
         "title": {
           "label": "Heading",
           "default": "Featured collection"
+        },
+        "title_position": {
+          "label": "Title position"
         },
         "description": {
           "label": "Description"
