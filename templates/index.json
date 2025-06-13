@@ -92,8 +92,9 @@
       "settings": {
         "collection": "all",
         "products_to_show": 8,
+        "title_position": "center",
         "title": "Featured Collection",
-        "heading_size": "h2",
+        "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "body",
@@ -111,7 +112,7 @@
         "quick_add": "drawer",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "padding_top": 28,
+        "padding_top": 40,
         "padding_bottom": 36
       }
     },
