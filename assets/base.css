@@ -2147,7 +2147,7 @@ input[type='checkbox'] {
 
 .announcement-bar,
 .announcement-bar__announcement {
-  color: rgb(var(--color-foreground));
+  color: rgb(var(--jdgm-write-review-text-color));
   width: 100%;
   height: 100%;
   display: flex;
@@ -2192,7 +2192,7 @@ input[type='checkbox'] {
   box-shadow: 0 0 0 -0.2rem rgb(var(--color-foreground));
 }
 
-.utility-bar {
+.announcement-bar-section .utility-bar {
   background: var(--jdgm-primary-color);
 }
 
