@@ -2192,6 +2192,10 @@ input[type='checkbox'] {
   box-shadow: 0 0 0 -0.2rem rgb(var(--color-foreground));
 }
 
+.utility-bar {
+  background: var(--jdgm-primary-color);
+}
+
 .localization-wrapper {
   grid-area: language-currency;
   align-self: center;
