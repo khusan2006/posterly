@@ -209,8 +209,6 @@ if (!customElements.get('quick-add-drawer')) {
         }
       }
 
-
-
       preprocessHTML(productElement) {
         // Prevent duplicate IDs by adding a unique prefix
         const sectionId = productElement.dataset.section;
@@ -249,7 +247,7 @@ if (!customElements.get('quick-add-drawer')) {
       }
 
       renderDrawerContent(productElement, productInfo) {
-        // Create a simplified wrapper that includes product info and the product element
+        // Only render product info header and product content (no close button or handle)
         const content = `
           <div class="quick-add-drawer__wrapper">
             <div class="quick-add-drawer__product-header">
@@ -265,7 +263,6 @@ if (!customElements.get('quick-add-drawer')) {
 
         if (this.drawerBody) {
           this.drawerBody.innerHTML = content;
-          
           // Initialize Shopify features after content is loaded
           if (window.Shopify && Shopify.PaymentButton) {
             Shopify.PaymentButton.init();
@@ -273,8 +270,6 @@ if (!customElements.get('quick-add-drawer')) {
           if (window.ProductModel) window.ProductModel.loadShopifyXR();
         }
       }
-
-
 
       renderErrorContent() {
         if (this.drawerBody) {

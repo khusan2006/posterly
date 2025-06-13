@@ -54,16 +54,30 @@
 
 #QuickAddDrawer .quick-add-drawer__header {
   display: flex;
-  justify-content: flex-end;
-  padding: 15px 20px;
-  border-bottom: 1px solid #f0f0f0;
+  flex-direction: column;
+  align-items: stretch;
   position: sticky;
   top: 0;
-  background: white;
-  z-index: 10;
+  z-index: 30;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  padding: 0 0 0.5rem 0;
+  min-height: 56px;
+}
+
+#QuickAddDrawer .quick-add-drawer__handle {
+  width: 36px;
+  height: 4px;
+  background: #ddd;
+  border-radius: 2px;
+  margin: 10px auto 8px auto;
+  display: block;
 }
 
 #QuickAddDrawer .quick-add-drawer__close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
   background: none;
   border: none;
   cursor: pointer;
@@ -73,6 +87,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 31;
 }
 
 #QuickAddDrawer .quick-add-drawer__close:hover {
@@ -430,26 +445,20 @@
     transform: translateY(100%);
   }
   #QuickAddDrawer .quick-add-drawer__header {
-    padding: 10px 20px 5px 20px;
-    border-bottom: none;
-    position: relative;
+    padding: 0 0 0.5rem 0;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: #fff;
+    min-height: 56px;
   }
-  #QuickAddDrawer .quick-add-drawer__header::before {
-    content: '';
-    position: absolute;
-    top: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 36px;
-    height: 4px;
-    background: #ddd;
-    border-radius: 2px;
+  #QuickAddDrawer .quick-add-drawer__handle {
+    margin: 10px auto 8px auto;
   }
   #QuickAddDrawer .quick-add-drawer__close {
-    position: absolute;
     top: 10px;
     right: 15px;
-    padding: 5px;
   }
   #QuickAddDrawer .quick-add-drawer__media {
     padding: 15px 20px 10px 20px;
