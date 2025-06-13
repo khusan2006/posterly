@@ -178,38 +178,41 @@
     "multicolumn": {
       "type": "multicolumn",
       "blocks": {
-        "column1": {
+        "column_pwLfYq": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "image": "shopify://shop_images/sub_save_icons-03.svg",
+            "title": "Efficient",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability.</p>",
             "link_label": "",
             "link": ""
           }
         },
-        "column2": {
+        "column_Vy34Bc": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "image": "shopify://shop_images/sub_save_icons-03.svg",
+            "title": "Efficient",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability.</p>",
             "link_label": "",
             "link": ""
           }
         },
-        "column3": {
+        "column_b46TJk": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "image": "shopify://shop_images/sub_save_icons-03.svg",
+            "title": "Efficient",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability.</p>",
             "link_label": "",
             "link": ""
           }
         }
       },
       "block_order": [
-        "column1",
-        "column2",
-        "column3"
+        "column_pwLfYq",
+        "column_Vy34Bc",
+        "column_b46TJk"
       ],
       "settings": {
         "title": "",
