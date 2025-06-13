@@ -70,20 +70,13 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+            "heading": "We believe a better experience comes from outdoor gear that strikes the optimal balance of weight, durability, and water protection.",
+            "heading_size": "h2"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text"
+        "heading"
       ],
       "settings": {
         "desktop_content_position": "center",
@@ -99,7 +92,7 @@
       "settings": {
         "collection": "all",
         "products_to_show": 8,
-        "title": "Featured products",
+        "title": "Featured Collection",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
