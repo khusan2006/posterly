@@ -129,7 +129,7 @@ if (!customElements.get('quick-add-drawer')) {
         if (spinner) spinner.classList.add('hidden');
       }
 
-      hide() {
+      hide(isProductFormSubmission = false) {
         if (!this.isOpen) return;
 
         // Start closing animation
@@ -145,6 +145,11 @@ if (!customElements.get('quick-add-drawer')) {
           this.removeAttribute('closing');
           document.body.style.overflow = '';
           document.removeEventListener('keydown', this.onKeyDown);
+
+          // Trigger modalClosed event for product-form compatibility
+          if (isProductFormSubmission) {
+            document.body.dispatchEvent(new CustomEvent('modalClosed'));
+          }
 
           // Clear content after animation
           if (this.drawerBody) {
@@ -167,315 +172,109 @@ if (!customElements.get('quick-add-drawer')) {
         try {
           const response = await fetch(productUrl);
           const html = await response.text();
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(html, 'text/html');
+          const doc = new DOMParser().parseFromString(html, 'text/html');
           
-          // Extract product data
-          const product = {
-            title: doc.querySelector('.product__title h1')?.textContent?.trim() || 'Product',
-            vendor: doc.querySelector('.product__vendor')?.textContent?.trim() || '',
-            price: this.extractPrice(doc),
-            image: doc.querySelector('.product__media img')?.getAttribute('src') || '',
-            imageAlt: doc.querySelector('.product__media img')?.getAttribute('alt') || '',
-            url: productUrl,
-            variants: this.extractVariants(doc),
-            selectedVariantId: this.extractSelectedVariantId(doc)
-          };
-
-          this.renderDrawerContent(product, opener);
-          return true; // Success
+          // Get the product-info element which contains everything
+          const productInfoElement = doc.querySelector('product-info');
+          if (productInfoElement) {
+            console.log('Found product-info element');
+            
+            // Clone the element to avoid modifying the original
+            const productClone = productInfoElement.cloneNode(true);
+            
+            // Process the element to avoid ID conflicts with the main page
+            this.preprocessHTML(productClone);
+            
+            // Extract basic info for header from the original document
+            const title = doc.querySelector('.product__title h1, h1')?.textContent?.trim() || 'Product';
+            const vendor = doc.querySelector('.product__text.caption-with-letter-spacing')?.textContent?.trim() || '';
+            
+            // Get the first image from media gallery
+            const image = doc.querySelector('.product__media img')?.getAttribute('src') || '';
+            const imageAlt = doc.querySelector('.product__media img')?.getAttribute('alt') || '';
+            
+            console.log('Extracted info:', { title, vendor, image, imageAlt });
+            
+            this.renderDrawerContent(productClone, { title, vendor, image, imageAlt, url: productUrl });
+            return true;
+          } else {
+            console.error('Product info element not found');
+            console.log('Available elements:', Array.from(doc.querySelectorAll('[class*="product"]')).map(el => el.className));
+            throw new Error('Product info element not found');
+          }
         } catch (error) {
           console.error('Error loading product data:', error);
           this.renderErrorContent();
-          return false; // Failure
+          return false;
         }
       }
 
-      extractPrice(doc) {
-        const priceElement = doc.querySelector('.price .price-item--regular, .price__regular .price-item');
-        return priceElement ? priceElement.innerHTML : '';
-      }
 
-      extractSelectedVariantId(doc) {
-        const variantIdInput = doc.querySelector('input[name="id"], .product-variant-id');
-        return variantIdInput ? variantIdInput.value : '';
-      }
 
-      extractVariants(doc) {
-        const variants = [];
-        
-        // Extract from fieldset elements (common pattern in Shopify themes)
-        const fieldsets = doc.querySelectorAll('fieldset');
-        fieldsets.forEach(fieldset => {
-          const legend = fieldset.querySelector('legend');
-          if (!legend) return;
+      preprocessHTML(productElement) {
+        // Prevent duplicate IDs by adding a unique prefix
+        const sectionId = productElement.dataset.section;
+        if (sectionId) {
+          const oldId = sectionId;
+          const newId = `quickadd-drawer-${sectionId}`;
+          productElement.innerHTML = productElement.innerHTML.replaceAll(oldId, newId);
           
-          const optionName = legend.textContent.trim();
-          const inputs = fieldset.querySelectorAll('input[type="radio"]');
-          
-          if (inputs.length > 0) {
-            const options = Array.from(inputs).map(input => ({
-              name: input.value,
-              value: input.value,
-              selected: input.checked,
-              available: !input.disabled
-            }));
-            variants.push({ name: optionName, options });
-          }
-        });
-
-        // Fallback: Extract from select elements
-        if (variants.length === 0) {
-          const variantSelects = doc.querySelectorAll('select[name*="option"]');
-          variantSelects.forEach(select => {
-            const optionName = select.name.replace('options[', '').replace(']', '');
-            const options = Array.from(select.options).map(option => ({
-              name: option.textContent.trim(),
-              value: option.value,
-              selected: option.selected,
-              available: !option.disabled
-            }));
-            if (options.length > 0) {
-              variants.push({ name: optionName, options });
+          // Update attributes that reference the old ID
+          Array.from(productElement.attributes).forEach((attribute) => {
+            if (attribute.value.includes(oldId)) {
+              productElement.setAttribute(attribute.name, attribute.value.replace(oldId, newId));
             }
           });
+          
+          productElement.dataset.originalSection = sectionId;
         }
-
-        return variants;
+        
+        // Only remove elements that are definitely not needed in drawer
+        const elementsToRemove = [
+          '.product__media-item:not(:first-child)', // Extra product images
+          '.quick-add-hidden', // Elements marked to hide in quick add
+          '.breadcrumb' // Navigation breadcrumbs
+        ];
+        
+        elementsToRemove.forEach(selector => {
+          const elements = productElement.querySelectorAll(selector);
+          elements.forEach(el => el.remove());
+        });
+        
+        // Remove product description only if it's very long (keep short descriptions)
+        const description = productElement.querySelector('.product__description');
+        if (description && description.textContent.length > 200) {
+          description.remove();
+        }
       }
 
-      renderDrawerContent(product, opener) {
-        const productId = this.currentProductId || 'default';
-        
+      renderDrawerContent(productElement, productInfo) {
+        // Create a simplified wrapper that includes product info and the product element
         const content = `
           <div class="quick-add-drawer__wrapper">
-            <div class="quick-add-drawer__media">
-              ${product.image ? `
-                <div class="quick-add-drawer__image">
-                  <img
-                    src="${product.image}"
-                    alt="${product.imageAlt}"
-                    loading="lazy"
-                  >
-                </div>
-              ` : ''}
+            <div class="quick-add-drawer__product-header">
+              ${productInfo.vendor ? `<div class="quick-add-drawer__vendor">${productInfo.vendor}</div>` : ''}
+              <h2 class="quick-add-drawer__title">${productInfo.title}</h2>
+              <a href="${productInfo.url}" class="quick-add-drawer__view-details">View full details →</a>
             </div>
-
-            <div class="quick-add-drawer__details">
-              ${product.vendor ? `<div class="quick-add-drawer__vendor">${product.vendor}</div>` : ''}
-              <h2 class="quick-add-drawer__title">${product.title}</h2>
-              <div class="quick-add-drawer__price">${product.price}</div>
-              <a href="${product.url}" class="quick-add-drawer__view-details">View full details →</a>
-
-              <form action="/cart/add" method="post" enctype="multipart/form-data" id="quick-add-drawer-form-${productId}" class="form" novalidate="novalidate" data-type="add-to-cart-form">
-                <input type="hidden" name="id" value="${product.selectedVariantId}" class="product-variant-id">
-
-                ${this.renderVariantOptions(product.variants, productId)}
-
-                <div class="quick-add-drawer__quantity">
-                  <label class="quick-add-drawer__option-label">Quantity:</label>
-                  <div class="quick-add-drawer__quantity-controls">
-                    <button type="button" class="quick-add-drawer__quantity-btn quick-add-drawer__quantity-btn--minus" aria-label="Decrease quantity">−</button>
-                    <input 
-                      type="number" 
-                      name="quantity" 
-                      value="1" 
-                      min="1" 
-                      class="quick-add-drawer__quantity-input"
-                      aria-label="Quantity"
-                    >
-                    <button type="button" class="quick-add-drawer__quantity-btn quick-add-drawer__quantity-btn--plus" aria-label="Increase quantity">+</button>
-                  </div>
-                </div>
-
-                <div class="quick-add-drawer__actions">
-                  <button
-                    type="submit"
-                    name="add"
-                    class="quick-add-drawer__add-to-cart"
-                  >
-                    <span>Add to cart</span>
-                  </button>
-                  
-                  <button type="button" class="quick-add-drawer__buy-now">
-                    Buy it now
-                  </button>
-                  
-                  <button type="button" class="quick-add-drawer__more-payment-options">
-                    More payment options
-                  </button>
-                </div>
-              </form>
+            <div class="quick-add-drawer__product-content">
+              ${productElement.outerHTML}
             </div>
           </div>
         `;
 
         if (this.drawerBody) {
           this.drawerBody.innerHTML = content;
-          this.setupDrawerInteractions();
-        }
-      }
-
-      renderVariantOptions(variants, productId) {
-        if (!variants.length) return '';
-
-        return `
-          <div class="quick-add-drawer__variants">
-            ${variants.map((variant, index) => `
-              <div class="quick-add-drawer__option-group">
-                <label class="quick-add-drawer__option-label">${variant.name}</label>
-                ${variant.name.toLowerCase() === 'color' ? this.renderColorOptions() : this.renderRegularOptions(variant, productId, index)}
-              </div>
-            `).join('')}
-          </div>
-        `;
-      }
-
-      renderColorOptions() {
-        return `
-          <div class="quick-add-drawer__color-options">
-            <div class="quick-add-drawer__color-swatch quick-add-drawer__color-swatch--white quick-add-drawer__color-swatch--selected" data-color="white"></div>
-            <div class="quick-add-drawer__color-swatch quick-add-drawer__color-swatch--black" data-color="black"></div>
-          </div>
-          <span class="quick-add-drawer__color-label">White</span>
-        `;
-      }
-
-      renderRegularOptions(variant, productId, variantIndex) {
-        return `
-          <div class="quick-add-drawer__option-values" data-option-position="${variantIndex + 1}">
-            ${variant.options.map((option, optionIndex) => `
-              <input
-                type="radio"
-                id="quick-add-drawer-${productId}-${variantIndex}-${optionIndex}"
-                name="options[${variant.name}]"
-                value="${option.value}"
-                ${option.selected ? 'checked' : ''}
-                ${!option.available ? 'disabled' : ''}
-                class="quick-add-drawer__option-input"
-              >
-              <label 
-                for="quick-add-drawer-${productId}-${variantIndex}-${optionIndex}"
-                class="quick-add-drawer__option-button${!option.available ? ' quick-add-drawer__option-button--disabled' : ''}"
-              >
-                ${option.name}
-                ${this.getOptionSubtext(variant.name, option.name)}
-              </label>
-            `).join('')}
-          </div>
-        `;
-      }
-
-      getOptionSubtext(variantName, optionName) {
-        if (variantName.toLowerCase().includes('torso')) {
-          const subtexts = {
-            'Extra Sm': '<small>&lt;15"</small>',
-            'Small': '<small>15"-17"</small>',
-            'Medium': '<small>17"-19"</small>',
-            'Large': '<small>19"-21"</small>',
-            'Tall': '<small>21"+</small>'
-          };
-          return subtexts[optionName] || '';
-        }
-        return '';
-      }
-
-      setupDrawerInteractions() {
-        // Quantity controls
-        const quantityInput = this.querySelector('.quick-add-drawer__quantity-input');
-        const minusBtn = this.querySelector('.quick-add-drawer__quantity-btn--minus');
-        const plusBtn = this.querySelector('.quick-add-drawer__quantity-btn--plus');
-
-        if (minusBtn && quantityInput) {
-          minusBtn.addEventListener('click', () => {
-            const currentValue = parseInt(quantityInput.value) || 1;
-            if (currentValue > 1) {
-              quantityInput.value = currentValue - 1;
-            }
-          });
-        }
-
-        if (plusBtn && quantityInput) {
-          plusBtn.addEventListener('click', () => {
-            const currentValue = parseInt(quantityInput.value) || 1;
-            quantityInput.value = currentValue + 1;
-          });
-        }
-
-        // Color swatches
-        const colorSwatches = this.querySelectorAll('.quick-add-drawer__color-swatch');
-        const colorLabel = this.querySelector('.quick-add-drawer__color-label');
-        
-        colorSwatches.forEach(swatch => {
-          swatch.addEventListener('click', () => {
-            colorSwatches.forEach(s => s.classList.remove('quick-add-drawer__color-swatch--selected'));
-            swatch.classList.add('quick-add-drawer__color-swatch--selected');
-            
-            const color = swatch.getAttribute('data-color');
-            if (colorLabel) {
-              colorLabel.textContent = color.charAt(0).toUpperCase() + color.slice(1);
-            }
-          });
-        });
-
-        // Form submission
-        const form = this.querySelector('form');
-        if (form) {
-          form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            this.handleAddToCart(form);
-          });
-        }
-
-        // Variant selection
-        const variantInputs = this.querySelectorAll('.quick-add-drawer__option-input');
-        variantInputs.forEach(input => {
-          input.addEventListener('change', () => {
-            this.updateSelectedVariant();
-          });
-        });
-      }
-
-      updateSelectedVariant() {
-        // This would need to be implemented based on your variant logic
-        // For now, we'll keep it simple
-        console.log('Variant selection changed');
-      }
-
-      async handleAddToCart(form) {
-        const formData = new FormData(form);
-        const addButton = form.querySelector('.quick-add-drawer__add-to-cart');
-        
-        // Add loading state
-        addButton.disabled = true;
-        addButton.innerHTML = '<span>Adding...</span>';
-
-        try {
-          const response = await fetch('/cart/add.js', {
-            method: 'POST',
-            body: formData
-          });
-
-          if (response.ok) {
-            // Success
-            addButton.innerHTML = '<span>Added!</span>';
-            setTimeout(() => {
-              this.hide();
-              // Trigger cart update event if you have a cart drawer
-              document.dispatchEvent(new Event('cart:refresh'));
-            }, 1000);
-          } else {
-            throw new Error('Failed to add to cart');
+          
+          // Initialize Shopify features after content is loaded
+          if (window.Shopify && Shopify.PaymentButton) {
+            Shopify.PaymentButton.init();
           }
-        } catch (error) {
-          console.error('Add to cart error:', error);
-          addButton.innerHTML = '<span>Error - Try again</span>';
-          setTimeout(() => {
-            addButton.disabled = false;
-            addButton.innerHTML = '<span>Add to cart</span>';
-          }, 2000);
+          if (window.ProductModel) window.ProductModel.loadShopifyXR();
         }
       }
+
+
 
       renderErrorContent() {
         if (this.drawerBody) {
