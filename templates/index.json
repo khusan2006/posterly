@@ -180,7 +180,7 @@
           "type": "text",
           "settings": {
             "text": "<p>Co-developed by Michelin-Star Chef Thomas Keller, our Salted Caramel Chip IQBAR combines buttery salted caramel, crunchy macadamia nuts & sweet chocolate chips while our Yuzu Mango IQMIX blends zesty citrus with lush tropical sweetness.</p>",
-            "text_style": "body"
+            "text_style": "subtitle"
           }
         },
         "button_AzMHcr": {
