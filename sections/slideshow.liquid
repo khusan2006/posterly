@@ -107,9 +107,11 @@
   >
     {%- for block in section.blocks -%}
       <style>
-        #Slide-{{ section.id }}-{{ forloop.index }} {
-          color: white;
-        }
+         {%- if block.settings.text_color -%}
+            #Slide-{{ section.id }}-{{ forloop.index }} .banner__heading {
+              color: {{block.settings.text_color}}!important;
+            }
+         {%- endif -%}
         #Slide-{{ section.id }}-{{ forloop.index }} .banner__media::after {
           opacity: {{ block.settings.image_overlay_opacity | divided_by: 100.0 }};
         }
