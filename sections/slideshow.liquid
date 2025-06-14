@@ -108,7 +108,7 @@
     {%- for block in section.blocks -%}
       <style>
         #Slide-{{ section.id }}-{{ forloop.index }} .banner__media::after {
-          color: {{block.settings.text_color}};
+          color: {{block.settings.text_color}}!important;
           opacity: {{ block.settings.image_overlay_opacity | divided_by: 100.0 }};
         }
       </style>
