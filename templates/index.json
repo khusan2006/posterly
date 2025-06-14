@@ -177,7 +177,7 @@
           "type": "button",
           "settings": {
             "button_label": "Shop Now",
-            "button_link": "",
+            "button_link": "shopify://collections",
             "button_style_secondary": false
           }
         }
@@ -197,7 +197,7 @@
         "content_layout": "no-overlap",
         "desktop_content_position": "top",
         "desktop_content_alignment": "center",
-        "mobile_content_alignment": "left",
+        "mobile_content_alignment": "center",
         "section_color_scheme": "scheme-2",
         "color_scheme": "scheme-1",
         "padding_top": 36,
