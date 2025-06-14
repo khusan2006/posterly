@@ -108,6 +108,7 @@
     {%- for block in section.blocks -%}
       <style>
         #Slide-{{ section.id }}-{{ forloop.index }} .banner__media::after {
+          color: {{block.settings.text_color}};
           opacity: {{ block.settings.image_overlay_opacity | divided_by: 100.0 }};
         }
       </style>
@@ -408,6 +409,11 @@
         {
           "type": "header",
           "content": "t:sections.slideshow.blocks.slide.settings.header_text.content"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color"
         },
         {
           "type": "inline_richtext",
