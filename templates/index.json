@@ -16,7 +16,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/webpost3.png",
-            "image_overlay_opacity": 0,
+            "image_overlay_opacity": 10,
             "text_color": "#ffffff",
             "heading": "Porsche Collection",
             "heading_size": "h0",
@@ -35,8 +35,8 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/webpost2.png",
-            "image_overlay_opacity": 0,
-            "text_color": "",
+            "image_overlay_opacity": 10,
+            "text_color": "#ffffff",
             "heading": "Classic Movies Albums",
             "heading_size": "h0",
             "subheading": "",
