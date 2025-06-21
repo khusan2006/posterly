@@ -1,0 +1,201 @@
+{{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="featured-product-banner section-{{ section.id }}-padding{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" style="background-color: {{ section.settings.background_color }}; color: {{ section.settings.text_color }}!important">
+  <div class="{{section.settings.page_type}}">
+    <div class="featured-product-banner__grid grid grid--gapless grid--1-col grid--2-col-tablet">
+      <div class="featured-product-banner__text grid__item">
+        <div class="featured-product-banner__content content-container featured-product-banner__content--{{ section.settings.text_position }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          {%- if section.settings.subheading != blank -%}
+            <div class="featured-product-banner__subheading caption-with-letter-spacing caption-with-letter-spacing--medium">
+              {{ section.settings.subheading }}
+            </div>
+          {%- endif -%}
+          {%- if section.settings.heading != blank -%}
+            <h2 class="featured-product-banner__heading h1" style="color: {{ section.settings.text_color }}">
+              {{ section.settings.heading }}
+            </h2>
+          {%- endif -%}
+          {%- if section.settings.text != blank -%}
+            <div class="featured-product-banner__text rte">
+              {{ section.settings.text }}
+            </div>
+          {%- endif -%}
+          {%- if section.settings.button_label != blank -%}
+            <a href="{{ section.settings.button_link }}" class="featured-product-banner__button" style="color: {{ section.settings.text_color }}">
+              {{ section.settings.button_label }}
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+      <div class="featured-product-banner__image grid__item">
+        {%- if section.settings.image != blank -%}
+          <div class="featured-product-banner__media media featured-product-banner__media--{{ section.settings.image_height }}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            {%- if section.settings.image_height == 'adapt' -%}
+              style="padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;"
+            {%- endif -%}
+          >
+            {{ section.settings.image | image_url: width: 1200 | image_tag: widths: '400, 600, 800, 1200', class: 'featured-product-banner__img', alt: section.settings.heading | escape }}
+          </div>
+        {%- else -%}
+          <div class="featured-product-banner__media media placeholder">
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Featured product banner",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+        "type": "select",
+        "id": "page_type",
+        "label": "Page type",
+        "options": [
+            {
+                "value": "page-width",
+                "label": "Page width"
+            },
+            {
+                "value": "full-width",
+                "label": "Full width"
+            }
+        ],
+        "default": "full-width"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "FEATURED ARTISTS"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Hannah Durham"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>British artist Hannah Durham brings playful vibrancy and nostalgic charm to everyday objects through bold color blocking, painterly textures, and whimsical compositions.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Explore prints"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background color",
+        "default": "#FFFFFF"
+    },
+    {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "#121212"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 36
+    },
+    {
+      "type": "select",
+      "id": "image_height",
+      "label": "Image height",
+      "options": [
+        { "value": "adapt", "label": "Adapt to image" },
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" }
+      ],
+      "default": "medium"
+    },
+    {
+      "type": "select",
+      "id": "text_position",
+      "label": "Text position",
+      "options": [
+        { "value": "top-left", "label": "Top left" },
+        { "value": "top-center", "label": "Top center" },
+        { "value": "top-right", "label": "Top right" },
+        { "value": "middle-left", "label": "Middle left" },
+        { "value": "middle-center", "label": "Middle center" },
+        { "value": "middle-right", "label": "Middle right" },
+        { "value": "bottom-left", "label": "Bottom left" },
+        { "value": "bottom-center", "label": "Bottom center" },
+        { "value": "bottom-right", "label": "Bottom right" }
+      ],
+      "default": "middle-left"
+    },
+    {
+      "type": "select",
+      "id": "image_behavior",
+      "label": "Image animation",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "ambient", "label": "Ambient" },
+        { "value": "zoom-in", "label": "Zoom in" }
+      ],
+      "default": "none"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured product banner"
+    }
+  ]
+}
+{% endschema %}
