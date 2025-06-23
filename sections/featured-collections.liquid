@@ -78,28 +78,26 @@
         {%- # Navigation arrows and view all button in header -%}
         {%- if has_collections -%}
           <div class="featured-collections__header-controls">
-            {%- if section.settings.show_navigation_arrows -%}
-              <div class="featured-collections__header-navigation" id="header-nav-{{ section.id }}">
-                <button
-                  type="button"
-                  class="featured-collections__nav-btn featured-collections__nav-btn--prev"
-                  data-carousel-target="featured-collections-carousel-{{ section.id }}"
-                  data-action="prev"
-                  aria-label="{{ 'general.slider.previous_slide' | t }}"
-                >
-                  <span class="featured-collections__nav-icon">‹</span>
-                </button>
-                <button
-                  type="button"
-                  class="featured-collections__nav-btn featured-collections__nav-btn--next"
-                  data-carousel-target="featured-collections-carousel-{{ section.id }}"
-                  data-action="next"
-                  aria-label="{{ 'general.slider.next_slide' | t }}"
-                >
-                  <span class="featured-collections__nav-icon">›</span>
-                </button>
-              </div>
-            {%- endif -%}
+            <div class="featured-collections__header-navigation" id="header-nav-{{ section.id }}">
+              <button
+                type="button"
+                class="featured-collections__nav-btn featured-collections__nav-btn--prev"
+                data-carousel-target="featured-collections-carousel-{{ section.id }}"
+                data-action="prev"
+                aria-label="{{ 'general.slider.previous_slide' | t }}"
+              >
+                <span class="featured-collections__nav-icon">‹</span>
+              </button>
+              <button
+                type="button"
+                class="featured-collections__nav-btn featured-collections__nav-btn--next"
+                data-carousel-target="featured-collections-carousel-{{ section.id }}"
+                data-action="next"
+                aria-label="{{ 'general.slider.next_slide' | t }}"
+              >
+                <span class="featured-collections__nav-icon">›</span>
+              </button>
+            </div>
             
             {%- if section.settings.show_view_all and section.settings.view_all_url != blank -%}
               <a 
@@ -138,7 +136,6 @@
                   assign custom_title = block.settings.custom_title
                   assign custom_image = block.settings.custom_image
                   assign custom_bg_color = block.settings.background_color
-                  assign card_style = section.settings.card_style
                 -%}
                 
                 <div 
@@ -154,7 +151,6 @@
                     image_override: custom_image,
                     background_color: custom_bg_color,
                     show_description: section.settings.show_descriptions,
-                    style: card_style,
                     size: 'medium',
                     loading: 'lazy'
                   -%}
@@ -175,7 +171,6 @@
                 {%- render 'collection-card-featured',
                   collection: null,
                   show_description: section.settings.show_descriptions,
-                  style: section.settings.card_style,
                   size: 'medium',
                   loading: 'lazy'
                 -%}
@@ -265,26 +260,7 @@
       "type": "header",
       "content": "Card Settings"
     },
-    {
-      "type": "select",
-      "id": "card_style",
-      "options": [
-        {
-          "value": "standard",
-          "label": "Standard"
-        },
-        {
-          "value": "overlay",
-          "label": "Text overlay"
-        },
-        {
-          "value": "minimal",
-          "label": "Minimal"
-        }
-      ],
-      "default": "standard",
-      "label": "Card style"
-    },
+
          {
        "type": "color",
        "id": "collection_title_color",
@@ -368,12 +344,7 @@
       "type": "header",
       "content": "Navigation"
     },
-         {
-       "type": "checkbox",
-       "id": "show_navigation_arrows",
-       "default": true,
-       "label": "Show navigation arrows"
-     },
+    
      {
        "type": "checkbox",
        "id": "show_view_all",
@@ -386,7 +357,7 @@
        "label": "View all URL",
        "info": "Link for the view all button"
      },
-    {
+{
       "type": "checkbox",
       "id": "enable_auto_scroll",
       "default": false,

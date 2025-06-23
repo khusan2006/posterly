@@ -9,7 +9,7 @@
   - title_override: {String} Custom title to override collection title
   - image_override: {Object} Custom image to override collection featured image
   - show_description: {Boolean} Whether to show collection description
-  - style: {String} Card style - "standard", "overlay", "minimal"
+
   - size: {String} Card size - "small", "medium", "large"
   - loading: {String} Image loading attribute - "lazy" or "eager"
 
@@ -29,26 +29,23 @@
   assign card_image = image_override | default: collection.featured_image
   assign card_description = collection.description
   assign card_url = collection.url
-  assign card_style = style | default: 'standard'
+
   assign card_size = size | default: 'medium'
   assign image_loading = loading | default: 'lazy'
   assign show_desc = show_description | default: false
   
   # Image dimensions
-  assign img_width = image_width | default: 400
-  assign img_height = image_height | default: 400
-  
-  # Calculate aspect ratio
-  assign aspect_ratio = img_width | divided_by: img_height | times: 1.0
+  assign img_width = 400
+  assign img_height = 400
   
   # Generate responsive image sizes
   assign sizes = '(min-width: 990px) calc((100vw - 10rem) / 4), (min-width: 750px) calc((100vw - 10rem) / 2), calc(100vw - 3rem)'
 -%}
 
-<div class="featured-collections__card featured-collections__card--{{ card_size }}{% if card_style != 'standard' %} featured-collections__card--{{ card_style }}{% endif %}">
+<div class="featured-collections__card featured-collections__card--{{ card_size }}">
   <div 
-    class="featured-collections__card-wrapper{% if card_style == 'overlay' %} featured-collections__card--overlay{% endif %}"
-    style="--card-image-ratio: {{ aspect_ratio }};{% if background_color %} --card-background-color: {{ background_color }};{% endif %}"
+    class="featured-collections__card-wrapper"
+    style="{% if background_color %} --card-background-color: {{ background_color }};{% endif %}"
   >
     <a 
       href="{{ card_url | default: '#' }}" 
