@@ -26,6 +26,8 @@ class HorizontalScrollCarousel extends HTMLElement {
     this.isDragging = false;
     this.startX = 0;
     this.scrollLeftPos = 0;
+    this.autoScrollInterval = null;
+    this.isUserInteracting = false;
     this.intersectionObserver = null;
     
     // Touch state
@@ -50,6 +52,11 @@ class HorizontalScrollCarousel extends HTMLElement {
     this.setupEventListeners();
     this.setupIntersectionObserver();
     this.updateNavigationState();
+    
+    // Start auto-scroll if enabled
+    if (this.autoScroll) {
+      this.startAutoScroll();
+    }
   }
 
   /**
@@ -279,6 +286,8 @@ class HorizontalScrollCarousel extends HTMLElement {
     this.touchStartX = e.touches[0].clientX;
     this.touchStartY = e.touches[0].clientY;
     this.isTouchScrolling = false;
+    this.isUserInteracting = true;
+    this.stopAutoScroll();
   }
 
   /**
@@ -321,6 +330,12 @@ class HorizontalScrollCarousel extends HTMLElement {
     this.touchStartX = 0;
     this.touchStartY = 0;
     this.isTouchScrolling = false;
+    
+    // Reset auto-scroll after touch interaction
+    setTimeout(() => {
+      this.isUserInteracting = false;
+      if (this.autoScroll) this.startAutoScroll();
+    }, 1000);
   }
 
   /**
