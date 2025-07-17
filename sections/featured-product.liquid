@@ -3,7 +3,20 @@
   if product == null
     assign placeholder = true
   endif
+  
+  # Hide products with 'hidden' tag
+  assign is_hidden = false
+  if product
+    for tag in product.tags
+      if tag == 'hidden'
+        assign is_hidden = true
+        break
+      endif
+    endfor
+  endif
 -%}
+
+{%- unless is_hidden -%}
 
 <product-info
   data-section="{{ section.id }}"
@@ -486,6 +499,8 @@
     <script src="{{ 'media-gallery.js' | asset_url }}" defer="defer"></script>
   {% endif %}
 </product-info>
+
+{%- endunless -%}
 
 {% schema %}
 {

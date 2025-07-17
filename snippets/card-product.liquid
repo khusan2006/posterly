@@ -20,6 +20,20 @@
   Usage:
   {% render 'card-product', show_vendor: section.settings.show_vendor %}
 {% endcomment %}
+
+{%- comment -%}
+  Hide products with 'hidden' tag from all product listings
+{%- endcomment -%}
+{%- if card_product and card_product != empty -%}
+  {%- assign is_hidden = false -%}
+  {%- for tag in card_product.tags -%}
+    {%- if tag == 'hidden' -%}
+      {%- assign is_hidden = true -%}
+      {%- break -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {%- unless is_hidden -%}
+
 {%- unless skip_styles -%}
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
   {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
@@ -28,7 +42,6 @@
   {{ 'quick-order-list.css' | asset_url | stylesheet_tag }}
   {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
 {%- endunless -%}
-{%- if card_product and card_product != empty -%}
   {%- liquid
     assign ratio = 1
     if card_product.featured_media and media_aspect_ratio == 'portrait'
@@ -645,4 +658,5 @@
       </div>
     </div>
   </div>
+{%- endunless -%}
 {%- endif -%}

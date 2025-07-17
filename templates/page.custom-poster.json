@@ -1,0 +1,30 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_poster": {
+      "type": "custom-poster",
+      "settings": {
+        "heading": "Create Your Custom Poster",
+        "description": "<p>Upload your image and customize your poster with our easy-to-use design tool. Choose from various sizes and frame options to create the perfect piece for your space.</p>",
+        "upload_title": "Upload Your Image",
+        "options_title": "Customize Your Poster",
+        "title_field_label": "Poster Title",
+        "description_field_label": "Description (Optional)",
+        "color_scheme": "scheme-1",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_poster"
+  ]
+}
