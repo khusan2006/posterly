@@ -1,0 +1,407 @@
+{{ 'custom-poster.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-product-variant-picker.css' | asset_url | stylesheet_tag }}
+{{ 'component-swatch.css' | asset_url | stylesheet_tag }}
+{{ 'component-swatch-input.css' | asset_url | stylesheet_tag }}
+
+<!-- Firebase SDK and Configuration -->
+<script>
+  // Firebase configuration
+  window.firebaseConfig = {
+    apiKey: "AIzaSyD6DBUGfDlHyzQY7_f5sgZqxkEhOgSp6IM",
+    authDomain: "poster-90252.firebaseapp.com",
+    projectId: "poster-90252",
+    storageBucket: "poster-90252.appspot.com",
+    messagingSenderId: "1012468324012",
+    appId: "1:1012468324012:web:2bc33fa376edef493d7109"
+  };
+
+  // Load Firebase SDK and initialize
+  function loadFirebase() {
+    const script1 = document.createElement('script');
+    script1.src = 'https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js';
+    script1.onload = function() {
+      const script2 = document.createElement('script');
+      script2.src = 'https://www.gstatic.com/firebasejs/9.22.2/firebase-storage-compat.js';
+      script2.onload = function() {
+        // Initialize Firebase after both scripts are loaded
+        if (typeof firebase !== 'undefined' && !firebase.apps.length) {
+          firebase.initializeApp(window.firebaseConfig);
+          console.log('Firebase initialized successfully');
+          
+          // Dispatch custom event to notify that Firebase is ready
+          document.dispatchEvent(new CustomEvent('firebaseReady'));
+        }
+      };
+      document.head.appendChild(script2);
+    };
+    document.head.appendChild(script1);
+  }
+
+  // Load Firebase when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadFirebase);
+  } else {
+    loadFirebase();
+  }
+</script>
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign template_product = section.settings.template_product
+  if template_product == null
+    assign template_product = collections.all.products.first
+  endif
+-%}
+
+<div class="custom-poster section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width">
+    <div class="custom-poster__container">
+      
+      {%- if section.settings.heading != blank -%}
+        <div class="custom-poster__header">
+          <h1 class="custom-poster__title h1">{{ section.settings.heading }}</h1>
+          {%- if section.settings.description != blank -%}
+            <div class="custom-poster__description rte">
+              {{ section.settings.description }}
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      <custom-poster-form 
+        class="custom-poster__form"
+        data-template-product="{{ template_product.handle | default: template_product.id }}"
+        data-section-id="{{ section.id }}"
+      >
+        <div class="custom-poster__grid">
+          
+          <!-- Image Upload Section -->
+          <div class="custom-poster__upload-section">
+            <div class="custom-poster__upload-container">
+              <h2 class="custom-poster__section-title h3">{{ section.settings.upload_title | default: 'Upload Your Image' }}</h2>
+              
+              <div class="custom-poster__upload-area" id="upload-area-{{ section.id }}">
+                <div class="custom-poster__upload-dropzone" id="dropzone-{{ section.id }}">
+                  <div class="custom-poster__upload-content">
+                    <span class="custom-poster__upload-icon">
+                      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="17,8 12,3 7,8"/>
+                        <line x1="12" y1="3" x2="12" y2="15"/>
+                      </svg>
+                    </span>
+                    <div class="custom-poster__upload-text">
+                      <p class="custom-poster__upload-primary">Drop your image here or click to upload</p>
+                      <p class="custom-poster__upload-secondary">Supports JPG, PNG, GIF up to 10MB</p>
+                    </div>
+                  </div>
+                  <input 
+                    type="file" 
+                    id="image-upload-{{ section.id }}" 
+                    class="custom-poster__upload-input"
+                    accept="image/*"
+                    hidden
+                  >
+                </div>
+                
+                <div class="custom-poster__preview-container" id="preview-container-{{ section.id }}" style="display: none;">
+                  <div class="custom-poster__preview-image-wrapper">
+                    <img 
+                      id="preview-image-{{ section.id }}" 
+                      class="custom-poster__preview-image" 
+                      alt="Preview"
+                      width="300"
+                      height="300"
+                    >
+                    <button 
+                      type="button" 
+                      class="custom-poster__remove-image"
+                      id="remove-image-{{ section.id }}"
+                      aria-label="Remove image"
+                    >
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="custom-poster__image-info">
+                    <p class="custom-poster__image-name" id="image-name-{{ section.id }}"></p>
+                    <p class="custom-poster__image-size" id="image-size-{{ section.id }}"></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="custom-poster__upload-progress" id="upload-progress-{{ section.id }}" style="display: none;">
+                <div class="custom-poster__progress-bar">
+                  <div class="custom-poster__progress-fill" id="progress-fill-{{ section.id }}"></div>
+                </div>
+                <p class="custom-poster__progress-text" id="progress-text-{{ section.id }}">Uploading...</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Configuration Section -->
+          <div class="custom-poster__config-section">
+            <h2 class="custom-poster__section-title h3">{{ section.settings.options_title | default: 'Customize Your Poster' }}</h2>
+            
+            {%- if template_product and template_product.variants.size > 1 -%}
+              <div class="custom-poster__variants">
+                {%- for option in template_product.options_with_values -%}
+                  <div class="custom-poster__variant-group">
+                    <label class="custom-poster__variant-label">
+                      {{ option.name }}:
+                      <span class="custom-poster__selected-value" data-option-name="{{ option.name }}">
+                        {{ option.selected_value | default: option.values.first }}
+                      </span>
+                    </label>
+                    
+                    <div class="custom-poster__variant-options">
+                      {%- for value in option.values -%}
+                        <input 
+                          type="radio" 
+                          name="options[{{ option.name }}]" 
+                          value="{{ value }}"
+                          id="option-{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                          {% if forloop.first %}checked{% endif %}
+                          class="custom-poster__variant-input"
+                          data-option-position="{{ option.position }}"
+                        >
+                        <label 
+                          for="option-{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                          class="custom-poster__variant-button"
+                        >
+                          {{ value }}
+                        </label>
+                      {%- endfor -%}
+                    </div>
+                  </div>
+                {%- endfor -%}
+              </div>
+            {%- endif -%}
+
+            <!-- Price Display -->
+            <div class="custom-poster__price-container">
+              <div class="custom-poster__price">
+                <span class="custom-poster__price-label">Price:</span>
+                <span class="custom-poster__price-value" id="price-display-{{ section.id }}">
+                  {%- if template_product -%}
+                    {{ template_product.price | money }}
+                  {%- else -%}
+                    $0.00
+                  {%- endif -%}
+                </span>
+              </div>
+            </div>
+
+            <!-- Custom Fields -->
+            <div class="custom-poster__custom-fields">
+              <div class="custom-poster__field-group">
+                <label for="poster-title-{{ section.id }}" class="custom-poster__field-label">
+                  {{ section.settings.title_field_label | default: 'Poster Title' }}
+                </label>
+                <input 
+                  type="text" 
+                  id="poster-title-{{ section.id }}"
+                  name="poster_title"
+                  class="custom-poster__field-input"
+                  placeholder="Enter a title for your poster"
+                >
+              </div>
+
+              <div class="custom-poster__field-group">
+                <label for="poster-description-{{ section.id }}" class="custom-poster__field-label">
+                  {{ section.settings.description_field_label | default: 'Description (Optional)' }}
+                </label>
+                <textarea 
+                  id="poster-description-{{ section.id }}"
+                  name="poster_description"
+                  class="custom-poster__field-textarea"
+                  placeholder="Add a description for your poster"
+                  rows="3"
+                ></textarea>
+              </div>
+            </div>
+
+            <!-- Add to Cart Button -->
+            <div class="custom-poster__actions">
+              <button 
+                type="button" 
+                class="custom-poster__add-to-cart-btn button button--full-width"
+                id="add-to-cart-{{ section.id }}"
+                disabled
+              >
+                <span class="custom-poster__btn-text">Add to Cart</span>
+                <div class="custom-poster__btn-loader" style="display: none;">
+                  <div class="loading__spinner">
+                    <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                      <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                    </svg>
+                  </div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Error Messages -->
+        <div class="custom-poster__errors" id="errors-{{ section.id }}" style="display: none;">
+          <div class="custom-poster__error-message" role="alert">
+            <span class="svg-wrapper">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="15" y1="9" x2="9" y2="15"/>
+                <line x1="9" y1="9" x2="15" y2="15"/>
+              </svg>
+            </span>
+            <span class="custom-poster__error-text" id="error-text-{{ section.id }}"></span>
+          </div>
+        </div>
+
+        <!-- Success Messages -->
+        <div class="custom-poster__success" id="success-{{ section.id }}" style="display: none;">
+          <div class="custom-poster__success-message" role="status">
+            <span class="svg-wrapper">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22,4 12,14.01 9,11.01"/>
+              </svg>
+            </span>
+            <span class="custom-poster__success-text" id="success-text-{{ section.id }}"></span>
+          </div>
+        </div>
+
+        <!-- Hidden form data -->
+        <input type="hidden" name="uploaded_image_url" id="uploaded-image-url-{{ section.id }}">
+        <input type="hidden" name="selected_variant_id" id="selected-variant-id-{{ section.id }}">
+        <input type="hidden" name="template_product_id" value="{{ template_product.handle | default: template_product.id }}">
+        
+      </custom-poster-form>
+    </div>
+  </div>
+</div>
+
+<script src="{{ 'custom-poster.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "Custom Poster Upload",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Create Your Custom Poster"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Upload your image and customize your poster with our easy-to-use design tool.</p>"
+    },
+    {
+      "type": "text",
+      "id": "upload_title",
+      "label": "Upload section title",
+      "default": "Upload Your Image"
+    },
+    {
+      "type": "text",
+      "id": "options_title",
+      "label": "Options section title",
+      "default": "Customize Your Poster"
+    },
+    {
+      "type": "text",
+      "id": "title_field_label",
+      "label": "Title field label",
+      "default": "Poster Title"
+    },
+    {
+      "type": "text",
+      "id": "description_field_label",
+      "label": "Description field label",
+      "default": "Description (Optional)"
+    },
+    {
+      "type": "product",
+      "id": "template_product",
+      "label": "Template Product",
+      "info": "Select the product that contains the size, frame, and other variant options for custom posters. Custom poster data will be stored as cart line item properties."
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "scheme-1",
+          "label": "Scheme 1"
+        },
+        {
+          "value": "scheme-2",
+          "label": "Scheme 2"
+        },
+        {
+          "value": "scheme-3",
+          "label": "Scheme 3"
+        },
+        {
+          "value": "scheme-4",
+          "label": "Scheme 4"
+        },
+        {
+          "value": "scheme-5",
+          "label": "Scheme 5"
+        }
+      ],
+      "default": "scheme-1",
+      "label": "Color scheme"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Poster Upload"
+    }
+  ]
+}
+{% endschema %}

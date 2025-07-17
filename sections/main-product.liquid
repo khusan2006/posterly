@@ -1,3 +1,18 @@
+{%- comment -%}
+  Hide products with 'hidden' tag
+{%- endcomment -%}
+{%- assign is_hidden = false -%}
+{%- if product -%}
+  {%- for tag in product.tags -%}
+    {%- if tag == 'hidden' -%}
+      {%- assign is_hidden = true -%}
+      {%- break -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+
+{%- unless is_hidden -%}
+
 <product-info
   id="MainProduct-{{ section.id }}"
   class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
@@ -723,6 +738,8 @@
     </script>
   </div>
 </product-info>
+
+{%- endunless -%}
 
 {% schema %}
 {
