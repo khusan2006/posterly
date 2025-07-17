@@ -7,6 +7,7 @@
 
 {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'custom-poster-cart.css' | asset_url | stylesheet_tag }}
 
 <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
@@ -120,8 +121,36 @@
                     {%- for item in cart.items -%}
                       <tr id="CartDrawer-Item-{{ item.index | plus: 1 }}" class="cart-item" role="row">
                         <td class="cart-item__media" role="cell" headers="CartDrawer-ColumnProductImage">
-                          {% if item.image %}
-                            {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
+                          {%- assign custom_poster_prop = item.properties['_Custom Poster'] -%}
+                          {%- assign uploaded_image_url = item.properties['_Uploaded Image URL'] -%}
+                          
+                          {% if custom_poster_prop and uploaded_image_url %}
+                            <a href="{{ pages.custom-poster.url | default: '/pages/custom-poster' }}" class="cart-item__link" tabindex="-1" aria-hidden="true"> </a>
+                            {% if uploaded_image_url contains 'http' %}
+                              {% comment %} Show actual uploaded image {% endcomment %}
+                              <img
+                                class="cart-item__image"
+                                src="{{ uploaded_image_url }}"
+                                alt="Custom Poster"
+                                loading="lazy"
+                                width="150"
+                                height="150"
+                              >
+                            {% else %}
+                              {% comment %} Show placeholder for failed uploads {% endcomment %}
+                              <div class="cart-item__image custom-poster-placeholder custom-poster-placeholder--drawer">
+                                <div class="custom-poster-icon">
+                                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                    <path d="M9 9h6v6H9z"/>
+                                    <path d="m9 9 3 3 3-3"/>
+                                  </svg>
+                                </div>
+                                <p class="custom-poster-text">Custom<br>Poster</p>
+                              </div>
+                            {% endif %}
+                          {% elsif item.image %}
+                            {% comment %} Show original product image {% endcomment %}
                             <a href="{{ item.url }}" class="cart-item__link" tabindex="-1" aria-hidden="true"> </a>
                             <img
                               class="cart-item__image"
@@ -139,9 +168,19 @@
                             <p class="caption-with-letter-spacing light">{{ item.product.vendor }}</p>
                           {%- endif -%}
 
-                          <a href="{{ item.url }}" class="cart-item__name h4 break">
-                            {{- item.product.title | escape -}}
-                          </a>
+                          {%- assign custom_poster_prop = item.properties['_Custom Poster'] -%}
+                          {%- assign poster_title = item.properties['_Poster Title'] -%}
+                          
+                          {% if custom_poster_prop and poster_title %}
+                            <a href="{{ pages.custom-poster.url | default: '/pages/custom-poster' }}" class="cart-item__name h4 break">
+                              {{- poster_title | escape -}}
+                            </a>
+                            <p class="custom-poster-label">Custom Poster</p>
+                          {% else %}
+                            <a href="{{ item.url }}" class="cart-item__name h4 break">
+                              {{- item.product.title | escape -}}
+                            </a>
+                          {% endif %}
 
                           {%- if item.original_price != item.final_price -%}
                             <div class="cart-item__discounted-prices">
@@ -180,6 +219,8 @@
                                   </div>
                                 {%- endfor -%}
                               {%- endif -%}
+
+
 
                               {%- for property in item.properties -%}
                                 {%- assign property_first_char = property.first | slice: 0 -%}
