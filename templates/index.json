@@ -87,7 +87,7 @@
         "color_scheme": "scheme-1",
         "full_width": true,
         "padding_top": 40,
-        "padding_bottom": 0
+        "padding_bottom": 40
       }
     },
     "featured_collection": {
@@ -116,7 +116,7 @@
         "columns_mobile": "2",
         "swipe_on_mobile": false,
         "padding_top": 40,
-        "padding_bottom": 36
+        "padding_bottom": 40
       }
     },
     "featured_collections_yWhxw7": {
