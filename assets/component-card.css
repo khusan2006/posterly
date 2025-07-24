@@ -136,7 +136,7 @@
 
 .card__information {
   grid-row-start: 2;
-  padding: 1.3rem 1rem;
+  padding: 0 1rem;
 }
 
 .card:not(.ratio) > .card__content {
@@ -260,13 +260,6 @@
 
   .card-information quantity-popover volume-pricing {
     margin-top: 4.2rem;
-  }
-}
-
-@media screen and (min-width: 750px) {
-  .card__information {
-    padding-bottom: 1.7rem;
-    padding-top: 1.7rem;
   }
 }
 
@@ -592,4 +585,99 @@
   .grid__item:nth-child(8n) .product-card-wrapper:hover .shape--blob {
     clip-path: polygon(var(--shape--blob-5));
   }
+}
+.loading__spinner {
+  display: flex;
+}
+.card__heading {
+  position: relative;
+  z-index: -10;
+}
+
+.card__media-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: transparent;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 100;
+  height: auto;
+  min-height: 60px;
+  visibility: hidden;
+}
+
+.card-wrapper:hover .card__media-overlay {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+  visibility: visible;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+}
+
+.card__quick-add-btn {
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  border-radius: 0.4rem;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: rgb(var(--color-foreground));
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 11;
+}
+
+.card__quick-add-btn:hover {
+  background-color: rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card__quick-add-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Mobile responsive adjustments */
+@media screen and (max-width: 749px) {
+  .card__media-overlay {
+    padding: 0.8rem;
+  }
+  
+  .card__quick-add-btn {
+    font-size: 1.3rem;
+    padding: 0.7rem 1rem;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .card__media-overlay {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+    visibility: visible;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
+  }
+}
+
+/* Quick add overlay handling */
+.card-wrapper:hover .card__media-overlay {
+  pointer-events: all;
+}
+
+/* Ensure buttons are always clickable when visible */
+.card__media-overlay * {
+  pointer-events: all;
 }
