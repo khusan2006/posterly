@@ -77,6 +77,8 @@ if (!customElements.get('product-form')) {
               });
             this.error = false;
             const quickAddModal = this.closest('quick-add-modal');
+            const quickAddDrawer = this.closest('quick-add-drawer');
+            
             if (quickAddModal) {
               document.body.addEventListener(
                 'modalClosed',
@@ -90,6 +92,18 @@ if (!customElements.get('product-form')) {
                 { once: true }
               );
               quickAddModal.hide(true);
+            } else if (quickAddDrawer) {
+              // Emit custom event to close the drawer
+              quickAddDrawer.dispatchEvent(new CustomEvent('product-added-to-cart', {
+                detail: {
+                  cartData: response,
+                  productVariantId: formData.get('id')
+                }
+              }));
+              
+              CartPerformance.measure("add:paint-updated-sections", () => {
+                this.cart.renderContents(response);
+              });
             } else {
               CartPerformance.measure("add:paint-updated-sections", () => {
                 this.cart.renderContents(response);
