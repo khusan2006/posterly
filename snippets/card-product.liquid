@@ -215,6 +215,23 @@
                 {% endif %}
               </div>
             {%- endif -%}
+            
+            {%- comment -%} Mobile Quick Add Icon for Drawer {%- endcomment -%}
+            {%- if quick_add == 'drawer' -%}
+              <div class="card__mobile-quick-add">
+                <drawer-opener data-drawer="#QuickAddDrawer">
+                  <button
+                    type="button"
+                    class="card__mobile-quick-add-btn"
+                    aria-label="{{ 'products.product.choose_options' | t }}: {{ card_product.title | escape }}"
+                    data-product-url="{{ card_product.url }}"
+                    data-product-id="{{ card_product.id }}"
+                  >
+                    {%- render 'icon' with 'shopping-cart', width: '8px', height: '8px' -%}
+                  </button>
+                </drawer-opener>
+              </div>
+            {%- endif -%}
           </div>
         {%- endif -%}
       </div>
