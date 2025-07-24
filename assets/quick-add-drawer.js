@@ -72,6 +72,11 @@ if (!customElements.get('quick-add-drawer')) {
             event.stopPropagation();
           });
         }
+
+        // Listen for product added to cart event to close drawer
+        this.addEventListener('product-added-to-cart', () => {
+          this.hide(true);
+        });
       }
 
       onOverlayClick(event) {
