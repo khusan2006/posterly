@@ -8,5 +8,12 @@
  * ------------------------------------------------------------
  */
 {
-  "markets": {}
+  "markets": {
+    "international": {
+      "parent": "@default"
+    },
+    "uz": {
+      "parent": "@default"
+    }
+  }
 }
