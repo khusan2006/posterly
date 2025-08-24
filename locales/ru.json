@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "general": {
     "password_page": {
@@ -547,6 +556,13 @@
       "send_on_label": "Дата отправки (необязательно)",
       "expanded": "Форма с данными получателя подарочной карты развернута",
       "collapsed": "Форма с данными получателя подарочной карты свернута"
+    }
+  },
+  "shopify": {
+    "checkout": {
+      "stock": {
+        "out_of_stock_in_context_label": "Этот продукт недоступен в вашей стране/регионе."
+      }
     }
   }
 }
