@@ -2796,6 +2796,7 @@ details[open] > .header__submenu {
 .yotpo-rating-container {
   display: flex;
   justify-content: center;
+  padding: 1rem 0;
 }
 .header__menu {
   padding: 0 1rem;
