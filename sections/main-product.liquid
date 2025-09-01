@@ -120,6 +120,9 @@
                     </h2>
                   </a>
                 </div>
+                <div>
+                    <p>review {{ product.metafields.reviews.rating.value }} </p>
+                </div>
               {%- when 'price' -%}
                 <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                   {%- render 'price',
