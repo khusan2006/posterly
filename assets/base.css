@@ -2793,6 +2793,10 @@ details[open] > .header__submenu {
   }
 }
 
+.yotpo-rating-container {
+  display: flex;
+  justify-content: center;
+}
 .header__menu {
   padding: 0 1rem;
 }
