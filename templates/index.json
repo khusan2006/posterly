@@ -317,7 +317,7 @@
         "image": "shopify://shop_images/exploded_image_1_1728x900_imgupscaler.ai_Upscaler_2K.png",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
-        "image_behavior": "none",
+        "image_behavior": "ambient",
         "desktop_content_position": "middle-center",
         "desktop_content_alignment": "center",
         "show_text_box": false,
