@@ -1643,6 +1643,130 @@
             "instruction_html": "Toʻlovni Multibanco yoki quyidagi maʼlumotlardan foydalanib onlayn amalga oshiring. Savollar yoki toʻlov tafsilotlarini yangilash uchun %{contact_us}."
           }
         }
+      },
+      "order_summary": {
+        "price_after_discount_aria_text": "Chegirmali narx",
+        "discount_code_aria_text": "Chegirma kodi",
+        "total_savings": "Jami tejash",
+        "total_label": "Jami",
+        "total_due_label": "Jami to'lov",
+        "total_price_label": "Umumiy narx",
+        "total_outstanding_label": "To'lanadigan miqdor",
+        "deposit_label": "Depozit",
+        "total_due_today_label": "Jami to'lov bugun",
+        "total_due_later_label": "Jami keyinroq to'lanadi",
+        "partial_total_label": "Jami",
+        "free_total_label": "Bepul",
+        "free_shipping_total_label": "Bepul",
+        "paid_label": "To'langan",
+        "payment_due_label": "To'lov muddati",
+        "vat_label_html": "Soliqlarga %{amount} ham kiradi",
+        "duties_included_label": "Jami soliq va yig'imlarni o'z ichiga oladi. Yetkazib berishda qo'shimcha to'lovlar olinmaydi.",
+        "discount_and_gift_card_savings_notice": "Chegirmalarda %{discount_amount} va sovg‘a kartalarida %{gift_card_amount} dan keyin",
+        "discount_savings_notice": "%{discount_amount} chegirmadan keyin",
+        "gift_card_savings_notice": "Sovg‘a kartalarida %{gift_card_amount} dan keyin",
+        "cost_table_title": "Xarajatlar xulosasi",
+        "cost_table_item_column_header": "Element",
+        "cost_table_value_column_header": "Qiymat",
+        "description_label": "Tavsif",
+        "price_per_item": {
+          "accessibility_label": "Har bir element uchun %{price}",
+          "label": "%{price}/har"
+        },
+        "quantity_label": "Miqdori",
+        "product_change_label": "O'zgartirish",
+        "product_image_label": "Mahsulot tasviri",
+        "product_image_quantity_label": "Miqdori",
+        "scroll_order_summary": "Boshqa elementlar uchun aylantiring",
+        "expand_order_summary_short": "Ko'rsatish",
+        "collapse_order_summary_short": "Yashirish",
+        "expand_order_summary": "Buyurtma xulosasini ko'rsatish",
+        "collapse_order_summary": "Buyurtma xulosasini yashirish",
+        "original_price": "Asl narxi",
+        "sale_price": "Sotish narxi",
+        "total_updated_label": "Yangilangan umumiy narx:",
+        "order_total_updated_label": "Jami yangilangan",
+        "total_already_paid_label": "To'langan",
+        "unit_price": {
+          "accessible_separator": "boshiga",
+          "per_item": {
+            "single": "Har biri %{price}",
+            "one": "%{count} ta element uchun %{price}",
+            "other": "%{count} ta element uchun %{price}"
+          }
+        },
+        "gift_card_ending": "%{last_characters} bilan tugaydigan sovg‘a kartasi",
+        "estimated_tax_label": "Hisoblangan soliq",
+        "multiple_shipping_lines_label": "Yetkazib berish jami",
+        "recurring_subtotal_label": "Takroriy oraliq jami",
+        "recurring_total_label": "Takroriy jami",
+        "recurring_total_tooltip": "Yuk tashish, soliq, bojlar yoki tegishli chegirmalarni o'z ichiga olmaydi.",
+        "confirmation_number_label": "Tasdiqlash #%{confirmation_number}",
+        "higher_value_discount_applied": "Mavjud chegirmalaringiz bilan <strong style=\"text-transform:uppercase\">%{code}</strong> ishlatib bo‘lmadi.",
+        "percent_off_shipping": "Yuk tashish %{percent}% chegirma",
+        "amount_off_shipping": "Yetkazib berishda %{amount} chegirma",
+        "deferred_payment_info": {
+          "title": "%{amount_due} toʻlovi %{due_at} sanasida toʻlanadi",
+          "description_html": "Buyurtma haqida savollaringiz uchun %{contact_us}.",
+          "paid_today": "Jami to'lov bugun",
+          "paid_today_next": "Bugun to'langan",
+          "due_on_fulfillment_title": "%{amount_due} miqdorida toʻlov bajarilgandan keyin amalga oshiriladi",
+          "due_on_receipt_title": "%{amount_due} miqdorida toʻlov kvitansiyada toʻlanadi"
+        },
+        "deferred_balance_info": {
+          "title": "{{amount_due}} qoldig‘i {{due_at}} sanasida to‘lanadi",
+          "due_on_fulfillment_title": "{{amount_due}} qoldigʻi toʻlanishi kerak"
+        },
+        "payment_terms_totals": {
+          "due_today": "Jami to'lov bugun",
+          "due_today_next": "Muddati bugun",
+          "due_later": "Jami toʻlov muddati %{du_at}",
+          "due_on_fulfillment": "Bajarish uchun jami to'lov",
+          "due_on_fulfillment_next": "Bajarilishi shart",
+          "due_on_receipt": "Qabul qilish bo'yicha jami to'lov",
+          "due_later_checkout_to_draft": "Jami keyinroq to'lanadi",
+          "total_paid": "Jami to'langan"
+        },
+        "maximum_discount_code_limit_reached": "Chegirma kodlarining maksimal soniga yetdingiz. <strong style=\"text-transform:uppercase\">%{code} dan</strong> foydalanish uchun mavjud kodni olib tashlang.",
+        "discount_code_application_failed": "<strong style=\"text-transform:uppercase\">%{code}</strong> hozir ishlamayapti. Yordam uchun biz bilan bog'laning.",
+        "due_on_fulfillment": "Bajarilishi shart",
+        "gift_card_masked": "•••• %{oxirgi_belgi}",
+        "subscriptions": "Obunalar",
+        "duties_label": "Vazifalar",
+        "duties_and_taxes_label": "Bojlar va soliqlar",
+        "error_duties_tooltip": "Bu buyurtma boshqa davlatdan jo‘natilmoqda, shuning uchun yetkazib berish vaqtida boj va soliqlar undirilishi mumkin.",
+        "may_be_charged_on_delivery": "Yetkazib berishda to'lov olinishi mumkin",
+        "total_updated_label_with_price": "Yangilangan umumiy narx: %{totalPrice}",
+        "updated_shipping_method": "Yangilangan yetkazib berish usuli: %{shipping_method}",
+        "recurring_payments": "Takroriy to'lovlar",
+        "recurring_total_multiple_label": "Bu buyurtma bir nechta mahsulot uchun takroriy toʻlovga ega.",
+        "deferred_total_due_date_label": "Jami muddati {{date}}",
+        "deferred_total_due_date_label_next": "Muddati}",
+        "full_price": "Toʻliq narx: %{price}",
+        "custom_discount": "Maxsus chegirma",
+        "expand_component_information": {
+          "one": "%{count} elementni ko‘rsatish",
+          "other": "%{count} ta elementni ko‘rsatish"
+        },
+        "collapse_component_information": {
+          "one": "%{count} elementni yashirish",
+          "other": "%{count} ta elementni yashirish"
+        },
+        "discount_discovery": {
+          "add_code": "Chegirma qo'shing",
+          "merchandise_quantity_label": {
+            "one": "%{count} element",
+            "other": "%{count} ta element"
+          }
+        },
+        "alternative_payment_currency_total": "%{amount_due} sifatida to‘langan"
+      },
+      "shipping": {
+        "title": "yuk tashish; yetkazib berish",
+        "delivery_title": "Yetkazib berish",
+        "shipping_method_title": "Yuk tashish usuli",
+        "shipping_method_rollup_accessibility_label": "Yetkazib berish usuli variantlari",
+        "shipping_method_one_time_purchase_group_title": "Bir martalik xarid"
       }
     },
     "email_marketing": {
