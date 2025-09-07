@@ -1797,7 +1797,25 @@
       "qrCode": "QR kodi",
       "addFile": "Fayl qo'shish",
       "dropzoneInvalidFileType": "Fayl turi qo'llab-quvvatlanmaydi",
-      "dropzoneDraggedOver": "Yuklash uchun faylni tashlang"
+      "dropzoneDraggedOver": "Yuklash uchun faylni tashlang",
+      "clear": "Toza",
+      "clipboardCopied": "Ko‘chirildi",
+      "clipboardFailedToCopy": "Nusxalab bo‘lmadi",
+      "closeNotification": "Yopish",
+      "expandNotification": "Koʻproq koʻrish",
+      "closeModal": "Yopish",
+      "submit": "Yuborish",
+      "processing": "Qayta ishlanmoqda…",
+      "increase": "{{type}} ni oshirish",
+      "decrease": "Kamaytirish {{type}}",
+      "minimumReached": "Minimal {{value}} ga yetdi",
+      "maximumReached": "Maksimal {{value}} ga yetdi",
+      "january": "Yanvar",
+      "february": "Fevral",
+      "march": "mart",
+      "april": "aprel",
+      "may": "may",
+      "june": "iyun"
     },
     "profile_preview_bar": {
       "customize_button": "Moslashtiring",
@@ -1874,6 +1892,116 @@
           "invalid_code": "To'g'ri 6 xonali kodni kiriting"
         }
       }
+    },
+    "payment_methods": {
+      "payment_details": {
+        "close_payment_modal": "Yopish",
+        "close_payment_modal_accessibility_label": "Toʻlov usuli tafsilotlarini yoping",
+        "payment_method_not_found_error": "Toʻlov usuli topilmadi",
+        "payment_details_loading": "Toʻlov usuli tafsilotlari yuklanmoqda",
+        "pre_authorized_payments": "Oldindan ruxsat etilgan to'lovlar",
+        "total_amount_of_subscription_line_items_left": "va yana {{total}}",
+        "total_amount_of_subscription_line_items_left_accessibility_label": "Jami {{totalItems}} ta element, {{totalItemsToDisplay}} ta element koʻrsatilgan.",
+        "next_payment_due": "Keyingi toʻlov muddati {{dueDateInMonthDayYear}}",
+        "edit_payment_method_button": "Tahrirlash",
+        "edit_payment_method_button_accessibility_label": "{{lastDigits}} bilan tugaydigan toʻlov usulini tahrirlash",
+        "loading_shop_pay": "Shop Pay yuklanmoqda",
+        "invalid_payment_method": "To‘lov usuli noto‘g‘ri",
+        "invalid_payment_method_message": "Kelgusi buyurtmalarni olishni davom ettirish uchun yangi kredit kartadan foydalaning.",
+        "replace_payment_method": "To'lov usulini almashtiring",
+        "checkout_card_banner": "Ushbu to'lov usuli faqat oldindan ruxsat berilgan to'lovlar uchun ishlatilishi mumkin. Agar siz ushbu doʻkonga kirgan boʻlsangiz, u toʻlov vaqtida koʻrinmaydi. ",
+        "default_checkbox": "Standart sifatida o'rnating",
+        "default_checkbox_accessibility_label": "Ushbu toʻlov usulini birlamchi qilib oʻrnating"
+      },
+      "edit_payment_method": {
+        "title": "Toʻlov usulini tahrirlash",
+        "save_payment_method_button": "Saqlash",
+        "cancel_edit_payment_method_button": "Bekor qilish",
+        "payment_method_updated_toast": "Toʻlov usuli yangilandi",
+        "billing_address": "To'lovchi; to'lovni qabul qiladigan manzil",
+        "billing_address_add_new": "Yangi qo'shing",
+        "billing_address_choose_from_list": "Ro'yxatdan tanlang",
+        "future_purchases_notice": "Bu toʻlov usuli kelgusi xaridlar uchun saqlanadi.",
+        "generic_error": "Yangilashda muammo yuz berdi. Iltimos, qayta urinib koʻring."
+      },
+      "card_fields": {
+        "card_number_label": "Karta raqami",
+        "card_number_placeholder": "Karta raqami",
+        "name_on_card_label": "Kartadagi ism",
+        "name_on_card_placeholder": "Kartadagi ism",
+        "card_expiry_label": "Yaroqlilik muddati (MM / YY)",
+        "card_expiry_placeholder": "Yaroqlilik muddati (MM / YY)",
+        "card_verification_value_label": "Xavfsizlik kodi",
+        "card_verification_value_placeholder": "Xavfsizlik kodi",
+        "card_start_label": "Chiqarilgan sana (MM / YY)",
+        "card_start_placeholder": "Chiqarilgan sana (MM / YY)",
+        "tooltip": {
+          "tooltip_accessibility_label": "Batafsil ma'lumot",
+          "card_verification_value_explanation_amex": "Kartangizning old tomonidagi 4 xonali xavfsizlik kodi",
+          "card_verification_value_explanation_other": "Kartangiz orqasidagi 3 xonali xavfsizlik kodi",
+          "card_verification_value_explanation": "3 xonali xavfsizlik kodi odatda kartangiz orqasida joylashgan. American Express kartalarining old tomonida 4 xonali kod mavjud.",
+          "card_security_notice": "Barcha operatsiyalar xavfsiz va shifrlangan."
+        },
+        "field_errors": {
+          "credit_card_name_invalid": "Ismingizni kartangizda yozilganidek kiriting",
+          "credit_card_number_invalid": "Yaroqli karta raqamini kiriting",
+          "credit_card_expiry_invalid": "Yaroqli kartaning amal qilish muddatini kiriting",
+          "credit_card_verification_value_blank": "Kartangizdagi CVV yoki xavfsizlik kodini kiriting"
+        },
+        "unavailable": {
+          "text": "Kredit va debet kartalar bilan toʻlovlar hozirda mavjud emas.",
+          "link_text": "Ushbu sahifani yangilang",
+          "suffix": "yoki keyinroq qayta urinib ko'ring."
+        }
+      },
+      "payment_delete": {
+        "title": "Toʻlov usulini oʻchirish",
+        "description_without_replacement": "Bu toʻlov usuli kelajakdagi xaridlar uchun mavjud boʻlmaydi.",
+        "description_with_replacement": "Bu toʻlov usulini oʻchirish oldindan ruxsat berilgan toʻlovlarga taʼsir qiladi. Kelgusi buyurtmalarni olishni davom ettirish uchun ixtiyoriy ravishda uni boshqa toʻlov usuli bilan almashtirishingiz mumkin.",
+        "warning_message_with_replacement": {
+          "with_pending_orders_and_subscriptions": "Bu toʻlov usulini oʻchirish oldindan ruxsat berilgan toʻlovlarga taʼsir qiladi. Muqobil toʻlov usulini tanlamaguningizcha, bu toʻlov usuli mavjud buyurtmalar boʻyicha toʻlanmagan qoldiqlar uchun undiriladi. Muqobil to‘lov usulini tanlash yaqinlashib kelayotgan obuna buyurtmalarini uzluksiz qabul qilish imkonini beradi.",
+          "with_pending_orders": "Bu toʻlov usulini oʻchirib tashlasangiz, u hisobingizdan oʻchiriladi va kelajakda xaridlar uchun mavjud boʻlmaydi. Muqobil toʻlov usulini tanlamaguningizcha, u mavjud buyurtmalar boʻyicha toʻlanmagan qoldiqlar uchun undiriladi.",
+          "with_subscriptions": "Bu toʻlov usulini oʻchirish oldindan ruxsat berilgan toʻlovlarga taʼsir qiladi. Kelgusi buyurtmalarni olishni davom ettirish uchun uni muqobil toʻlov usuli bilan almashtiring."
+        },
+        "warning_message_without_replacement": {
+          "with_pending_orders_and_subscriptions": "Bu toʻlov usulini oʻchirish oldindan ruxsat berilgan toʻlovlarga taʼsir qiladi. Bu toʻlov usuli mavjud buyurtmalar boʻyicha toʻlanmagan qoldiqlar uchun undiriladi, lekin siz kelgusi obuna buyurtmalarini olmaysiz. Obuna buyurtmalarini olishni davom ettirish uchun muqobil to‘lov usulini qo‘shing.",
+          "with_pending_orders": "Bu toʻlov usulini oʻchirib tashlasangiz, u hisobingizdan oʻchiriladi va kelajakda xaridlar uchun mavjud boʻlmaydi. Mavjud buyurtmalar bo‘yicha to‘lanmagan qoldiqlar uchun undiriladi.",
+          "with_subscriptions": "Bu toʻlov usulini oʻchirish oldindan ruxsat berilgan toʻlovlarga taʼsir qiladi. Kelgusi buyurtmalarni olishni davom ettirish uchun muqobil toʻlov usulini qoʻshing."
+        },
+        "payment_method_selector_placeholder": "O'zgartirish to'lov usulini tanlang (ixtiyoriy)",
+        "payment_method_selector_no_alternative_payment": "O'zgartirish usuli yo'q",
+        "replace_method_with_new_method_description": "Sizning {{currentPaymentMethodName}} oʻchiriladi va {{newPaymentMethodName}} bilan almashtiriladi.",
+        "error_when_deleting": "Uzr so‘raymiz, lekin nimadir noto‘g‘ri ketdi va bu to‘lov usulini o‘chirib bo‘lmadi. Keyinroq qayta urinib ko'ring yoki sahifani yangilang.",
+        "delete_and_replace_button": "O'chirish va almashtirish",
+        "delete_and_replace_button_accessibility_label": "{{currentPaymentMethodName}} oʻchirib tashlang va {{newPaymentMethodName}} bilan almashtiring.",
+        "deleted_successfully": "Toʻlov usuli muvaffaqiyatli oʻchirib tashlandi.",
+        "loading_available_payment_methods_accessibility_label": "Mavjud toʻlov usullari yuklanmoqda"
+      },
+      "add_payment_method": {
+        "title": "Toʻlov usulini qoʻshing",
+        "payment_method_added_confirmation": "Toʻlov usuli qoʻshildi",
+        "billing_address": {
+          "title": "To'lovchi; to'lovni qabul qiladigan manzil",
+          "add_billing_address_button": "Yangi qo'shing",
+          "add_billing_address_button_accessibility_label": "Yangi hisob-kitob manzilini qo'shing",
+          "choose_billing_address_from_list_button": "Ro'yxatdan tanlang",
+          "choose_billing_address_from_list_button_accessibility_label": "Ro'yxatdan hisob-kitob manzilini tanlang",
+          "missing_billing_address_error_message": "Iltimos, hisob-kitob manzilini belgilang",
+          "default_checkbox": "Standart toʻlov usuli sifatida oʻrnating"
+        }
+      }
+    },
+    "payment_method_brands": {
+      "visa": "Viza",
+      "discover": "Kashf qiling",
+      "dinersclub": "Diners klubi",
+      "hipercard": "Hiperkarta",
+      "laser": "Lazer",
+      "storecredit": "Do'kon krediti",
+      "bogus": "Soxta"
+    },
+    "privacy_banner": {
+      "cookie_preferences_link": "Cookie sozlamalari"
     }
   }
 }
