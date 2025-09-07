@@ -316,8 +316,8 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/quality.png",
-            "title": "Efficient",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability.</p>",
+            "title": "High-Quality Prints",
+            "text": "<p>Every poster is printed on premium, museum-grade paper with rich, fade-resistant inks. Your walls deserve artwork that looks vibrant today and will stay beautiful for years to come.</p>",
             "link_label": "",
             "link": ""
           }
@@ -326,8 +326,8 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/palette.png",
-            "title": "Efficient",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability.</p>",
+            "title": "Unique Designs",
+            "text": "<p>Our collection is filled with exclusive artworks and creative prints you won’t find anywhere else. Each piece is designed to inspire and add personality to your home or office.</p>",
             "link_label": "",
             "link": ""
           }
@@ -336,8 +336,8 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/fast-delivery.png",
-            "title": "Efficient",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability.</p>",
+            "title": "Fast & Secure Shipping",
+            "text": "<p>We carefully package every order to make sure your posters arrive safe and sound. With fast, reliable shipping, you can refresh your walls without the long wait.</p>",
             "link_label": "",
             "link": ""
           }
