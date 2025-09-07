@@ -2417,7 +2417,88 @@
               "claim_shop_cash_description": "Do‘kon ilovasida kelajakdagi xaridlaringizda Shop Cashdan foydalanishingiz mumkin."
             }
           }
-        }
+        },
+        "attempted_delivery_label": "Yetkazib berishga urinish",
+        "attempted_delivery_description": "Yetkazib berish urinishi muvaffaqiyatsiz tugadi.",
+        "attempted_to_deliver_label": "Yetkazib berishga harakat qildi",
+        "confirmed_description": "Buyurtmangizni oldik.",
+        "on_its_way_description": "Bu jo‘natma yo‘lda.",
+        "out_for_delivery_description": "Ushbu jo'natma yetkazib berish uchun chiqarilgan.",
+        "preparing_for_shipping_label": "Yuk tashishga tayyorlanmoqda",
+        "preparing_for_shipping_description": "Ushbu mahsulotlar jo'natish uchun tayyorlanmoqda.",
+        "ready_for_pickup_label": "Olib ketishga tayyor",
+        "ready_for_pickup_description": "Bu buyumlar olib ketishga tayyor. Buyurtmani olganingizda, iltimos, buyurtmangizni tasdiqlovchi hujjatni olib keling.",
+        "ready_for_pickup_location": "Buyurtmangiz joydan olib ketishga tayyor",
+        "picked_up_label": "Ko'tarib oldi; moshinada olib ketdi",
+        "picked_up_description": "Bu narsalar olib ketildi.",
+        "canceled_description": "Buyurtmangiz {{date}} kuni bekor qilindi.",
+        "canceled_label": "Bekor qilingan",
+        "canceled_title": "Buyurtmangiz bekor qilindi",
+        "come_back": "Yetkazib berish holati haqidagi yangilanishlarni olish uchun ushbu sahifaga qayting.",
+        "company_tracking_number": "{{company}} kuzatuv raqami:",
+        "confirmed_label": "Tasdiqlangan",
+        "confirmed_title": "Buyurtmangiz tasdiqlandi",
+        "confirmed_description_pickup": "Buyurtma olib ketishga tayyor boʻlganda, sizga e-pochta orqali xabar keladi.",
+        "confirmed_description_digital": "Buyurtma tayyor bo'lgach, sizga elektron pochta xabari keladi.",
+        "confirmed_description_gift_card_text": "Buyurtma tayyor bo'lgach, sizga xabar keladi.",
+        "delivered_description": "Ushbu jo'natma yetkazib berildi.",
+        "complete_label": "Bajarildi",
+        "delivered_label": "Yetkazib berildi",
+        "delivered_title": "Yuboringiz yetkazib berildi",
+        "delivered_description_digital": {
+          "one": "Ushbu element to'liq.",
+          "other": "Ushbu elementlar to'liq."
+        },
+        "delivered_description_gift_card": {
+          "one": "Sovg'a kartasi elektron pochta orqali yuborildi.",
+          "other": "Sovg'a kartalari elektron pochta orqali yuborildi."
+        },
+        "delivered_description_gift_card_text": {
+          "one": "Sovg'a kartasi matn orqali yuborildi.",
+          "other": "Sovg'a kartalari matn orqali yuborildi."
+        },
+        "gift_card_label": {
+          "one": "Sovg'a kartasi",
+          "other": "Sovg'a kartalari"
+        },
+        "gift_card_resend_button": {
+          "one": "Sovg'a kartasini qayta yuboring",
+          "other": "Sovg'a kartalarini qayta yuboring"
+        },
+        "gift_resend_success": {
+          "one": "Sovg'a kartasi qayta yuborildi",
+          "other": "Sovg'a kartalari qayta yuboriladi"
+        },
+        "gift_resend_failure": {
+          "one": "Sovg‘a kartangizni qayta yuborishda muammo yuz berdi. Qayta urinib ko'ring yoki biz bilan bog'laning.",
+          "other": "Sovg‘a kartalarini qayta yuborishda muammo yuz berdi. Qayta urinib ko'ring yoki biz bilan bog'laning."
+        },
+        "confirmed_gift_card_additional_description": {
+          "one": "Sovg'a kartasi alohida elektron pochta orqali yuboriladi.",
+          "other": "Har bir sovg'a kartasi alohida elektron pochta orqali yuboriladi."
+        },
+        "confirmed_gift_card_additional_description_text": {
+          "one": "Sovg'a kartasi alohida matn shaklida yuboriladi.",
+          "other": "Har bir sovg'a kartasi alohida matn shaklida yuboriladi."
+        },
+        "status_timestamp": "Yangilangan {{date}}",
+        "estimated_delivery": "Kutilayotgan {{date}}",
+        "expected_by": "{{date}} sanasida kutilmoqda",
+        "was_expected_by": "{{date}} sanasida kutilgan edi",
+        "delivered": "{{date}} yetib keldi",
+        "buy_with_prime_logo_accessibility_label": "Prime logotipi bilan Amazon Buy",
+        "in_review_description": "Agar bizga qoʻshimcha maʼlumot kerak boʻlsa yoki buyurtmangiz tasdiqlanganda sizga xabar beramiz.",
+        "in_review_label": "Ko'rib chiqishda",
+        "in_review_title": "Buyurtmangiz tekshirilmoqda",
+        "last_updated": "Oxirgi yangilangan {{date}}",
+        "multiple_shipments_label": "Ko'p yuk tashish",
+        "multiple_statuses_label": "Bir nechta buyurtma holati",
+        "no_tracking_number": "Bu jo'natilish uchun kuzatuv raqami yo'q.",
+        "tracking_number": {
+          "one": "Joylashuvni kuzatish raqami",
+          "other": "Kuzatuv raqamlari"
+        },
+        "on_its_way_label": "Yo'lda"
       },
       "status_mark_as_delivered": "Yetkazib berilgan deb belgilang",
       "fulfillment_status_title": "Bajarish holati: {{status}}",
@@ -2426,7 +2507,70 @@
       "manage": "Boshqarish",
       "manage_accessiblity_label": "Buyurtmani boshqarish {{orderId}}",
       "group_title_label": "Bir qismi: {{groupTitle}}",
-      "group_title_label_with_parent": "Uchun: {{groupTitle}}"
+      "group_title_label_with_parent": "Uchun: {{groupTitle}}",
+      "order_list": {
+        "payment_status": {
+          "gallery_view": {
+            "payment_not_due": "Toʻlov hali toʻlanmagan"
+          },
+          "list_view": {
+            "overdue": "Muddati o'tgan",
+            "due": "{{date}}",
+            "due_today": "Muddati bugun",
+            "paid": "To'langan",
+            "due_without_date": "Muddati",
+            "due_on_fulfillment": "Bajarilishi shart",
+            "pay_to_confirm": "Tasdiqlash uchun to'lang",
+            "payment_not_due": "Hali muddati emas"
+          }
+        },
+        "sort_by": "Saralash: {{option}}",
+        "sort_hide_options_accessibility_label": "Tasdiqlangan buyurtmalar uchun saralash parametrlarini yashirish.",
+        "sort_show_options_accessibility_label": "Tasdiqlangan buyurtmalar uchun saralash variantlarini ko'rsatish.",
+        "sort_currently_sorted_by_accessibility_label": "Hozirda saralangan: {{option}}",
+        "sort_title": "Saralash",
+        "sort": {
+          "date": {
+            "newest": "Eng yangidan eng qadimgigacha",
+            "oldest": "Eng eskidan eng yangigacha"
+          },
+          "location": {
+            "ascending": "Manzil (AZ)",
+            "descending": "Joylashuv (ZA)"
+          },
+          "order_number": {
+            "ascending": "Buyurtma raqami (pastdan yuqoriga)",
+            "descending": "Buyurtma raqami (yuqoridan pastgacha)"
+          },
+          "order_total": {
+            "ascending": "Buyurtma jami (pastdan yuqoriga)",
+            "descending": "Buyurtma jami (yuqoridan pastgacha)"
+          }
+        },
+        "location_filter_picker": {
+          "all_location": "Barcha manzillar",
+          "current_location": "Joriy joylashuv",
+          "switch_view": "Ko‘rinishni almashtirish"
+        },
+        "filter_title": "Filtr",
+        "filter": {
+          "clear_section": "Bo'limni tozalash",
+          "clear_all": "Hammasini tozalang",
+          "apply": "Murojaat qiling",
+          "date": {
+            "start_date": "Boshlanish sanasi",
+            "end_date": "Tugash sanasi",
+            "title": "Buyurtma sanasi",
+            "today": "Bugun",
+            "last_7_days": "Oxirgi 7 kun",
+            "last_30_days": "Oxirgi 30 kun",
+            "last_90_days": "Oxirgi 90 kun",
+            "last_365_days": "Oxirgi 12 oy",
+            "custom": "Maxsus"
+          }
+        },
+        "show_order_actions_accessibility_label": "{{name}} buyurtmasi uchun buyurtma amallarini koʻrsatish"
+      }
     },
     "order_details": {
       "shipment_timeline": {
