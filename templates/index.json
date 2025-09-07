@@ -364,6 +364,23 @@
         "padding_top": 60,
         "padding_bottom": 60
       }
+    },
+    "image_banner_UrEHAU": {
+      "type": "image-banner",
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Generated_Image_September_07_2025_-_7_50PM.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
     }
   },
   "order": [
@@ -374,6 +391,7 @@
     "collage",
     "image_with_text_xgF3z9",
     "featured_product_banner_E4ztVU",
-    "multicolumn"
+    "multicolumn",
+    "image_banner_UrEHAU"
   ]
 }
