@@ -1339,6 +1339,156 @@
       },
       "vaulted": {
         "change_button": "O'zgartirish"
+      },
+      "local_pickup": {
+        "location_information": {
+          "other": "Sizga yaqin joylashgan %{count} ta joy bor"
+        },
+        "toggle_location": "Joylashuvni o'zgartirish",
+        "or": "YOKI",
+        "cancel": "Bekor qilish",
+        "your_location": "joylashuvingiz",
+        "search_button": "Do'konlarni toping",
+        "no_stores_found": "Hech qanday doʻkon topilmadi",
+        "all_stores_far_away": {
+          "title": "Eng yaqin joylar %{distance} dan ortiq masofada joylashgan",
+          "description": "Joyni tanlang yoki %{ship_to_address_link}",
+          "ship_to_address_link": "manzilga jo'natish"
+        },
+        "selected_pickup_option_no_longer_available": {
+          "title": "Oldin tanlagan joylashuvingiz endi mavjud emas",
+          "description": "Yangi joy yoki %{ship_to_address_link} tanlang",
+          "ship_to_address_link": "manzilga jo'natish"
+        },
+        "could_not_resolve_address": "Manzilingiz topilmadi. Qaytadan urining yoki boshqa manzildan foydalaning",
+        "paginator": {
+          "accessibility_label": "Mahalliy qabul qilish sahifalari",
+          "previous": "Oldingi sahifa",
+          "next": "Keyingi sahifa",
+          "label": {
+            "one": "%{count} doʻkondan %{first} - %{last}",
+            "other": "%{count} doʻkondan %{first} - %{last}"
+          }
+        },
+        "reveal_more_label": {
+          "one": "Yana %{count} ta joyni ko‘rsatish",
+          "other": "Yana %{count} ta joyni ko‘rsatish"
+        }
+      },
+      "captcha": {
+        "title": "Davom etish uchun CAPTCHA-ni to‘ldiring",
+        "errors": {
+          "not_solved": "Davom etish uchun CAPTCHA-ni to‘ldiring"
+        }
+      },
+      "clipboard": {
+        "copied": "Ko‘chirildi",
+        "failed_to_copy": "Nusxalab bo‘lmadi"
+      },
+      "discount_errors": {
+        "generic_error": "Buyurtmani amalga oshirib bo‘lmadi, chunki chegirma kodingiz endi mavjud emas. Buyurtmaning umumiy miqdorini ko'rib chiqing va qayta urinib ko'ring."
+      },
+      "b2b_errors": {
+        "lost_b2b_purchasing_permissions": "Siz endi B2B buyurtmalarini joylashtirishga ruxsatingiz yo‘q. Shaxsiy buyurtma berish uchun %{logout_url}.",
+        "log_out_link_text": "tizimdan chiqish",
+        "lost_permissions_subtitle": "Siz endi B2B buyurtmalarini joylashtirishga ruxsatingiz yo‘q. Shaxsiy buyurtma berish uchun tizimdan chiqing.",
+        "lost_permissions_title": "Joylashuvga ruxsat yo‘q"
+      },
+      "shop_pay_external": {
+        "title": "Do'konda to'lovni to'lash",
+        "errors": {
+          "problem_loading": "Shop Payni yuklashda muammo yuz berdi",
+          "try_again_later": "Ulanishingizni tekshiring yoki bu oynani yoping va bir necha daqiqadan so‘ng qayta urinib ko‘ring.",
+          "checkout_has_expired": "To‘lov muddati tugadi. Bu oynani yoping va {{shopName}} orqali qaytadan chiqishga urinib koʻring."
+        },
+        "return_to_store": "{{shopName}} sahifasiga qaytish",
+        "return_to_store_simple": "Do'konga qaytish"
+      },
+      "wallets": {
+        "return_to_store": "Do'konga qaytish",
+        "return_to_checkout": "Hisob-kitob sahifasiga qaytish",
+        "redirect_hint": "Sizdan {{walletName}} bilan tizimga kirishingiz soʻraladi.",
+        "logged_in": "{{email}} ga ulangan",
+        "shipping_line_label": "yuk tashish; yetkazib berish",
+        "payment_in_progress_title": "Toʻlov davom etmoqda",
+        "payment_in_progress_body": "Toʻlovingiz qayta ishlanmoqda. Buyurtmangiz tez orada bajariladi.",
+        "call_to_action": "{{walletName}} bilan toʻlash",
+        "redirection_notice": "“ {{buttonLabel}} \" tugmasini bosganingizdan so‘ng, xaridni xavfsiz yakunlash uchun siz {{walletName}} sahifasiga yo‘naltirilasiz.",
+        "errors": {
+          "unavailable": {
+            "title": "{{walletName}} mavjud emas",
+            "description": "{{walletName}} mavjud emas edi. Boshqa toʻlov usulidan foydalaning yoki keyinroq qayta urinib koʻring.",
+            "instructions": "{{walletName}} bilan muammo yuz berdi. Qayta urinib koʻrish yoki boshqa yoʻlni tekshirish uchun doʻkonga qayting.",
+            "unavailable_for_country": "{{walletName}} {{countryName}} hududida mavjud emas. Xaridni yakunlash uchun boshqa toʻlov usulini tanlang"
+          },
+          "unavailable_terminal": {
+            "instructions": "{{walletName}} hozirda buyurtmangiz uchun mavjud emas. Xaridni davom ettirish uchun boshqa to‘lov usulini tanlang."
+          },
+          "generic": "{{walletName}} bilan muammo yuz berdi. Qaytadan urining yoki boshqa toʻlov usulidan foydalaning.",
+          "discount_code": "Bu chegirma kodini qo‘llab bo‘lmadi. Iltimos, kodingizni tekshiring va qaytadan urining.",
+          "terminal": "{{walletName}} bilan muammo yuz berdi. Boshqa toʻlov usulidan foydalaning.",
+          "detour": {
+            "stock_problems": "Ayrim elementlar endi mavjud emas. {{walletName}} ilovasini yoping va qaytadan urining.",
+            "price_change": "Ba'zi tovarlar narxi o'zgargan. Buyurtmani ko‘rib chiqish uchun {{walletName}} ilovasini yoping va qayta urinib ko‘ring.",
+            "queue": "Hisob-kitob qilish uchun navbatda turdingiz. Davom etish uchun {{walletName}} ilovasini yoping.",
+            "currency_change": "{{walletName}} bilan boshqa manzildan foydalana olmaysiz. Asl manzildan foydalaning yoki boshqa toʻlov usulini sinab koʻring."
+          },
+          "unsupported": {
+            "address": "Savdogar bu manzilga yetkazib bera olmaydi",
+            "wallet_is_unavailable": "Bu manzil bilan {{walletName}} ishlatib bo‘lmaydi. Boshqa manzilni tanlang yoki xaridni yakunlash uchun {{walletName}} ni yoping",
+            "postal_code": "Bu joylashuv qo‘llab-quvvatlanmaydi"
+          },
+          "outdated": {
+            "shipping_method": "Buyurtmangiz uchun yetkazib berish imkoniyatlari o‘zgardi. Tanlovingizni ko'rib chiqing.",
+            "payment_terms": "To'lov shartlari o'zgardi. Iltimos, buyurtmangizni ko'rib chiqing"
+          },
+          "invalid": {
+            "shipping_address": "Yaroqli yetkazib berish manzilini kiriting",
+            "billing_address": "Yaroqli hisob-kitob manzilini kiriting",
+            "shipping_option": "Yaroqli yetkazib berish variantini tanlang",
+            "email": "Yaroqli elektron pochta manzilini kiriting",
+            "zone": "Yaroqli shtat/viloyatni kiriting",
+            "billing_zone": "Yaroqli hisob-kitob manzilini shtat/viloyat kiriting",
+            "emirate": "Yaroqli amirlikni kiriting",
+            "postal_code": "Yaroqli pochta / pochta indeksini kiriting",
+            "phone": "Yaroqli telefon raqamini kiriting",
+            "billing_phone": "Yaroqli hisob-kitob manzili telefon raqamini kiriting",
+            "reduction_code": "Yaroqli chegirma kodi yoki sovg'a kartasini kiriting",
+            "billing_must_match_shipping": "Yetkazib berish manziliga mos kelishi kerak",
+            "billing_zip": "Yaroqli hisob-kitob manzilini ZIP / pochta indeksini kiriting"
+          },
+          "missing": {
+            "first_name": "Ismni kiriting",
+            "billing_first_name": "Hisob-kitob manzili nomini kiriting",
+            "last_name": "Familiya kiriting",
+            "address1": "Manzil kiriting",
+            "billing_address1": "Hisob-kitob manzilini kiriting",
+            "address2": "Kvartira, suit va hokazolarni kiriting.",
+            "billing_address2": "Hisob-kitob manzilini kvartira, suit va hokazolarni kiriting.",
+            "city": "Shaharni kiriting",
+            "billing_city": "Billing manzili shaharni kiriting",
+            "province": "Shtat/viloyatni tanlang",
+            "billing_province": "Hisob-kitob manzilini shtat/viloyat tanlang",
+            "country": "Mamlakat/mintaqani tanlang",
+            "zip": "ZIP / pochta indeksini kiriting",
+            "billing_zip": "Hisob-kitob manzilini ZIP / pochta indeksini kiriting",
+            "phone": "Telefon raqamini kiriting",
+            "contact_info": "Kontakt ma'lumotlarini kiriting"
+          },
+          "formatting": {
+            "name_contains_emojis": "Ismingizdan kulgichni oʻchirib tashlang",
+            "postal_code_contains_emoji": "Pochta indeksingizdan kulgichlarni o‘chirib tashlang",
+            "first_name_too_long": "Ism juda ko'p harflardan iborat",
+            "last_name_too_long": "Familiya juda ko'p harflardan iborat",
+            "address_too_long": "Manzil qatori juda uzun"
+          },
+          "select_different_shipping_address_to_resolve_errors": "Yetkazib berish manzilingiz noto‘g‘ri. Boshqa manzilni tanlang yoki yangisini ishlating."
+        },
+        "scrim": {
+          "continue_purchase_in_window": "Xaridni {{walletName}} oynasida davom eting",
+          "and_return_to_checkout": "va Checkout-ga qayting",
+          "cancel": "Bekor qilish"
+        }
       }
     }
   },
@@ -1607,6 +1757,122 @@
         "continue_to_store": "Saqlashda davom eting",
         "description": "Agar savatingizda allaqachon narsalar bo'lsa, joyni o'zgartirish savat narxi va miqdoriga ta'sir qilishi mumkin.",
         "description_switch_later": "Siz istalgan vaqtda keyinroq almashishingiz mumkin"
+      }
+    },
+    "ui_components": {
+      "july": "iyul",
+      "august": "Avgust",
+      "september": "sentyabr",
+      "october": "oktyabr",
+      "november": "Noyabr",
+      "december": "dekabr",
+      "monday": "dushanba",
+      "tuesday": "seshanba",
+      "wednesday": "chorshanba",
+      "thursday": "Payshanba",
+      "friday": "Juma",
+      "saturday": "shanba",
+      "sunday": "yakshanba",
+      "wednesdayAbbreviation": "Biz",
+      "showNextMonth": "Keyingi oyni ko'rsatish, {{month}} {{year}}",
+      "showPreviousMonth": "Oʻtgan oyni koʻrsatish, {{month}} {{year}}",
+      "rangeStart": "Diapazon boshlanishi",
+      "inRange": "Diapazonda",
+      "rangeEnd": "Diapazon oxiri",
+      "autocompleteOptionsAvailable": {
+        "one": "{{count}} ta element mavjud",
+        "other": "{{count}} ta element mavjud"
+      },
+      "removeItem": "{{label}} olib tashlash",
+      "removeTag": "Tegni olib tashlang",
+      "month": {
+        "one": "oy",
+        "other": "oylar"
+      },
+      "mapClusterTitle": {
+        "one": "{{number}} marker klasteri",
+        "other": "{{number}} belgilar klasteri"
+      },
+      "expandSheet": "Kengaytirish",
+      "qrCode": "QR kodi",
+      "addFile": "Fayl qo'shish",
+      "dropzoneInvalidFileType": "Fayl turi qo'llab-quvvatlanmaydi",
+      "dropzoneDraggedOver": "Yuklash uchun faylni tashlang"
+    },
+    "profile_preview_bar": {
+      "customize_button": "Moslashtiring",
+      "hide_bar": "Barni yashirish",
+      "navigate_to_admin": "Administratorga o'ting",
+      "close_preview": "Ko‘rib chiqishni yopish",
+      "previewing": "Siz ko‘ryapsiz:",
+      "saved_at": "Saqlangan {{date}} da {{time}}",
+      "viewing": "Siz ko'ryapsiz:",
+      "not_available": "Profil maʼlumotlari mavjud emas",
+      "actions_button": "Harakatlar"
+    },
+    "active_inspector": {
+      "extension": {
+        "select": "{{extensionName}} nomli kengaytmani tanlang",
+        "unselect": "{{extensionName}} deb nomlangan kengaytmani bekor qiling",
+        "move_down": "Kengaytmani keyingi holatga o'tkazing",
+        "move_up": "Kengaytmani oldingi holatga o'tkazing",
+        "remove": "Kengaytmani olib tashlang",
+        "move_down_tooltip": "Keyingi pozitsiyaga o'ting",
+        "move_up_tooltip": "Oldingi holatga o'ting",
+        "remove_tooltip": "O'chirish"
+      }
+    },
+    "editor": {
+      "link_new_tab_confirmation": "Ushbu havolani muharrir ichida ochib bo'lmaydi. U yangi oynada ochiladi ( {{resolved_to_link}} ). Davom etish uchun OK tugmasini bosing."
+    },
+    "settings": {
+      "title": "Sozlamalar",
+      "loading_accessibility_message": "Sozlamalar sahifasi yuklanmoqda",
+      "log_out_everywhere": {
+        "title": "Hamma joyda tizimdan chiqing",
+        "description": "Agar qurilmangizni yoʻqotib qoʻygan boʻlsangiz yoki xavfsizlik bilan bogʻliq muammolar mavjud boʻlsa, hisobingiz xavfsizligini taʼminlash uchun hamma joyda tizimdan chiqing.",
+        "button": "Hamma joyda tizimdan chiqing",
+        "warning_message": "Bu qurilmada ham hisobingizdan chiqasiz."
+      }
+    },
+    "shop_ads": {
+      "title": "Shopdan eksklyuziv takliflar",
+      "subtitle": "Cheklangan vaqt uchun mavjud",
+      "button": "Do'konda o'rganing",
+      "previous_button": "Oldingi",
+      "next_button": "Keyingisi"
+    },
+    "knowledge_base": {
+      "self_serve_returns": {
+        "enabled": "Mijozlar o'zlari qaytarib olishni so'rashi va boshqarishi mumkin.",
+        "disabled": "Xaridorlar qaytarib berishni talab qilish uchun sotuvchiga murojaat qilishlari kerak."
+      }
+    },
+    "sign_in": {
+      "brand_logo_alt_text": "%{shop_name} logotipi",
+      "processing": "Qayta ishlanmoqda…",
+      "step_one": {
+        "page_title": "Kirish - %{shop_name}",
+        "heading": "tizimga kirish",
+        "subheading": "Elektron pochtangizni kiriting va biz sizga tasdiqlash kodini yuboramiz",
+        "subheading_with_sign_in_options": "Hisobingizga qanday kirishni tanlang",
+        "input_field_label": "Elektron pochta",
+        "button": "Davom eting",
+        "or": "yoki"
+      },
+      "step_two": {
+        "page_title": "Kodni kiriting - %{shop_name}",
+        "heading": "Kodni kiriting",
+        "subheading": "%{email} manziliga yuborildi",
+        "restart_link": "Boshqa elektron pochta orqali tizimga kiring",
+        "input_field_label": "6 xonali kod",
+        "button": "Yuborish"
+      },
+      "error": {
+        "invalid": {
+          "invalid_email": "Yaroqli elektron pochta manzilini kiriting",
+          "invalid_code": "To'g'ri 6 xonali kodni kiriting"
+        }
       }
     }
   }
