@@ -1434,8 +1434,10 @@
           "description": "Bu mahsulotlar uchun narxlar va mavjud miqdorlar oʻzgardi va savatingizda yangilandi."
         },
         "out_of_stock": {
-          "description": "Bu mahsulotlar endi mavjud emas va savatdan olib tashlandi."
-        }
+          "description": "Bu mahsulotlar endi mavjud emas va savatdan olib tashlandi.",
+          "items_unavailable": "Ayrim mahsulotlar endi mavjud emas va savatdan olib tashlandi."
+        },
+        "out_of_stock_in_context_label": "Bu mahsulot mamlakatingizda/mintaqada mavjud emas."
       },
       "vaulted": {
         "change_button": "O'zgartirish"
@@ -1894,7 +1896,97 @@
             "other": "%{count} ta element"
           }
         },
-        "alternative_payment_currency_total": "%{amount_due} sifatida to‘langan"
+        "alternative_payment_currency_total": "%{amount_due} sifatida to‘langan",
+        "title": "Buyurtma xulosasi",
+        "group_title_label": "“%{group_title}” qismi",
+        "for_add_on": "Uchun: %{group_title}",
+        "number_items": {
+          "one": "%{count} element",
+          "other": "%{count} ta element"
+        },
+        "view_all_items": {
+          "one": "%{count} elementni ko‘rish",
+          "other": "Barcha %{count} ta elementni ko‘rish"
+        },
+        "more_items_modal": {
+          "clear_search": "Qidiruvni tozalash",
+          "empty_results": "“%{searchText}” uchun hech qanday natija topilmadi. Imloni tekshiring yoki boshqa so'z yoki iboradan foydalaning.",
+          "number_items_shown": "%{shownNumber} of %{totalNumber} ta element"
+        },
+        "order_name_label": "Buyurtma %{name}",
+        "shopping_cart_label": "Xarid savati",
+        "discount_title": "Chegirma",
+        "discount_title_stacking": {
+          "one": "Chegirma",
+          "other": "Chegirmalar"
+        },
+        "discount_order_stacking": {
+          "one": "Buyurtma uchun chegirma",
+          "other": "Buyurtma chegirmalari"
+        },
+        "discount_label": "Chegirma kodi",
+        "discount_not_found": "Kiritilgan kodga mos chegirma topilmadi",
+        "discount_placeholder": "Chegirma kodi",
+        "discount_code_applied": "Chegirma kodi qo'llanildi",
+        "discount_code_allocations_mismatch": "<strong style=\"text-transform:uppercase\">%{code}</strong> chegirma kodi oʻzgardi. Savatingizni tekshiring va qaytadan urining.",
+        "gift_card_applied": "Sovg‘a kartasi qo‘llanildi",
+        "enter_shipping_address": "Yetkazib berish manzilini kiriting",
+        "gift_card_title": "Sovg'a kartasi",
+        "gift_card_label": "Sovg'a kartasi",
+        "gift_card_placeholder": "Sovg'a kartasi",
+        "gift_card_and_discount_title": "Chegirma kodi yoki sovg'a kartasi",
+        "gift_card_and_discount_label": "Chegirma kodi yoki sovg'a kartasi",
+        "gift_card_and_discount_placeholder": "Chegirma kodi yoki sovg'a kartasi",
+        "remove_gift_card_label": "Sovg'a kartasini tozalang",
+        "remove_discount_label": "Chegirmani olib tashlash",
+        "return_restocking_fee_label": "Qayta tiklash to'lovi",
+        "return_shipping_fee_label": "Qayta yuk tashish",
+        "free_shipping_discount_label": "Yetkazib berish bepul",
+        "applied_free_shipping_discount_label": "Qo'llaniladi",
+        "apply_discount_button_label": "Murojaat qiling",
+        "applied_discount_message": "Buyurtmaning umumiy narxidan %{amount} chegirma",
+        "discount_has_been_applied": "Chegirma qo'llanildi",
+        "discount_has_been_removed": "Chegirma olib tashlandi",
+        "gift_card_has_been_applied": "Sovg'a kartasi qo'llanildi",
+        "gift_card_has_been_removed": "Sovg'a kartasi olib tashlandi",
+        "gift_card_subscriptions_notice": "Sovg'a kartalari faqat birinchi to'lovingizga qo'llaniladi",
+        "discount_already_applied": "Bu buyurtma uchun chegirma qo'llanildi. Siz boshqa chegirma qo'sha olmaysiz.",
+        "cart_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> chegirma kodi savatingizdagi mahsulotlar uchun yaroqsiz",
+        "discount_requires_customer_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> chegirma kodini qo‘llash uchun yetkazib berish ma’lumotlarini kiriting",
+        "customer_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> chegirma kodi hozir siz uchun mavjud emas",
+        "eligible_customer_missing_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> chegirma kodi tegishli mijozni talab qiladi",
+        "shipping_information_does_not_meet_discount_requirements_notice": "Yetkazib berish manzilingiz uchun <strong style=\"text-transform:uppercase\">%{code}</strong> chegirma kodi mavjud emas",
+        "customer_already_used_once_per_customer_discount_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> chegirma kodi allaqachon ishlatilgan",
+        "subtotal_label": "Oraliq jami",
+        "subtotal_label_with_quantity": {
+          "one": "Oraliq jami · %{count} element",
+          "other": "Oraliq jami · %{count} ta element"
+        },
+        "shipping_label": "yuk tashish; yetkazib berish",
+        "pickup_label": "Do'konda olib ketish",
+        "no_pickup_location": "Olib ketish joylari mavjud emas.",
+        "pickup_unavailable_banner_title": {
+          "one": "Buyumingiz bilan hech qanday doʻkon mavjud emas",
+          "other": "Mahsulotlaringiz bilan hech qanday doʻkon mavjud emas"
+        },
+        "pickup_unavailable_banner_body": {
+          "ship_to_address": "Manzilga jo'natish",
+          "ship_to_address_instead_html": "Buning oʻrniga %{link}"
+        },
+        "tip_label": "Maslahat",
+        "unconfirmed_label": "Tasdiqlanmagan",
+        "calculating_shipping": "Hisoblanmoqda…",
+        "calculating": "Hisoblanmoqda…",
+        "shipping_default_value": "Keyingi bosqichda hisoblangan",
+        "shipping_discount_title": "Yetkazib berish uchun chegirma",
+        "shipping_pending_message": "Hali mavjud emas",
+        "shipping_policy_link": "Yuk tashish xarajatlari",
+        "taxes_label": "Soliqlar",
+        "estimated_taxes_label": "Hisoblangan soliqlar",
+        "information_estimated_taxes_label": "Soliqlar (taxminiy)",
+        "estimated_taxes_finalization_tooltip_content": "Buyurtmani joylashtirganingizdan so'ng, yakuniy soliq va jami elektron pochta yoki matn orqali tasdiqlanadi.",
+        "order_total_label": "Buyurtma jami",
+        "price_before_discount_aria_text": "Asl narxi"
       },
       "shipping": {
         "title": "yuk tashish; yetkazib berish",
@@ -1980,6 +2072,52 @@
           "shipping_credential_tw": "Milliy ID raqami/QQS",
           "tax_credential_tr": "Türkiye Cumhuriyeti Kimlik Numarasi/KDV",
           "shipping_credential_tr": "Türkiye Cumhuriyeti Kimlik Numarasi/KDV"
+        }
+      },
+      "contextual_availability": {
+        "title": {
+          "one": "Mahsulot mavjud emas",
+          "other": "Mavjud mahsulotlar"
+        },
+        "products_not_available": {
+          "one": "Bu mahsulot savatdan olib tashlanadi, chunki u mamlakatingizda/mintaqada mavjud emas.",
+          "other": "Bu mahsulotlar savatdan olib tashlanadi, chunki ular mamlakatingizda/mintaqada mavjud emas."
+        },
+        "all_products_in_cart_unavailable": {
+          "one": "Bu mahsulot mamlakatingizda/mintaqada mavjud emas.",
+          "other": "Bu mahsulotlar mamlakatingizda/mintaqada mavjud emas."
+        },
+        "unavailable_label": "Mavjud emas"
+      },
+      "merchandise_unavailable_in_buyer_location": {
+        "banner_title": {
+          "some_products_one": "Bu mahsulotni %{location_name} manziliga yetkazib berish mumkin emas.",
+          "some_products_other": "Bu mahsulotlarni %{location_name} manziliga yetkazib berish mumkin emas.",
+          "all_products_one": "Savatingizdagi mahsulotni %{location_name} manziliga yetkazib berish mumkin emas.",
+          "all_products_other": "Savatingizdagi mahsulotlarni %{location_name} manziliga yetkazib berish mumkin emas."
+        },
+        "missing_country_fallback": "sizning mamlakatingiz",
+        "indeterminate_location_fallback": "joylashuvingiz",
+        "cart_updated": "Savatingiz yangilandi.",
+        "change_address_only": "Davom etish uchun yetkazib berish manzilini o‘zgartiring.",
+        "change_address_or_remove": "Yetkazib berish manzilini oʻzgartiring yoki %{remove_action}.",
+        "remove_items_action": {
+          "one": "mavjud bo'lmagan elementni olib tashlang",
+          "other": "mavjud bo'lmagan narsalarni olib tashlang"
+        },
+        "empty_cart_action": "aravani bo'shating va do'konga qayting"
+      },
+      "deliverability": {
+        "not_deliverable": {
+          "title": {
+            "one": "%{count} ta mahsulot yetkazib berilmaydi",
+            "other": "%{count} ta mahsulot yetkazib berilmaydi"
+          },
+          "message": {
+            "one": "Bu narsa savatdan olib tashlanadi, chunki manzilingiz uchun yetkazib berish usullari mavjud emas.",
+            "other": "Bu narsalar savatdan olib tashlanadi, chunki manzilingiz uchun yetkazib berish usullari mavjud emas."
+          },
+          "label": "Yetkazib berish yo'q"
         }
       }
     },
