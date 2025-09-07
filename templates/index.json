@@ -315,7 +315,7 @@
         "column_pwLfYq": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/sub_save_icons-03.svg",
+            "image": "shopify://shop_images/quality.png",
             "title": "Efficient",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability.</p>",
             "link_label": "",
@@ -325,7 +325,7 @@
         "column_Vy34Bc": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/sub_save_icons-03.svg",
+            "image": "shopify://shop_images/palette.png",
             "title": "Efficient",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability.</p>",
             "link_label": "",
@@ -335,7 +335,7 @@
         "column_b46TJk": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/sub_save_icons-03.svg",
+            "image": "shopify://shop_images/fast-delivery.png",
             "title": "Efficient",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability.</p>",
             "link_label": "",
