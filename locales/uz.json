@@ -1779,7 +1779,38 @@
         "credit_card_start_month": "Boshlanish oyi",
         "credit_card_start_year": "Boshlanish yili",
         "delete_customer_mandate_modal_title": "Bu toʻlov kartasi olib tashlansinmi?",
-        "delete_customer_mandate_modal_body": "Agar bu kartani olib tashlasangiz, uni toʻlovlar uchun ishlatishdan oldin yana qoʻshishingiz kerak boʻladi."
+        "delete_customer_mandate_modal_body": "Agar bu kartani olib tashlasangiz, uni toʻlovlar uchun ishlatishdan oldin yana qoʻshishingiz kerak boʻladi.",
+        "markets_pro_disclaimer_terms_and_conditions": "Foydalanish shartlari",
+        "markets_pro_disclaimer_privacy_policy": "Maxfiylik siyosati",
+        "markets_pro_disclaimer_terms_and_conditions_title": "Savdogarning rekord qoidalari va shartlari",
+        "markets_pro_disclaimer_privacy_policy_title": "Merchant of Record Maxfiylik siyosati",
+        "purchase_order_number": {
+          "title": "PO raqami",
+          "label": "PO raqami (ixtiyoriy)"
+        },
+        "alternative_payment_currency_total_notice": "Eslatma: sizdan %{amount_due} undiriladi.",
+        "alternative_payment_currency_total_manual_payment_notice": "Eslatma: konvertatsiya qilingan jami %{amount_due}.",
+        "waiting_on_taxes_message": "Agar soliqlaringiz keyingi bir necha soniya ichida hisoblanmasa, sahifani yangilang.",
+        "waiting_on_taxes_notice": "Soliqlarni hisoblash",
+        "payment_method": "To'lov usuli",
+        "payment_method_rollup_accessibility_label": "To'lov usuli imkoniyatlari",
+        "expired_payment_method": "Tanlangan toʻlov usulining amal qilish muddati tugadi",
+        "payment_method_update_failed": "Toʻlov usuli yangilanmadi.",
+        "payment_method_incompatible_with_payment_terms": "To'lov usuli to'lov shartlariga mos kelmaydi.",
+        "proposed_gateway_unavailable": "Taklif etilgan toʻlov shlyuzi mavjud emas",
+        "pay_in_installments_split_pay_short": "%{amount} miqdorida 4 ta toʻlov",
+        "gift_cards_unavailable": "Sovg‘a kartangiz endi bu buyurtmaga qo‘llanilmaydi va olib tashlandi",
+        "payment_flexibility_terms_id_mismatch": "Toʻlov moslashuvchanligi shartlari ID nomuvofiqligi",
+        "payment_option": {
+          "accessibility_label": "To'lov variantini tanlang"
+        },
+        "bank_account_type": {
+          "checking": "Tekshirish",
+          "savings": "Tejamkorlik"
+        },
+        "bank_account_choose": "Xaridingizni xavfsiz bajarish uchun hisobni tanlang",
+        "bank_account_connect_another": "Boshqa bank hisobini ulang",
+        "bank_account_connect": "Bank hisobini ulang"
       },
       "order_summary": {
         "price_after_discount_aria_text": "Chegirmali narx",
@@ -2174,7 +2205,62 @@
         "split_cart_international_shipping_not_supported": "Xalqaro miqyosda jo'natilayotganda barcha mahsulotlar bir xil etkazib berish usulidan foydalanishi kerak. Yetkazib berish usulini yangilang yoki bir nechta buyurtmalar yarating.",
         "invalid_delivery_address_reference_handle": "Etkazib berish manzili ma'lumotnomasini mavjud yetkazib berish manzillariga moslab bo'lmadi.",
         "must_use_available_delivery_address": "Etkazib berish manzili mavjud yetkazib berish manzillaridan tanlanishi kerak.",
-        "must_use_available_shipping_rate": "Yuk tashish narxi mavjud yuk stavkalaridan tanlanishi kerak."
+        "must_use_available_shipping_rate": "Yuk tashish narxi mavjud yuk stavkalaridan tanlanishi kerak.",
+        "handle_phone_invalid": "Yaroqli telefon raqamini kiriting",
+        "handle_email_invalid": "Yaroqli elektron pochta manzilini kiriting",
+        "email_invalid": "Yaroqli elektron pochta manzilini kiriting",
+        "email_or_phone_blank": "Elektron pochta yoki telefon raqamini kiriting",
+        "email_or_phone_invalid": "Yaroqli elektron pochta yoki mobil telefon raqamini kiriting",
+        "address_first_name_blank": "Ismni kiriting",
+        "address_first_name_too_long": "Ism juda uzun (maksimal 255 belgidan iborat)",
+        "address_first_name_contains_emojis": "Ismda kulgichlar bo‘lishi mumkin emas",
+        "address_first_name_contains_html_tags": "Ism HTML teglarini o'z ichiga olmaydi.",
+        "address_first_name_contains_url": "Ismda URL bo‘lishi mumkin emas",
+        "address_first_name_contains_mathematical_symbols": "Ismda matematik belgilar bo'lishi mumkin emas",
+        "address_last_name_blank": "Familiya kiriting",
+        "address_last_name_too_long": "Familiya juda uzun (maksimal 255 belgidan iborat)",
+        "address_last_name_contains_emojis": "Familiyada kulgichlar bo‘lishi mumkin emas",
+        "address_last_name_contains_html_tags": "Familiya HTML teglarini o'z ichiga olmaydi.",
+        "address_last_name_contains_url": "Familiyada URL boʻlishi mumkin emas",
+        "address_last_name_contains_mathematical_symbols": "Familiya matematik belgilarni o'z ichiga olmaydi",
+        "address_address1_blank": "Manzil kiriting",
+        "address_address1_too_long": "Birinchi manzil qatori juda uzun (maksimal 255 belgidan iborat)",
+        "address_address1_contains_emojis": "1-manzilda kulgichlar bo‘lishi mumkin emas",
+        "address_address1_contains_html_tags": "1-manzil HTML teglarini o'z ichiga olmaydi.",
+        "address_address1_contains_mathematical_symbols": "Birinchi manzil satrida matematik belgilar bo'lishi mumkin emas",
+        "address_address2_blank": "Kvartira, suit va hokazolarni kiriting.",
+        "address_address2_too_long": "Ikkinchi manzil qatori juda uzun (maksimal 255 belgidan iborat)",
+        "address_address2_contains_emojis": "2-manzilda kulgichlar bo‘lishi mumkin emas",
+        "address_address2_contains_html_tags": "2-manzil HTML teglarini o'z ichiga olmaydi.",
+        "address_address2_contains_mathematical_symbols": "Ikkinchi manzil qatori matematik belgilarni o'z ichiga olmaydi",
+        "address_city_blank": "Shaharni kiriting",
+        "address_city_too_long": "Shahar juda uzun (maksimal 255 belgi)",
+        "address_city_contains_emojis": "Shaharda kulgichlar bo‘lishi mumkin emas",
+        "address_city_contains_html_tags": "City HTML teglarini o'z ichiga olmaydi.",
+        "address_city_contains_mathematical_symbols": "Shahar matematik belgilarni o'z ichiga olmaydi",
+        "address_country_blank": "Mamlakat/mintaqani tanlang",
+        "address_country_not_supported": "Biz bu mamlakat yoki mintaqaga yetkazib bermaymiz. Yangi yetkazib berish manzilini kiriting va qaytadan urining.",
+        "address_province_blank": "Shtat/viloyatni tanlang",
+        "address_province_invalid": "Yaroqli shtat/viloyatni tanlang",
+        "address_company_blank": "Kompaniya nomini kiriting",
+        "address_company_too_long": "Kompaniya nomi juda uzun (maksimal 255 belgidan iborat)",
+        "address_company_contains_emojis": "Kompaniya emojilarni o'z ichiga olmaydi",
+        "address_company_contains_html_tags": "Kompaniya HTML teglarini o'z ichiga olmaydi.",
+        "address_company_contains_mathematical_symbols": "Kompaniya matematik belgilarni o'z ichiga olmaydi",
+        "address_phone_blank": "Yaroqli telefon raqamini kiriting",
+        "address_phone_contains_emojis": "Telefon raqamida kulgichlar bo‘lishi mumkin emas",
+        "address_phone_invalid": "Yaroqli telefon raqamini kiriting",
+        "address_zip_blank": "ZIP / pochta indeksini kiriting",
+        "address_zip_blocked_address": "Bu joylashuv qo‘llab-quvvatlanmaydi",
+        "address_zip_too_long": "ZIP / pochta indeksi juda uzun (maksimal 255 belgidan iborat)",
+        "address_zip_not_supported": "Bu joylashuv qo‘llab-quvvatlanmaydi",
+        "address_zip_invalid_for_country": "%{country} uchun yaroqli pochta indeksini kiriting",
+        "address_zip_invalid_for_province": "%{province} uchun yaroqli pochta indeksini kiriting",
+        "address_zip_invalid_for_country_and_province": "%{province}, %{country} uchun yaroqli pochta/pochta indeksini kiriting",
+        "address_zip_contains_emojis": "ZIP / pochta indeksida kulgichlar bo‘lishi mumkin emas",
+        "address_zip_contains_mathematical_symbols": "ZIP / pochta indeksida matematik belgilar bo'lishi mumkin emas",
+        "address_generic_blank": "Majburiy maydon",
+        "address_generic_invalid": "Yaroqsiz yozuv"
       },
       "store_credit_errors": {
         "generic_error": "Doʻkon kreditida muammo yuz berdi. Qaytadan urining yoki sahifani qayta yuklang."
@@ -2233,6 +2319,34 @@
         "pick_up_card": "Sizning kartangiz rad etildi. Qaytadan urining yoki boshqa toʻlov usulidan foydalaning.",
         "cannot_verify": "Toʻlov maʼlumotlaringiz tasdiqlanmadi. Karta ma'lumotlarini tekshiring va qayta urinib ko'ring.",
         "invalid_number": "Yaroqli karta raqamini kiriting"
+      },
+      "billing": {
+        "billing_address_title": "hisob kimning nomiga",
+        "same_as_shipping": "Yuk tashish manzili bilan bir xil",
+        "add_address": "Boshqa manzildan foydalaning",
+        "edit": "Tahrirlash",
+        "delete": "Oʻchirish",
+        "address_more": "Bu manzil uchun boshqa amallar",
+        "address_edit": "Manzilni tahrirlash",
+        "address_delete": "Manzilni o'chirish",
+        "address_confirm": "Haqiqatan ham bu manzilni hisobingizdan oʻchirib tashlamoqchimisiz?",
+        "address_form": {
+          "add_address": "Manzil qo'shing",
+          "save": "Saqlash",
+          "cancel": "Bekor qilish"
+        }
+      },
+      "company_location": {
+        "location_title": "Kompaniyaning joylashuvi",
+        "location_rollup_accessibility_label": "Kompaniyaning joylashuvi variantlari"
+      },
+      "payment_summary": {
+        "gift_card_current_balance_notice": "Joriy balans %{amount}",
+        "credit_card_expires_on_notice": "Muddati %{month}/%{year} da tugaydi",
+        "express_payment_gateway_label": "Ekspress",
+        "manual_payment_gateway_label": "Qo'llanma",
+        "billing_address_title": "To'lovchi; to'lovni qabul qiladigan manzil",
+        "free_label": "Bepul"
       }
     },
     "email_marketing": {
