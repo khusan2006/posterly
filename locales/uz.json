@@ -1345,6 +1345,130 @@
       "partially_refunded_label": "QISMAN QAYTA BERILGAN",
       "payment": {
         "status_in_review": "Ko'rib chiqishdan keyin to'lov"
+      },
+      "log_in_to_a_different_account": "Boshqa hisobga kiring",
+      "fees": {
+        "restocking_fee": "Qayta tiklash to'lovi",
+        "return_shipping_fee": "Qayta yuk tashish"
+      },
+      "vat_invoices": {
+        "title": "QQS hisob-fakturalari"
+      },
+      "link_sent": "Havola yuborildi",
+      "cash_rounding": "Naqd pulni yaxlitlash",
+      "adjusted_payment": "Sozlangan to'lov",
+      "adjusted_total": "Sozlangan jami",
+      "due_on_date": "{{date}}",
+      "due_on_fulfillment": "Bajarilishi shart",
+      "due_on_receipt": "Qabul qilish to'g'risida"
+    },
+    "addresses": {
+      "add_button": "Manzil qo'shing",
+      "add_button_text": "Qo'shish",
+      "add_button_accessibility_label": "Manzil qo'shing",
+      "back_button": "Orqaga",
+      "back_button_accessibility_label": "{{address}} manzilini tahrirlash sahifasiga qaytish",
+      "add_address_banner": "Hisob-kitob paytida foydalanish uchun manzillarni qo'shing",
+      "no_addresses_banner": "Hech qanday manzil kiritilmagan",
+      "address_deleted_notification": "Manzil oʻchirildi",
+      "cancel_adding_address_accessibility_label": "Manzil qo'shishni bekor qiling",
+      "cancel_deletion_button": "Bekor qilish",
+      "cancel_deletion_button_accessibility_label": "{{address}} ni oʻchirishni bekor qilish",
+      "default_address": {
+        "title": "Birlamchi manzil",
+        "title_accessibility_label": "Birlamchi manzil: {{address}}"
+      },
+      "delete_button": "Oʻchirish",
+      "delete_button_accessibility_label": "{{address}} manzilini oʻchirish",
+      "delete_confirmation_button": "Manzilni o'chirish",
+      "delete_confirmation_button_accessibility_label": "{{address}} manzilini oʻchirish",
+      "delete_confirmation_message": "Manzil oʻchirilsinmi? Mavjud buyurtmalar ta'sir qilmaydi.",
+      "delete_confirmation_title": "Manzil oʻchirilsinmi?",
+      "delete_confirmation_description": "Mavjud buyurtmalar ta'sir qilmaydi.",
+      "edit_button": "Tahrirlash",
+      "edit_button_accessibility_label": "{{address}} tahrirlash",
+      "edit_section_accessibility_label": "{{address}} tahrirlash",
+      "edit_modal_title": {
+        "default": "Manzilni tahrirlash",
+        "billing": "Hisob-kitob manzilini tahrirlash",
+        "shipping": "Yetkazib berish manzilini tahrirlash"
+      },
+      "loading_accessibility_message": "Manzil yuklanmoqda",
+      "loading_addresses_accessibility_message": "Manzillar yuklanmoqda",
+      "loading_billing_accessibility_message": "Toʻlov manzili yuklanmoqda",
+      "loading_finished_accessibility_message": "Manzillarning yangi sahifasi yuklandi",
+      "loading_shipping_accessibility_message": "Yuklash manzili",
+      "pagination": {
+        "load_more": "Ko'proq yuklash",
+        "load_more_accessibility_label": "Ko'proq manzillarni yuklang"
+      },
+      "save_new_address_accessibility_label": "Manzilni saqlang",
+      "title": "Manzillar",
+      "billing_address_dropdown_placeholder": "To'lovchi; to'lovni qabul qiladigan manzil"
+    },
+    "address_form": {
+      "attention": "Diqqat",
+      "attention_company": "Kompaniya / e'tibor",
+      "attention_help_text": "Shaxs yoki bo'limning nomi",
+      "auto_complete_close_accessibility_label": "Takliflarni yopish",
+      "auto_complete_title": "Takliflar",
+      "billing_address": "Hisob-kitob manzili sifatida foydalaning",
+      "cancel": "Bekor qilish",
+      "cancel_accessibility_label": "{{address}} manzilini tahrirlashni bekor qilish",
+      "creation_success_notification": "Manzil qo'shildi",
+      "default_address": "Bu mening birlamchi manzilim",
+      "default_address_creation_success_notification": "Birlamchi manzil qoʻshildi",
+      "default_address_update_success_notification": "Birlamchi manzil yangilandi",
+      "loading_add_form_accessibility_message": "Yangi manzil shakli yuklanmoqda",
+      "loading_edit_form_accessibility_message": "Manzilni tahrirlash formasi yuklanmoqda",
+      "loading_form_accessibility_message": "Manzil shakli yuklanmoqda",
+      "loading_finished_accessibility_message": "Manzil formasi yuklandi",
+      "save": "Saqlash",
+      "save_accessibility_label": "{{address}} manzilini saqlang",
+      "section_title_accessibility_label": "Manzil qo'shing",
+      "update_success_notification": "Manzil yangilandi"
+    },
+    "B2B": {
+      "account_information": {
+        "company_card_name_label": "Shirkat nomi",
+        "company_card_section_accessibility_label": "Kompaniya"
+      },
+      "locations": {
+        "contact_email": "Elektron pochta",
+        "contact_list_title": "Odamlar",
+        "contact_name": "Ism",
+        "contact_permissions": "Ruxsatlar",
+        "contact_phone_number": "Telefon raqami",
+        "location_picker_label": "Joy nomi",
+        "location_picker_accessibility_label": "Joy nomi: {{locationName}}",
+        "net_payment_terms_description": "{{name}} : toʻlovlar {{numberOfDays}} kun ichida",
+        "deposit_percentage": "{{percentage}} depozit",
+        "own_role_contact_name": "Siz",
+        "pagination": {
+          "load_more": "Ko'proq yuklash",
+          "load_more_accessibility_label": "Boshqa joylarni yuklang"
+        },
+        "payment_details_title": "To'lov tafsilotlari",
+        "payment_terms": "To'lov shartlari",
+        "permissions_label": "Sizning ruxsatlaringiz",
+        "permissions_title": "Ruxsatlar",
+        "section_title": "Joylashuv",
+        "shipping_address_required": "Buyurtma berishni boshlash uchun ushbu manzilga yetkazib berish manzilini kiriting.",
+        "staff_and_permissions_title": "Xodimlar va ruxsatnomalar",
+        "tax_details_title": "Soliq tafsilotlari",
+        "tax_id": "Soliq identifikatori",
+        "tax_exemptions": "Soliq imtiyozlari",
+        "multiple_tax_exemptions": "{{taxExemptionsCount}} ta",
+        "multiple_tax_exemptions_and": "va",
+        "tax_exemptions_modal_close": "Yopish",
+        "taxes_none": "Yo'q",
+        "tax_exemption_not_applicable": "Yoʻq",
+        "tax_exemptions_modal_button_accessibility_label": "Barcha soliq imtiyozlarini ko'ring"
+      },
+      "location_selection": {
+        "continue_to_store": "Saqlashda davom eting",
+        "description": "Agar savatingizda allaqachon narsalar bo'lsa, joyni o'zgartirish savat narxi va miqdoriga ta'sir qilishi mumkin.",
+        "description_switch_later": "Siz istalgan vaqtda keyinroq almashishingiz mumkin"
       }
     }
   }
