@@ -778,7 +778,28 @@
         "state_and_territory_label": "Shtat/hudud",
         "state_and_territory_placeholder": "Shtat/hudud",
         "phone_label": "Telefon",
-        "optional_phone_label": "Telefon (ixtiyoriy)"
+        "optional_phone_label": "Telefon (ixtiyoriy)",
+        "phone_placeholder": "Telefon",
+        "phone_tooltip": "Buyurtmangiz haqida siz bilan bog'lanishimiz kerak bo'lsa",
+        "zip_code_label": "Pochta indeksi",
+        "optional_zip_code_label": "Pochta indeksi (ixtiyoriy)",
+        "zip_code_placeholder": "Pochta indeksi",
+        "postal_code_label": "Pochta kodi",
+        "optional_postal_code_label": "Pochta indeksi (ixtiyoriy)",
+        "postal_code_placeholder": "Pochta kodi",
+        "postcode_label": "Pochta indeksi",
+        "optional_postcode_label": "Pochta indeksi (ixtiyoriy)",
+        "postcode_placeholder": "Pochta indeksi",
+        "pincode_label": "PIN kod",
+        "optional_pincode_label": "PIN kod (ixtiyoriy)",
+        "pincode_placeholder": "PIN kod",
+        "civic_number_warning": "Agar sizda bo'lsa, uy raqamini qo'shing",
+        "optional_last_name_label": "Familiya (ixtiyoriy)",
+        "different_shipping_address_label": "Boshqa manzilga jo'natish",
+        "different_shipping_address_text": "Bu buyurtma uchun bir martalik manzildan foydalaning",
+        "change_company_location_link_label": "Kompaniyaning manzilini o'zgartiring",
+        "change_location_link_label": "Joylashuvni o'zgartirish",
+        "ship_to_company": "{{companyName}} manziliga jo‘natish"
       },
       "payment_gateway": {
         "generic_payment_terms": "Siz {{translatedName}} shartlaridasiz. Toʻlovingiz {{dueDate}} sanasida toʻlanadi.",
@@ -1067,6 +1088,263 @@
         "inventory": {
           "partial_inventory_banner": "Savatingizning bir qismi sotilgan va uni kassada xarid qilib bo‘lmaydi."
         }
+      },
+      "delivery_options": {
+        "free_total_label": "Bepul",
+        "ship": "Kema",
+        "ship_to_address": "Manzilga jo'natish",
+        "shipping_address": "Yetkazib berish manzili",
+        "pick_up": "Olib ketish; ko'tarish",
+        "pick_up_from_store": "Do'konda olib ketish",
+        "pick_up_locations": "Qabul qilish joylari",
+        "pick_up_in_one_hour": "Odatda 1 soat ichida tayyor",
+        "pick_up_in_two_hours": "Odatda 2 soat ichida tayyor",
+        "pick_up_in_four_hours": "Odatda 4 soat ichida tayyor",
+        "pick_up_in_twenty_four_hours": "Odatda 24 soat ichida tayyor",
+        "pick_up_in_two_to_four_days": "Odatda 2-4 kun ichida tayyor",
+        "pick_up_in_five_or_more_days": "Odatda 5+ kun ichida tayyor",
+        "pick_up_in_zero_to_two_hours": "2 soat ichida olib ketishga tayyor",
+        "pick_up_in_two_to_four_hours": "4 soat ichida olib ketishga tayyor",
+        "pick_up_immediately": "Hozir olib ketishga tayyor",
+        "pick_up_next_day": "Ertasi kuni olib ketishga tayyor",
+        "pickup_point_method_definition": "Qabul qilish punktiga jo'natish",
+        "retail_method_definition": "Chakana savdo",
+        "company_location_no_address_banner": "Manzilsiz joylarga jo'natilgan buyurtmalar ko'rib chiqish uchun yuboriladi.",
+        "none_method_definition": "Yuk tashish yo'q",
+        "subscription_pickup_information": "Bu yetkazib berish usuli ushbu buyurtmadagi barcha mahsulotlarga va ushbu obuna boʻyicha kelgusidagi barcha buyurtmalarga qoʻllaniladi."
+      },
+      "customer_account": {
+        "not_user_label": "%{first_name} emasmi?",
+        "have_an_account_label": "Hisobingiz bormi?",
+        "sign_in_link_label": "tizimga kirish",
+        "sign_out_link_label": "tizimdan chiqish",
+        "save_my_information_label": "Ushbu ma'lumotni keyingi safar uchun saqlang",
+        "invalid_address": "Tanlangan manzil yaroqsiz. %{update_address_link} yoki boshqa manzilni tanlang.",
+        "incomplete_address": "Tanlangan manzil toʻliq emas. %{update_address_link} yoki boshqa manzilni tanlang.",
+        "invalid_shipping_method_summary": "Mavjud etkazib berish usullarini ko'rish uchun to'g'ri etkazib berish manzilini tanlang",
+        "saved_address_option_description": {
+          "one": "Sizda saqlangan {{count}} manzil bor.",
+          "other": "Sizda saqlangan {{count}} ta manzil bor."
+        },
+        "saved_address_option_link": "Saqlangan manzildan foydalaning",
+        "saved_address_modal_title": "Saqlangan manzilimdan foydalaning"
+      },
+      "stock": {
+        "page_title": "Inventarizatsiya muammolari",
+        "title": "Sotuvda yo'q",
+        "items_unavailable_notice": "Ayrim elementlar endi mavjud emas.",
+        "product_column_header": "Mahsulotlar",
+        "quantity_column_header": "Miqdori",
+        "removed_from_cart_notice": "Savatdan olib tashlandi",
+        "sold_out_label": "Sotildi",
+        "reduced_label": "Qisqartirilgan",
+        "reduced_with_quantity_label": "Faqat %{quantity_available} qoldi",
+        "remove_from_cart_button_label": "Savatdan olib tashlang",
+        "continue_shopping_button_label": "Davom eting",
+        "go_back_to_cart_button_label": "Mening savatimga qayting",
+        "remove": "O'chirish",
+        "return_to_store_label": "Do'konga qaytish",
+        "continue_cta_label": "Hisobni davom ettiring",
+        "item_label": {
+          "one": "{{count}} ta element",
+          "other": "{{count}} ta element"
+        },
+        "empty_cart_label": "Savatingiz boʻsh",
+        "quantity_update": {
+          "page_title": "Miqdorni yangilash",
+          "title": "Miqdorni yangilash",
+          "description": "Bu mahsulotlar uchun mavjud miqdorlar oʻzgardi va savatingizda yangilandi."
+        },
+        "unpurchasable_product": {
+          "title": "Sotib bo'lmaydigan mahsulot",
+          "header": "Ba'zi narsalar savatdan olib tashlandi",
+          "message": "Ushbu mahsulotlar B2B buyurtmalari uchun mavjud emas.",
+          "status_column_header": "Mavjud emas"
+        },
+        "unpurchasable_product_generic": {
+          "title": "Sotib bo'lmaydigan mahsulot",
+          "header": "Ba'zi narsalar savatingizdan olib tashlandi",
+          "message": "Bu elementlar mavjud emas.",
+          "status_column_header": "Mavjud emas"
+        },
+        "unfulfillable_product": {
+          "title": "Yetkazib berish mumkin emas",
+          "message": {
+            "one": "%{delivery_method} endi bu element uchun mavjud emas.",
+            "other": "%{delivery_method} endi bu elementlar uchun mavjud emas."
+          },
+          "default_message": {
+            "one": "Tanlangan yetkazib berish usuli endi bu mahsulot uchun mavjud emas.",
+            "other": "Tanlangan yetkazib berish usuli endi bu mahsulotlar uchun mavjud emas."
+          }
+        },
+        "unshippable_product": {
+          "title": "Yetkazib berish mavjud emas",
+          "header": {
+            "one": "%{count} ta mahsulot yetkazib berilmaydi",
+            "other": "%{count} ta mahsulot yetkazib berilmaydi"
+          },
+          "message": {
+            "one": "Bu narsa savatdan olib tashlanadi, chunki manzilingiz uchun yetkazib berish usullari mavjud emas.",
+            "other": "Bu narsalar savatdan olib tashlanadi, chunki manzilingiz uchun yetkazib berish usullari mavjud emas."
+          },
+          "status_column_header": "Yetkazib berish yo'q"
+        },
+        "price_update": {
+          "title": "Narx yangilanishi",
+          "description": "Bu mahsulotlarning narxlari oʻzgardi va savatingizda yangilandi."
+        },
+        "price_and_quantity_update": {
+          "title": "Narx va miqdorni yangilash",
+          "description": "Bu mahsulotlar uchun narxlar va mavjud miqdorlar oʻzgardi va savatingizda yangilandi."
+        },
+        "out_of_stock": {
+          "description": "Bu mahsulotlar endi mavjud emas va savatdan olib tashlandi."
+        }
+      }
+    }
+  },
+  "customer_accounts": {
+    "orders": {
+      "order_status": {
+        "on_its_way_title": "Yuborishingiz yo‘lda",
+        "out_for_delivery_label": "Yetkazib berish uchun chiqdi",
+        "out_for_delivery_title": "Yuborishingiz yetkazib berishga tayyor",
+        "resume_tracking": "Kuzatishni davom ettirish",
+        "submitted_label": "Taqdim etilgan",
+        "submitted_description": "Buyurtma va to'lov tafsilotlarini ko'rib chiqing.",
+        "there_was_a_problem_label": "Muammo bor edi",
+        "track_shipment": "Yetkazib berishni kuzatish",
+        "request_return": "Qaytish talabi",
+        "view_order_for_details": "Tafsilotlar uchun buyurtmani ko'ring",
+        "external_promise_manage_button_label": {
+          "buy_with_prime": "Amazonda boshqaring"
+        },
+        "amazon_buy_with_prime": {
+          "order_tracking_link": {
+            "text": "Amazon bilan boshqaring",
+            "new_window_disclaimer": "(yangi oyna ochadi)"
+          }
+        },
+        "delivery_promise_v2": {
+          "promise_line": {
+            "shop_promise_brand_label": "Yetkazib berish kafolatlangan",
+            "external_promise_brand_label": "tomonidan yetkazib berish",
+            "not_delivered_by_label": "{{date}} sanasidan keyin yetkazib beriladi",
+            "delivery_guarantee_expired_label": "Yetkazib berish kafolati muddati tugagan",
+            "modal_accessibility_button_label": "Yetkazib berish va'dasi tafsilotlari",
+            "download_shop_app_button_label": "Kuzatish uchun do'konni yuklab oling",
+            "track_with_shop_button_label": "Shop bilan kuzating",
+            "claim_shop_cash_button_label": "Do'konda naqd pul talab qiling"
+          },
+          "details_modal": {
+            "title": "Yetkazib berish kafolati",
+            "active_delivery_guarantee_label": "Yetkazib berish: {{date}}",
+            "expired_delivery_guarantee_description": "Bu buyurtmaning 30 kunlik Shop Promise kafolati muddati tugadi.",
+            "expired_badge_label": "Muddati tugagan",
+            "order_includes_guarantees_label": "Buyurtmangizda {{deliveryAgreementsCount}} kafolat mavjud",
+            "order_includes_guarantees_description": "Shop Promise tezkor va ishonchli yetkazib berishni kafolatlaydi. Buyurtmangiz {{date}} dan keyin yetib kelsa, Shop Cash ni talab qiling.",
+            "delivered_after_label": "{{date}} sanasidan keyin yetkazib beriladi",
+            "delivered_after_description": "Buyurtmangiz kechikib kelgani uchun siz {{amount}} Shop Cash daʼvo qilishingiz mumkin.",
+            "claimed_shop_cash_description": "Bu buyurtma kechikib kelgani uchun siz {{amount}} Shop Cash talab qildingiz.",
+            "eligible_to_claim_shop_cash_description": "Buyurtmangiz kechikib kelgani uchun siz {{amount}} Shop Cash daʼvo qilishingiz mumkin.",
+            "learn_more_button_label": "Batafsil ma'lumot",
+            "claim_shop_cash_button_label": "Do'konda naqd pul talab qiling",
+            "view_balance_in_shop_button_label": "Do'konda balansni ko'ring",
+            "scan_to_claim_shop_cash_label": "{{amount}} Shop Cashga daʼvo qilish uchun skanerlang"
+          }
+        },
+        "delivery_promise": {
+          "promise_line": {
+            "single_brand_label": "tomonidan qo'llab-quvvatlangan yetkazib berish",
+            "mixed_brands_label": "Yetkazib berish kafolatlangan",
+            "not_delivered_by_label": "{{date}} sanasigacha yetkazib berilmagan",
+            "modal_accessibility_button_label": "Yetkazib berish va'dasi tafsilotlari"
+          },
+          "claim_shop_cash_cta": {
+            "has_shop_app_label": "Do'koningizning naqd pulini talab qiling",
+            "no_shop_app_label": "Shop Cash talab qilish uchun {{appDownloadLink}}",
+            "download_shop_app_label": "Do'konni yuklab oling"
+          },
+          "details_modal": {
+            "title": "tomonidan qo'llab-quvvatlangan yetkazib berish",
+            "modal_accessiblity_label": "Yetkazib berish va'dasi tafsilotlari",
+            "delivery_guarantee_label": "Yetkazib berish kafolati",
+            "delivery_by_label": "Yetkazib berish: {{date}}",
+            "delivery_guaranteed_by_label": "Yetkazib berish kafolatlangan: {{date}}",
+            "shop_cash_claim": {
+              "may_be_eligible_label": "Shop Promise tezkor va ishonchli yetkazib berishni kafolatlaydi. Buyurtmangiz kechikib kelsa, Shop Cash da'vo qiling.",
+              "may_be_eligible_not_authorized_label": "Bu buyurtma kech kelgani uchun siz Shop Cash daʼvo qilishingiz mumkin. Tafsilotlarni ko'rish uchun tizimga kiring.",
+              "redeemed_label": "Bu buyurtma kech kelgani uchun siz allaqachon Shop Cash daʼvo qilgansiz.",
+              "expired_label": "30 kunlik kafolat muddati tugaganligi sababli, bu buyurtma kechikish boʻyicha daʼvo qilish huquqiga ega emas.",
+              "no_shop_cash_label": "Bu buyurtma Shop Pay bilan toʻlanmagani uchun kech yetkazib berish daʼvosi uchun mos emas.",
+              "no_longer_guaranteed_label": "Ushbu mahsulotlar endi yetkazib berish kafolati bilan ta'minlanmaydi.",
+              "claim_shop_cash_title": "Shop Cashda {{amount}} miqdorida daʼvo qilish uchun skanerlang",
+              "claim_shop_cash_description": "Do‘kon ilovasida kelajakdagi xaridlaringizda Shop Cashdan foydalanishingiz mumkin."
+            }
+          }
+        }
+      },
+      "status_mark_as_delivered": "Yetkazib berilgan deb belgilang",
+      "fulfillment_status_title": "Bajarish holati: {{status}}",
+      "buy_again": "Qayta sotib oling",
+      "buy_again_accessibility_label": "{{orderId}} buyurtmasi uchun qayta xarid qiling",
+      "manage": "Boshqarish",
+      "manage_accessiblity_label": "Buyurtmani boshqarish {{orderId}}",
+      "group_title_label": "Bir qismi: {{groupTitle}}",
+      "group_title_label_with_parent": "Uchun: {{groupTitle}}"
+    },
+    "order_details": {
+      "shipment_timeline": {
+        "expand_events_label": "Tafsilotlarni ko'rsatish",
+        "expand_events_accessibility_label": "Buyurtmani jo'natish tafsilotlarini ko'rsatish",
+        "hide_events_label": "Tafsilotlarni yashirish",
+        "hide_events_accessibility_label": "Buyurtmani jo'natish tafsilotlarini yashirish"
+      },
+      "addresses_section_title": "Hisob-kitob va jo'natish",
+      "order_details": "Buyurtma tafsilotlari",
+      "order_details_skeleton_accessibility_label": "Barcha buyurtma tafsilotlarini ko'rish uchun tizimga kiring.",
+      "billing_address": "To'lovchi; to'lovni qabul qiladigan manzil",
+      "card_ending_with": "{{lastDigits}} bilan tugaydi",
+      "contact_information": "Bog'lanish uchun ma'lumot",
+      "company": "Kompaniya",
+      "company_and_location": "Kompaniya va joylashuvi",
+      "fully_refunded_label": "QAYTA BERILGAN",
+      "group_title_label": "Bir qismi: {{groupTitle}}",
+      "group_title_label_with_parent": "Uchun: {{groupTitle}}",
+      "view_controls": {
+        "gallery": "Galereya",
+        "list": "Roʻyxat"
+      },
+      "grouped_view_components": {
+        "expand_line_items": "{{count}} ta elementni ko‘rsatish",
+        "collapse_line_items": "{{count}} ta elementni yashirish",
+        "line_item_summary_list_accessibility_label": "{{productTitle}} toʻplamidagi elementlar"
+      },
+      "discount": "Chegirma",
+      "hide_items": "Elementlarni yashirish",
+      "loading": "Buyurtma tafsilotlari yuklanmoqda",
+      "loading_finished_accessibility_message": "Buyurtma tafsilotlari yuklandi",
+      "location": "Joylashuv",
+      "image_gallery": {
+        "next": "Keyingi elementlarni ko'rsatish",
+        "previous": "Oldingi narsalarni ko'rsatish",
+        "load_more_items": {
+          "one": "Yana {{count}} ta elementni yuklang",
+          "other": "Yana {{count}} ta elementni yuklang"
+        }
+      },
+      "mobile_summary_toggle_button": {
+        "open": "Buyurtma xulosasini ko'rsatish",
+        "closed": "Buyurtma xulosasini yashirish"
+      },
+      "no_data": "Yo'q",
+      "no_data_provided_accessibility_label": "{{fieldName}} boʻsh",
+      "not_applicable": "Yoʻq",
+      "paid_amount": "To'langan",
+      "partially_refunded_label": "QISMAN QAYTA BERILGAN",
+      "payment": {
+        "status_in_review": "Ko'rib chiqishdan keyin to'lov"
       }
     }
   }
