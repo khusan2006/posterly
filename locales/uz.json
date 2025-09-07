@@ -1490,6 +1490,112 @@
           "cancel": "Bekor qilish"
         }
       }
+    },
+    "email_marketing": {
+      "subscribed": {
+        "disclaimer": "Istalgan vaqtda obunani bekor qilishingiz mumkin.",
+        "unsubscribe": "Obunani bekor qilish"
+      },
+      "unsubscribed": {
+        "confirmation": "Siz bizning pochta ro'yxatimizdan obunani bekor qildingiz.",
+        "disclaimer": "Siz bizdan boshqa marketing yangiliklarini olmaysiz. Istalgan vaqtda qayta obuna bo'lishingiz mumkin.",
+        "preview": "Mijozlar obunani bekor qilganda nimani koʻrishini oldindan koʻryapsiz."
+      },
+      "open_tracking": {
+        "opt_in": {
+          "opted_in_html": "<b>Siz elektron pochta orqali ochiq kuzatuvni tanladingiz.</b>",
+          "visibility": "Elektron pochtani ochish tariflari anonim ravishda xabar qilinadi. Biz faqat e-pochtani ochganingiz yoki yo'qligini ko'ramiz.",
+          "opt_out_html": "Agar siz ushbu ma'lumotni baham ko'rishni xohlamasangiz, elektron pochta orqali ochiq kuzatuvdan <a style=\"text-decoration:underline;\" href=\"%{link}\">voz kechishingiz</a> mumkin.",
+          "preview_bar": "Siz mijozlar e-pochta orqali ochiq kuzatuvga kirishganida nima ko‘rishini oldindan ko‘rayapsiz."
+        },
+        "opt_out": {
+          "opted_out_html": "<b>Siz elektron pochta orqali ochiq kuzatuvdan voz kechdingiz.</b>",
+          "visibility": "E-pochtalarimizni ochganingizni ko'rmaymiz.",
+          "opt_in_html": "Elektron pochta orqali ochiq kuzatuvga <a style=\"text-decoration:underline;\" href=\"%{link}\">obuna boʻling</a> .",
+          "preview_bar": "Siz mijozlar e-pochta orqali ochiq kuzatuvdan voz kechganlarida nimani ko‘rishini oldindan ko‘ryapsiz."
+        },
+        "no_longer_track": {
+          "status_html": "<b>Biz endi ochilgan elektron pochta xabarlarini kuzatmaymiz.</b>",
+          "privacy_policy": "Ushbu xat yuborilgandan so'ng, biz maxfiylik siyosatimizni yangiladik va biz endi ochilishlarni kuzatmaymiz."
+        },
+        "track": {
+          "status_html": "<b>Elektron pochta ochiq kuzatuvi haqida xabar berilgan.</b>",
+          "visibility": "Biz faqat e-pochtani ochganingizni ko'ramiz, bu umumiy elektron pochtani ochish tezligining bir qismi sifatida."
+        },
+        "updated_policy": {
+          "status_html": "<b>Elektron pochta ochiq kuzatuvi haqida xabar berilgan.</b>",
+          "visibility": "Biz siyosatimizni yangiladik va endi elektron pochta xabarlarini kuzatish ochiladi. Elektron pochtani ochish tariflari anonim ravishda xabar qilinadi. E-pochtani ochish tezligining bir qismi sifatida faqat siz xat ochganingizni ko'ramiz.",
+          "opt_out_html": "Agar siz ushbu ma'lumotni baham ko'rishni xohlamasangiz, <a style=\"text-decoration:underline;\" href=\"%{link}\">obunani bekor qilishingiz mumkin.</a>"
+        }
+      }
+    },
+    "filters": {
+      "availability": {
+        "value": {
+          "in_stock": "Omborda mavjud; sotuvda mavjud",
+          "out_of_stock": "Sotuvda yo'q"
+        }
+      },
+      "boolean": {
+        "true_label": "Ha",
+        "false_label": "Yo'q"
+      }
+    },
+    "search": {
+      "error": "Qidiruv natijalarini yuklashda muammo yuz berdi. Sahifani yangilang yoki keyinroq qayta urinib ko‘ring.",
+      "sorting": {
+        "relevance": "Muvofiqlik",
+        "price_ascending": "Narx, pastdan yuqoriga",
+        "price_descending": "Narx, yuqoridan pastgacha"
+      }
+    },
+    "page_titles": {
+      "blog_or_article_with_error": "Xato - %{title}",
+      "products": "Mahsulotlar",
+      "shopping_cart": "Savatingiz",
+      "create_account": "Hisob yaratish",
+      "reset_account": "Hisobni tiklash",
+      "addresses": "Manzillar",
+      "order": "Buyurtma %{name}",
+      "search_results": {
+        "one": "Qidiruv: “%{terms}” uchun %{count} ta natija topildi",
+        "other": "Qidiruv: “%{terms}” uchun %{count} ta natija topildi"
+      },
+      "not_found": "404 topilmadi",
+      "challenge": "Challenj",
+      "checkpoint": "Tekshirish punkti"
+    },
+    "cart": {
+      "discounts_with_count": "%{count} chegirma qo‘llanildi"
+    },
+    "challenge": {
+      "message": "Davom etish uchun robot emasligingizni bizga xabar bering.",
+      "error": "Javobingiz noto'g'ri, qayta urinib ko'ring.",
+      "submit_button_text": "Yuborish"
+    },
+    "checkpoint": {
+      "message": "Davom etish uchun Captcha-ni hal qiling",
+      "error": "Captcha tekshiruvi amalga oshmadi",
+      "submit_button_text": "Yuborish"
+    },
+    "store_availability": {
+      "pick_up_time": {
+        "one_hour": "Odatda 1 soat ichida tayyor",
+        "two_hours": "Odatda 2 soat ichida tayyor",
+        "four_hours": "Odatda 4 soat ichida tayyor",
+        "twenty_four_hours": "Odatda 24 soat ichida tayyor",
+        "two_to_four_days": "Odatda 2-4 kun ichida tayyor",
+        "five_or_more_days": "Odatda 5+ kun ichida tayyor",
+        "zero_to_two_hours": "Odatda 2 soat ichida tayyor",
+        "two_to_four_hours": "Odatda 4 soat ichida tayyor",
+        "immediately": "Hozir olib ketishga tayyor",
+        "next_day": "Ertasi kuni olib ketishga tayyor"
+      }
+    },
+    "subscriptions": {
+      "buyer_consent_product": "Bu mahsulot takroriy yoki kechiktirilgan xariddir. Davom etish orqali men %{cancellationPolicyLink}ga rozilik beraman va buyurtmam bajarilgunimcha yoki ruxsat berilsa, bekor qilgunimcha toʻlov usulimdan ushbu sahifada koʻrsatilgan narxlar, chastota va sanalarda toʻlov olishga ruxsat beraman.",
+      "buyer_consent_cart": "Savatingizdagi mahsulotlardan biri yoki bir nechtasi takroriy yoki kechiktirilgan xariddir. Davom etish orqali men %{cancellationPolicyLink}ga rozilik beraman va buyurtmam bajarilgunimcha yoki ruxsat berilsa, bekor qilgunimcha toʻlov usulimdan ushbu sahifada koʻrsatilgan narxlar, chastota va sanalarda toʻlov olishga ruxsat beraman.",
+      "cancellation_policy": "bekor qilish siyosati"
     }
   },
   "customer_accounts": {
@@ -2002,6 +2108,58 @@
     },
     "privacy_banner": {
       "cookie_preferences_link": "Cookie sozlamalari"
+    },
+    "date": {
+      "humanize": {
+        "lessThanOneHourAgo": {
+          "one": "{{count}} daqiqa oldin",
+          "other": "{{count}} daqiqa oldin"
+        },
+        "lessThanOneMinuteAgo": "Hozir",
+        "yesterday": "Kecha {{time}} da",
+        "today": "Bugun {{time}}",
+        "tomorrow": "Ertaga {{time}}"
+      }
+    },
+    "enable_javascript": "Hisobingizni ko'rish uchun brauzer sozlamalarida JavaScript-ni yoqing yoki boshqa brauzer bilan kiring.",
+    "navigation_and_structure": {
+      "account_menu": {
+        "hide_accessibility_label": "Hisob menyusini yashirish",
+        "show_accessibility_label": "Hisob menyusini ko'rsatish",
+        "nav_accessibility_label": "Hisob navigatsiyasi",
+        "open_menu_accessibility_label": "Hisob navigatsiyasini oching",
+        "close_menu_accessibility_label": "Hisob navigatsiyasini yoping",
+        "loading_message": "Hisob navigatsiyasi yuklanmoqda"
+      },
+      "action_menu_accessibility_label": "Ko'proq harakatlar",
+      "close_menu_accessibility_label": "Asosiy navigatsiyani yoping",
+      "contact_email_subject": "{{shopName}} onlayn doʻkonidan bogʻlaning",
+      "contact_link": "Bog'lanish uchun ma'lumot",
+      "delete_confirmation": {
+        "cancel": "Bekor qilish",
+        "delete": "Oʻchirish"
+      },
+      "dismiss_toast": "Rad etish",
+      "document_title": "{{sectionName}} - {{shopName}} - Hisob",
+      "go_to_store_link": "Do'konga boring",
+      "loading_message": "Yuklanmoqda",
+      "loading_policy_content_accessibility_label": "Siyosat kontenti yuklanmoqda",
+      "log_out_link": "tizimdan chiqish",
+      "logout_overlay_label": "Chiqish...",
+      "nav_label_accessibility_label": "Asosiy navigatsiya",
+      "navigation_accessibility_message": "Siz {{sectionName}} sahifasiga oʻtdingiz",
+      "open_menu_accessibility_label": "Asosiy navigatsiyani oching",
+      "shop_logo_accessibility_label": "{{shopName}} logotipi",
+      "subscriptions_link_label": "Obunalar",
+      "settings_link": "Sozlamalar",
+      "country_switcher_toast_message": "Mamlakat {{countryName}} ga almashtirildi",
+      "switch_country": "Mamlakatni almashtirish",
+      "no_countries_found": "Hech qanday davlat topilmadi",
+      "location_switcher_toast_message": "Joylashuv {{locationName}} ga almashtirildi",
+      "switch_location": "Joyni almashtirish",
+      "no_locations_found": "Hech qanday joy topilmadi",
+      "try_new_search": "Yangi qidiruvni sinab ko'ring",
+      "view_details": "Tafsilotlarni ko'rish"
     }
   }
 }
