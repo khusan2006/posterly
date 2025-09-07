@@ -913,7 +913,122 @@
         "thank_you_payments_app_pending_payment_description_buyer_action_required_with_missing_pick_up": "Buyurtmani tasdiqlash uchun elektron pochta yoki telefon orqali biz bilan bog'laning.",
         "thank_you_payments_app_pending_payment_description_buyer_action_required_with_email_and_phone": "To‘lovni amalga oshirgandan so‘ng, sizga buyurtma raqamingiz bilan tasdiqlovchi xat keladi.",
         "thank_you_payments_app_pending_payment_description_buyer_action_required_with_email_and_phone_payment": "To‘lovni amalga oshirgandan so‘ng, sizga buyurtma raqamingiz bilan tasdiqlovchi xat keladi.",
-        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_email_and_phone_pick_up": "To‘lovni amalga oshirgandan so‘ng, sizga buyurtma raqamingiz bilan tasdiqlovchi xat keladi."
+        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_email_and_phone_pick_up": "To‘lovni amalga oshirgandan so‘ng, sizga buyurtma raqamingiz bilan tasdiqlovchi xat keladi.",
+        "non_shippable_title": "Buyurtmangiz tugallandi",
+        "let_us_know": "Bizga xabar bering",
+        "login_title": "Barcha buyurtma tafsilotlarini ko'rish uchun tizimga kiring",
+        "login_description": "Buyurtma raqamingizni elektron pochta orqali olingan kvitansiyada topishingiz mumkin.",
+        "login_description_phone": "Buyurtma raqamingizni matnli xabar orqali olingan kvitansiyada topishingiz mumkin.",
+        "login_not_customer_html": "%{name} emasmi? %{link} mumkin",
+        "login_reorder_link_text": {
+          "one": "ushbu mahsulotni ham sotib oling",
+          "other": "bu mahsulotlarni ham sotib oling"
+        },
+        "customer_information_hidden_fields_message": "Barcha mijozlar ma'lumotlarini ko'rish uchun tizimga kiring.",
+        "cancelled_title": "Buyurtmangiz bekor qilindi",
+        "cancelled_description": "Buyurtmangiz %{date} da bekor qilindi. Agar sizda biron bir savol bo'lsa, biz bilan bog'laning.",
+        "order_number_label": "Buyurtma raqami",
+        "customer_validation_error": "Yaroqli elektron pochta yoki buyurtma raqamini kiriting.",
+        "customer_validation_error_phone": "Yaroqli telefon yoki buyurtma raqamini kiriting.",
+        "login": "tizimga kirish",
+        "unfulfilled_items_title": "Yuk tashishga tayyorlanmoqda",
+        "unfulfilled_items_description": "Hozirda biz ushbu mahsulotlarni jo'natish uchun tayyorlamoqdamiz.",
+        "marker": {
+          "current": "Joriy jo'natish joyi",
+          "shipping": "Yetkazib berish manzili"
+        },
+        "pick_up_in_store_marker": {
+          "current": "Joriy jo'natish joyi",
+          "shipping": "Olib ketish joyi"
+        },
+        "fulfillment": {
+          "fulfilled_table_title": "Ushbu jo'natmadagi narsalar",
+          "unfulfilled_table_title": "Yuk tashish uchun tayyorlanayotgan narsalar",
+          "product_image_label": "Mahsulot tasviri",
+          "description_label": "Tavsif",
+          "quantity_label": "Miqdori"
+        },
+        "order_updates_description_missing": "Siz yetkazib berish boʻyicha yangilanishlarni olmayapsiz.",
+        "order_updates_subscribe_to_email_notifications": "E-pochta orqali etkazib berish yangiliklarini oling",
+        "order_updates_subscribe_to_email_or_phone_notifications": "E-pochta yoki matn orqali etkazib berish yangiliklarini oling",
+        "order_updates_subscribe_to_phone_notifications": "Matn orqali yetkazib berish yangiliklarini oling",
+        "order_updates_submit_subscription": "Yuborish",
+        "track_shipment": "Yetkazib berishni kuzatish",
+        "other_options": "Boshqa variantlar",
+        "delivery_information_label": "Yetkazib berish ma'lumotlari:",
+        "gift_card_sent_confirmation": "Sovg'a kartalari yuborildi",
+        "qr_code": {
+          "send_link_to_phone": "Yoki telefoningizga havola yuboring",
+          "title": "Telefoningizda kuzating"
+        },
+        "shop_qr_with_sms_upsell": {
+          "qr_code": {
+            "title": "Telefoningiz bilan skanerlang"
+          },
+          "sms": {
+            "title": "Yoki telefoningizga havola yuboring"
+          }
+        },
+        "view_business_customer_account": "Hisobni ko'rish",
+        "breadcrumbs_submitted": "Taqdim etilgan",
+        "breadcrumbs_in_review": "Ko'rib chiqishda",
+        "breadcrumbs_confirmed": "Tasdiqlangan",
+        "missing_shipping_address_banner": {
+          "title": "Buyurtmada etkazib berish manzili yo'q",
+          "text_html": "Manzilingizni kiritish uchun %{contact_us}",
+          "contact_us": "Biz bilan bog'lanish"
+        },
+        "first_payment_complete": "Birinchi toʻlov tugallandi",
+        "in_store_purchase": "Do'konda xarid qilish",
+        "company_location_section_title": "Kompaniya va joylashuvi",
+        "thank_you_ready_for_picked_up": "Buyurtmangiz %{address} manzilidan olingan.",
+        "ready_for_delivery": "Yetkazib berishga tayyor",
+        "order_updates_subscribe_to_email_notifications_failed": "Biz bu xatni yangilanishlar uchun saqlay olmaymiz. Qaytadan urining yoki boshqa elektron pochta manzilidan foydalaning.",
+        "order_updates_subscribe_to_email_notifications_email_already_exists": "Siz kiritgan elektron pochta allaqachon mavjud.",
+        "subscriptions_management": {
+          "title": "Obuna",
+          "description": "Obunalaringizni ko‘rish va boshqarish uchun hisobingizga o‘ting.",
+          "button_label": "Obunangizni boshqaring"
+        },
+        "manage_order_label": "Buyurtmangizni boshqaring",
+        "gift_card_confirmation_by_text_typ": {
+          "one": "Bir necha daqiqadan so'ng sizga sovg'a kartangiz bilan SMS keladi.",
+          "other": "Bir necha daqiqadan so‘ng sizga sovg‘a kartalaringiz yozilgan matn keladi."
+        },
+        "gift_card_confirmation_by_email_typ": {
+          "one": "Bir necha daqiqadan so‘ng sizga sovg‘a kartangiz yozilgan xat keladi.",
+          "other": "Bir necha daqiqadan so‘ng sizga sovg‘a kartalari yozilgan xat keladi."
+        },
+        "gift_card_email_title": {
+          "one": "Sovg'a kartasi elektron pochta orqali yuborildi",
+          "other": "Sovg'a kartalari elektron pochta orqali yuborildi"
+        },
+        "gift_card_text_title": {
+          "one": "Sovg'a kartasi SMS orqali yuborildi",
+          "other": "Sovg'a kartalari SMS orqali yuborildi"
+        },
+        "resend_gift_cards_by_email": "Elektron pochtani qayta yuborish",
+        "resend_gift_cards_by_text": "Matnli xabarni qayta yuborish",
+        "gift_card_resent_confirmation": {
+          "one": "Sovg'a kartasi qayta yuborildi.",
+          "other": "Sovg'a kartalari qayta yuborildi."
+        },
+        "gift_card_resend_failure": {
+          "one": "Sovg‘a kartangizni qayta yuborishda muammo yuz berdi. Qayta urinib ko'ring yoki biz bilan bog'laning.",
+          "other": "Sovg‘a kartalarini qayta yuborishda muammo yuz berdi. Qayta urinib ko'ring yoki biz bilan bog'laning."
+        },
+        "vat_invoices": {
+          "title": "QQS hisob-fakturalari"
+        },
+        "verify_shop_account_title": "Shop hisobingizni tasdiqlang",
+        "verify_shop_account_message": "Ma'lumotlaringiz Do'konda saqlangan, uni millionlab do'konlarda avtomatik ishlatish uchun hisobingizni tasdiqlang.",
+        "verify_shop_account_cta": "Hisobingizni tasdiqlang",
+        "verify_shop_account_confirmation": "Hisob-kitob tafsilotlari saqlandi",
+        "announcement": {
+          "close": "Yopish",
+          "expand": "Kengaytirish",
+          "collapse": "Yiqilish"
+        }
       },
       "review": {
         "blocks": {
@@ -922,14 +1037,34 @@
           "due_after_order_reviewed_html": "Buyurtma ko'rib chiqilgandan keyin to'lanadi",
           "review_title_free_order": "Buyurtmangizni ko'rib chiqing va yakunlang",
           "payment_method_saved_company_location": "Ushbu joylashuv uchun kartani saqlang",
-          "company_location": "Kompaniyaning joylashuvi"
+          "company_location": "Kompaniyaning joylashuvi",
+          "billing_address_title": "Hisob-kitob",
+          "shipping_address_title": "Ga yetkazib berish",
+          "shipping_method_title": "Yuk tashish usuli",
+          "payment_method_title": "To'lov usuli",
+          "change_link_label": "O'zgartirish",
+          "change_contact_method_link_label": "Kontakt ma'lumotlarini o'zgartiring",
+          "change_billing_address_link_label": "Hisob-kitob manzilini o'zgartiring",
+          "change_shipping_address_link_label": "Yetkazib berish manzilini o'zgartiring",
+          "change_shipping_method_link_label": "Yuk tashish usulini o'zgartirish",
+          "change_payment_method_link_label": "To'lov usulini o'zgartirish",
+          "pick_up_in_store_shipping_method_html": "Doʻkonda olib ketish · %{location_name}",
+          "purchase_order_number_title": "PO raqami",
+          "change_purchase_order_number_label": "PO raqamini o'zgartiring",
+          "change_delivery_method_link_label": "Yetkazib berish usulini o'zgartirish"
         },
         "block_title": "Ma'lumotlaringizni ko'rib chiqing",
         "item_header": {
           "change_value": "Qiymatni o'zgartirish",
           "section": "Bo'lim",
           "value": "Qiymat"
-        }
+        },
+        "title": "Ko‘rib chiqish",
+        "review_title": "Buyurtmani to'ldiring",
+        "review_and_confirm_title": "Ko'rib chiqing va tasdiqlang",
+        "checkout_as_guest": "Mehmon sifatida tekshiring",
+        "account_more_actions": "Bu hisob uchun boshqa amallar",
+        "checkout_a_different_way": "Boshqa yo'lni tekshiring"
       },
       "marketing": {
         "accept_marketing_checkbox_label": "Yangiliklar va takliflar bilan menga elektron pochta orqali xabar yuboring",
@@ -1201,6 +1336,9 @@
         "out_of_stock": {
           "description": "Bu mahsulotlar endi mavjud emas va savatdan olib tashlandi."
         }
+      },
+      "vaulted": {
+        "change_button": "O'zgartirish"
       }
     }
   },
