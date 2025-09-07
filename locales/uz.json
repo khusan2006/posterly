@@ -2119,6 +2119,120 @@
           },
           "label": "Yetkazib berish yo'q"
         }
+      },
+      "field_errors": {
+        "address_generic_error": "Maydon xatosi",
+        "credit_card_name_blank": "Ismingizni kartangizda yozilganidek kiriting",
+        "credit_card_name_invalid": "Ismingizni kartangizda yozilganidek kiriting",
+        "credit_card_number_invalid": "Yaroqli karta raqamini kiriting",
+        "credit_card_expiry_invalid": "Yaroqlilik muddatini kiriting",
+        "credit_card_month_invalid": "Yaroqli amal qilish oyini kiriting",
+        "credit_card_year_invalid": "Yaroqli amal qilish yilini kiriting",
+        "credit_card_start_invalid": "Yaroqli karta boshlanish sanasini kiriting",
+        "credit_card_start_month_invalid": "Yaroqli karta boshlanish oyini kiriting",
+        "credit_card_start_year_invalid": "Yaroqli karta boshlanish yilini kiriting",
+        "credit_card_number_blank": "Karta raqamini kiriting",
+        "credit_card_verification_value_blank": "Kartangizdagi CVV yoki xavfsizlik kodini kiriting",
+        "delivery_line_detail_changed": "Ba'zi yetkazib berish tafsilotlari o'zgargan bo'lishi mumkin. Yetkazib berish usulingizni tasdiqlang va qayta urinib ko'ring.",
+        "delivery_zone_not_found": "Belgilangan hudud ko'rsatilgan mamlakatda topilmadi.",
+        "reduction_code_code_not_found": "Yaroqli chegirma kodi yoki sovg'a kartasini kiriting",
+        "reduction_code_discount_not_found": "Yaroqli chegirma kodini kiriting",
+        "reduction_code_gift_card_code_invalid": "Yaroqli sovg‘a kartasini kiriting",
+        "reduction_code_gift_card_unusable": "Boshqa sovg‘a kartasini xarid qilish uchun sovg‘a kartasidan foydalana olmaysiz",
+        "reduction_code_gift_cards_not_supported_with_deferred_purchase_options": "Kechiktirilgan xarid imkoniyatlari bilan sovg'a kartalari qo'llab-quvvatlanmaydi.",
+        "shipping_line_phone_blank": "Ushbu yetkazib berish usulidan foydalanish uchun telefon raqamini kiriting",
+        "shipping_line_phone_invalid": "Yaroqli telefon raqamini kiriting",
+        "tips_invalid_tip_amount": "%{amount} dan kamroq maslahat kiriting",
+        "gift_card_already_applied": "Bu sovg‘a kartasi allaqachon buyurtmangizga qo‘llanilgan",
+        "gift_card_disabled": "Bu sovg‘a kartasi endi mavjud emas",
+        "gift_card_expired": "Bu sovg‘a kartasining muddati tugagan",
+        "gift_card_depleted": "Bu sovg‘a kartasida mablag‘ qolmagan",
+        "gift_card_currency_mismatch": "Bu buyurtma uchun faqat %{checkout_currency} dagi sovg‘a kartalaridan foydalanish mumkin",
+        "gift_cards_not_supported_with_deferred_purchase_options": "Kechiktirilgan xarid imkoniyatlari bilan sovg'a kartalari qo'llab-quvvatlanmaydi.",
+        "gift_card_buying_gift_card": "Boshqa sovg‘a kartasini xarid qilish uchun sovg‘a kartasidan foydalana olmaysiz",
+        "payment_gateway_missing": "Toʻlov usulini tanlang.",
+        "payment_gateway_needs_paid_plan_error": "Bu toʻlov usuli hozir doʻkonda mavjud emas",
+        "payment_gateway_not_in_test_mode": "buyurtmalarni sinash uchun sozlanmagan. Bu doʻkon haqiqiy buyurtmalar yoki haqiqiy toʻlovlarni qabul qila olmaydi.",
+        "payment_gateway_incompatible_with_multi_currency": "Bu toʻlovni mahalliy valyutada bajarish uchun kredit karta orqali toʻlashingiz kerak.",
+        "payment_gateway_unsupported_for_subscriptions": "Bu toʻlov usuli obuna buyurtmalari uchun mavjud emas.",
+        "payment_gateway_unsupported_for_deferred_purchase_options": "Bu toʻlov usuli kechiktirilgan xaridlar uchun mavjud emas.",
+        "payment_gateway_unsupported_for_country": "Bu toʻlov usuli yetkazib berilgan mamlakatda ishlamaydi.",
+        "payment_gateway_unsupported_for_development_store_html": "Sinov buyurtmasini berish uchun siz test toʻlov shlyuzidan foydalanishingiz kerak boʻladi. <a href=\"%{docs_link}\">Rivojlanish do'konlarida buyurtmalarni sinovdan o'tkazish</a> haqida ko'proq bilib oling.",
+        "payment_gateway_unsupported_for_order_above_maximum_orders_html": "Siz ushbu toʻlov protsessori bilan ishlab chiqish doʻkoniga buyurtmalar limitiga yetdingiz. Boshqa buyurtma berish uchun siz test toʻlov shlyuzidan foydalanishingiz kerak. <a href=\"%{docs_link}\">Rivojlanish do'konlarida buyurtmalarni sinovdan o'tkazish</a> haqida ko'proq bilib oling.",
+        "purchase_options_agreement_blank": "Xarid qilishni davom ettirish uchun kechiktirilgan yoki takroriy xarid shartlariga rozilik bildiring.",
+        "physical_gift_card_invalid_quantity": "Jismoniy sovg'a kartalari qatori sovg'a kartasi kodlari soniga mos keladigan miqdorga ega bo'lishi kerak.",
+        "physical_gift_card_duplicate_code": "Jismoniy sovg'a kartasi qatorida takroriy kod mavjud.",
+        "physical_gift_card_invalid_code": "Jismoniy sovg‘a kartasi kodi yaroqsiz.",
+        "email_blank": "Elektron pochta manzilini kiriting",
+        "phone_blank": "Telefon raqamini kiriting",
+        "address_country_invalid": "Roʻyxatdan mamlakat/mintaqani tanlang",
+        "address_zip_invalid": "Yaroqli pochta / pochta indeksini kiriting",
+        "gift_card_invalid": "“••••%{last_four_characters}” sovg‘a kartasi endi yaroqsiz",
+        "vaulting_agreement_blank": "Sizning kartangiz saqlanishi kerak, chunki bu buyurtmaning qoldig'i uchun to'lov keyinroq to'lanadi.",
+        "sms_marketing_phone_invalid": "Yaroqli telefon raqamini kiriting",
+        "address_suggestion_did_you_mean_html": "%{html} demoqchimisiz?",
+        "split_cart_international_shipping_not_supported": "Xalqaro miqyosda jo'natilayotganda barcha mahsulotlar bir xil etkazib berish usulidan foydalanishi kerak. Yetkazib berish usulini yangilang yoki bir nechta buyurtmalar yarating.",
+        "invalid_delivery_address_reference_handle": "Etkazib berish manzili ma'lumotnomasini mavjud yetkazib berish manzillariga moslab bo'lmadi.",
+        "must_use_available_delivery_address": "Etkazib berish manzili mavjud yetkazib berish manzillaridan tanlanishi kerak.",
+        "must_use_available_shipping_rate": "Yuk tashish narxi mavjud yuk stavkalaridan tanlanishi kerak."
+      },
+      "store_credit_errors": {
+        "generic_error": "Doʻkon kreditida muammo yuz berdi. Qaytadan urining yoki sahifani qayta yuklang."
+      },
+      "redeemable_errors": {
+        "shop_cash": {
+          "currency_mismatch": "Valyuta o'zgardi. Iltimos, Shop Cash va taklifingizni ko'rib chiqing."
+        },
+        "gift_card": {
+          "duplicate": "Sovg'a kartasi allaqachon buyurtmangizga qo'llanilgan",
+          "insufficient_funds": "Bu sovg‘a kartasida mablag‘ qolmagan",
+          "expired": "Bu sovg‘a kartasining muddati tugagan",
+          "not_available": "Bu sovg‘a kartasi endi mavjud emas",
+          "invalid": "Yaroqli sovg‘a kartasini kiriting",
+          "currency_mismatch": "Faqat %{shop_currency} dagi sovg‘a kartalari qabul qilinadi",
+          "generic": "Sovg‘a kartasini to‘lovga qo‘shib bo‘lmadi",
+          "throttle_limit_exceeded": "Siz maksimal urinishlar sonidan oshib ketdingiz. Keyinroq qayta urining.",
+          "no_longer_available": "Bu sovg‘a kartasidan endi bu to‘lov bilan foydalanilmaydi"
+        }
+      },
+      "merchant_instruction_errors": {
+        "empty_stable_id": "%{position} %{name} tovar yo‘riqnomasida bo‘sh barqaror identifikator mavjud.",
+        "invalid_stable_id_target": "%{position} %{name} mahsuloti boʻyicha yoʻriqnomada %{stable_id} barqaror identifikatori koʻrsatilgan, ammo bu barqaror identifikator savdo qatorlarida emas.",
+        "duplicate_variant_id": "%{position} %{name} tovar yo‘riqnomasida %{variant_id} identifikatorining takroriy varianti mavjud.",
+        "invalid_variant_id_target": "%{name} mahsuloti boʻyicha yoʻriqnomada %{variant_id} identifikatori mavjud, ammo bu variant tovar qatorida emas.",
+        "invalid_price_override_target": "%{stable_id} qatori uchun narxni bekor qilish boʻyicha koʻrsatma notoʻgʻri, chunki u toʻplam komponenti hisoblanadi.",
+        "invalid_entrypoint_for_remote_negotiation": "Masofaviy muzokaralar bo'yicha ko'rsatma uzoqdan bo'lmagan muzokaralar sessiyasiga taqdim etilishi mumkin emas."
+      },
+      "payment_errors": {
+        "amount_too_small": "Minimal to‘lov miqdori 0,50 AQSh dollaridan yuqori bo‘lishi kerak. Iltimos, yuqoriroq miqdor bilan qayta urinib ko'ring.",
+        "method_not_available": "Soʻralgan toʻlov usuli mavjud emas. Boshqa toʻlov usulini tanlang va qaytadan urining.",
+        "available_methods_updated": "Mavjud to'lov usullari yangilandi.",
+        "generic_error": "Toʻlovingizni qayta ishlashda muammo yuz berdi. Qaytadan urining yoki boshqa toʻlov usulidan foydalaning.",
+        "rejected_transaction": "Toʻlovingiz rad etildi. Qaytadan urining yoki boshqa toʻlov usulidan foydalaning.",
+        "credit_card_processing": "To‘lovingizni texnik sabablarga ko‘ra amalga oshirib bo‘lmaydi. Bir necha daqiqadan so‘ng qayta urinib ko‘ring yoki boshqa to‘lov usulidan foydalaning.",
+        "checkout_amount_changed": "Toʻlovni amalga oshirib boʻlmadi, chunki toʻlov vaqtida toʻlanishi lozim boʻlgan miqdor oʻzgargan. Buyurtmani tekshiring va qaytadan urining.",
+        "deferred_payment_not_allowed": "Kechiktirilgan to'lovlarga yo'l qo'yilmaydi. Buyurtmani tekshiring va qaytadan urining.",
+        "deferred_payment_required": "Ushbu buyurtma kechiktirilgan to'lovni talab qiladi. Buyurtmani tekshiring va qaytadan urining.",
+        "deferred_amount_changed": "Toʻlovingizni amalga oshirib boʻlmadi, chunki kechiktirilgan toʻlov miqdori oʻzgargan. Buyurtmani tekshiring va qaytadan urining.",
+        "deferred_date_changed": "To‘lovni amalga oshirib bo‘lmadi, chunki kechiktirilgan to‘lov sanasi o‘zgargan. Buyurtmani tekshiring va qaytadan urining.",
+        "order_total_changed": "Buyurtmangiz jami oʻzgardi. Ko‘rib chiqing va qayta urinib ko‘ring.",
+        "payment_processing": "To‘lovingizni texnik sabablarga ko‘ra amalga oshirib bo‘lmaydi. Qaytadan urining yoki boshqa toʻlov usulidan foydalaning.",
+        "payment_processing_no_retry": "To‘lovingizni texnik sabablarga ko‘ra amalga oshirib bo‘lmaydi. Boshqa toʻlov usulini sinab koʻring.",
+        "paypal_zero_amount": "%{amount} buyurtma uchun PayPal’dan foydalana olmaysiz. Buyurtmangiz to'g'riligini tasdiqlang va PayPalsiz hisobdan chiqing.",
+        "paypal_invalid_token": "PayPal mavjud emas edi. Qayta urinib ko'ring yoki boshqa to'lov variantidan foydalaning.",
+        "pay_later_failed": "Toʻlovni keyinroq qayta ishlashda xatolik yuz berdi. Boshqa toʻlov usulini tanlang va qaytadan urining.",
+        "three_d_secure_failed": "Toʻlovingizni tasdiqlab boʻlmadi. Qaytadan urining yoki boshqa toʻlov usulidan foydalaning.",
+        "three_d_secure_failed_duplicate": "Kredit kartaning 3D Secure autentifikatsiyasi amalga oshmadi, chunki boshqasi allaqachon amalga oshirilmoqda.",
+        "three_d_secure_failed_payment_method": "Kartangizni tasdiqlab bo‘lmadi. Qayta urinib ko'ring yoki boshqa karta qo'shing.",
+        "three_d_secure_throttled": "Juda ko'p urinishlar; qayta urinishdan oldin kuting",
+        "subscription_agreement_blank": "Obunani sotib olish uchun toʻlov maʼlumotlarini saqlash kerak. Davom etish uchun roziligingizni tasdiqlang yoki buyurtmangizdan obuna elementlarini olib tashlang.",
+        "insufficient_funds": "Pul yetarli emasligi sababli toʻlovingiz rad etildi. Qaytadan urining yoki boshqa toʻlov usulidan foydalaning.",
+        "multiple_deferred_payment_not_allowed": "Har bir soʻrov uchun faqat bitta kechiktirilgan toʻlovga ruxsat beriladi. Iltimos, so‘rovingizni tekshiring va qayta urinib ko‘ring.",
+        "shipping_must_match_billing": "To‘lov manzili yetkazib berish manziliga mos kelishi kerak. Boshqa toʻlov usulidan foydalaning.",
+        "decision_rule_block": "Toʻlovingizni qayta ishlashda muammo yuz berdi. Iltimos, do'kon egasiga murojaat qiling.",
+        "pick_up_card": "Sizning kartangiz rad etildi. Qaytadan urining yoki boshqa toʻlov usulidan foydalaning.",
+        "cannot_verify": "Toʻlov maʼlumotlaringiz tasdiqlanmadi. Karta ma'lumotlarini tekshiring va qayta urinib ko'ring.",
+        "invalid_number": "Yaroqli karta raqamini kiriting"
       }
     },
     "email_marketing": {
@@ -2622,7 +2736,40 @@
       "paid_amount": "To'langan",
       "partially_refunded_label": "QISMAN QAYTA BERILGAN",
       "payment": {
-        "status_in_review": "Ko'rib chiqishdan keyin to'lov"
+        "status_in_review": "Ko'rib chiqishdan keyin to'lov",
+        "status_unpaid": "Toʻlov muddati {{date}}",
+        "title": "To'lov",
+        "payment_type": {
+          "gift_card": "Sovg'a kartasi",
+          "store_credit": "Do'kon krediti",
+          "money_order": "Pul buyurtmasi",
+          "cash_on_delivery": "Yetkazib berishda naqd pul (COD)",
+          "bank_deposit": "Bank depoziti",
+          "manual": "Qo'llanma"
+        },
+        "card_payment_details": "{{lastDigits}} bilan tugaydigan - {{formattedTransactionAmount}}",
+        "gift_card_payment_details": "{{lastDigits}} bilan tugaydigan - {{formattedTransactionAmount}}",
+        "store_credit_payment_details": "Do'kon krediti - {{formattedTransactionAmount}}",
+        "shop_pay_installments": {
+          "paid_in_installments": "Shop Pay bo'lib to'lanadi",
+          "view_schedule": "Jadvalni ko'rish"
+        },
+        "manual_payment_methods": {
+          "money_order": "Pul buyurtmasi - {{formattedTransactionAmount}}",
+          "cash_on_delivery": "Yetkazib berishda naqd pul (COD) - {{formattedTransactionAmount}}",
+          "bank_deposit": "Bank depoziti - {{formattedTransactionAmount}}",
+          "manual": "Qo'llanma - {{formattedTransactionAmount}}"
+        },
+        "transactions": {
+          "show_all": "Hammasini ko'rsatish",
+          "show_less": "Kamroq ko'rsatish",
+          "details": "Tafsilotlar",
+          "payment_details": "Toʻlov tafsilotlari"
+        },
+        "emv_details": {
+          "aid": "YORDAM:",
+          "source": "MANBA:"
+        }
       },
       "log_in_to_a_different_account": "Boshqa hisobga kiring",
       "fees": {
@@ -2638,7 +2785,104 @@
       "adjusted_total": "Sozlangan jami",
       "due_on_date": "{{date}}",
       "due_on_fulfillment": "Bajarilishi shart",
-      "due_on_receipt": "Qabul qilish to'g'risida"
+      "due_on_receipt": "Qabul qilish to'g'risida",
+      "paid_with_shop_pay_installments_card": {
+        "paid_with_shop_pay_installments": "Do'kon to'lovlari bilan to'lanadi",
+        "description": "Shop ilovasidagi eslatmalar bilan toʻlov jadvalingizdan xabardor boʻling.",
+        "payment_reminders_button": "Toʻlov eslatmalarini oling",
+        "desktop_qr_code_content": {
+          "title": "Eslatmalarni skanerlang",
+          "description": "Shop bilan toʻlovlar haqida eslatma oling."
+        }
+      },
+      "refunded_amount": "Toʻlov qaytarildi",
+      "request_return_failed": "So‘rovingizni ko‘rib chiqishda muammo yuz berdi. Iltimos, qayta urinib koʻring.",
+      "login_card": {
+        "resend_link_and_login": "Buyurtma tafsilotlarini ko'rish uchun hisobingizga kiring yoki to'lov paytida foydalanilgan elektron pochta yoki telefon raqamiga yangi havola yuboring.",
+        "resend_link_only": "Buyurtma tafsilotlarini ko'rish uchun to'lov paytida foydalanilgan elektron pochta yoki telefon raqamiga yangi havola yuboring.",
+        "log_in": "tizimga kirish",
+        "resend_link": "Yangi havola yuboring",
+        "link_expired": "Havola muddati tugagan"
+      },
+      "remaining_amount": "Qolgan",
+      "marketing_section_title": "Yangiliklar va takliflar",
+      "marketing_description": "Siz marketing xatlarini olasiz. Istalgan vaqtda obunani bekor qilishingiz mumkin.",
+      "marketing_checkbox_label": "Yangiliklar va takliflar bilan menga elektron pochta orqali xabar yuboring",
+      "marketing_checkmark_label": "Siz elektron pochta xabarlari va takliflarini olishga obuna bo'ldingiz",
+      "returns": {
+        "expand_events_label": "Tafsilotlarni ko'rsatish",
+        "hide_events_label": "Tafsilotlarni yashirish",
+        "ineligible_return_message": "Bu buyurtmadagi hech qanday mahsulot qaytarib berilmaydi.",
+        "ineligible_return_message_when_returned": "Ushbu buyurtmadagi hech qanday qo'shimcha mahsulot qaytarib berilmaydi.",
+        "print_shipping_label": "Yuk tashish yorlig'ini chop eting",
+        "return_and_refund_modal_header": "To'lovni qaytarish siyosati",
+        "tracking_number": "Joylashuvni kuzatish raqami:",
+        "exchange_header": "Elementlarni almashtirish",
+        "exchange_subheader": "Qaytarilish tugallangandan so'ng, almashtirish elementlari buyurtmaga qo'shiladi."
+      },
+      "shipping": {
+        "address": "Yetkazib berish manzili",
+        "address_map_marker": "Yetkazib berish manzili",
+        "method": "Yuk tashish usuli",
+        "summary": "yuk tashish; yetkazib berish",
+        "free": "Bepul",
+        "one_time": "Bir martalik etkazib berish",
+        "subscription": "Obuna yetkazib berish"
+      },
+      "pickup": {
+        "pickup": "Olib ketish; ko'tarish",
+        "pickup_location": "Olib ketish joyi",
+        "pickup_point": "Qabul qilish punkti"
+      },
+      "show_items": "Elementlarni ko'rsatish",
+      "show_order_summary": "Buyurtma xulosasini ko'rsatish",
+      "hide_order_summary": "Buyurtma xulosasini yashirish",
+      "subtitle": "Tasdiqlangan {{date}}",
+      "subtotal": "Oraliq jami",
+      "summary_list_title_accessibility_label": "Buyurtma buyumlari",
+      "summary_title": "Buyurtma xulosasi",
+      "summary_totals_title_accessibility_label": "Buyurtma jami",
+      "shop_order_tracking": {
+        "download_shop_to_track": "Paketni kuzatish uchun do'konni yuklab oling",
+        "track_order_with_shop": "Buyurtmani Shop bilan kuzatib boring",
+        "title_header": "Telefoningiz bilan skanerlang",
+        "real_time_delivery_updates": "Buyurtma jo'natilgandan so'ng, do'kon sizga real vaqtda yetkazib berish yangiliklarini yuboradi."
+      },
+      "edit_summary": {
+        "added": "Qo'shilgan",
+        "added_with_quantity": "{{quantity}} qoʻshildi",
+        "removed": "Oʻchirildi",
+        "removed_with_quantity": "{{quantity}} olib tashlandi",
+        "updated_at": "Buyurtmangiz {{date}} sanasida yangilangan",
+        "returned": "Qaytgan",
+        "returned_with_quantities": "Qaytgan {{delta}} / {{total}}",
+        "removed_with_quantities": "{{delta}} dan {{total}} tasi olib tashlandi",
+        "return_line_item_removed": "Qaytishdan olib tashlandi",
+        "return_line_item_removed_with_quantities": "Qaytishdan {{delta}} olib tashlandi"
+      },
+      "shop_pay": {
+        "order_completed_with": "Buyurtma bilan yakunlandi",
+        "learn_more": "Batafsil ma'lumot"
+      },
+      "taxes": "Soliqlar",
+      "taxes_included": "Soliqlarga {{amount}} ham kiradi",
+      "duties_and_taxes_included": "Jami bojlar va soliqlarni o'z ichiga oladi. Yetkazib berishda qo'shimcha to'lovlar olinmaydi.",
+      "duties": "Vazifalar",
+      "ok_duties_tooltip": "Bu buyurtma boshqa davlatdan jo‘natilmoqda, shuning uchun jami buyurtmangizga bojlar qo‘shildi.",
+      "error_duties_tooltip": "Bu buyurtma boshqa davlatdan yuborilmoqda, shuning uchun yetkazib berish vaqtida boj va soliqlar undirilishi mumkin.",
+      "zero_duties_tooltip": "Bu buyurtma boshqa davlatdan yuborilmoqda. Ushbu qiymatdagi buyurtmalar bo'yicha yig'imlar undirilmaydi.",
+      "tip": "Maslahat",
+      "title": "Buyurtma {{name}}",
+      "total": "Jami",
+      "unit_price": "{{price}} /a",
+      "pagination": {
+        "load_more": "Ko'proq yuklash",
+        "load_more_accessibility_label": "Yana narsalarni yuklang",
+        "loading_accessibility_label": "Elementlar yuklanmoqda"
+      },
+      "login_to_view_all_order_details": "Barcha buyurtma tafsilotlarini ko'rish uchun tizimga kiring.",
+      "log_in": "tizimga kirish",
+      "logged_in_account_no_permission_to_order": "Siz {{email}} sifatida kirgansiz. Bu hisobda buyurtmani boshqarishga ruxsat yo‘q."
     },
     "addresses": {
       "add_button": "Manzil qo'shing",
