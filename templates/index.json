@@ -221,6 +221,7 @@
         "product",
         "collection-1"
       ],
+      "disabled": true,
       "settings": {
         "heading": "Featured Products & Collections",
         "heading_size": "h2",
