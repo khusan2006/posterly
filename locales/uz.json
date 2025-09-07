@@ -533,5 +533,253 @@
       "send_on": "YYYY-MM-DD",
       "send_on_label": "Yuborish (ixtiyoriy)"
     }
+  },
+  "shopify": {
+    "sentence": {
+      "two_words_connector": " va ",
+      "last_word_connector": ", va "
+    },
+    "checkout": {
+      "address_management": {
+        "confirm_address_deletion": "Haqiqatan ham {{address}} manzilini oʻchirib tashlamoqchimisiz?"
+      },
+      "general": {
+        "page_title": "Ro'yxatdan o'chirilish",
+        "error_page_title": "Xato",
+        "skip_to_content": "Tarkibga oʻtish",
+        "breadcrumb": "Non bo'laklari",
+        "continue_button_label": "Davom eting",
+        "complete_purchase_button_label": "To'liq buyurtma",
+        "pay_now_button_label": "Hozir toʻlang",
+        "authenticate_purchase_button_label": "To'lovni tasdiqlash",
+        "edit_link_label": "Tahrirlash",
+        "all_rights_reserved": "Barcha huquqlar himoyalangan %{shop_name}",
+        "print_policies_link_label": "Chop etish",
+        "cart": "Arava",
+        "close_modal_label": "Yopish",
+        "close_notice_label": "Yopish",
+        "expand_notice_label": "Koʻproq koʻrish",
+        "continue_to_shipping_method": "Yuk tashishda davom eting",
+        "continue_to_payment_method": "To'lovni davom ettiring",
+        "continue_to_review": "Buyurtmani ko'rib chiqish",
+        "back_to_cart": "Savatga qaytish",
+        "back_to_contact_information": "Ma'lumot sahifasiga qaytish",
+        "back_to_shipping_method": "Yuk tashish sahifasiga qaytish",
+        "back_to_payment_method": "To'lovga qaytish",
+        "choose_shipping_method": "Yuk tashish usulini tanlang",
+        "choose_payment_method": "Toʻlov usulini tanlang",
+        "choose_billing_address": "Hisob-kitob manzilini tanlang",
+        "contact_us_html": "Qo'shimcha ma'lumot olish uchun biz bilan bog'laning",
+        "autocomplete_title": "Takliflar",
+        "autocomplete_single_item": "1 ta element mavjud",
+        "autocomplete_multi_item": "{{number}} ta element mavjud",
+        "autocomplete_close": "Takliflarni yopish",
+        "forwarding_indicator": {
+          "new_window": "Yangi oynada ochiladi.",
+          "external": "Tashqi veb-saytni ochadi.",
+          "external_and_new_window": "Tashqi veb-saytni yangi oynada ochadi."
+        },
+        "checkout_context": {
+          "step_one": "%{shop_name} - To‘lov"
+        },
+        "tooltip_accessibility_label": "Batafsil ma'lumot",
+        "qr_code": "QR kodi",
+        "errors": {
+          "only_empty_terms_accepted": "Bu siyosat faqat boʻsh shartlarni qabul qiladi.",
+          "session_identifier_not_unique_error": "Buyurtmangizda nimadir xatolik yuz berdi, qayta tekshirib ko‘ring.",
+          "line_item_limit_reached": "Satr elementlarining maksimal soniga erishildi.",
+          "session_is_already_finished": "Bu toʻlov sessiyasi allaqachon yakunlangan.",
+          "merchandise": {
+            "only_value_constraint": "Tovar kiritishda faqat aniq qiymatlarga ruxsat beriladi.",
+            "merchandise_not_found": "Mahsulot topilmadi.",
+            "merchandise_variant_not_found": "Mahsulot varianti topilmadi.",
+            "merchandise_not_applicable": "Mahsulot variantini sotib bo'lmaydi.",
+            "mixed_currencies": "Hisob-kitobda turli valyutadagi qatorlar mavjud.",
+            "bundle_products_not_supported_for_b2b": "Toʻplamdagi mahsulotlarni bu joy uchun B2B buyurtmalariga qoʻshib boʻlmaydi.",
+            "gift_card_quantity_mismatch": "Sovg'a kartasi kodlarini belgilashda qator elementi miqdori va sovg'a kartasi kodlari soni mos kelishi kerak.",
+            "gift_card_not_supported": "Bu toʻlovda sovgʻa kartalari qoʻllab-quvvatlanmaydi.",
+            "gift_card_not_unique": "{{code}} kodli sovg'a kartasi bu to'lovda bir necha marta uchraydi. Taqqoslashdan oldin kodlar formatlanadi.",
+            "gift_card_used": "Sovg'a kartasi kodi {{code}} allaqachon sovg'a kartasiga tayinlangan. Taqqoslashdan oldin kodlar formatlanadi.",
+            "gift_card_invalid": "{{code}} sovg‘a kartasi kodi yaroqsiz.",
+            "gift_card_code_changed": "Sovg'a kartasi kodi {{proposed_code}} formatlash qoidalariga mos kelishi uchun {{formatted_code}} ga o'zgartirildi.",
+            "gift_card_with_attributes_not_supported": "Maxsus atributlarga ega sovgʻa kartalari bu toʻlovda qoʻllab-quvvatlanmaydi.",
+            "gift_card_with_components_not_supported": "Komponentli sovg‘a kartalari bu to‘lovda qo‘llab-quvvatlanmaydi.",
+            "selling_plan_mismatch": "Obuna yangilandi.",
+            "selling_plan_not_supported": "Obunalar qo‘llab-quvvatlanmaydi.",
+            "selling_plan_not_supported_b2b": "B2B to'lovi uchun obunalar qo'llab-quvvatlanmaydi.",
+            "price_mismatch": "Bu tovar uchun ilgari taklif qilingan narx haqiqiy emas va yangilangan.",
+            "inventory_not_found": "Bu tovar uchun inventar topilmadi.",
+            "product_not_published": "Mahsulot nashr etilmagan.",
+            "product_not_published_in_buyer_location": "Mahsulot xaridor joylashgan joyda chop etilmaydi.",
+            "duplicated_stable_id": "Bu tovar liniyasi boshqa qator bilan bir xil barqaror identifikatorga ega.",
+            "minimum_quantity_not_met": "Ayrim elementlarning miqdori minimal talabga javob bermaydi.",
+            "maximum_quantity_exceeded": "Ayrim elementlarning soni ruxsat etilgan maksimaldan oshib ketdi.",
+            "quantity_increment_not_met": "Ayrim mahsulotlar miqdori buyurtma chegaralariga mos kelmaydi.",
+            "quantity_rules_not_met": "Ayrim mahsulotlar miqdori buyurtma chegaralariga mos kelmaydi.",
+            "bundle_requires_components": "Ushbu to'plamda hech qanday tarkibiy qismlar mavjud emas.",
+            "title_too_long": "Tovar nomi juda uzun.",
+            "title_empty": "Tovar nomi boʻsh."
+          },
+          "buyer_identity": {
+            "business_customer_does_not_match_company": "Kompaniya aloqasi kompaniyaga kirish huquqiga ega emas.",
+            "customer_account_required": "Davom etish uchun tizimga kirishingiz kerak.",
+            "company_location_required": "Davom etish uchun mijoz kompaniya manzilini tanlashi kerak.",
+            "company_purchase_permission_required": "Mijozning kompaniya buyurtmalarini joylashtirishga ruxsati yo'q.",
+            "personal_order_not_allowed": "Ushbu do'kon uchun shaxsiy buyurtmalarga ruxsat berilmaydi.",
+            "lost_access_to_company": "Mijoz har qanday kompaniyaga kirish huquqini yo'qotdi.",
+            "contact_info_does_not_match_customer_account": "Kontakt maʼlumotlari siz kirgan hisobingizga mos kelishi kerak.",
+            "phone_number_does_not_match_expected_pattern": "Belgilangan telefon raqami kutilgan namunaga mos kelmaydi.",
+            "email_required": "Tovar obuna orqali sotib olinganda elektron pochta xabari talab qilinadi.",
+            "email_domain_is_invalid": "Ushbu ko'rsatilgan domenni hal qilib bo'lmaydi.",
+            "missing_contact_method": "Yaroqli aloqa usuli mavjud emas.",
+            "checkout_completion_target_is_missing": "Toʻlovni yakunlash maqsadi yoʻq.",
+            "invalid_customer_profile": "Yaroqsiz mijoz profili taqdim etildi.",
+            "customer_profile_access_restricted": "Checkout mijoz profiliga kirish uchun ruxsatga ega emas.",
+            "checkout_completion_target_is_invalid_proc": "To‘lovni yakunlash maqsadi noto‘g‘ri.",
+            "buyer_identity_presentment_currency_does_not_match": "Buyurtmangizni qayta ishlashda muammo yuz berdi. Bir necha daqiqadan so‘ng qayta urinib ko‘ring."
+          },
+          "delivery": {
+            "only_one_delivery_line_allowed": "Savatda faqat bitta etkazib berish liniyasi bo'lishi kerak.",
+            "wrong_number_of_delivery_lines": "Har bir tovar guruhi uchun yetkazib berish liniyasi belgilanishi kerak.",
+            "external_delivery_promise_error": "Tashqi yetkazib berish va'dasini olish xatosi.",
+            "options_instructions_invalid": "Belgilangan ko'rsatmalar kutilgan naqshga mos kelmaydi.",
+            "destination_address_required": "Davom etish uchun manzil manzili talab qilinadi.",
+            "pickup_points_unavailable": "Qabul qilish punktlari hozirda mavjud emas.",
+            "local_pickup_delivery_line_detail_changed": "Davom etish uchun joriy mahalliy olib ketish strategiyasini o‘zgartirish kerak.",
+            "selected_pickup_option_no_longer_available": "Oldin tanlangan olib ketish opsiyasi endi mavjud emas.",
+            "local_pickup_no_delivery_strategy_available": "Mahalliy olib ketish strategiyasi topilmadi.",
+            "origin_location_id_required": "CHAKKANA yetkazib berish usuli soʻralganda kelib chiqish manzili identifikatori talab qilinadi.",
+            "invalid_origin_location_id": "Manzil identifikatoriga mos keladigan joy topilmadi.",
+            "origin_location_id_not_allowed": "Talab qilingan yetkazib berish usullari manba manzili identifikatorini qo‘llab-quvvatlamaydi."
+          },
+          "fx_reconciliation_override": {
+            "shop_currency_mismatch": "Qabul qilingan miqdor do'kon valyutasida bo'lishi kerak."
+          },
+          "checkout_source": {
+            "revoked": "Bu toʻlov endi mavjud emas."
+          }
+        },
+        "full_price": "To'liq narx:",
+        "title": "Hisob-kitob - {{shopName}}",
+        "full_title": "{{pageTitle}} - {{shopName}} - Chiqish",
+        "loading": "Yuklanmoqda…",
+        "loading_title": "Hisob-kitob - {{shopName}}",
+        "google_map_title": "Google xaritasi",
+        "confirm_order_button_label": "Buyurtmani tasdiqlang",
+        "submit_order_button_label": "Buyurtma berish",
+        "submit_for_review_button_label": "Tekshirish uchun yuboring",
+        "submit_for_review_notice_label": "Buyurtmangiz tekshirilgunga qadar toʻlov amalga oshirilmaydi",
+        "continue_to_payment_plans_button_label": "Toʻlov rejalariga oʻting",
+        "back_button_label": "Qaytish",
+        "choose_delivery_strategy": "Yetkazib berish usulini tanlang",
+        "autocomplete_zero_item": "Hech narsa mavjud emas",
+        "autocomplete_powered_by_google": "{{brandName}} tomonidan quvvatlanadi",
+        "submit": "Yuborish",
+        "processing": "Qayta ishlanmoqda…",
+        "stepper": {
+          "increase": "{{type}} ni oshirish",
+          "decrease": "Kamaytirish {{type}}",
+          "minimum_reached": "Minimal {{value}} ga yetdi",
+          "maximum_reached": "Maksimal {{value}} ga yetdi"
+        },
+        "remove_chip": "Elementni olib tashlang",
+        "remove_item": "%{label}ni olib tashlash",
+        "remove_tag": "Tegni olib tashlang",
+        "dates": {
+          "weekdays": {
+            "monday": "dushanba",
+            "tuesday": "seshanba",
+            "wednesday": "chorshanba",
+            "thursday": "Payshanba",
+            "friday": "Juma",
+            "saturday": "shanba",
+            "sunday": "yakshanba"
+          },
+          "weekdays_abbreviation": {
+            "wednesday": "Biz"
+          },
+          "months": {
+            "january": "Yanvar",
+            "february": "Fevral",
+            "march": "mart",
+            "april": "aprel",
+            "may": "may",
+            "june": "iyun",
+            "july": "iyul",
+            "august": "Avgust",
+            "september": "sentyabr",
+            "october": "oktyabr",
+            "november": "Noyabr",
+            "december": "dekabr"
+          }
+        },
+        "datepicker": {
+          "show_previous_month": "Oʻtgan oyni koʻrsatish, {{month}} {{year}}",
+          "show_next_month": "Keyingi oyni ko'rsatish, {{month}} {{year}}",
+          "range_start": "Diapazon boshlanishi",
+          "in_range": "Diapazonda",
+          "range_end": "Diapazon oxiri"
+        },
+        "map": {
+          "cluster_title": {
+            "one": "{{number}} marker klasteri",
+            "other": "{{number}} belgilar klasteri"
+          }
+        },
+        "sheet": {
+          "expand": "Kengaytirish"
+        },
+        "dropzone": {
+          "add_file": "Fayl qo'shish",
+          "invalid_file_type": "Fayl turi qo'llab-quvvatlanmaydi",
+          "dragged_over": "Yuklash uchun faylni tashlang"
+        }
+      },
+      "contact": {
+        "title": "Ma'lumot",
+        "address_title": "Manzil",
+        "shipping_used_as_billing_notice": "Bu buyurtma uchun hisob-kitob manzili sifatida ham foydalaniladi.",
+        "delivery_option_title": "Yetkazib berish usuli",
+        "email_label": "Elektron pochta",
+        "email_placeholder": "Elektron pochta",
+        "email_or_phone_label": "Elektron pochta yoki mobil telefon raqami",
+        "email_or_phone_placeholder": "Elektron pochta yoki mobil telefon raqami",
+        "stored_addresses_label": "Saqlangan manzillar",
+        "available_addresses_label": "Mavjud manzillar",
+        "new_address_label": "Yangi manzildan foydalaning",
+        "first_name_label": "Ism",
+        "optional_first_name_label": "Ism (ixtiyoriy)",
+        "last_name_label": "Familiya",
+        "company_label": "Kompaniya",
+        "company_attention_label": "Kompaniya/Diqqat",
+        "optional_company_attention_label": "Kompaniya/Diqqat (ixtiyoriy)",
+        "optional_company_label": "Kompaniya (ixtiyoriy)",
+        "address1_label": "Manzil",
+        "address2_label": "Kvartira, suite va boshqalar.",
+        "optional_address2_label": "Kvartira, suit va boshqalar (ixtiyoriy)",
+        "city_label": "Shahar",
+        "country_label": "Mamlakat/mintaqa",
+        "country_code": "Mamlakat/mintaqa kodi",
+        "province_label": "Viloyat",
+        "province_placeholder": "Viloyat",
+        "county_label": "Tuman",
+        "county_placeholder": "Tuman",
+        "state_label": "Davlat",
+        "state_placeholder": "Davlat",
+        "region_label": "Mintaqa",
+        "region_placeholder": "Mintaqa",
+        "region_none": "Hech biri tanlanmagan",
+        "prefecture_label": "Prefektura",
+        "prefecture_placeholder": "Prefektura",
+        "governorate_label": "Gubernatorlik",
+        "governorate_placeholder": "Gubernatorlik",
+        "emirate_label": "Amirlik",
+        "emirate_placeholder": "Amirlik",
+        "state_and_territory_label": "Shtat/hudud",
+        "state_and_territory_placeholder": "Shtat/hudud",
+        "phone_label": "Telefon",
+        "optional_phone_label": "Telefon (ixtiyoriy)"
+      }
+    }
   }
 }
