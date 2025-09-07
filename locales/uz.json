@@ -1489,6 +1489,160 @@
           "and_return_to_checkout": "va Checkout-ga qayting",
           "cancel": "Bekor qilish"
         }
+      },
+      "note": {
+        "length_exceeds_maximum": "Eslatma hajmini 5000 yoki undan kam belgigacha kamaytiring."
+      },
+      "one": {
+        "errors": {
+          "merchandise": {
+            "gift_card_price_must_be_greater_than_zero": "Sovg'a kartasi narxi 0 dan katta bo'lishi kerak.",
+            "gift_card_price_must_not_exceed_limit": "Sovg‘a kartasi narxi %{gift_card_limit} dan oshmasligi kerak.",
+            "subtotal_limit_reached": "Satr elementlarining maksimal qiymatiga erishildi.",
+            "signature_mismatch": "%{stable_id} qatori uchun tovar imzosi mos kelmadi."
+          }
+        }
+      },
+      "units": {
+        "centimeter": "sm",
+        "pound": "funt",
+        "inch": "ichida",
+        "item": "element"
+      },
+      "memberships": {
+        "delivery_promise_unfulfillable": "Joriy aʼzolik uchun manzil qoʻllab-quvvatlanmaydi.",
+        "items_split_across_locations_unsupported": "Buyurtmangiz uchun asosiy yetkazib berish mavjud emas. Yetkazib berish opsiyalaringiz yangilandi."
+      },
+      "editor": {
+        "navigation": {
+          "store_logo_accessibility_label": "Onlayn do'konga o'ting"
+        }
+      },
+      "tooltip": {
+        "accessibility_label_context": "%{context} haqida koʻproq maʼlumot",
+        "additional_payment_methods": "Qo'shimcha to'lov usullari"
+      },
+      "payment": {
+        "delete_customer_mandate_modal_confirm": "Kartani olib tashlang",
+        "delete_customer_mandate_modal_cancel": "Bekor qilish",
+        "card_verification_value_label": "Xavfsizlik kodi",
+        "card_verification_value_placeholder": "Xavfsizlik kodi",
+        "card_verification_confirm": "Tasdiqlash uchun kartangizning xavfsizlik kodini kiriting.",
+        "card_expiry_date_explanation": "Kartaning amal qilish muddati formatda: oy, oy, yil, yil",
+        "card_expiration_month_label": "Yaroqlilik oyi",
+        "card_expiration_year_label": "Yaroqlilik muddati",
+        "card_verification_value_explanation": "3 xonali xavfsizlik kodi odatda kartangiz orqasida joylashgan. American Express kartalarining old tomonida 4 xonali kod mavjud.",
+        "card_verification_value_explanation_amex": "Kartangizning old tomonidagi 4 xonali xavfsizlik kodi",
+        "card_verification_value_explanation_other": "Kartangiz orqasidagi 3 xonali xavfsizlik kodi",
+        "card_start_label": "Chiqarilgan sana (MM / YY)",
+        "card_start_placeholder": "Chiqarilgan sana (MM / YY)",
+        "card_issue_number_label": "Ishlab chiqarish raqami",
+        "card_issue_number_placeholder": "Ishlab chiqarish raqami",
+        "card_change_label": "O'zgartirish",
+        "card_update_label": "Kartani yangilash",
+        "paypal_disconnect": "Ulanishni uzing",
+        "ends_with_label": "%{last_digits} bilan tugaydi",
+        "masked_digits_label": "•••• %{oxirgi_raqam}",
+        "payment_method_saved": "Toʻlov usuli saqlandi",
+        "card_vaulted_company_location": "Bu joy uchun karta saqlangan",
+        "expiry_long": "(Muddati tugaydi %{month}/%{year})",
+        "expiry_short": "(Muddati %{month}/%{year})",
+        "crypto_modal": {
+          "header": "%{shop_name} %{total_price} USDC toʻlang",
+          "error": {
+            "refresh": "Yangilash",
+            "close": "yaqin",
+            "sandbox_error": "Nimadir xato ketdi",
+            "web_component_error": "Bu sahifani yuklashda muammo yuz berdi"
+          }
+        },
+        "saved_by_payment_method": "Saqlangan: %{payment_method}",
+        "pay_with_payment_method": "%{payment_method} bilan toʻlash",
+        "different_credit_card_label": "Boshqa kredit kartadan foydalaning",
+        "same_billing_address_label": "Yuk tashish manzili bilan bir xil",
+        "different_billing_address_label": "Boshqa hisob-kitob manzilidan foydalaning",
+        "billing_address_associated_with_mandate": "Toʻlov usuli bilan bogʻlangan manzildan foydalaning",
+        "billing_address_associated_with_mandate_info": "Agar siz hisob-kitob manzilingizni o'zgartirmoqchi bo'lsangiz, kredit kartangiz ma'lumotlarini olib tashlang va qayta kiriting",
+        "free_order_notice_html": "Buyurtmangiz <strong>bepul</strong> . Hech qanday to'lov talab qilinmaydi.",
+        "express_checkout_free_order": "Bepul buyurtma uchun sizdan toʻlov olinmaydi",
+        "order_covered_by_gift_cards_notice": {
+          "one": "Buyurtmangiz sovg'a kartangiz bilan qoplangan.",
+          "other": "Buyurtmangiz sovg'a kartalaringiz bilan qoplangan."
+        },
+        "offsite_gateway_redirect_hint": "“%{button_label}” tugmasini bosganingizdan so‘ng, xaridni xavfsiz yakunlash uchun siz %{gateway_label} sahifasiga yo‘naltirilasiz.",
+        "offsite_gateway_review_page_redirect_hint": "Buyurtmani ko‘rib chiqqaningizdan so‘ng, xaridingizni xavfsiz yakunlash uchun siz %{gateway_label} saytiga yo‘naltirilasiz.",
+        "offsite_gateway_redirect_hint_multi_currency_html": "%{gateway_label} jami %{total_shop_price}",
+        "offsite_gateway_redirect_hint_no_button_label": "Davom etganingizdan so‘ng, xaridingizni xavfsiz yakunlash uchun siz %{gateway_label} sahifasiga yo‘naltirilasiz.",
+        "receiver_payment_experience_hint": "Buyurtmani joylashtirgandan so'ng, siz to'lov ma'lumotlarini olasiz. %{du_days} kun ichida Multibanco yoki onlayn toʻlovni amalga oshiring.",
+        "billing_address_title": "To'lovchi; to'lovni qabul qiladigan manzil",
+        "billing_address_rollup_accessibility_label": "Hisob-kitob manzili variantlari",
+        "billing_address_description": "Kartangizga yoki to'lov usulingizga mos keladigan manzilni tanlang.",
+        "billing_address_description_no_shipping_address": "Kartangizga yoki toʻlov usulingizga mos keladigan manzilni kiriting.",
+        "no_js_credit_card_fields_redirect_hint": "Siz toʻlov maʼlumotlarini qoʻshish uchun yoʻnaltirilasiz.",
+        "card_fields_container_prefix": "Dala konteyneri:",
+        "card_fields_unavailable_html": {
+          "one": "Kredit va debet kartalar bilan toʻlovlar hozirda mavjud emas.<br> <a href=\"%{current_url}\">Ushbu sahifani yangilang</a> yoki keyinroq qayta urinib ko'ring.",
+          "other": "Kredit va debet kartalar bilan toʻlovlar hozirda mavjud emas.<br> <a href=\"%{current_url}\">Bu sahifani yangilang</a> yoki boshqa toʻlov usulini sinab koʻring."
+        },
+        "card_fields_processing_error": "Toʻlovni qayta ishlashda muammo yuz berdi. Ushbu sahifani yangilab koʻring yoki internet aloqangizni tekshiring.",
+        "technical_error": "Texnik muammo tufayli toʻlovlarni hozirda amalga oshirib boʻlmaydi. Bir necha daqiqadan so‘ng qayta urinib ko‘ring.",
+        "no_method_error": "Bu doʻkon hozir toʻlovlarni qabul qila olmaydi.",
+        "not_configured_error": "Bu doʻkon hozir toʻlovlarni qabul qila olmaydi.",
+        "missing_credit_card_error": "To'lovni yakunlash uchun kartangiz ma'lumotlarini kiriting",
+        "shop_pay_ideal_unavailable_error": "Bu buyurtma uchun iDEAL mavjud emas. Boshqa toʻlov usulini tanlang.",
+        "payment_method_not_available_for_shipping_address_error": "Tanlangan yetkazib berish manzili uchun toʻlov usuli mavjud emas. Boshqa toʻlov usulini tanlang.",
+        "billing_address_not_supported_for_payment_method_error": "Bu toʻlov usuli hisob manzilingiz va valyutangiz uchun mavjud emas. Boshqa toʻlov usulini sinab koʻring.",
+        "generic_incorrect_card_info": "Toʻlov maʼlumotlaringiz tasdiqlanmadi. Karta maʼlumotlarini tekshiring va qayta urinib koʻring.",
+        "sofort_label": "Sofort bank o'tkazmasi",
+        "paypal_wallet_label": "PayPal hamyon",
+        "shop_pay_installments_label": "Bo'lib-bo'lib to'lash",
+        "paypal_modal": {
+          "order_contains_subscriptions": "Obuna",
+          "order_contains_fixed_selling_plans": "Jami soliqlar, yuk tashish, kechiktirilgan to'lovlar va ba'zi chegirmalarni o'z ichiga olmaydi. Bugun to'lanishi kerak bo'lgan miqdorni tekshirishda davom eting."
+        },
+        "klarna_pay_later_label": "Klarna bilan keyinroq toʻlang",
+        "klarna_pay_now_label": "Klarna bilan hozir toʻlang",
+        "multibanco_label": "Multibank",
+        "klarna_slice_it_label": "Klarna bilan moliya",
+        "ideal_label": "IDEAL",
+        "afterpay_label": "To'lovdan keyin",
+        "vipps_label": "Vipplar",
+        "kcp_creditcard_label": "KCP kredit kartasi",
+        "purchase_options_card_update_agreement_label_html": "Toʻlov usulingizni yangilash orqali siz ushbu doʻkonning <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{cancellation_policy}\" href=\"%{policy_href}\">bekor qilish siyosatiga</a> muvofiq har qanday takroriy yoki kechiktirilgan xaridlar uchun toʻlovlarga ruxsat berasiz.",
+        "subscription_card_update_agreement_label": "Toʻlov usuli oʻzgartirilsa, obuna va kelgusidagi takroriy toʻlovlar yangilanadi.",
+        "subscription_agreement_label": "Savatingizdagi bir yoki bir nechta mahsulot kechiktirilgan yoki obuna sotib olingan. Toʻlovni davom ettirish orqali siz toʻlov usuli tugaguncha yoki bekor qilmaguningizcha ushbu sahifada koʻrsatilgan narx va chastota boʻyicha avtomatik ravishda toʻlov olinishiga rozilik bildirasiz. Barcha bekor qilishlar %{cancelled}ga bog'liq.",
+        "subscription_agreement_cancelled": "bekor qilish siyosati",
+        "subscription_heading": "Obuna shartnomasi",
+        "subscription_agreement_label_html": "Men obunaga rozi ekanligimni tushunaman. U tugaguncha yoki tugaguniga qadar sanab o'tilgan narx va chastotada yangilanadi\n <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">bekor qilingan</a> .\n",
+        "purchase_options_agreement_label": "Savatingizdagi bir yoki bir nechta mahsulot kechiktirilgan yoki takroriy xariddir. Toʻlovni davom ettirish orqali siz toʻlov usuli tugaguncha yoki bekor qilmaguningizcha ushbu sahifada koʻrsatilgan narx va chastota boʻyicha avtomatik ravishda toʻlov olinishiga rozilik bildirasiz. Barcha bekor qilishlar %{cancellation_policy_label} bo‘ysunadi.",
+        "purchase_options_agreement_label_html": "Savatimdagi bir yoki bir nechta mahsulot kechiktirilgan yoki takroriy xarid ekanligini tushunaman. Davom etish orqali men rozilik bildiraman\n <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">bekor qilish siyosati</a>\n va mening to'lov usulimdan mengacha ushbu sahifada ko'rsatilgan narxlar, chastota va sanalar bo'yicha to'lovni amalga oshirishga ruxsat beraman\n buyurtma bajarildi yoki ruxsat berilsa, bekor qilaman.\n",
+        "purchase_options_agreement_label_wallets": "Toʻlovni davom ettirish orqali siz ushbu sahifada koʻrsatilgan kelajakdagi toʻlovlar va bekor qilish siyosatiga rozilik bildirasiz.",
+        "change_currency_section_description": "Valyuta variantini tanlang",
+        "no_real_orders_dev_store": "Bu doʻkon haqiqiy buyurtmalar yoki haqiqiy toʻlovlarni qabul qila olmaydi.",
+        "waiting_on_payment_methods": "Mavjud toʻlov usullari olinmoqda...",
+        "apple_pay_payment_error": "Toʻlovingiz tugallanmadi. Qaytadan urining yoki boshqa toʻlov usulidan foydalaning.",
+        "taxes_not_included": "Soliqlar kiritilmagan",
+        "no_taxes_banner_content": "Bu buyurtma uchun soliq olinmaydi. Toʻlovni yigʻib boʻlgach, soliqlarni boshqa qoʻshib boʻlmaydi.",
+        "paypal": {
+          "connect": "PayPal hisobingizni ulash uchun bosing"
+        },
+        "apple": {
+          "connect": "Apple Pay hisobingizni ulash uchun bosing",
+          "not_available": "Apple Pay ushbu brauzerda mavjud emas. Apple Pay hisobingizni ulash uchun Apple qurilmasida Safari-dan foydalanishingiz kerak."
+        },
+        "google": {
+          "connect": "Google Pay hisobingizga ulanish uchun bosing",
+          "error_authorizing": "Toʻlovga ruxsat berishda xatolik yuz berdi"
+        },
+        "account_connected": "Hisob ulangan.",
+        "mor_disclaimer_html": "Quyida bosish va buyurtmani bajarish orqali siz mahsulot(lar)ingizni Global-e’dan rekord sotuvchi sifatida sotib olishga rozilik bildirasiz.\n ushbu tranzaksiya uchun Global-e <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{mor_terms}\" href=\"%{terms_href}\">qoidalari va shartlariga</a> muvofiq\n va <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{privacy_policy}\" href=\"%{policy_href}\">Maxfiylik siyosati</a> . Global-e xalqaro\n %{shop_name} ga yetkazib berish xizmati provayderi\n",
+        "pending_payment": {
+          "due_notice": "%{amount_due} toʻlovingiz %{due_date} sanasida toʻlanadi.",
+          "multibanco": {
+            "buyer_action_info": "%{amount_due} toʻlash kerak.",
+            "instruction_html": "Toʻlovni Multibanco yoki quyidagi maʼlumotlardan foydalanib onlayn amalga oshiring. Savollar yoki toʻlov tafsilotlarini yangilash uchun %{contact_us}."
+          }
+        }
       }
     },
     "email_marketing": {
@@ -1596,6 +1750,116 @@
       "buyer_consent_product": "Bu mahsulot takroriy yoki kechiktirilgan xariddir. Davom etish orqali men %{cancellationPolicyLink}ga rozilik beraman va buyurtmam bajarilgunimcha yoki ruxsat berilsa, bekor qilgunimcha toʻlov usulimdan ushbu sahifada koʻrsatilgan narxlar, chastota va sanalarda toʻlov olishga ruxsat beraman.",
       "buyer_consent_cart": "Savatingizdagi mahsulotlardan biri yoki bir nechtasi takroriy yoki kechiktirilgan xariddir. Davom etish orqali men %{cancellationPolicyLink}ga rozilik beraman va buyurtmam bajarilgunimcha yoki ruxsat berilsa, bekor qilgunimcha toʻlov usulimdan ushbu sahifada koʻrsatilgan narxlar, chastota va sanalarda toʻlov olishga ruxsat beraman.",
       "cancellation_policy": "bekor qilish siyosati"
+    },
+    "pagination": {
+      "previous": "Oldingi",
+      "next": "Keyingisi"
+    },
+    "links": {
+      "powered_by_shopify": "Shopify tomonidan quvvatlanadi",
+      "learn_more": "Batafsil ma'lumot"
+    },
+    "feed": {
+      "more": "Ko'proq"
+    },
+    "attributes": {
+      "email": "elektron pochta",
+      "password": "parol",
+      "password_confirmation": "Parolni tasdiqlash",
+      "first_name": "ism",
+      "last_name": "familiyasi",
+      "body": "tanasi",
+      "signature": "Manzil"
+    },
+    "addresses": {
+      "zip_code": "Pochta indeksi",
+      "postal_code": "Pochta kodi",
+      "postcode": "Pochta indeksi",
+      "pincode": "PIN-kod",
+      "region": "Mintaqa",
+      "prefecture": "Prefektura",
+      "province": "Viloyat",
+      "state": "Davlat",
+      "state_and_territory": "Shtat/hudud",
+      "county": "Tuman",
+      "emirate": "Amirlik",
+      "governorate": "Gubernatorlik",
+      "confirm": "Haqiqatan ham bu manzilni oʻchirib tashlamoqchimisiz?"
+    },
+    "collections": {
+      "sorting": {
+        "manual": "Tavsiya etilgan",
+        "best_selling": "Eng yaxshi sotilgan",
+        "az": "Alifbo tartibida, AZ",
+        "za": "Alifbo tartibida ZA",
+        "price_ascending": "Narx, pastdan yuqoriga",
+        "price_descending": "Narx, yuqoridan pastgacha",
+        "date_ascending": "Sana, eskidan yangigacha",
+        "date_descending": "Sana, yangidan eskiga"
+      }
+    },
+    "errors": {
+      "blank": "bo'sh bo'lishi mumkin emas",
+      "blocked_address": "Bu joylashuv qo‘llab-quvvatlanmaydi",
+      "credit_card_session_expired": "Kredit karta avtorizatsiyasi muddati tugadi, toʻlov maʼlumotlarini qayta kiriting. Sizning kartangizdan to‘lov olinmagan.",
+      "empty": "bo'sh bo'lishi mumkin emas",
+      "invalid_email": "haqiqiy elektron pochta manzili bo'lishi kerak",
+      "discount_disabled": "Bu chegirma o‘chirib qo‘yilgan",
+      "discount_expired": "Bu chegirma endi amal qilmaydi",
+      "discount_limit_reached": "Ushbu chegirma o'zining foydalanish chegarasiga yetdi",
+      "discount_not_found": "Kiritilgan kodga mos chegirma topilmadi",
+      "customer_already_used_once_per_customer_discount_notice": "Ushbu chegirma o'zining foydalanish chegarasiga yetdi",
+      "gift_card_already_applied": "Kod allaqachon to'lovga qo'llanilgan",
+      "gift_card_code_invalid": "Kod yaroqsiz",
+      "gift_card_currency_mismatch": "Sovg‘a kartangiz %{gift_card_currency} da. Uni %{checkout_currency} da qayta chiqarish uchun biz bilan bog‘laning.",
+      "gift_card_depleted": "Ushbu sovg'a kartasida mablag' qolmagan",
+      "gift_card_disabled": "Sovg'a kartasi o'chirilgan",
+      "gift_card_expired": "Sovg'a kartasining muddati tugagan",
+      "invalid": "haqiqiy emas",
+      "bad_domain": "yaroqsiz domen nomi mavjud",
+      "taken": "allaqachon band",
+      "contains_html_tags": "HTML teglarini o'z ichiga olmaydi",
+      "too_short": "juda qisqa (minimal %{count} ta belgidan iborat)",
+      "too_long": "juda uzun (maksimal %{count} ta belgidan iborat)",
+      "password_mismatch": "berilgan parolga mos kelishi kerak",
+      "contains_spaces": "bo'shliqlar bilan boshlanadi yoki tugaydi.",
+      "email_domain_invalid": "provayder qo'llab-quvvatlanmaydi",
+      "invalid_for_country": "%{country} uchun amal qilmaydi",
+      "invalid_for_country_and_province": "%{province} va %{country} uchun yaroqsiz",
+      "invalid_province_in_country": "%{country}da yaroqli viloyat emas",
+      "invalid_state_in_country": "%{country}da yaroqsiz holat",
+      "invalid_region_in_country": "%{country}da yaroqli hudud emas",
+      "less_than_or_equal_to": "%{count} dan kichik yoki teng boʻlishi kerak",
+      "not_supported": "qo'llab-quvvatlanmaydi",
+      "full_name_required": "Ism va familiyani kiriting",
+      "invalid_for_card_type": "haqiqiy emas",
+      "invalid_type": "Kechirasiz, biz bunday turdagi kartalarni qabul qilmaymiz",
+      "invalid_format": "format haqiqiy emas",
+      "expired": "muddati tugagan",
+      "invalid_start_date_or_issue_number_for_debit": "haqiqiy boshlanish sanasi yoki nashr raqami talab qilinadi",
+      "invalid_expiry_year": "amal qilish muddati tugaydigan yil emas",
+      "reset_password_html": "Bu elektron pochta manzili allaqachon hisob bilan bog'langan. Agar bu hisob sizniki bo'lsa, <a href=\"/account/login#recover\">parolingizni qayta o'rnatishingiz</a> mumkin",
+      "verify_email": "Biz %{customer_email} manziliga xat yubordik, elektron pochta manzilingizni tasdiqlash uchun ilova qilingan havolani bosing.",
+      "product_not_available": "mahsulot bu mijoz uchun chop etilmagan.",
+      "shop_404": {
+        "title": "Elektron tijorat veb-saytini yarating va onlayn soting! Shopify tomonidan elektron tijorat dasturi",
+        "heros": {
+          "store_unavailable": "Kechirasiz, bu do‘kon hozirda mavjud emas.",
+          "store_not_exist": "Bu do'kon mavjud emas.",
+          "no_storefront": "Bu doʻkonning hali veb-sayti yoʻq."
+        },
+        "links": {
+          "explore_other_stores": "Boshqa do'konlarni o'rganing",
+          "start_free_trial": "Bepul sinov muddatini boshlang"
+        },
+        "owner_ctas": {
+          "header": "Siz do'kon egasimisiz?",
+          "fix_domain": "Yangi veb-manzilingizni sozlashni tugating, %{domain_settings_link} sahifasiga o‘ting. “Domenni ulash” tugmasini bosing va kiriting: %{domain}.<br> Agar doʻkoningizga kirishda muammoga duch kelsangiz, %{forgot_your_store_link} sahifasini sinab koʻring.",
+          "fix_domain_link_text": "domeningiz sozlamalari",
+          "forgot_your_store_link_text": "do'koningizni unutdingiz",
+          "add_storefront": "%{admin_link} sahifangizga Onlayn doʻkon kanalini qoʻshish orqali veb-saytingizni sozlashingiz mumkin. Agar doʻkoningizga kirishda muammoga duch kelsangiz, %{forgot_your_store_link} sahifasini sinab koʻring."
+        }
+      }
     }
   },
   "customer_accounts": {
