@@ -779,6 +779,294 @@
         "state_and_territory_placeholder": "Shtat/hudud",
         "phone_label": "Telefon",
         "optional_phone_label": "Telefon (ixtiyoriy)"
+      },
+      "payment_gateway": {
+        "generic_payment_terms": "Siz {{translatedName}} shartlaridasiz. Toʻlovingiz {{dueDate}} sanasida toʻlanadi.",
+        "login_prompt": {
+          "no_access": {
+            "message": "Saqlangan toʻlov usullarini qoʻshish yoki undan foydalanish uchun ushbu manzilga kirish huquqiga ega hisobingizga {{logIn}} .",
+            "link": "Tizimga kirish"
+          }
+        },
+        "direct_payment_terms": "Siz {{translatedName}} shartlaridasiz. Kartangizdan to‘lov {{dueDate}} sanasida olinadi.",
+        "fixed_direct_payment_terms": "Kartangizdan to‘lov {{dueDate}} sanasida olinadi.",
+        "order_due_on_fulfillment_choose_later": "Buyurtma bajarilgandan so'ng sizning to'lovingiz to'lanadi.",
+        "order_due_on_fulfillment_payment": "Buyurtma bajarilgandan so'ng kartangizdan to'lov olinadi.",
+        "order_due_on_receipt_choose_later": "Sizning to'lovingiz qabul qilinganda to'lanadi.",
+        "order_deposit_due_now": "Bugun {{depositAmount}} toʻlanadi. Balans {{translatedName}} shartlariga muvofiq va {{dueDate}} sanasida to‘lanadi.",
+        "order_deposit_due_on_fulfillment": "Bugun {{depositAmount}} toʻlanadi. Buyurtma bajarilgandan so'ng balans to'lanadi.",
+        "order_deposit_due_on_receipt": "Bugun {{depositAmount}} toʻlanadi. Balans keyinroq to'lanadi.",
+        "order_deposit_due_on_fixed_date": "Bugun {{depositAmount}} toʻlanadi. Balans {{dueDate}} sanasida to‘lanadi.",
+        "draft_order_payment_due_later_no_terms": "Buyurtma tasdiqlangach, toʻlovingiz toʻlanadi.",
+        "draft_order_payment_due_later_no_terms_payment_selected": "Buyurtma tasdiqlangach, kartangizdan to‘lov olinadi.",
+        "draft_order_payment_due_later_terms": "Buyurtma tasdiqlangach, siz {{translatedName}} shartlariga amal qilasiz.",
+        "draft_order_payment_due_on_fulfillment": "Buyurtmangiz tasdiqlangan va bajarilgandan so'ng to'lovingiz amalga oshiriladi.",
+        "draft_order_deposit_due_later": "Buyurtma tasdiqlanganda {{depositAmount}} toʻlanadi. Balans {{translatedName}} shartlariga muvofiq bo‘ladi.",
+        "draft_order_deposit_due_on_fulfillment": "Buyurtma tasdiqlanganda {{depositAmount}} toʻlanadi. Balans sizning buyurtmangiz bajarilgandan so'ng bo'ladi."
+      },
+      "thank_you": {
+        "title": "Xaridingiz uchun rahmat!",
+        "confirmation_email_sent_text": "Tasdiqlash xati %{email} manziliga yuborildi",
+        "return_to_store_link_label": "Xarid qilishda davom eting",
+        "print_link_label": "Kvitansiyani chop etish",
+        "payment_information_title": "To'lov ma'lumotlari",
+        "shipping_information_title": "Yuk tashish ma'lumotlari",
+        "page_title": "Rahmat, %{display_name}!",
+        "page_title_no_name": "Rahmat!",
+        "purchase_order_number_title": "PO raqami #%{buyurtma_raqami}",
+        "cancelled_page_title": "Buyurtma bekor qilindi",
+        "failed_pending_payment_page_title": "Toʻlovingizda muammo bor",
+        "customer_information_title": "Buyurtma tafsilotlari",
+        "contact_information_title": "Bog'lanish uchun ma'lumot",
+        "billing_address_title": "To'lovchi; to'lovni qabul qiladigan manzil",
+        "company_location_title": "Joylashuv",
+        "shipping_address_title": "Yetkazib berish manzili",
+        "shipping_address_map_title": "Yuk tashish manzilining aniq nuqtasini ko'rsatadigan Google xaritasi: %{address}",
+        "payment_method_title": "To'lov usuli",
+        "shipping_method_title": "Yuk tashish usuli",
+        "tracking_number": "Joylashuvni kuzatish raqami:",
+        "company_tracking_number": "%{company} kuzatuv raqami:",
+        "estimated_arrival": "Taxminiy yetkazib berish sanasi: ",
+        "estimated_delivery": "Joriy yetkazib berish taxmini: ",
+        "re-order": "Xuddi shu narsalarni qayta buyurtma qiling",
+        "confirmed": "Tasdiqlangan",
+        "confirmed_items_count": "%{total_count} ta elementning %{confirmed_count} tasi tasdiqlandi",
+        "gift_card_confirmation_by_text": "Agar siz uni olmagan bo'lsangiz, matnni qayta yuboring yoki biz bilan bog'laning.",
+        "gift_card_confirmation_by_email": "Agar siz uni olmagan bo'lsangiz, elektron pochta xabarini qayta yuboring yoki biz bilan bog'laning.",
+        "gift_card_title": "Sovg'a kartalari",
+        "resend_gift_cards": "Sovg'a kartalarini qayta yuboring",
+        "thank_you_title": "Buyurtmangiz tasdiqlandi",
+        "thank_you_title_payment": "Toʻlovingiz tasdiqlandi",
+        "thank_you_title_review": "Buyurtmangiz ko'rib chiqish uchun yuborildi",
+        "thank_you_title_payments_app_pending_default": "Toʻlovingiz qayta ishlanmoqda",
+        "thank_you_title_payments_app_pending_buyer_action_required": "Buyurtmangiz qabul qilindi",
+        "thank_you_title_payments_app_failed_pending_payment": "Toʻlovingizni amalga oshirib boʻlmadi",
+        "thank_you_confirmed_order_with_email": "Tez orada buyurtma raqamingiz bilan tasdiqlovchi elektron pochta xabarini olasiz.",
+        "thank_you_confirmed_order_with_phone": "Tez orada buyurtma raqamingiz bilan tasdiqlovchi matnni olasiz.",
+        "thank_you_confirmed_order_with_email_and_phone": "Tez orada buyurtma raqamingiz bilan tasdiqlovchi elektron pochta xabarini olasiz.",
+        "thank_you_confirmed_orders_with_email": "Tez orada buyurtma raqamlari bilan alohida tasdiqlovchi elektron pochta xabarlarini olasiz",
+        "thank_you_confirmed_orders_with_phone": "Tez orada buyurtma raqamlari bilan alohida tasdiqlash matnlarini olasiz",
+        "thank_you_confirmed_orders_with_email_and_phone": "Tez orada buyurtma raqamlari bilan alohida tasdiqlovchi elektron pochta xabarlarini olasiz",
+        "thank_you_confirmed_order_with_email_payment": "%{date} buyurtmangiz boʻyicha toʻlovni amalga oshirdingiz.",
+        "thank_you_confirmed_order_with_phone_payment": "%{date} buyurtmangiz boʻyicha toʻlovni amalga oshirdingiz.",
+        "thank_you_confirmed_order_with_email_and_phone_payment": "%{date} buyurtmangiz boʻyicha toʻlovni amalga oshirdingiz.",
+        "thank_you_confirmed_order_with_email_pick_up": "Buyurtma olib ketishga tayyor boʻlganda, sizga e-pochta orqali xabar keladi.",
+        "thank_you_confirmed_order_with_phone_pick_up": "Buyurtma olib ketishga tayyor boʻlganda sizga xabar keladi.",
+        "thank_you_confirmed_order_with_email_and_phone_pick_up": "Buyurtma olib ketishga tayyor boʻlganda, sizga e-pochta orqali xabar keladi.",
+        "thank_you_confirmed_order_with_missing": "Buyurtmani tasdiqlash uchun elektron pochta yoki telefon orqali biz bilan bog'laning.",
+        "thank_you_confirmed_order_with_missing_payment": "Buyurtmani tasdiqlash uchun elektron pochta yoki telefon orqali biz bilan bog'laning.",
+        "thank_you_confirmed_order_with_missing_pick_up": "Buyurtmani tasdiqlash uchun elektron pochta yoki telefon orqali biz bilan bog'laning.",
+        "thank_you_confirmed_order_with_draft": "Agar bizga qoʻshimcha maʼlumot kerak boʻlsa yoki buyurtmangiz tasdiqlanganda sizga xabar beramiz.",
+        "thank_you_confirmed_order_with_draft_payment": "Agar bizga qoʻshimcha maʼlumot kerak boʻlsa yoki buyurtmangiz tasdiqlanganda sizga xabar beramiz.",
+        "thank_you_confirmed_order_with_draft_pick_up": "Agar bizga qoʻshimcha maʼlumot kerak boʻlsa yoki buyurtmangiz tasdiqlanganda sizga xabar beramiz.",
+        "thank_you_unconfirmed_items_heading": {
+          "one": "Element tasdiqlanmagan",
+          "other": "Ba'zi elementlar tasdiqlanmagan"
+        },
+        "thank_you_unconfirmed_items_description": {
+          "one": "Buning uchun sizdan to‘lov olinmagan",
+          "other": "Bular uchun sizdan to‘lov olinmagan"
+        },
+        "thank_you_item_label": {
+          "one": "%{count} element",
+          "other": "%{count} ta element"
+        },
+        "thank_you_from_shop": "%{shop_name}dan",
+        "thank_you_payments_app_failed_pending_payment": "Buyurtmangiz uchun sizdan to‘lov olinmagan. Buyurtmani ko'rib chiqish va qayta to'lash uchun savatga qayting.",
+        "thank_you_payments_app_failed_pending_payment_payment": "Buyurtmangiz uchun sizdan to‘lov olinmagan. Buyurtmani ko'rib chiqish va qayta to'lash uchun savatga qayting.",
+        "thank_you_payments_app_failed_pending_payment_pick_up": "Buyurtmangiz uchun sizdan to‘lov olinmagan. Buyurtmani ko'rib chiqish va qayta to'lash uchun savatga qayting.",
+        "thank_you_payments_app_pending_payment_description_default_with_missing": "Buyurtmani tasdiqlash uchun elektron pochta yoki telefon orqali biz bilan bog'laning.",
+        "thank_you_payments_app_pending_payment_description_default_with_missing_payment": "Buyurtmani tasdiqlash uchun elektron pochta yoki telefon orqali biz bilan bog'laning.",
+        "thank_you_payments_app_pending_payment_description_default_with_missing_pick_up": "Buyurtmani tasdiqlash uchun elektron pochta yoki telefon orqali biz bilan bog'laning.",
+        "thank_you_payments_app_pending_payment_description_default_with_email_and_phone": "Tez orada buyurtma raqamingiz bilan tasdiqlovchi elektron pochta xabarini olasiz.",
+        "thank_you_payments_app_pending_payment_description_default_with_email_and_phone_payment": "Tez orada buyurtma raqamingiz bilan tasdiqlovchi elektron pochta xabarini olasiz.",
+        "thank_you_payments_app_pending_payment_description_default_with_email_and_phone_pick_up": "Tez orada buyurtma raqamingiz bilan tasdiqlovchi elektron pochta xabarini olasiz.",
+        "thank_you_payments_app_pending_payment_description_default_with_email": "Tez orada buyurtma raqamingiz bilan tasdiqlovchi elektron pochta xabarini olasiz.",
+        "thank_you_payments_app_pending_payment_description_default_with_email_payment": "Tez orada buyurtma raqamingiz bilan tasdiqlovchi elektron pochta xabarini olasiz.",
+        "thank_you_payments_app_pending_payment_description_default_with_email_pick_up": "Tez orada buyurtma raqamingiz bilan tasdiqlovchi elektron pochta xabarini olasiz.",
+        "thank_you_payments_app_pending_payment_description_default_with_phone": "Tez orada buyurtma raqamingiz bilan tasdiqlovchi matnni olasiz.",
+        "thank_you_payments_app_pending_payment_description_default_with_phone_payment": "Tez orada buyurtma raqamingiz bilan tasdiqlovchi matnni olasiz.",
+        "thank_you_payments_app_pending_payment_description_default_with_phone_pick_up": "Tez orada buyurtma raqamingiz bilan tasdiqlovchi matnni olasiz.",
+        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_missing": "Buyurtmani tasdiqlash uchun elektron pochta yoki telefon orqali biz bilan bog'laning.",
+        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_missing_payment": "Buyurtmani tasdiqlash uchun elektron pochta yoki telefon orqali biz bilan bog'laning.",
+        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_missing_pick_up": "Buyurtmani tasdiqlash uchun elektron pochta yoki telefon orqali biz bilan bog'laning.",
+        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_email_and_phone": "To‘lovni amalga oshirgandan so‘ng, sizga buyurtma raqamingiz bilan tasdiqlovchi xat keladi.",
+        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_email_and_phone_payment": "To‘lovni amalga oshirgandan so‘ng, sizga buyurtma raqamingiz bilan tasdiqlovchi xat keladi.",
+        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_email_and_phone_pick_up": "To‘lovni amalga oshirgandan so‘ng, sizga buyurtma raqamingiz bilan tasdiqlovchi xat keladi."
+      },
+      "review": {
+        "blocks": {
+          "no_address": "(Manzil yo'q)",
+          "no_purchase_order_number": "(PO raqami yo'q)",
+          "due_after_order_reviewed_html": "Buyurtma ko'rib chiqilgandan keyin to'lanadi",
+          "review_title_free_order": "Buyurtmangizni ko'rib chiqing va yakunlang",
+          "payment_method_saved_company_location": "Ushbu joylashuv uchun kartani saqlang",
+          "company_location": "Kompaniyaning joylashuvi"
+        },
+        "block_title": "Ma'lumotlaringizni ko'rib chiqing",
+        "item_header": {
+          "change_value": "Qiymatni o'zgartirish",
+          "section": "Bo'lim",
+          "value": "Qiymat"
+        }
+      },
+      "marketing": {
+        "accept_marketing_checkbox_label": "Yangiliklar va takliflar bilan menga elektron pochta orqali xabar yuboring",
+        "post_accept_marketing_checkbox_label": "Siz elektron pochta xabarlari va takliflarini olishga obuna bo'ldingiz",
+        "pending_accept_marketing_checkbox_label": "Yangiliklar va takliflarga obuna bo'lganingizni tasdiqlash uchun elektron pochtangizni tekshiring",
+        "accept_sms_checkbox_label": "Yangiliklar va takliflar bilan menga SMS yuboring",
+        "disclaimer": {
+          "privacy_policy": "Maxfiylik siyosati",
+          "terms_of_service": "Xizmat shartlari"
+        },
+        "sms": {
+          "disclaimer": {
+            "privacy_policy": "Maxfiylik siyosati",
+            "terms_of_service": "Xizmat shartlari",
+            "description_html": "Matn orqali ro'yxatdan o'tish orqali siz ko'rsatilgan telefon raqamiga takroriy avtomatlashtirilgan marketing xabarlarini, jumladan, savat eslatmalarini olishga rozilik bildirasiz. Rozilik sotib olish sharti emas. Obunani bekor qilish uchun STOP deb javob bering. Yordam uchun HELP deb javob bering. Xabar chastotasi farq qiladi. Xabar va internet tariflari olinishi mumkin. %{privacy_policy_link} va %{terms_of_service_link} bilan tanishing.",
+            "description_transactional_html": "Buyurtmani tasdiqlash va jo'natish yangiliklari bilan bog'liq matnli xabarlarni olishingiz mumkin. Obunani bekor qilish uchun STOP deb javob bering. Yordam uchun HELP deb javob bering. Xabar chastotasi farq qiladi. Xabar va internet tariflari olinishi mumkin. %{privacy_policy_modal_link} va %{terms_of_service_modal_link} bilan tanishing."
+          },
+          "mobile_phone_number": "Mobil telefon raqami",
+          "get_offers_by_text": "Takliflarni matn orqali oling"
+        },
+        "unsubscribe": {
+          "title": "Obunani bekor qildingiz",
+          "description": "Bizdan boshqa savat eslatmalarini olmaysiz."
+        },
+        "accept_shop_pay_marketing_checkbox_label": "Ushbu do'kondan yangiliklar va takliflar uchun meni ro'yxatdan o'tkazing"
+      },
+      "shop_policies": {
+        "policy_label": "Siyosat",
+        "policies_label": "Siyosat",
+        "select_policy_label": "Siyosatni tanlang",
+        "refund_policy": "To'lovni qaytarish siyosati",
+        "privacy_policy": "Maxfiylik siyosati",
+        "terms_of_service": "Xizmat ko'rsatish shartlari",
+        "legal_notice": "Yuridik bildirishnoma",
+        "shipping_policy": "yuk tashish; yetkazib berish",
+        "terms_of_sale": "Sotish shartlari",
+        "subscription_policy": "Bekor qilish",
+        "purchase_options_policy": "Sotib olish imkoniyatlari siyosati",
+        "purchase_options_cancellation_policy": "Bekor qilish",
+        "cookie_preferences": "Cookie-fayllar"
+      },
+      "mor_policies": {
+        "terms_and_conditions": "Savdogarning rekord qoidalari va shartlari",
+        "privacy_policy": "Merchant of Record Maxfiylik siyosati"
+      },
+      "markets": {
+        "invalid_market_manager_error": "To'lovni yakunlashdan oldin aloqa ma'lumotlarini ko'rib chiqing"
+      },
+      "notifications": {
+        "title": "Bildirishnomalar"
+      },
+      "order_payment_collection": {
+        "custom_line_item_description": "%{order_name} buyurtmasi uchun toʻlanadigan summa",
+        "changes_summary": {
+          "added": {
+            "one": "Qo'shilgan",
+            "other": "%{count} qo‘shildi"
+          },
+          "removed": "Oʻchirildi",
+          "subtracted": "Oʻchirildi: %{count}",
+          "returned": "Qaytarildi %{count}",
+          "return_line_item_removed": "Qaytishdan %{count} olib tashlandi"
+        },
+        "additional_payment_requested": "%{total_outstanding} toʻlash kerak",
+        "checkout_review_and_pay": "Buyurtmangiz %{order_name} yangilandi. Bu oʻzgarishlarni koʻrib chiqing, soʻngra buyurtmangizni tasdiqlash uchun toʻlang.",
+        "order_updated_on": "Buyurtmangiz %{last_edited_at} da yangilandi.",
+        "order_review_and_pay": "Buyurtmangiz yangilandi. Buyurtmani tasdiqlash uchun ko'rib chiqing va to'lang.",
+        "pay_now": "Hozir toʻlang"
+      },
+      "change_currency": {
+        "credit_card_will_be_charged_html": "Kredit kartangizdan %{amount} undiriladi",
+        "payment_total_label": "Jami to'lov",
+        "change_currency_link": "%{currency_name} ga o‘zgartirish",
+        "card_provider_fx_charges_warning": "Karta provayderingiz %{currency_code} tranzaksiyalari uchun haq olishi mumkin.",
+        "currency_not_supported_by_shop": "Siz tanlagan valyuta endi mavjud emas. Barcha narxlar endi %{currency_code} da."
+      },
+      "change_country": {
+        "cart_updated_based_on_country": "Savatingiz yetkazib berilgan mamlakatga qarab yangilandi.",
+        "cart_and_currency_updated_based_on_country": "Savatingiz va valyutangiz yetkazib berish mamlakatingizga qarab yangilandi."
+      },
+      "change_cart_localization": {
+        "verify_shipping_address": "Mamlakatingiz/mintaqangiz yangilandi. To‘lovni davom ettirish uchun yetkazib berish manzilingizni kiriting."
+      },
+      "tips": {
+        "title": "Maslahat qo'shing",
+        "description": "%{shop_name} orqali jamoani qoʻllab-quvvatlang.",
+        "presets_description": "Maslahat foizini tanlang",
+        "custom_label": "Maxsus maslahat",
+        "add_tip": "Maslahat qo'shing",
+        "update_tip": "Maslahatni yangilash",
+        "message": "Rahmat, biz buni qadrlaymiz.",
+        "no_tip_label": "Yo'q"
+      },
+      "open_graph_meta_tag": {
+        "title_with_products": {
+          "zero": "%{product_name} xarid qilish",
+          "one": "%{product_name} va yana %{count} ta mahsulotni xarid qiling",
+          "other": "%{product_name} va boshqa %{count} ta mahsulotni xarid qiling"
+        }
+      },
+      "subscriptions": {
+        "recurring_total_intervals": {
+          "day": {
+            "one": "kun",
+            "other": "%{count} kun"
+          },
+          "week": {
+            "one": "hafta",
+            "other": "%{count} hafta"
+          },
+          "month": {
+            "one": "oy",
+            "other": "%{count} oy"
+          },
+          "year": {
+            "one": "yil",
+            "other": "%{count} yil"
+          }
+        },
+        "recurring_totals": "%{total_price} har %{interval}",
+        "recurring_totals_with_initial_order_shipping_discount": "Birinchi toʻlov %{total_price_with_discount}, keyin %{recurring_total}",
+        "recurring_totals_with_policies": {
+          "first_cycles": {
+            "one": "Birinchi toʻlov %{total_price}",
+            "other": "Birinchi %{count} toʻlov har biri %{total_price}"
+          },
+          "following_cycles": ", keyin har %{intervalda %{total_price}"
+        },
+        "recurring_totals_with_initial_order_shipping_discount_with_policies": {
+          "first_cycles": {
+            "one": ", keyin %{count} toʻlovi %{total_price} boʻyicha",
+            "other": ", keyin har biri %{total_price} bo‘lgan %{count} to‘lov"
+          }
+        }
+      },
+      "customer_payment_methods": {
+        "page_title": "To'lov usullari",
+        "title": "To'lov usullari",
+        "update_card_button_label": "Kartani yangilash",
+        "delete_customer_mandate": {
+          "generic_error": "So‘rovingizni ko‘rib chiqishda muammo yuz berdi.",
+          "success_message": "Toʻlov usulingiz muvaffaqiyatli oʻchirildi"
+        }
+      },
+      "throttle": {
+        "too_many_attempts": {
+          "message": "Juda koʻp urinishlar",
+          "description": "Iltimos, bir necha daqiqadan so‘ng qayta urinib ko‘ring"
+        },
+        "line_to_check_out": "Chiqish uchun navbatda turibsiz",
+        "cart_summary_heading": "Sizning savatingiz",
+        "merchandise": {
+          "available": "Mavjud",
+          "sold_out": "Sotildi"
+        },
+        "inventory": {
+          "partial_inventory_banner": "Savatingizning bir qismi sotilgan va uni kassada xarid qilib bo‘lmaydi."
+        }
       }
     }
   }
