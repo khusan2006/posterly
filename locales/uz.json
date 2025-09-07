@@ -2250,7 +2250,153 @@
       "location_selection": {
         "continue_to_store": "Saqlashda davom eting",
         "description": "Agar savatingizda allaqachon narsalar bo'lsa, joyni o'zgartirish savat narxi va miqdoriga ta'sir qilishi mumkin.",
-        "description_switch_later": "Siz istalgan vaqtda keyinroq almashishingiz mumkin"
+        "description_switch_later": "Siz istalgan vaqtda keyinroq almashishingiz mumkin",
+        "list_accessibility_label": "Joylar ro'yxati",
+        "list_item_without_address_accessibility_label": "{{name}} : Manzil yo'q",
+        "list_loading_accessibility_message": "Joylar roʻyxati yuklanmoqda",
+        "list_loading_address_accessibility_message": "{{locationName}} manzili yuklanmoqda",
+        "list_loading_finished_accessibility_message": "Joylar roʻyxati yuklandi",
+        "loading_store_accessibility_message": "Do'konga borish",
+        "no_location_title": "Faqat shaxsiy buyurtmalar",
+        "no_location_description": "Siz endi {{company}} kompaniyasiga buyurtma berish huquqiga ega emassiz. Siz hali ham shaxsiy buyurtma berishingiz mumkin.",
+        "no_locations_found": "Hech qanday joy topilmadi",
+        "search": "Joylarni qidirish",
+        "search_location_title": "Joyni tanlang",
+        "selection_cancel_button": "Bekor qilish",
+        "selection_confirmation_button": "Joyni tanlang",
+        "selection_continue_button": "Davom eting",
+        "title": "Qaysi joy uchun xarid qilyapsiz?",
+        "title_choose_location": "Joyni tanlang",
+        "clear_search": "Qidiruvni tozalash",
+        "try_new_search": "Yangi qidiruvni sinab ko'ring"
+      },
+      "addresses": {
+        "add_billing_address_button": "Hisob-kitob manzilini qo'shing",
+        "add_billing_address_section_accessibility_label": "Hisob-kitob manzilini qo'shing",
+        "add_shipping_address_button": "Yetkazib berish manzilini qo'shing",
+        "add_shipping_address_section_accessibility_label": "Yetkazib berish manzilini qo'shing",
+        "billing_address_card_title": "To'lovchi; to'lovni qabul qiladigan manzil",
+        "cancel_adding_billing_address_accessibility_label": "Toʻlov manzilini qoʻshishni bekor qiling",
+        "cancel_adding_shipping_address_accessibility_label": "Yetkazib berish manzilini qo'shishni bekor qiling",
+        "save_new_billing_address_accessibility_label": "Hisob-kitob manzilini saqlang",
+        "save_new_shipping_address_accessibility_label": "Yetkazib berish manzilini saqlang",
+        "shipping_address_card_title": "Yetkazib berish manzili"
+      },
+      "orders": {
+        "draft_order_list": {
+          "hide_all": "Hammasini yashirish",
+          "show_all": "Hammasini ko'rsatish",
+          "hide_all_accessibility_label": "Ko'rib chiqilayotgan barcha buyurtmalarni yashirish",
+          "show_all_accessibility_label": "Barcha buyurtmalarni ko'rib chiqishda ko'rsatish",
+          "show_all_orders_in_review": "Barcha buyurtmalarni ko'rib chiqishda ko'rsatish",
+          "show_less_orders_in_review": "Ko'rib chiqishda kamroq buyurtmalarni ko'rsatish",
+          "title": "Kutilmoqda",
+          "pending_tab_accessibility_label": {
+            "no_pending_orders": "Sizda kutilayotgan buyurtma yo‘q",
+            "pending_orders": {
+              "one": "Sizda kutilayotgan {{count}} ta buyurtma bor",
+              "other": "Sizda kutilayotgan {{count}} ta buyurtma bor"
+            },
+            "more_than_pagination_length": "Sizda {{count}} tadan ortiq kutilayotgan buyurtma bor"
+          },
+          "pending_orders_count_more_than_pagination_length": "{{count}} +",
+          "pagination": {
+            "nav_accessibility_label": "Ko'rib chiqish navigatsiya tugmalaridagi buyurtmalar"
+          }
+        },
+        "order_list_column_headers_location": "Joylashuv",
+        "removed_company_contact_tooltip": "Kompaniyadan olib tashlangan"
+      },
+      "draft_order_details": {
+        "draft_order_subtitle": "{{draftOrderName}} buyurtmasidan {{date}} sanasi tasdiqlandi",
+        "loading": "Buyurtma tafsilotlari yuklanmoqda",
+        "loading_finished_accessibility_message": "Buyurtma tafsilotlari yuklandi",
+        "payment_status": {
+          "pending": {
+            "banner_overdue": {
+              "one": "Toʻlov muddati {{count}} kunga kechiktirildi",
+              "other": "Toʻlov muddati {{count}} kunga kechiktirildi"
+            },
+            "banner_due": {
+              "one": "Toʻlovingiz {{count}} kundan keyin toʻlanadi",
+              "other": "Toʻlovingiz {{count}} kundan keyin toʻlanadi"
+            },
+            "banner_due_today": "Toʻlovingiz bugun toʻlanadi",
+            "title": "To'lov muddati",
+            "title_with_date": "Toʻlov muddati {{date}}",
+            "title_due_on_receipt": "Toʻlov hali toʻlanmagan",
+            "title_due_on_fulfillment": "Bajarilganidan keyin to'lov",
+            "description_overdue": "Sizning to'lovingiz kechikdi.",
+            "description_partially_paid": "Bu buyurtma qisman to'langan. Qolgan balansingiz bor.",
+            "description_authorized": "Toʻlov usulidan toʻlov belgilangan sanada olinadi yoki hozir toʻlashingiz mumkin.",
+            "description_waiting_for_manual_payment": "Bu buyurtma kutilayotgan toʻlovga ega. To'lov qabul qilinganda balans yangilanadi.",
+            "description_due_on_receipt": "Toʻlov muddati tugashi bilan siz hisob-faktura olasiz.",
+            "description_due_on_receipt_partially_paid": "Bu buyurtma qisman to'langan. Qolgan balansingiz bor. Toʻlov muddati tugashi bilan siz hisob-faktura olasiz.",
+            "description_due_on_fulfillment": "To'lov ushbu buyurtmadagi barcha narsalar bajarilgandan so'ng amalga oshiriladi.",
+            "description_due_on_fulfillment_partially_paid": "Bu buyurtma qisman to'langan. Qolgan balansingiz bor. To'lov ushbu buyurtmadagi barcha narsalar bajarilgandan so'ng amalga oshiriladi."
+          },
+          "draft": {
+            "description": "To'lov tafsilotlari buyurtma tasdiqlanganda aniqlanadi.",
+            "title": "Toʻlov hali toʻlanmagan",
+            "in_review": {
+              "description": "To'lov tafsilotlari buyurtma tasdiqlanganda aniqlanadi.",
+              "title": "Toʻlov hali toʻlanmagan"
+            },
+            "submitted": {
+              "description": "Bu buyurtmani tasdiqlash uchun toʻlovni yuboring.",
+              "title": "Tasdiqlash uchun to'lang",
+              "deposit": {
+                "title": "To'lov to'lanadi",
+                "due_later": "Balans {{translatedName}} shartlariga muvofiq va {{dueDate}} sanasida to‘lanadi.",
+                "due_on_fulfillment": "Ushbu tartibdagi barcha elementlar bajarilgandan keyin balans to'lanadi.",
+                "due_on_receipt": "Qolgan balans uchun hisob-faktura olasiz.",
+                "due_on_date": "Balans {{dueDate}} sanasida to‘lanadi."
+              }
+            },
+            "deposit": {
+              "due_later": "Buyurtma tasdiqlanganda {{depositAmount}} toʻlanadi. Balans {{translatedName}} shartlariga muvofiq bo‘ladi.",
+              "due_on_fulfillment": "Buyurtma tasdiqlanganda {{depositAmount}} toʻlanadi. Buyurtma bajarilganda balans to'lanadi.",
+              "due_on_receipt": "Buyurtma tasdiqlanganda {{depositAmount}} toʻlanadi. Balans keyinroq to'lanadi.",
+              "due_on_date": "Buyurtma tasdiqlanganda {{depositAmount}} toʻlanadi. Balans {{dueDate}} sanasida to‘lanadi."
+            }
+          },
+          "paid": {
+            "title": "To'langan",
+            "title_with_date": "Toʻlangan {{date}}",
+            "description": "Buyurtmangiz to'liq to'langan."
+          },
+          "refund": {
+            "title": "Toʻlov qaytarildi",
+            "title_with_date": "Toʻlov qaytarildi {{date}}",
+            "description_full_refund": "Bu buyurtma uchun toʻliq toʻlovni qaytarib oldingiz.",
+            "description_single_refund": "Bu buyurtma uchun toʻlovni qisman qaytarib oldingiz.",
+            "description_multiple_refunds": "Bu buyurtma uchun toʻlovni qisman qaytarib oldingiz."
+          },
+          "canceled": {
+            "title": "Toʻlov bekor qilindi",
+            "description": "Sizdan undirilmagan."
+          },
+          "pay_now": "Hozir toʻlang",
+          "pay_now_accessibility_label": "{{orderName}} buyurtmasi uchun hozir toʻlang",
+          "title": "To'lov holati"
+        },
+        "order_timeline": {
+          "expand_events_label": "Tafsilotlarni ko'rsatish",
+          "expand_events_accessibility_label": "Buyurtma qoralama tafsilotlarini ko'rsatish",
+          "hide_events_label": "Tafsilotlarni yashirish",
+          "hide_events_accessibility_label": "Buyurtma loyihasi tafsilotlarini yashirish"
+        },
+        "subtitle": "Yuborilgan {{date}}",
+        "title": "Buyurtma {{name}}"
+      },
+      "payment_methods": {
+        "payment_delete": {
+          "description_without_replacement": "Bu toʻlov usuli bu joydan keyingi xaridlar uchun mavjud boʻlmaydi.",
+          "description_with_replacement": "Bu toʻlov usulini oʻchirish ushbu joy uchun oldindan ruxsat berilgan toʻlovlarga taʼsir qiladi. Kelgusi buyurtmalarni olishni davom ettirish uchun uni muqobil toʻlov usuli bilan almashtiring."
+        },
+        "payment_details": {
+          "order_label": "Buyurtma {{name}}"
+        }
       }
     },
     "ui_components": {
