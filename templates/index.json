@@ -314,7 +314,7 @@
       "type": "image-banner",
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/exploded_image_1_1728x900_4638c0d7-ef8c-4622-b02a-882f5f468a16.jpg",
+        "image": "shopify://shop_images/exploded_image_1_1728x900_imgupscaler.ai_Upscaler_2K.png",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "image_behavior": "none",
