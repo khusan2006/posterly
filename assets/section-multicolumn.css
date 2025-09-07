@@ -18,6 +18,7 @@
 
 @media screen and (min-width: 750px) and (max-width: 989px) {
   .multicolumn__title {
+    justify-content: center;
     padding-left: 5rem;
     padding-right: 5rem;
   }
