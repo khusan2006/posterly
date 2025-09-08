@@ -125,7 +125,7 @@
         "collection_KFrC6R": {
           "type": "collection",
           "settings": {
-            "collection": "frontpage",
+            "collection": "motobikes-collection",
             "custom_title": "",
             "background_color": ""
           }
@@ -141,7 +141,7 @@
         "collection_7XcJka": {
           "type": "collection",
           "settings": {
-            "collection": "frontpage",
+            "collection": "motobikes-collection",
             "custom_title": "",
             "background_color": ""
           }
@@ -149,7 +149,7 @@
         "collection_rKahnV": {
           "type": "collection",
           "settings": {
-            "collection": "frontpage",
+            "collection": "car-collection",
             "custom_title": "",
             "background_color": ""
           }
