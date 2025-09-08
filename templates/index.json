@@ -93,7 +93,7 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "collection": "all",
+        "collection": "car-collection",
         "products_to_show": 4,
         "title_position": "center",
         "title": "Featured Collection",
