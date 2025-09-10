@@ -193,6 +193,35 @@
         "padding_bottom": 36
       }
     },
+    "featured_collection_49Vn9D": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "music-albom",
+        "products_to_show": 15,
+        "title_position": "center",
+        "title": "New Music alboms",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 5,
+        "enable_desktop_slider": true,
+        "full_width": true,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "quick_add": "drawer",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
     "collage": {
       "type": "collage",
       "blocks": {
@@ -390,6 +419,7 @@
     "rich_text",
     "featured_collection",
     "featured_collections_yWhxw7",
+    "featured_collection_49Vn9D",
     "collage",
     "image_with_text_xgF3z9",
     "featured_product_banner_E4ztVU",
