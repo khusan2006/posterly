@@ -46,6 +46,21 @@
     "header": {
       "type": "header",
       "blocks": {
+        "mega_menu_promo_4WwBCw": {
+          "type": "mega_menu_promo",
+          "settings": {
+            "parent_link": "Posters",
+            "image": "shopify://shop_images/67.png",
+            "url": "",
+            "cta": "Shop now",
+            "cta_style": "link",
+            "cta_color": "",
+            "cta_bg": "",
+            "cta_radius": 0,
+            "cta_align": "center",
+            "position": "left"
+          }
+        },
         "mega_menu_promo_xgQHUX": {
           "type": "mega_menu_promo",
           "settings": {
@@ -63,6 +78,7 @@
         }
       },
       "block_order": [
+        "mega_menu_promo_4WwBCw",
         "mega_menu_promo_xgQHUX"
       ],
       "settings": {
