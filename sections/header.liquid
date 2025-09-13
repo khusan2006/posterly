@@ -8,7 +8,7 @@
 {%- endif -%}
 
 {%- if section.settings.menu_type_desktop == 'mega' -%}
-  <link rel="stylesheet" href="{{ 'component-mega-menu.css' | asset_url }}" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="{{ 'custom-mega-menu.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- endif -%}
 
 
@@ -173,7 +173,7 @@
         if section.settings.menu_type_desktop == 'dropdown'
           render 'header-dropdown-menu'
         elsif section.settings.menu_type_desktop != 'drawer'
-          render 'header-mega-menu'
+          render 'custom-header-mega-menu'
         endif
       endif
     %}
@@ -454,7 +454,7 @@
 {
   "name": "t:sections.header.name",
   "class": "section-header",
-  "max_blocks": 3,
+  "max_blocks": 12,
   "settings": [
     {
       "type": "select",
@@ -636,6 +636,32 @@
   "blocks": [
     {
       "type": "@app"
+    },
+    {
+      "type": "mega_menu_promo",
+      "name": "Mega menu promo",
+      "settings": [
+        { "type": "text", "id": "parent_link", "label": "Top-level menu item title" },
+        { "type": "image_picker", "id": "image", "label": "Promo image" },
+        { "type": "url", "id": "url", "label": "Promo link URL" },
+        { "type": "text", "id": "cta", "label": "CTA label", "default": "Shop now" },
+        { "type": "select", "id": "cta_style", "label": "CTA style", "default": "link", "options": [
+          { "value": "link", "label": "Link" },
+          { "value": "button", "label": "Button" }
+        ] },
+        { "type": "color", "id": "cta_color", "label": "CTA text color" },
+        { "type": "color", "id": "cta_bg", "label": "CTA background (button)" },
+        { "type": "range", "id": "cta_radius", "label": "CTA corner radius", "min": 0, "max": 24, "step": 1, "unit": "px", "default": 0 },
+        { "type": "select", "id": "cta_align", "label": "CTA alignment", "default": "start", "options": [
+          { "value": "start", "label": "Left" },
+          { "value": "center", "label": "Center" },
+          { "value": "end", "label": "Right" }
+        ] },
+        { "type": "select", "id": "position", "label": "Promo position", "default": "right", "options": [
+          { "value": "left", "label": "Left" },
+          { "value": "right", "label": "Right" }
+        ] }
+      ]
     }
   ]
 }
