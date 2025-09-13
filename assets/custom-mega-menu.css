@@ -1,0 +1,150 @@
+/* Custom Mega Menu styles */
+
+:root { --mega-gap: 40px; }
+
+/* Panel container (replaces Dawn's component-mega-menu.css baseline) */
+.mega-menu {
+  position: static;
+}
+
+.mega-menu summary.header__menu-item {
+  align-items: center;
+  position: relative;
+}
+
+/* Hover bridge to prevent accidental close while moving into panel */
+@media screen and (min-width: 990px) {
+  .mega-menu summary.header__menu-item::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -14px;
+    height: 14px;
+  }
+}
+
+/* Open on click (details[open]) and also on hover/focus for desktop */
+.mega-menu[open] > .mega-menu__content { display: block; }
+@media screen and (min-width: 990px) {
+  .mega-menu:hover > .mega-menu__content,
+  .mega-menu:focus-within > .mega-menu__content { display: block; }
+}
+
+.mega-menu > .mega-menu__content {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% - 1px); /* slight overlap to remove any gap */
+  background: rgb(var(--color-background));
+  background-image: none; /* avoid transparent gradients from color schemes */
+  color: rgb(var(--color-foreground));
+  border-top: 1px solid rgba(var(--color-foreground), 0.06);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.08);
+  padding: 28px 0;
+  z-index: 20;
+  pointer-events: auto;
+}
+
+/* Inner layout: nav columns + optional left/right promos share space without overflow */
+.mega-menu .custom-mega-menu { padding: 0; }
+
+.mega-menu .custom-mega-menu__grid {
+  display: flex;
+  align-items: flex-start;
+  gap: 0; /* use explicit side margins for consistent spacing */
+  flex-wrap: nowrap;
+  min-width: 0; /* allow children to shrink */
+}
+
+/* Navigation columns take priority and flex to fill remaining space */
+.mega-menu .custom-mega-menu__columns {
+  flex: 999 1 0%;
+  min-width: 0;
+  width: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--mega-col-min, 180px), 1fr));
+  gap: 24px 32px;
+}
+
+/* Promo stacks on left/right: flexible width, side-by-side when two items */
+.mega-menu .custom-mega-menu__features {
+  flex: 0 0 clamp(260px, 28vw, 680px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-content: start;
+  min-width: 260px;
+}
+
+/* Single vs multi promo sizing */
+.mega-menu .custom-mega-menu__features[data-count="1"] { flex-basis: clamp(260px, 22vw, 420px); }
+.mega-menu .custom-mega-menu__features[data-count="2"] { flex-basis: clamp(420px, 32vw, 680px); }
+
+/* When no promos exist, previous grid becomes irrelevant; keep for compatibility */
+.mega-menu .custom-mega-menu__grid.custom-mega-menu__grid--no-feature {
+  display: block;
+}
+
+/* Group heading */
+.mega-menu .custom-mega-menu__column > .mega-menu__link--level-2 {
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: .02em;
+  line-height: 1.4;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+/* Sublinks */
+.mega-menu .custom-mega-menu__sublist { display: grid; gap: 6px; }
+.mega-menu .custom-mega-menu__sublist a {
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.82;
+  text-decoration: none;
+}
+.mega-menu .custom-mega-menu__sublist a:hover { opacity: 1; text-decoration: underline; }
+
+/* Promo cards */
+.mega-menu .custom-mega-menu__feature { align-self: start; }
+.mega-menu .custom-mega-menu__feature-card { display: grid; gap: 10px; text-decoration: none; color: inherit; }
+.mega-menu .custom-mega-menu__feature-image { width: 100%; height: auto; border-radius: var(--inputs-radius, 0); display: block; }
+.mega-menu .custom-mega-menu__feature-cta-wrap { text-align: left; }
+.mega-menu .custom-mega-menu__feature-cta { display: inline-block; font-size: 14px; font-weight: 600; text-decoration: underline; }
+.mega-menu .custom-mega-menu__feature-cta--button { text-decoration: none; padding: 10px 14px; border-radius: var(--promo-cta-radius, 0px); background: var(--promo-cta-bg, currentColor); color: var(--promo-cta-color, inherit); border: 1px solid transparent; }
+
+/* Responsive */
+@media screen and (max-width: 1400px) {
+  .mega-menu .custom-mega-menu__columns { grid-template-columns: repeat(auto-fit, minmax(var(--mega-col-min, 180px), 1fr)); }
+}
+
+@media screen and (max-width: 1280px) {
+  :root { --mega-col-min: 170px; }
+}
+@media screen and (max-width: 1140px) {
+  :root { --mega-col-min: 160px; }
+}
+
+@media screen and (max-width: 1200px) {
+  .mega-menu .custom-mega-menu__columns { grid-template-columns: repeat(auto-fit, minmax(var(--mega-col-min, 180px), 1fr)); }
+  .mega-menu .custom-mega-menu__features { grid-template-columns: 1fr; }
+}
+
+@media screen and (max-width: 990px) {
+  /* Mega menu is not used on mobile; keep minimal */
+  .mega-menu > .mega-menu__content { position: static; box-shadow: none; padding: 16px 0; }
+  .mega-menu .custom-mega-menu__grid { display: block; }
+} 
+
+/* Allow columns to shrink and wrap before encroaching promos */
+.mega-menu .custom-mega-menu__columns { min-height: 1px; }
+
+/* When space gets very tight, reduce min column width slightly to avoid overflow */
+@media screen and (max-width: 1100px) {
+  :root { --mega-col-min: 160px; }
+}
+@media screen and (max-width: 1000px) {
+  :root { --mega-col-min: 150px; }
+} 
