@@ -1,0 +1,171 @@
+{% comment %}
+  Custom mega menu with multiple optional promotional images.
+  Each Header block of type "mega_menu_promo" that matches the current top-level link title
+  will render as a promo card. The "position" setting controls whether the promos are shown
+  on the left or the right of the columns area.
+{% endcomment %}
+
+<nav class="header__inline-menu">
+  <ul class="list-menu list-menu--inline" role="list">
+    {%- for link in section.settings.menu.links -%}
+      <li>
+        {%- if link.links != blank -%}
+          <header-menu>
+            <details id="Details-HeaderMenu-{{ forloop.index }}" class="mega-menu">
+              <summary
+                id="HeaderMenu-{{ link.handle }}"
+                class="header__menu-item list-menu__item link focus-inset"
+              >
+                <span
+                  {%- if link.child_active %}
+                    class="header__active-menu-item"
+                  {% endif %}
+                >
+                  {{- link.title | escape -}}
+                </span>
+                {{- 'icon-caret.svg' | inline_asset_content -}}
+              </summary>
+              <div
+                id="MegaMenu-Content-{{ forloop.index }}"
+                class="mega-menu__content color-{{ section.settings.menu_color_scheme }} gradient motion-reduce global-settings-popup"
+                tabindex="-1"
+              >
+                <div class="custom-mega-menu page-width">
+                  {%- liquid
+                    assign promos_left = ''
+                    assign promos_right = ''
+                    assign promos_left_count = 0
+                    assign promos_right_count = 0
+
+                    for b in section.blocks
+                      if b.type == 'mega_menu_promo' and b.settings.parent_link != blank and b.settings.parent_link == link.title and b.settings.image != blank
+                        assign cta_style_class = 'custom-mega-menu__feature-cta'
+                        if b.settings.cta_style == 'button'
+                          assign cta_style_class = cta_style_class | append: ' custom-mega-menu__feature-cta--button'
+                        endif
+
+                        assign cta_align = b.settings.cta_align | default: 'start'
+                        assign cta_color = b.settings.cta_color
+                        assign cta_bg = b.settings.cta_bg
+                        assign cta_radius = b.settings.cta_radius | default: 0
+
+                        assign cta_style_inline = ''
+                        capture cta_style_inline
+                          if cta_color != blank
+                            echo '--promo-cta-color:' | append: cta_color | append: ';'
+                          endif
+                          if cta_bg != blank
+                            echo '--promo-cta-bg:' | append: cta_bg | append: ';'
+                          endif
+                          echo '--promo-cta-radius:' | append: cta_radius | append: 'px;'
+                        endcapture
+
+                        assign card = ''
+                        capture card
+                          echo '<div class="custom-mega-menu__feature">'
+                          echo '<a href="'
+                          echo b.settings.url | default: link.url
+                          echo '" class="custom-mega-menu__feature-card">'
+                          echo b.settings.image | image_url: width: 800 | image_tag: loading: 'lazy', sizes: '(min-width: 990px) 320px, 33vw', class: 'custom-mega-menu__feature-image'
+                          echo '<div class="custom-mega-menu__feature-cta-wrap" style="text-align:'
+                          echo cta_align
+                          echo ';">'
+                          echo '<span class="'
+                          echo cta_style_class
+                          echo '" style="'
+                          echo cta_style_inline
+                          echo '">'
+                          echo b.settings.cta | default: 'Shop now'
+                          echo '</span>'
+                          echo '</div>'
+                          echo '</a>'
+                          echo '</div>'
+                        endcapture
+
+                        if b.settings.position == 'left'
+                          assign promos_left = promos_left | append: card
+                          assign promos_left_count = promos_left_count | plus: 1
+                        else
+                          assign promos_right = promos_right | append: card
+                          assign promos_right_count = promos_right_count | plus: 1
+                        endif
+                      endif
+                    endfor
+
+                    assign has_any_promos = false
+                    if promos_left != '' or promos_right != ''
+                      assign has_any_promos = true
+                    endif
+                  -%}
+
+                  <div class="custom-mega-menu__grid{%- unless has_any_promos -%} custom-mega-menu__grid--no-feature{%- endunless -%}">
+                    {%- if promos_left != '' -%}
+                      <div class="custom-mega-menu__features custom-mega-menu__features--left" data-count="{{ promos_left_count }}">{{ promos_left }}</div>
+                    {%- endif -%}
+
+                    <div class="custom-mega-menu__columns">
+                      {%- for childlink in link.links -%}
+                        <div class="custom-mega-menu__column">
+                          <a
+                            id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
+                            href="{{ childlink.url }}"
+                            class="mega-menu__link mega-menu__link--level-2 link{% if childlink.current %} mega-menu__link--active{% endif %}"
+                            {% if childlink.current %}
+                              aria-current="page"
+                            {% endif %}
+                          >
+                            {{ childlink.title | escape }}
+                          </a>
+
+                          {%- if childlink.links != blank -%}
+                            <ul class="custom-mega-menu__sublist list-unstyled" role="list">
+                              {%- for grandchildlink in childlink.links -%}
+                                <li>
+                                  <a
+                                    id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
+                                    href="{{ grandchildlink.url }}"
+                                    class="mega-menu__link link{% if grandchildlink.current %} mega-menu__link--active{% endif %}"
+                                    {% if grandchildlink.current %}
+                                      aria-current="page"
+                                    {% endif %}
+                                  >
+                                    {{ grandchildlink.title | escape }}
+                                  </a>
+                                </li>
+                              {%- endfor -%}
+                            </ul>
+                          {%- endif -%}
+                        </div>
+                      {%- endfor -%}
+                    </div>
+
+                    {%- if promos_right != '' -%}
+                      <div class="custom-mega-menu__features custom-mega-menu__features--right" data-count="{{ promos_right_count }}">{{ promos_right }}</div>
+                    {%- endif -%}
+                  </div>
+                </div>
+              </div>
+            </details>
+          </header-menu>
+        {%- else -%}
+          <a
+            id="HeaderMenu-{{ link.handle }}"
+            href="{{ link.url }}"
+            class="header__menu-item list-menu__item link link--text focus-inset"
+            {% if link.current %}
+              aria-current="page"
+            {% endif %}
+          >
+            <span
+              {%- if link.current %}
+                class="header__active-menu-item"
+              {% endif %}
+            >
+              {{- link.title | escape -}}
+            </span>
+          </a>
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+</nav> 
