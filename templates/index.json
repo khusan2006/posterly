@@ -432,7 +432,7 @@
         "button_link": "",
         "columns_desktop": 3,
         "column_alignment": "center",
-        "background_style": "primary",
+        "background_style": "none",
         "color_scheme": "scheme-1",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
