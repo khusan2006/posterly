@@ -150,6 +150,11 @@
         "settings": {
           "product": ""
         }
+      },
+      "12741885996470144523": {
+        "type": "shopify://apps/enorm-image-gallery-video/blocks/embed-js/01219f89-c8d0-40c2-a0ff-1987199e84a2",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {

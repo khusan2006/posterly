@@ -439,6 +439,23 @@
         "padding_top": 60,
         "padding_bottom": 60
       }
+    },
+    "17581329472bbac2d5": {
+      "type": "apps",
+      "blocks": {
+        "enorm_image_gallery_video_embed_code_heMARB": {
+          "type": "shopify://apps/enorm-image-gallery-video/blocks/embed-code/01219f89-c8d0-40c2-a0ff-1987199e84a2",
+          "settings": {
+            "embed-code": "<div id=\"enap-gallery-94297\"></div>"
+          }
+        }
+      },
+      "block_order": [
+        "enorm_image_gallery_video_embed_code_heMARB"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -451,6 +468,7 @@
     "image_with_text_xgF3z9",
     "featured_product_banner_E4ztVU",
     "image_banner_UrEHAU",
-    "multicolumn"
+    "multicolumn",
+    "17581329472bbac2d5"
   ]
 }
