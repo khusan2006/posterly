@@ -60,7 +60,7 @@
           "settings": {
             "heading": "Materials",
             "icon": "leather",
-            "content": "",
+            "content": "<p>{{ block.settings.page.title }}</p>",
             "page": ""
           }
         },
