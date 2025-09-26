@@ -57,9 +57,11 @@
         },
         "collapsible-row-0": {
           "type": "collapsible_tab",
-          "repeater": "{{ product.metafields.shopify[\"color-pattern\"].value }}",
           "settings": {
-            "heading": "{{ block.repeater.label.value }}"
+            "heading": "Materials",
+            "icon": "leather",
+            "content": "",
+            "page": ""
           }
         },
         "collapsible-row-1": {
@@ -89,6 +91,15 @@
             "page": ""
           }
         },
+        "collapsible_tab_wpP9DJ": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "content": "",
+            "page": ""
+          }
+        },
         "share": {
           "type": "share",
           "settings": {
@@ -109,6 +120,7 @@
         "collapsible-row-1",
         "collapsible-row-2",
         "collapsible-row-3",
+        "collapsible_tab_wpP9DJ",
         "share"
       ],
       "settings": {
