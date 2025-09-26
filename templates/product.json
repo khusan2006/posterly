@@ -96,7 +96,7 @@
           "settings": {
             "heading": "Collapsible row",
             "icon": "check_mark",
-            "content": "",
+            "content": "{{ product.metafields.custom.material | metafield_tag }}",
             "page": ""
           }
         },
