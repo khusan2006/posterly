@@ -946,7 +946,11 @@
         "money_order_label": "Pul buyurtmasi",
         "debit_card_label": "Debet karta",
         "deferred_payment_label": "Toʻlov usulini keyinroq tanlang",
-        "fixed_payment_label": "Toʻlovingiz {{dueDate}} sanasida toʻlanadi."
+        "fixed_payment_label": "Toʻlovingiz {{dueDate}} sanasida toʻlanadi.",
+        "credit_card_label": "Kredit kartasi",
+        "bank_deposit_label": "Bank depoziti",
+        "bank_account_label": "Bank hisobi",
+        "cash_on_delivery_label": "Yetkazib berishda naqd pul (COD)"
       },
       "thank_you": {
         "title": "Xaridingiz uchun rahmat!",
@@ -2492,7 +2496,35 @@
         "decision_rule_block": "Toʻlovingizni qayta ishlashda muammo yuz berdi. Iltimos, do'kon egasiga murojaat qiling.",
         "pick_up_card": "Sizning kartangiz rad etildi. Qaytadan urining yoki boshqa toʻlov usulidan foydalaning.",
         "cannot_verify": "Toʻlov maʼlumotlaringiz tasdiqlanmadi. Karta ma'lumotlarini tekshiring va qayta urinib ko'ring.",
-        "invalid_number": "Yaroqli karta raqamini kiriting"
+        "invalid_number": "Yaroqli karta raqamini kiriting",
+        "invalid_expiry_date": "Yaroqlilik muddatini kiriting",
+        "invalid_cvc": "Yaroqli xavfsizlik kodini kiriting",
+        "expired_card": "Kartangiz muddati tugagan. Boshqa toʻlov usulidan foydalaning.",
+        "payment_method_not_applicable": "Bu toʻlov usuli qoʻllanilmaydi. Boshqa toʻlov usulidan foydalaning.",
+        "card_declined": "Sizning kartangiz rad etildi. Qaytadan urining yoki boshqa toʻlov usulidan foydalaning.",
+        "processing_error": "Toʻlovingizni qayta ishlashda muammo yuz berdi. Qaytadan urining yoki boshqa toʻlov usulidan foydalaning.",
+        "processing_error_checkout_as_guest": "Toʻlovingizni qayta ishlashda muammo yuz berdi. Boshqa toʻlov usuli yoki {{checkout_as_guest_link}} bilan qayta urinib koʻring.",
+        "selected_payment_method": "Siz tanlagan toʻlov usulida muammo yuz berdi va sizdan toʻlov olinmadi. Qaytadan urining yoki boshqa toʻlov usulidan foydalaning.",
+        "payment_method_billing_address": "Siz tanlagan toʻlov usulining hisob-kitob manzilida muammo yuz berdi va sizdan toʻlov olinmadi. Manzilni tekshiring va qayta urinib ko'ring yoki boshqa to'lov usulidan foydalaning.",
+        "call_issuer": "Sizning kartangiz rad etildi. Boshqa toʻlov usulidan foydalaning yoki qoʻshimcha maʼlumot olish uchun bankingizga murojaat qiling.",
+        "test_mode_live_card": "Bu doʻkon haqiqiy buyurtmalar yoki haqiqiy toʻlovlarni qabul qila olmaydi.",
+        "test_mode_enabled_only_test_cards": "Sinov rejimi yoqilgan, faqat test kredit kartalarini qo'shish mumkin.",
+        "transient_error": "Toʻlovingizni qayta ishlashda muammo yuz berdi. Ushbu sahifani yangilab koʻring yoki internet aloqangizni tekshiring.",
+        "missing_shipping_address": "Toʻlovingizni amalga oshirib boʻlmadi, chunki yetkazib berish manzilingiz yoʻq. Yetkazib berish manzilini kiriting va qaytadan urining.",
+        "invalid_shipping_address": "Toʻlovingizni amalga oshirib boʻlmadi, chunki yetkazib berish manzilingizni topa olmadik. Yetkazib berish manzilingizni tekshiring va qaytadan urining.",
+        "successful_offsite_with_gift_card_error": "Sovg‘a kartasi to‘lovini qayta ishlashda muammo yuz berdi. Qaytadan urining yoki boshqa toʻlov usulidan foydalaning.",
+        "development_store_order_limit_reached": "Siz ushbu toʻlov protsessori bilan ishlab chiqish doʻkoniga buyurtmalar limitiga yetdingiz. Boshqa buyurtma berish uchun siz test toʻlov shlyuzidan foydalanishingiz kerak. %{development_store_order_testing_docs_link} haqida batafsil.",
+        "development_store_with_order_limit": "Sinov buyurtmasini berish uchun siz test toʻlov shlyuzidan foydalanishingiz kerak boʻladi. %{development_store_order_testing_docs_link} haqida batafsil.",
+        "development_store_order_testing_docs_link": "ishlab chiqish do'konlarida buyurtmalarni sinovdan o'tkazish",
+        "payment_above_threshold": "Toʻlov miqdori ushbu mintaqa uchun pul chegarasidan yuqori. Jami miqdorni kamaytiring va qayta urinib ko'ring",
+        "risky": "Toʻlovingizni qayta ishlashda muammo yuz berdi. Qaytadan urining yoki boshqa toʻlov usulidan foydalaning.",
+        "expired_buyer_action": "Toʻlov usuli muddati tugadi. Iltimos, qayta urinib koʻring.",
+        "name_mismatch": "Iltimos, kartangiz ma'lumotlarini tekshiring. Kartangizdagi ism va hisob-kitob manzili mos emas.",
+        "shop_pay_wallet_not_available": "Shop Pay bu to‘lov uchun mavjud emas.",
+        "market_manager_blocks_wallet_payments": "Mamlakatingizda toʻlov usuli qoʻllab-quvvatlanmaydi.",
+        "paypal_over_capture": "Buyurtmangiz jami yangilandi. Buyurtmani bajarish uchun {{walletName}} bilan toʻlang.",
+        "captcha_required": "Xaridingizni yakunlash uchun toʻlov maʼlumotlarini kiriting va captcha ni hal qiling.",
+        "captcha_required_without_payment_information": "Xaridingizni yakunlash uchun captcha ni hal qiling."
       },
       "billing": {
         "billing_address_title": "hisob kimning nomiga",
@@ -2678,6 +2710,99 @@
           },
           "request_id": "So‘rov identifikatori: {{requestId}}"
         }
+      },
+      "shipping_errors": {
+        "shipping_method": "Buyurtmangiz uchun yetkazib berish imkoniyatlari o‘zgardi. Iltimos, tanlovingizni ko'rib chiqing.",
+        "shipping_method_not_available": "Savatingiz yangilandi va siz qo‘shgan narsalarni manzilingizga jo‘natib bo‘lmaydi. Buyurtmani bajarish uchun narsalarni olib tashlang.",
+        "shipping_method_not_available_generic": {
+          "one": "Buyurtmani tanlangan manzilga jo'natib bo'lmaydi. Manzilingiz toʻgʻri ekanligini tekshiring va qayta urinib koʻring yoki boshqa manzilni tanlang.",
+          "other": "Savatingizdagi baʼzi narsalarni siz kiritgan manzilga joʻnatib boʻlmaydi. Manzilingiz toʻgʻri ekanligini tekshiring va qayta urinib koʻring yoki boshqa manzilni tanlang."
+        },
+        "shipping_method_not_available_due_to_unsatisfied_conditions": "Savatdagi narsalar yuk tashish uchun talablarga javob bermaydi. Savatingizni yangilang va qaytadan urining.",
+        "shipping_method_not_available_updated": {
+          "one": "Siz qoʻshgan element joylashuvingizga yetkazilmaydi. Tekshirish uchun uni olib tashlang yoki do'konga murojaat qiling.",
+          "other": "Siz qoʻshgan bir yoki bir nechta mahsulot joylashuvingizga yetkazilmaydi. Tekshirish uchun ularni olib tashlang yoki do'konga murojaat qiling."
+        },
+        "payment_method_not_supported": "%{country} uchun bu toʻlov usulidan foydalana olmaysiz. Bu mamlakatga yetkazib berish uchun boshqa toʻlov usulidan foydalaning.",
+        "empty_state": "Mavjud etkazib berish usullarini ko'rish uchun yuk manzilingizni kiriting.",
+        "title": "Yetkazib berish mavjud emas",
+        "invalid_selected_address": "Tanlangan yetkazib berish manzili noto‘g‘ri",
+        "invalid_selected_address_with_update_link": "Tanlangan yetkazib berish manzili noto‘g‘ri. %{update_address_link} yoki boshqa manzilni tanlang",
+        "unavailable_addresses_only_countries": "Buyurtmani faqat {{countriesList}} ga jo‘natish mumkin. Davom etish uchun yangi manzil qo‘shing.",
+        "unavailable_selected_address": "Tanlangan manzil uchun yetkazib berish mavjud emas",
+        "unavailable_selected_address_for_region": "{{region}} uchun yetkazib berish imkonsiz. Davom etish uchun boshqa manzilni tanlang"
+      },
+      "alternative_payment_method_banner": {
+        "express_checkout": "Ekspress to'lov",
+        "or": "YOKI",
+        "or_pay_another_way": "Yoki boshqa yo'l bilan to'lang",
+        "or_check_out_another_way": "Yoki boshqa yo'lni tekshiring",
+        "or_pay_with_credit_card": "Yoki kredit karta bilan to'lang",
+        "show_more_options": "Koʻproq variantlarni koʻrsatish",
+        "hide_more_options": "Boshqa variantlarni yashirish"
+      },
+      "post_purchase": {
+        "page_title": "Sotib olishdan keyingi",
+        "title": "Sotib olishdan keyingi",
+        "escape_confirmation": "Buyurtmangiz uchun toʻladingiz.",
+        "escape_action": "Buyurtmani tasdiqlashni ko'rish ›",
+        "components": {
+          "close": "Yopish",
+          "expand": "Koʻproq koʻrish",
+          "processing": "Qayta ishlanmoqda…",
+          "submit": "Yuborish"
+        }
+      },
+      "processing": {
+        "redirecting_page_title": "Qayta yoʻnaltirilmoqda…",
+        "redirecting_title": "Qayta yoʻnaltirilmoqda…",
+        "redirecting_notice": "Biz sizni qayta yo'naltirgunimizcha kuting.",
+        "redirecting_to_bank": "{{bank}} ga yoʻnaltirilmoqda",
+        "complete_your_purchase_title": "Xaridingizni yakunlang",
+        "continue_to_payment_gateway_notice": "Toʻlov maʼlumotlarini qoʻshish uchun toʻlovni davom ettiring.",
+        "continue_to_payment_gateway_button_label": "To'lovni davom ettiring",
+        "complete_your_purchase_title_error": "Toʻlov maʼlumotlarini toʻgʻrilang",
+        "continue_to_payment_gateway_notice_error": "Toʻlov maʼlumotlarini tekshirib boʻlmadi.",
+        "continue_to_payment_gateway_button_label_error": "To'lov ma'lumotlarini yangilang",
+        "page_title": "Buyurtmani qayta ishlash",
+        "title": "Buyurtmani qayta ishlash",
+        "your_order_has_been_received_title": "Buyurtmangiz uchun rahmat",
+        "you_will_receive_confirmation": "Bizga hozir juda ko'p buyurtmalar kelyapti. Tez orada elektron pochta yoki matn orqali tasdiqnoma olishingiz kerak. Agar keyingi bir soat ichida uni olmasangiz, bizga xabar bering.",
+        "you_will_not_be_charged": "Sizdan hali to‘lov olinmaydi",
+        "wait": {
+          "short": "Buyurtmangiz qayta ishlanmoqda.",
+          "medium": {
+            "one": "Buyurtmangiz qayta ishlanmoqda. Taxminiy kutish vaqti %{count} daqiqa.",
+            "other": "Buyurtmangiz qayta ishlanmoqda. Taxminiy kutish vaqti %{count} daqiqa."
+          },
+          "long": "Buyurtmangiz amalga oshirilishi bilanoq sizga elektron pochta xabari keladi. Hozirda buyurtmalar katta.",
+          "no_auto_refresh_html": "Agar siz avtomatik ravishda yoʻnaltirilmagan boʻlsangiz, %{link}.",
+          "refresh_this_page": "bu sahifani yangilang"
+        },
+        "remote_shops_payments_processing": "To'lovlarni qayta ishlash",
+        "action_required": "Harakat talab qilinadi",
+        "modal_notice": "Biz {{paymentMethod}} bilan bog‘lanyapmiz"
+      },
+      "payment_challenge_modal": {
+        "instructions": "Xaridingizni {{paymentMethod}} kodingiz yordamida yakunlang",
+        "timer_message": "Toʻlash uchun {{timeLeft}} vaqtingiz bor",
+        "copy_text": "{{paymentMethod}} kodini nusxalash",
+        "open_app_text": "{{paymentMethod}} ilovasini oching",
+        "header": "{{paymentMethod}} bilan toʻlash",
+        "qr_code": {
+          "instructions": "Xaridingizni {{paymentMethod}} kodingiz yordamida yakunlang"
+        },
+        "external": {
+          "instructions": "Ushbu xaridni yakunlash uchun ilovangizda toʻlovni tasdiqlang"
+        },
+        "close": "Tanlovni yoping"
+      },
+      "failed_payment": {
+        "page_title": "Toʻlovni amalga oshirib boʻlmadi",
+        "title": "Toʻlovni amalga oshirib boʻlmadi",
+        "payment_not_processed_title": "Toʻlovingizni amalga oshirib boʻlmadi",
+        "payment_not_processed_text": "Sizdan to‘lov olinmagan. Xaridni yakunlash uchun savatga qayting.",
+        "return_to_cart_button_label": "Savatga qaytish"
       }
     },
     "email_marketing": {
