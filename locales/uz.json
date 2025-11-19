@@ -657,10 +657,6 @@
           },
           "checkout_source": {
             "revoked": "Bu toʻlov endi mavjud emas."
-          },
-          "captcha": {
-            "token_invalid": "Taqdim etilgan captcha tokeni yaroqsiz. To‘lovni davom ettirish uchun yangi captcha-ni to‘ldiring.",
-            "token_not_valid_for_session": "Taqdim etilgan captcha-dan bu hisob-kitob bilan foydalanib bo‘lmaydi."
           }
         },
         "full_price": "To'liq narx:",
@@ -803,11 +799,7 @@
         "different_shipping_address_text": "Bu buyurtma uchun bir martalik manzildan foydalaning",
         "change_company_location_link_label": "Kompaniyaning manzilini o'zgartiring",
         "change_location_link_label": "Joylashuvni o'zgartirish",
-        "ship_to_company": "{{companyName}} manziliga jo‘natish",
-        "contact_method_title": "Aloqa",
-        "email_rollup_accessibility_label": "Elektron pochta imkoniyatlari",
-        "phone_rollup_accessibility_label": "Telefon imkoniyatlari",
-        "phone_country_code_label": "Telefon raqami mamlakat kodi"
+        "ship_to_company": "{{companyName}} manziliga jo‘natish"
       },
       "payment_gateway": {
         "generic_payment_terms": "Siz {{translatedName}} shartlaridasiz. Toʻlovingiz {{dueDate}} sanasida toʻlanadi.",
@@ -1159,7 +1151,8 @@
           "pick_up_in_store_shipping_method_html": "Doʻkonda olib ketish · %{location_name}",
           "purchase_order_number_title": "PO raqami",
           "change_purchase_order_number_label": "PO raqamini o'zgartiring",
-          "change_delivery_method_link_label": "Yetkazib berish usulini o'zgartirish"
+          "change_delivery_method_link_label": "Yetkazib berish usulini o'zgartirish",
+          "contact_method_title": "Aloqa"
         },
         "block_title": "Ma'lumotlaringizni ko'rib chiqing",
         "item_header": {
@@ -1212,7 +1205,8 @@
         "subscription_policy": "Bekor qilish",
         "purchase_options_policy": "Sotib olish imkoniyatlari siyosati",
         "purchase_options_cancellation_policy": "Bekor qilish",
-        "cookie_preferences": "Cookie-fayllar"
+        "cookie_preferences": "Cookie-fayllar",
+        "contact_information": "Aloqa"
       },
       "mor_policies": {
         "terms_and_conditions": "Savdogarning rekord qoidalari va shartlari",
@@ -1370,9 +1364,7 @@
           "other": "Sizda saqlangan {{count}} ta manzil bor."
         },
         "saved_address_option_link": "Saqlangan manzildan foydalaning",
-        "saved_address_modal_title": "Saqlangan manzilimdan foydalaning",
-        "rollup_label": "Hisob",
-        "rollup_accessibility_label": "Hisob parametrlari"
+        "saved_address_modal_title": "Saqlangan manzilimdan foydalaning"
       },
       "stock": {
         "page_title": "Inventarizatsiya muammolari",
@@ -1437,8 +1429,7 @@
         },
         "price_update": {
           "title": "Narx yangilanishi",
-          "description": "Bu mahsulotlarning narxlari oʻzgardi va savatingizda yangilandi.",
-          "updated_price": "Yangilangan narx"
+          "description": "Bu mahsulotlarning narxlari oʻzgardi va savatingizda yangilandi."
         },
         "price_and_quantity_update": {
           "title": "Narx va miqdorni yangilash",
@@ -1448,15 +1439,15 @@
           "description": "Bu mahsulotlar endi mavjud emas va savatdan olib tashlandi.",
           "items_unavailable": "Ayrim mahsulotlar endi mavjud emas va savatdan olib tashlandi."
         },
-        "out_of_stock_in_context_label": "Bu mahsulot mamlakatingizda/mintaqada mavjud emas.",
-        "price_column_header": "Narxi"
+        "out_of_stock_in_context_label": "Bu mahsulot mamlakatingizda/mintaqada mavjud emas."
       },
       "vaulted": {
         "change_button": "O'zgartirish"
       },
       "local_pickup": {
         "location_information": {
-          "other": "Sizga yaqin joylashgan %{count} ta joy bor"
+          "other": "Sizga yaqin joylashgan %{count} ta joy bor",
+          "one": "Sizga yaqin bo'lgan %{count} ta joy bor"
         },
         "toggle_location": "Joylashuvni o'zgartirish",
         "or": "YOKI",
@@ -1487,7 +1478,8 @@
         "reveal_more_label": {
           "one": "Yana %{count} ta joyni ko‘rsatish",
           "other": "Yana %{count} ta joyni ko‘rsatish"
-        }
+        },
+        "location_address_search_label": "Manzil"
       },
       "captcha": {
         "title": "Davom etish uchun CAPTCHA-ni to‘ldiring",
@@ -1954,8 +1946,7 @@
         "more_items_modal": {
           "clear_search": "Qidiruvni tozalash",
           "empty_results": "“%{searchText}” uchun hech qanday natija topilmadi. Imloni tekshiring yoki boshqa so'z yoki iboradan foydalaning.",
-          "number_items_shown": "%{shownNumber} of %{totalNumber} ta element",
-          "search_item": "Qidiruv"
+          "number_items_shown": "%{shownNumber} of %{totalNumber} ta element"
         },
         "order_name_label": "Buyurtma %{name}",
         "shopping_cart_label": "Xarid savati",
@@ -2030,15 +2021,7 @@
         "information_estimated_taxes_label": "Soliqlar (taxminiy)",
         "estimated_taxes_finalization_tooltip_content": "Buyurtmani joylashtirganingizdan so'ng, yakuniy soliq va jami elektron pochta yoki matn orqali tasdiqlanadi.",
         "order_total_label": "Buyurtma jami",
-        "price_before_discount_aria_text": "Asl narxi",
-        "from_shop_heading": "%{shop_name}dan",
-        "from_other_stores_heading": "Boshqa do'konlardan",
-        "order_discounts_apply_to_local_shop": "Buyurtma chegirmalari faqat %{shop_name} tovarlariga tegishli",
-        "gift_cards_apply_to_local_shop": "Sovg‘a kartalari faqat %{shop_name} do‘konidagi mahsulotlarga tegishli",
-        "add_discount_or_gift_card": "Chegirma kodi yoki sovg'a kartasini qo'shing",
-        "estimated_taxes_label_short": "Hisoblangan",
-        "total_paid_label": "Jami to'langan",
-        "price_label": "Narxi"
+        "price_before_discount_aria_text": "Asl narxi"
       },
       "shipping": {
         "title": "yuk tashish; yetkazib berish",
@@ -2106,98 +2089,7 @@
         "split_shipping_option_lowest_price": "Eng past narx",
         "split_shipping_option_fastest": "Eng tez",
         "split_shipping_option_recommended": "Tavsiya etilgan",
-        "split_shipping_option_custom": "Maxsus",
-        "shipping_method_first_shipment_group_title": {
-          "one": "Birinchi jo'natish",
-          "other": "Birinchi yuklar"
-        },
-        "shipping_method_subscription_group_title": "Obuna",
-        "shipping_method_recurring_shipments_group_title": {
-          "one": "Takroriy jo'natish",
-          "other": "Takroriy yuklar"
-        },
-        "subscription_shipping": "Obuna yetkazib berish",
-        "subscription_local_delivery": "Obuna mahalliy yetkazib berish",
-        "subscription_pickup": "Obunani qabul qilish",
-        "waiting_on_rate_notice": "Mavjud yetkazib berish tariflari olinmoqda…",
-        "waiting_on_pickup_location_notice": "Mavjud olib ketish joylari olinmoqda…",
-        "no_rates_for_cart_or_destination_notice": "Savatingiz yoki manzilingiz uchun yetkazib berish usullari mavjud emas",
-        "no_pickup_location_notice": "Mahsulotlaringizdan kamida bittasini olib ketish mumkin emas",
-        "no_rates_for_country_notice": "Bu manzil uchun yetkazib berish narxi topilmadi.",
-        "no_rates_contact_notice": "Qo'shimcha ma'lumot olish uchun biz bilan bog'laning",
-        "free_rate_label": "Bepul",
-        "cheapest_rate_label": "Eng arzon",
-        "please_enter_your_shipping_information_notice": "Yuk tashish ma'lumotlarini kiriting.",
-        "estimated_delivery_date": {
-          "one": "%{count} ish kuni",
-          "other": "%{count} ish kuni"
-        },
-        "estimated_delivery_date_range": "%{minimum} dan %{maximum} ish kunigacha",
-        "estimated_delivery_time": "Taxminiy yetkazib berish %{time}",
-        "estimated_delivery_time_range": "Taxminiy yetkazib berish %{min_time}–%{max_time}",
-        "delivery_today": "Shu kuni yetkazib berish %{time}",
-        "delivery_tomorrow": "Keyingi kun yetkazib berish %{time}",
-        "two_day_delivery": "2 kunlik yetkazib berish %{time}",
-        "delivery": "Yetkazib berish vaqti}",
-        "arrives_time": "%{time} yetib keladi",
-        "arrives_time_range": "Yetib keladi: %{min_time}–%{max_time}",
-        "estimated_time": "Taxminiy %{time}",
-        "estimated_time_range": "Taxminiy %{min_time}–%{max_time}",
-        "default_description": "1 ish kunida yetkazib beriladi",
-        "unbranded_default_description": "Yetkazib berishga tayyor",
-        "shipping_line_phone_label": "Mobil telefon raqami (majburiy)",
-        "shipping_line_phone": "Sizning kureringiz siz bilan bog'lanish uchun ushbu raqamdan foydalanishi mumkin.",
-        "shipping_line_delivery_phone_label": "Mobil telefon raqami",
-        "shipping_line_delivery_phone": "Yetkazib berishingiz haqidagi yangilanishlar bilan bog'lanishingiz mumkin.",
-        "optional_shipping_line_delivery_instructions_label": "Yetkazib berish bo'yicha ko'rsatmalar (ixtiyoriy)",
-        "shipping_line_delivery_instructions": "Eshik kodlari yoki o'chirish ko'rsatmalari kabi kerakli ma'lumotlarni kiriting.",
-        "other_method": {
-          "zero": "Boshqa usullar mavjud emas",
-          "one": "Boshqa %{count} usul mavjud",
-          "other": "%{count} boshqa usullardan boshlab mavjud"
-        },
-        "shipping_rate_discounted_amount": "Bu: %{original_amount}. Hozir: %{amount}",
-        "local_delivery": "Mahalliy yetkazib berish",
-        "prime_not_available": {
-          "default": "Buyurtmangiz uchun asosiy yetkazib berish mavjud emas. Yetkazib berish opsiyalaringiz yangilandi."
-        },
-        "subscription_delivery_description": {
-          "free_shipping_cycles": {
-            "one": "Yana %{count} ta yetkazib berish uchun bepul yetkazib berish",
-            "other": "Yana %{count} ta yetkazib berish uchun bepul yetkazib berish"
-          },
-          "free_shipping_cycles_delivery_not_included": {
-            "one": "%{count} yetkazib berish uchun bepul yetkazib berish",
-            "other": "%{count} ta yetkazib berish uchun bepul yetkazib berish"
-          },
-          "first_n_order_free_with_cycle": {
-            "one": "Yana %{count} yetkazib berish uchun bepul yetkazib berish, keyin %{recurring_order_shipping_price}",
-            "other": "Yana %{count} ta yetkazib berish uchun bepul yetkazib berish, keyin %{recurring_order_shipping_price}"
-          },
-          "first_n_order_free_with_cycle_delivery_not_included": {
-            "one": "%{count} yetkazib berish uchun bepul yetkazib berish, keyin %{recurring_order_shipping_price}",
-            "other": "%{count} ta yetkazib berish uchun bepul yetkazib berish, keyin %{recurring_order_shipping_price}"
-          },
-          "max_cycles_base_shipping": {
-            "one": "%{shipping_price} uchun yana %{count} yetkazib berish",
-            "other": "Har biri %{shipping_price} evaziga yana %{count} ta yetkazib berish"
-          },
-          "max_cycles_base_shipping_delivery_not_included": {
-            "one": "%{count} yetkazib berish: %{shipping_price}",
-            "other": "Har biri %{shipping_price} evaziga yana %{count} ta yetkazib berish"
-          },
-          "prepaid_free_shipping_with_cycles": {
-            "one": "Birinchi %{cycle} uchun bepul yetkazib berish, keyin esa %{recurring_order_shipping_price}",
-            "other": "Birinchi %{cycle} uchun bepul yetkazib berish, keyin esa %{recurring_order_shipping_price}"
-          },
-          "prepaid_order_one_cycle": {
-            "one": "Yana %{count} ta yetkazib berish uchun %{shipping_price}",
-            "other": "Yana %{count} ta yetkazib berish uchun %{shipping_price} (%{per_delivery_cost})"
-          },
-          "prepaid_order_one_cycle_delivery_not_included": {
-            "one": "%{count} yetkazib berish uchun %{shipping_price"
-          }
-        }
+        "split_shipping_option_custom": "Maxsus"
       },
       "localized_fields": {
         "additional_information": {
@@ -2460,16 +2352,60 @@
         "billing_address_title": "To'lovchi; to'lovni qabul qiladigan manzil",
         "free_label": "Bepul"
       },
-      "remote_merchandise_only": {
-        "title": "Xaridingizni yakunlang",
-        "remote_only_notice": "Ushbu mahsulotlar boshqa do'konlar tomonidan sotiladi va jo'natiladi. Xaridingizni yakunlash uchun har bir do'konni tekshiring.",
-        "return_to_store_label": "Do'konga qaytish",
-        "detail_item_label": {
-          "one": "{{count}} ta element",
-          "other": "{{count}} ta element"
+      "notice_banner": {
+        "editable_shipping_address_violations_email_link": "Biz bilan bog'lanish",
+        "shipping_address_incomplete_title": "Yetkazib berish manzili toʻliq emas",
+        "calculating_shipping": "Yetkazib berish hali ham hisoblab chiqilmoqda. Bir necha soniyadan keyin qayta urinib ko'ring. Sizdan to‘lov olinmagan.",
+        "calculating_taxes": "Soliqlar hali ham hisoblab chiqilmoqda. Bir necha soniyadan keyin qayta urinib ko'ring. Sizdan to‘lov olinmagan.",
+        "generic_processing_error": {
+          "title": "Buyurtmangizni qayta ishlashda muammo yuz berdi",
+          "body": "Sizdan to‘lov olinmagan. Qaytadan urining yoki boshqa toʻlov usulidan foydalaning."
         },
-        "checkout_on_shop_label": "%{shop_name} orqali tekshiring",
-        "single_shop_transition": "Xaridingizni yakunlash uchun sizni %{advertiser} saytiga yo‘naltirilmoqda."
+        "payment_method_not_available_with_payment_terms": "Siz tanlagan toʻlov usuli endi mavjud emas, chunki bu buyurtma uchun toʻlov endi {{paymentTerms}} shartlari asosida amalga oshiriladi",
+        "payment_method_not_available_with_fulfillment_terms": "Siz tanlagan toʻlov usuli endi mavjud emas, chunki bu buyurtma uchun toʻlov endi bajarilishi kerak",
+        "payment_method_not_available_with_fixed_terms": "Siz tanlagan toʻlov usuli endi mavjud emas, chunki bu buyurtma uchun toʻlov keyinroq toʻlanishi kerak",
+        "payment_method_not_available_with_review_requirement": "Siz tanlagan toʻlov usuli endi mavjud emas, chunki toʻlov buyurtmangiz tasdiqlanganidan keyin amalga oshiriladi.",
+        "contact_information": {
+          "title": "Kontakt maʼlumotlari yaroqsiz",
+          "header": "Maʼlumotlaringizni yangilash uchun {{emailLink}} .",
+          "email_link": "Biz bilan bog'lanish"
+        }
+      },
+      "review_address_modal": {
+        "title": "Ko'rib chiqish manzili",
+        "subtitle": {
+          "one": "Bu buyurtma {{merchant}} tomonidan ko'rsatilgan manzilga jo'natiladi.",
+          "other": "Bu buyurtma {{merchant}} tomonidan taqdim etilgan manzilga yuboriladi. Yetkazib berish manzilini tanlang."
+        },
+        "subtitle_no_match": "Bu manzil saqlangan manzillaringizga mos kelmaydi.",
+        "subtitle_must_use": "Buyurtmangiz ushbu manzilga jo'natiladi.",
+        "continue": "Ushbu manzil bilan davom eting",
+        "use_saved_address": "Boshqa manzildan foydalaning",
+        "return_to_cart": "Savatga qaytish"
+      },
+      "marketplaces": {
+        "legal_notice": {
+          "legal_text": "Ko‘rib chiqish",
+          "link_label": "{{partnerDisplayName}} Foydalanish shartlari"
+        }
+      },
+      "online_store_chat": {
+        "title": "Savollar? Biz bilan suhbatlashing"
+      },
+      "offsite_payment_failed": {
+        "title": "Saytdan tashqari toʻlov amalga oshmadi",
+        "payment_not_processed_title": "Toʻlov amalga oshmadi",
+        "payment_not_processed_text": "QR kodni qaytadan skanerlab ko‘ring. Agar u hali ham ishlamasa, xodimlarimizga xabar bering va boshqa to'lov usulini sinab ko'ring.",
+        "payment_link_expired_title": "Toʻlov havolasi muddati tugagan",
+        "payment_link_expired_text": "QR kodni qaytadan skanerlab ko‘ring."
+      },
+      "remote": {
+        "errors": {
+          "only_remote_merchandise_lines": "To'lov faqat masofaviy tovarlarni o'z ichiga oladi. To‘lovni yakunlash uchun masofaviy do‘konga yo‘naltirish talab qilinadi.",
+          "currency_mismatch": "Bu mahsulotni savatga qo‘shib bo‘lmaydi, chunki u boshqa valyutadan foydalanadigan do‘kondan.",
+          "currency_mismatch_removal": "Savatingizdan biror narsa olib tashlandi, chunki u boshqa valyutadan foydalanadigan doʻkondan.",
+          "max_remote_shops_exceeded": "Bu mahsulotni qoʻshib boʻlmaydi, chunki savatingizda boshqa doʻkonlardan koʻpi bor."
+        }
       }
     },
     "email_marketing": {
@@ -2685,6 +2621,83 @@
           "fix_domain_link_text": "domeningiz sozlamalari",
           "forgot_your_store_link_text": "do'koningizni unutdingiz",
           "add_storefront": "%{admin_link} sahifangizga Onlayn doʻkon kanalini qoʻshish orqali veb-saytingizni sozlashingiz mumkin. Agar doʻkoningizga kirishda muammoga duch kelsangiz, %{forgot_your_store_link} sahifasini sinab koʻring."
+        },
+        "ctas": {
+          "sell_in_person": {
+            "header": "Shaxsan soting",
+            "caption": "Chakana savdo doʻkonini ochish yoki kengaytirishdan qatʼi nazar, oʻzingizga kerak boʻlgan xususiyatlarni oling.",
+            "link_text": "Bepul sinovni boshlang"
+          },
+          "open_a_store": {
+            "header": "Yangi Shopify do'konini oching",
+            "caption": "3 kunlik bepul sinov muddatini boshlang, keyin keyingi 3 oy davomida oyiga $1 evaziga davom eting.",
+            "link_text": "Hozir roʻyxatdan oʻting"
+          },
+          "editions": {
+            "header": "Shopify nashrlarini tekshiring",
+            "caption": "100 dan ortiq mahsulot yangilanishi bilan siz o'zingiz tasavvur qilganingizdan ko'ra samaraliroq va ijodiy va savdoda kuchliroq bo'lishingiz mumkin.",
+            "link_text": "Eng so'nggi nashrlarni o'rganing"
+          },
+          "store_owner": {
+            "header": "Siz do'kon egasimisiz?",
+            "caption": "Do'koningizga kirishda muammo bormi? %{forgot_your_store_link} funksiyasini sinab ko‘ring. Agar doʻkoningizni qayta faollashtirmoqchi boʻlsangiz, %{shopify_support_link} bilan bogʻlaning.",
+            "shopify_support_link_text": "Shopify qo'llab-quvvatlash"
+          }
+        }
+      }
+    },
+    "notices": {
+      "customer": {
+        "password_reset_error": "Parolni tiklash xatosi",
+        "subscribe_error": "Obuna xatosi",
+        "unsubscribe_error": "Obunani bekor qilish xatosi",
+        "no_account_found": "Bu e-pochta bilan hech qanday hisob topilmadi.",
+        "invalid_credentials": "Noto'g'ri elektron pochta yoki parol.",
+        "denylisted_reset_password": "Hisobingizga kirib boʻlmadi, chunki joriy parol xavfsiz emas. Parolingizni yangilash uchun sizga elektron pochta xabari keladi.",
+        "signup_disabled": "Mijoz hisobini yaratish o‘chirib qo‘yilgan."
+      },
+      "address": {
+        "updated": "Manzil muvaffaqiyatli yangilandi.",
+        "error_updating": "Manzilni yangilashda xatolik yuz berdi",
+        "created": "Manzil muvaffaqiyatli yaratildi",
+        "error_creating": "Manzil yaratishda xatolik yuz berdi.",
+        "deleted": "Manzil muvaffaqiyatli oʻchirildi",
+        "error_deleting": "Manzilni oʻchirishda xatolik yuz berdi."
+      },
+      "line_item": {
+        "item_status": {
+          "add_variant": "%{delta} qo‘shildi",
+          "increment_item": "%{delta} qo‘shildi",
+          "decrement_item": "%{total} dan %{delta} olib tashlandi",
+          "decrement_fulfilled_line_item": "Qaytarildi %{delta/ %{total}",
+          "decrement_return_line_item": "Qaytishdan %{delta} olib tashlandi"
+        }
+      },
+      "order": {
+        "not_available": "Bu buyurtma mavjud emas",
+        "financial_status": {
+          "authorized": "Vakolatli",
+          "pending": "Kutilmoqda",
+          "paid": "To'langan",
+          "unpaid": "To'lanmagan",
+          "voided": "Bekor qilingan",
+          "partially_paid": "Qisman to'langan",
+          "partially_refunded": "Qisman qaytarilgan",
+          "refunded": "Toʻlov qaytarildi",
+          "expired": "Muddati tugagan"
+        },
+        "fulfillment_status": {
+          "fulfilled": "Bajarildi",
+          "complete": "Bajarildi",
+          "partial": "Qisman",
+          "unfulfilled": "Bajarilmagan",
+          "restocked": "Qayta zaxiralangan"
+        },
+        "transaction_status": {
+          "success": "Muvaffaqiyat",
+          "pending": "Kutilmoqda",
+          "failure": "Muvaffaqiyatsizlik",
+          "error": "Xato"
         }
       }
     }
@@ -3119,7 +3132,8 @@
       },
       "login_to_view_all_order_details": "Barcha buyurtma tafsilotlarini ko'rish uchun tizimga kiring.",
       "log_in": "tizimga kirish",
-      "logged_in_account_no_permission_to_order": "Siz {{email}} sifatida kirgansiz. Bu hisobda buyurtmani boshqarishga ruxsat yo‘q."
+      "logged_in_account_no_permission_to_order": "Siz {{email}} sifatida kirgansiz. Bu hisobda buyurtmani boshqarishga ruxsat yo‘q.",
+      "contact": "Aloqa"
     },
     "addresses": {
       "add_button": "Manzil qo'shing",
@@ -3282,7 +3296,8 @@
           }
         },
         "order_list_column_headers_location": "Joylashuv",
-        "removed_company_contact_tooltip": "Kompaniyadan olib tashlangan"
+        "removed_company_contact_tooltip": "Kompaniyadan olib tashlangan",
+        "order_list_column_headers_contact": "Aloqa"
       },
       "draft_order_details": {
         "draft_order_subtitle": "{{draftOrderName}} buyurtmasidan {{date}} sanasi tasdiqlandi",
