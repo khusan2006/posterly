@@ -564,5 +564,14 @@
         "out_of_stock_in_context_label": "Этот продукт недоступен в вашей стране/регионе."
       }
     }
+  },
+  "customer_accounts": {
+    "payment_methods": {
+      "pay_pal": {
+        "errors": {
+          "generic": "Возникла проблема с PayPal. Попробуйте ещё раз или воспользуйтесь другим способом оплаты."
+        }
+      }
+    }
   }
 }
