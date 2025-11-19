@@ -16,12 +16,6 @@
           "type": "title",
           "settings": {}
         },
-        "yotpo_product_reviews_star_rating_UUwB3L": {
-          "type": "shopify://apps/yotpo-product-reviews/blocks/star-rating/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
-          "settings": {
-            "product": "{{product}}"
-          }
-        },
         "caption": {
           "type": "text",
           "settings": {
@@ -55,15 +49,6 @@
           "type": "description",
           "settings": {}
         },
-        "collapsible-row-0": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Materials",
-            "icon": "leather",
-            "content": "",
-            "page": ""
-          }
-        },
         "collapsible-row-1": {
           "type": "collapsible_tab",
           "settings": {
@@ -91,15 +76,6 @@
             "page": ""
           }
         },
-        "collapsible_tab_wpP9DJ": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
-            "content": "{{ product.metafields.custom.material | metafield_tag }}",
-            "page": ""
-          }
-        },
         "share": {
           "type": "share",
           "settings": {
@@ -109,18 +85,15 @@
       },
       "block_order": [
         "title",
-        "yotpo_product_reviews_star_rating_UUwB3L",
         "caption",
         "price",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
         "description",
-        "collapsible-row-0",
         "collapsible-row-1",
         "collapsible-row-2",
         "collapsible-row-3",
-        "collapsible_tab_wpP9DJ",
         "share"
       ],
       "settings": {
@@ -245,17 +218,6 @@
     },
     "1756041486e4b13d2a": {
       "type": "apps",
-      "blocks": {
-        "yotpo_product_reviews_reviews_FVzbLd": {
-          "type": "shopify://apps/yotpo-product-reviews/blocks/reviews/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
-          "settings": {
-            "product": "{{product}}"
-          }
-        }
-      },
-      "block_order": [
-        "yotpo_product_reviews_reviews_FVzbLd"
-      ],
       "settings": {
         "include_margins": true
       }
