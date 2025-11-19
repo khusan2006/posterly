@@ -537,7 +537,8 @@
   "shopify": {
     "sentence": {
       "two_words_connector": " va ",
-      "last_word_connector": ", va "
+      "last_word_connector": ", va ",
+      "words_connector": ","
     },
     "checkout": {
       "address_management": {
@@ -650,13 +651,131 @@
             "local_pickup_no_delivery_strategy_available": "Mahalliy olib ketish strategiyasi topilmadi.",
             "origin_location_id_required": "CHAKKANA yetkazib berish usuli soʻralganda kelib chiqish manzili identifikatori talab qilinadi.",
             "invalid_origin_location_id": "Manzil identifikatoriga mos keladigan joy topilmadi.",
-            "origin_location_id_not_allowed": "Talab qilingan yetkazib berish usullari manba manzili identifikatorini qo‘llab-quvvatlamaydi."
+            "origin_location_id_not_allowed": "Talab qilingan yetkazib berish usullari manba manzili identifikatorini qo‘llab-quvvatlamaydi.",
+            "auto_fulfill_not_allowed": "Bu seans bajarilish xatti-harakatlarini bekor qilishga ruxsat berilmagan.",
+            "auto_fulfill_required": "CHAKKANA yetkazib berish usuli soʻralganda avtomatik bajarish talab qilinadi.",
+            "prefetch_shipping_rates_used": "Oldindan yuklangan yuk stavkalari hech qachon tariflarni qaytarmasligi kerak.",
+            "fulfillment_constraints_not_satisfied": "Bir yoki bir nechta bajarish cheklovlari qoniqtirilmadi.",
+            "must_fulfill_from_constraint_not_satisfied": "Bajarish cheklovlari qoniqtirilmaydi, chunki elementlarni kerakli joylardan bajarish mumkin emas.",
+            "must_fulfill_from_same_location_constraint_not_satisfied": "Bajarish cheklovlari qondirilmaydi, chunki elementlarni bir joydan bajarish mumkin emas.",
+            "delivery_strategy_conditions_not_satisfied": "Bu joy uchun yetkazib berish strategiyalari mavjud, ammo ularning shartlari qoniqtirilmaydi.",
+            "out_of_stock_at_origin_location": "Kelib chiqish joyida zaxira yo'q.",
+            "invalid_signature": "Chegirma imzosi yaroqsiz."
           },
           "fx_reconciliation_override": {
             "shop_currency_mismatch": "Qabul qilingan miqdor do'kon valyutasida bo'lishi kerak."
           },
           "checkout_source": {
             "revoked": "Bu toʻlov endi mavjud emas."
+          },
+          "discount": {
+            "discounts_not_allowed_for_b2b": "B2B do'konlarida chegirmalarga ruxsat berilmaydi.",
+            "custom_discount_not_honoured": "Taqdim etilgan maxsus chegirma inobatga olinmadi.",
+            "unsupported_expectation": "Taqdim etilgan chegirma qatorida siyosat talqin qila olmaydigan taxmin mavjud edi.",
+            "additional_requested_discount_code_discarded": "{{code}} amal qiladi, lekin amal qilmaydi. Chegirma shartlarini tekshiring.",
+            "additional_requested_discount_discarded": "Chegirmangiz amal qiladi, lekin amal qilmaydi. Chegirma shartlarini tekshiring.",
+            "allocations_mismatch": "Chegirma kodingiz o'zgardi. Savatingizni tekshiring va qaytadan urining.",
+            "discount_title_too_long": "Chegirma nomi 255 belgidan oshmasligi kerak."
+          },
+          "tax": {
+            "new_tax_must_be_accepted": "Buyurtmangizga bog‘liq soliqlar o‘zgardi. Ko‘rib chiqing va qayta urinib ko‘ring.",
+            "unresolvable_tax_terms": "Taklif etilayotgan shartlar hozirgi muzokaralar kontekstidan kelib chiqqan holda hal qilib bo'lmaydi.",
+            "delivery_price_is_abstract": "Tegishli yetkazib berish narxi mavhum.",
+            "tax_inclusivity_mismatch": "Aniq totalTaxAndDutyAmount yoki totalAmountIncludedInTarget qiymati bilan qayta muzokara qiling.",
+            "tax_exemption_not_supported": "Joriy muzokaralar sessiyasi uchun soliq imtiyozlari qo‘llab-quvvatlanmaydi.",
+            "delivery_tax_exemption_not_supported": "Yetkazib berish liniyalari uchun soliq imtiyozlari hozircha qo‘llab-quvvatlanmaydi.",
+            "proposed_allocations_required": "“Taklif etilgan ajratmalar” maydoni yetishmayapti.",
+            "merchandise_terms_must_be_defined": "Tovar shartlari aniqlanishi kerak.",
+            "delivery_terms_must_be_defined": "Yetkazib berish shartlari aniqlanishi kerak.",
+            "merchandise_discount_terms_must_be_defined": "Tovar chegirmalari shartlari aniqlanishi kerak.",
+            "delivery_discount_terms_must_be_defined": "Yetkazib berish uchun chegirma shartlari aniqlanishi kerak.",
+            "allocated_required": "\"ajratilgan\" maydon etishmayapti.",
+            "value_required": "“Qiymat” maydoni yetishmayapti.",
+            "line_splits_not_supported": "\"Tovar liniyalari\" maydoni sotuvchi taklifida har birida bitta qator komponentiga ega bo'lishi uchun ajratilishi kerak."
+          },
+          "payment": {
+            "manual_payments_not_allowed_for_b2b": "B2B do'konlarida qo'lda to'lovlar amalga oshirilmaydi.",
+            "positive_amount_expected": "To'lov miqdori 0 dan katta bo'lishi kerak.",
+            "total_amount_mismatch": "Jami toʻlov summasi toʻlovlar summasiga mos kelmaydi.",
+            "subscription_terms_not_accepted": "Obuna shartlari qabul qilinmaydi.",
+            "missing_session_id": "Kredit karta seansi ma'lumotlari etishmayapti.",
+            "gateway_not_supported": "Toʻlov shlyuzi toʻlov usulini saqlashni qoʻllab-quvvatlamaydi.",
+            "credit_card_last_name_required": "\"familiya\" nol bo'lishi mumkin emas.",
+            "credit_card_update_failed": "Kredit karta yangilanmadi.",
+            "installments_amount_invalid": "Boʻlib-boʻlib toʻlash uchun yaroqsiz summa.",
+            "installments_test_mode_not_allowed": "Sinov rejimiga ruxsat berilmagan.",
+            "installments_gift_card_not_allowed": "To'lovlar sovg'a kartalaridan foydalanishga ruxsat bermaydi.",
+            "installments_unsupported_currency": "Toʻlovlar bu valyutani qoʻllab-quvvatlamaydi.",
+            "installments_unsupported_shipping": "Boʻlib-boʻlib toʻlash ushbu manzilga yetkazib berishni qoʻllab-quvvatlamaydi.",
+            "installments_unsupported_billing": "Toʻlovlar bu toʻlov manzilini qoʻllab-quvvatlamaydi.",
+            "installments_unsupported_subscriptions": "Toʻlovlar obunalarni qoʻllab-quvvatlamaydi.",
+            "installments_ineligible_line_item": "Bu xariddagi band uchun toʻlovlar oʻchirib qoʻyilgan.",
+            "shop_cash_not_found": "Shop Cash topilmadi.",
+            "shop_cash_not_allowed": "Shop Paysiz naqd pul olish mumkin emas.",
+            "shop_cash_unsupported_checkout_source": "Shop Cash bu to'lovni qo'llab-quvvatlamaydi.",
+            "shop_cash_gift_card_not_allowed": "Shop Cash sovg'a kartalarini sotib olishga ruxsat bermaydi.",
+            "shop_cash_not_enabled": "Shop Cash bu do‘kon uchun yoqilmagan.",
+            "shop_cash_not_available": "Bu kassada Shop Cash qo‘llab-quvvatlanmaydi.",
+            "shop_cash_unsupported_subscriptions": "Shop Cash obunalarni qo'llab-quvvatlamaydi.",
+            "shop_cash_unsupported_shipping": "Shop Cash yuk tashishsiz tovarlarni qo'llab-quvvatlamaydi.",
+            "invalid_address_type": "Ushbu toʻlov usuli uchun koʻrsatilgan manzil turi yaroqsiz.",
+            "missing_retail_attributions": "Qo'lda kiritilgan kredit karta to'lovlari uchun chakana atributlar talab qilinadi.",
+            "unexpected_retail_attributions": "Chakana savdo atributlari kutilmaganda kredit karta to'lovi uchun taqdim etilgan.",
+            "invalid_card_source": "Bu seansda ushbu karta manbasidan foydalanishga ruxsat yo‘q.",
+            "wallet_content_missing": "Hamyon tarkibi yo‘q.",
+            "payment_instrument_not_found": "Toʻlov usuli topilmadi",
+            "unauthorized_capture_method": "Toʻlovni yozib olish usulini sozlash mumkin emas.",
+            "saved_payment_methods_not_allowed": "Saqlangan toʻlov usullariga ruxsat berilmagan.",
+            "saved_payment_methods_not_enabled": "Bu doʻkonda saqlangan toʻlov usullari yoqilmagan.",
+            "saved_payment_methods_cvv_verification_disabled": "Tanlangan toʻlov usuli CVV tasdiqlashni talab qiladi, bu doʻkon uchun yoqilmagan. Boshqa toʻlov usulini tanlang.",
+            "store_credit_not_enabled": "Bu doʻkon uchun doʻkon krediti yoqilmagan.",
+            "store_credit_account_not_found": "Do'kon kredit hisobi topilmadi.",
+            "store_credit_account_mismatch": "Do'kon kredit hisobi xaridor identifikatoriga mos kelmaydi.",
+            "store_credit_mismatched_currency": "Doʻkon kredit hisobining valyutasi toʻlov valyutasiga mos kelmaydi.",
+            "store_credit_insufficient_funds": "Do'konning kredit hisobida mablag' yetarli emas.",
+            "store_credit_buying_gift_card": "Sovg'a kartasini xarid qilish uchun do'kon kreditidan foydalana olmaysiz.",
+            "gift_cards_not_allowed_for_b2b": "B2B do'konlarida sovg'a kartalariga ruxsat berilmaydi.",
+            "method_required": "To'lov usuli taklif qilinishi kerak.",
+            "paypal_express_address_invalid": "PayPal yaroqsiz manzilni qaytardi.",
+            "shop_cash_unsupported_currency": "Shop Cash bu valyutani qo'llab-quvvatlamaydi."
+          },
+          "tip": {
+            "not_accepted_by_shop": "Do'kon maslahatlarni qabul qilmaydi.",
+            "only_one_tip_line_allowed": "Bir nechta maslahatlar qatori qo'llab-quvvatlanmaydi.",
+            "tips_not_allowed_for_b2b": "B2B do'konlarida maslahatlarga ruxsat berilmaydi.",
+            "currency_change_reset": "Valyuta o'zgarishi sababli maslahat qayta o'rnatildi.",
+            "tips_not_allowed_for_deferred_purchase_options": "Kechiktirilgan xarid variantlari uchun maslahatlar hali qo'llab-quvvatlanmaydi."
+          },
+          "sale_attribution": {
+            "draft_order_not_exist": "Bu qoralama buyurtma joriy do‘konda mavjud emas.",
+            "staff_member_not_exist": "Hozirgi do'konda bunday xodimlar mavjud emas.",
+            "location_not_exist": "Bu joy joriy do‘konda mavjud emas.",
+            "point_of_sale_device_not_exist": "Ushbu savdo nuqtasi qurilmasi joriy do'konda mavjud emas.",
+            "unresolvable_target_merchandise_lines": "Joriy muzokaralar kontekstidan kelib chiqqan holda, taklif etilayotgan savdo belgilarini hal qilib bo‘lmaydi."
+          },
+          "non_negotiable": {
+            "missing_non_negotiable_terms": "Xaridor taklifida munozarali boʻlmagan_shartlar boʻlishi kerak.",
+            "invalid_signature": "{{target_terms}} imzosi yaroqsiz."
+          },
+          "inventory": {
+            "missing_quantity_value": "Xaridorning inventar qatorlarida miqdor maydoni mavjud emas.",
+            "changing_behavior_not_allowed": "Bu mijozda inventarni o‘zgartirishga ruxsati yo‘q.",
+            "only_one_inventory_behavior_allowed": "Hozirda har bir to‘lov uchun faqat bitta inventarizatsiyaga ruxsat berilgan."
+          },
+          "optional_duties": {
+            "optional_duties_not_permitted": "Ushbu to'lov uchun to'lovlarni rad etishga yo'l qo'yilmaydi."
+          },
+          "attribution": {
+            "retail_attribution_not_allowed": "Ushbu hisob-kitob uchun chakana savdo belgisiga ruxsat berilmagan.",
+            "retail_attribution_required": "Ushbu hisob-kitob uchun chakana savdo belgisi talab qilinadi."
+          },
+          "captcha": {
+            "metadata_missing": "Bu toʻlov uchun captcha-ni toʻldirish talab qilinadi.",
+            "metadata_mismatch": "Taqdim etilgan captcha provayderi va turi kutilgan qiymatlarga mos kelmaydi.",
+            "token_missing": "Hisob-kitobni yakunlash uchun captcha tokeni taqdim etilishi kerak.",
+            "job_enqueue_failed": "Captcha tekshirish vazifasini navbatga qo‘yib bo‘lmadi.",
+            "job_already_queued": "Bu captcha tokeni uchun Captcha tekshiruvi allaqachon navbatga qo‘yilgan.",
+            "token_expired": "Taqdim etilgan captcha tokeni muddati tugagan. To‘lovni davom ettirish uchun yangi captcha-ni to‘ldiring."
           }
         },
         "full_price": "To'liq narx:",
@@ -823,7 +942,11 @@
         "draft_order_payment_due_later_terms": "Buyurtma tasdiqlangach, siz {{translatedName}} shartlariga amal qilasiz.",
         "draft_order_payment_due_on_fulfillment": "Buyurtmangiz tasdiqlangan va bajarilgandan so'ng to'lovingiz amalga oshiriladi.",
         "draft_order_deposit_due_later": "Buyurtma tasdiqlanganda {{depositAmount}} toʻlanadi. Balans {{translatedName}} shartlariga muvofiq bo‘ladi.",
-        "draft_order_deposit_due_on_fulfillment": "Buyurtma tasdiqlanganda {{depositAmount}} toʻlanadi. Balans sizning buyurtmangiz bajarilgandan so'ng bo'ladi."
+        "draft_order_deposit_due_on_fulfillment": "Buyurtma tasdiqlanganda {{depositAmount}} toʻlanadi. Balans sizning buyurtmangiz bajarilgandan so'ng bo'ladi.",
+        "money_order_label": "Pul buyurtmasi",
+        "debit_card_label": "Debet karta",
+        "deferred_payment_label": "Toʻlov usulini keyinroq tanlang",
+        "fixed_payment_label": "Toʻlovingiz {{dueDate}} sanasida toʻlanadi."
       },
       "thank_you": {
         "title": "Xaridingiz uchun rahmat!",
@@ -1128,7 +1251,34 @@
         "failure": "Yetkazib berilmagan",
         "failed_title": "Buyurtmani yetkazib bo‘lmadi",
         "failed_contact_merchant": "Yetkazib berishni tartibga solish uchun %{company} bilan bog‘laning.",
-        "failed_contact_merchant_no_company": "Yetkazib berishni tashkil qilish uchun biz bilan bog'laning."
+        "failed_contact_merchant_no_company": "Yetkazib berishni tashkil qilish uchun biz bilan bog'laning.",
+        "payment_method_not_charged": "Toʻlov olinmaydi",
+        "items_fulfilled_by_store": {
+          "one": "Siz xarid qilgan mahsulotlar %{remote_shop_name} orqali keladi.",
+          "other": "Siz sotib olgan mahsulotlar boshqa doʻkonlardan keladi."
+        },
+        "thank_you_confirmed_with_email_description": {
+          "single_store": "Tez orada tasdiqlovchi xat olasiz",
+          "multi_store": "Tez orada har bir doʻkondan alohida tasdiqlovchi xatlar olasiz"
+        },
+        "thank_you_confirmed_with_phone_description": {
+          "single_store": "Tez orada tasdiqlash matnini olasiz",
+          "multi_store": "Tez orada har bir doʻkondan alohida tasdiqlash matnlarini olasiz"
+        },
+        "thank_you_confirmed_with_email_and_phone_description": {
+          "single_store": "Tez orada tasdiqlovchi xat olasiz",
+          "multi_store": "Tez orada har bir doʻkondan alohida tasdiqlovchi xatlar olasiz"
+        },
+        "thank_you_confirmed_items_with_email": {
+          "one": "Tez orada tasdiqlovchi xat olasiz",
+          "other": "Tez orada tasdiqlovchi xatlarni olasiz"
+        },
+        "thank_you_confirmed_items_with_phone": {
+          "one": "Tez orada tasdiqlash matnini olasiz",
+          "other": "Tez orada tasdiqlash xabarlarini olasiz"
+        },
+        "thank_you_from_other_store": "Boshqa do'kondan",
+        "checkout_on_another_store": "Boshqa do'konda tekshiring"
       },
       "review": {
         "blocks": {
@@ -1152,7 +1302,8 @@
           "purchase_order_number_title": "PO raqami",
           "change_purchase_order_number_label": "PO raqamini o'zgartiring",
           "change_delivery_method_link_label": "Yetkazib berish usulini o'zgartirish",
-          "contact_method_title": "Aloqa"
+          "contact_method_title": "Aloqa",
+          "change_company_location_link_label": "Kompaniyaning manzilini o'zgartiring"
         },
         "block_title": "Ma'lumotlaringizni ko'rib chiqing",
         "item_header": {
@@ -1323,7 +1474,26 @@
           "sold_out": "Sotildi"
         },
         "inventory": {
-          "partial_inventory_banner": "Savatingizning bir qismi sotilgan va uni kassada xarid qilib bo‘lmaydi."
+          "partial_inventory_banner": "Savatingizning bir qismi sotilgan va uni kassada xarid qilib bo‘lmaydi.",
+          "sold_out": {
+            "heading": "Savatingiz sotildi",
+            "storefront_body": "Xarid qilishni davom ettirish uchun do'konga qayting",
+            "no_storefront_body": "Afsuski, siz sotib olmoqchi bo'lgan narsa endi mavjud emas.",
+            "link": "Do'konga qaytish"
+          }
+        },
+        "title": "Navbat",
+        "time_to_checkout_title": "Chiqish vaqti - {{shopName}}",
+        "estimated_wait_time": {
+          "calculating": "Taxminiy kutish vaqtini hisoblash",
+          "less_than_one": "Taxminiy kutish vaqti: bir daqiqadan kamroq",
+          "one": "Taxminiy kutish vaqti: {{count}} daqiqa",
+          "other": "Taxminiy kutish vaqti: {{count}} daqiqa"
+        },
+        "last_checked": "(Oxirgi tekshirilgan: {{time}} )",
+        "footer": {
+          "heading": "Bu sahifani yangilamang, u avtomatik ravishda yangilanadi.",
+          "body": "Toʻlovni tugatmaguningizcha savatingizdagi narsalar band qilinmaydi."
         }
       },
       "delivery_options": {
@@ -2369,7 +2539,23 @@
           "title": "Kontakt maʼlumotlari yaroqsiz",
           "header": "Maʼlumotlaringizni yangilash uchun {{emailLink}} .",
           "email_link": "Biz bilan bog'lanish"
-        }
+        },
+        "return_to_cart_link_text": "Savatga qaytish",
+        "return_to_cart_to_update_quantities": "Miqdorlarni yangilash uchun %{return_to_cart_link_text}",
+        "subscription_changed": "Obunalaringizdan biri o‘zgardi.",
+        "company_location_changed": "Savatingiz yangilandi. Buyurtmani yuborishdan oldin uni ko'rib chiqing.",
+        "company_location_changed_product_removed": "Savatingiz yangilandi, chunki ayrim mahsulotlar bu joyda mavjud emas. Buyurtmani yuborishdan oldin uni ko'rib chiqing.",
+        "violations_title": "{{violation}} yoʻq yoki yaroqsiz",
+        "individual_violations_title": {
+          "DeliveryViolations": "Yetkazib berish manzili",
+          "PaymentViolations": "To'lovchi; to'lovni qabul qiladigan manzil",
+          "OtherViolations": "Buyurtma haqida ma'lumot",
+          "UnhandledViolations": "Buyurtma haqida ma'lumot"
+        },
+        "all_violations_content": "Ushbu maʼlumotni yangilash va buyurtmani bajarish uchun bizga qoʻngʻiroq qiling yoki {{emailLink}} :",
+        "all_violations_email_link": "elektron pochta",
+        "editable_shipping_address_violations_message_title": "Buyurtmani bajarish uchun ushbu ma'lumotlarni qo'shing:",
+        "editable_shipping_address_violations_message_footer": "Bu joylashuv manzilini doimiy yangilash uchun {{emailLink}} ."
       },
       "review_address_modal": {
         "title": "Ko'rib chiqish manzili",
@@ -2405,6 +2591,92 @@
           "currency_mismatch": "Bu mahsulotni savatga qo‘shib bo‘lmaydi, chunki u boshqa valyutadan foydalanadigan do‘kondan.",
           "currency_mismatch_removal": "Savatingizdan biror narsa olib tashlandi, chunki u boshqa valyutadan foydalanadigan doʻkondan.",
           "max_remote_shops_exceeded": "Bu mahsulotni qoʻshib boʻlmaydi, chunki savatingizda boshqa doʻkonlardan koʻpi bor."
+        }
+      },
+      "remote_policies": {
+        "unavailable_policy": "Bu doʻkon uchun %{policy_name} taqdim etilmagan. Qoʻshimcha maʼlumot olish uchun %{shop_name} bilan bevosita bogʻlaning."
+      },
+      "cart_checkout_validation": {
+        "runtime_error": "So‘rovingizni ko‘rib chiqishda muammo yuz berdi, do‘kon egasi bilan bog‘laning."
+      },
+      "no_address_location": {
+        "title": "Manzilsiz joy",
+        "header": "Sizda bu joy uchun jo‘natish manzili yo‘q",
+        "alt_header": "Yetkazib berish manzili yetishmayapti",
+        "message": "Toʻlovni yakunlash uchun ushbu manzilga manzil qoʻshish uchun biz bilan bogʻlaning.",
+        "email_us_button_label": "Bizga elektron pochta xabarini yuboring"
+      },
+      "order_errors": {
+        "creation_failure": "Buyurtmani yaratishda muammo yuz berdi. Qayta urinib ko'ring yoki batafsil ma'lumot uchun biz bilan bog'laning.",
+        "network_failure": "Tarmoq xatosi tufayli buyurtmangizni yuborib bo‘lmadi. Ulanishingizni tekshiring va qaytadan urining.",
+        "inventory_reservation_failure": "Ayrim elementlar endi mavjud emas."
+      },
+      "session_errors": {
+        "session_not_unique": "Buyurtmangizni qayta ishlashda muammo yuz berdi. Do'konga qaytish uchun ushbu sahifani yangilang.",
+        "session_already_finished": "Bu buyurtma allaqachon yuborilgan. Yangi buyurtmani boshlash uchun do'konga qaytishingiz mumkin."
+      },
+      "artifact_errors": {
+        "artifact_dissatisfaction_without_violation": "Buyurtmangizni qayta ishlashda muammo yuz berdi. Bir necha daqiqadan so‘ng qayta urinib ko‘ring."
+      },
+      "pickup_point": {
+        "location_is_currently_closed": "Yopiq",
+        "business_hours": "Ish vaqti",
+        "no_business_hours": "Ish vaqti yo'q",
+        "open_twenty_four_hours": "24/7 ochiq",
+        "title": "Qabul qilish punkti",
+        "or": "yoki",
+        "search_button": "Qidiruv",
+        "address_label": "Manzil",
+        "selector_tabs": "Qabul qilish nuqtasi selektori",
+        "selector_tab_map": "Xarita",
+        "selector_tab_list": "Roʻyxat",
+        "could_not_resolve_address": "Manzilingiz topilmadi. Qaytadan urining yoki boshqa manzildan foydalaning",
+        "no_pickup_points_near_you": "Tanlangan manzil yaqinida qabul qilish punktlari topilmadi",
+        "no_pickup_points_near_location": "Joylashuvingiz yaqinida qabul qilish punktlari topilmadi",
+        "pickup_unavailable_banner_title": {
+          "one": "Buyumingizni qabul qilish punktlari mavjud emas",
+          "other": "Elementlaringizni qabul qilish punktlari mavjud emas"
+        },
+        "no_pickup_points_found": "Hech qanday qabul qilish nuqtalari topilmadi",
+        "paginator": {
+          "next_accessibility_label": "Keyingi sahifa",
+          "previous_accessibility_label": "Oldingi sahifa",
+          "header": {
+            "one": "%{count} balldan %{first} - %{last} ko‘rsatilmoqda",
+            "other": "%{count} balldan %{first} - %{last} ko‘rsatilmoqda"
+          },
+          "selected_pickup_point_label": {
+            "one": "%{count} balldan %{pickup_point_index}",
+            "other": "%{count} balldan %{pickup_point_index}"
+          },
+          "selected_page": {
+            "one": "%{count} balldan %{first} - %{last} ball",
+            "other": "%{count} balldan %{first} - %{oxirgisi"
+          }
+        },
+        "number_of_pickup_points_near_location": {
+          "one": "Joylashuvingiz yaqinidagi %{count} qabul qilish punkti",
+          "other": "Joylashuvingiz yaqinida %{count} qabul qilish punkti"
+        },
+        "change": "Joylashuvni o'zgartirish",
+        "waiting_on_pickup_point_location_notice": "Qabul qilish punktlari qidirilmoqda...",
+        "geolocation": {
+          "shared_location_button": "Mening joylashuvimdan foydalaning",
+          "errors": {
+            "unsuported_by_browser": "Geolokatsiyani olish brauzeringiz tomonidan qo‘llab-quvvatlanmaydi. Qaytadan urining yoki boshqa brauzerdan foydalaning.",
+            "permission_not_allowed": "Joylashuvingizni ulashishga ruxsat bering.",
+            "permission_denied": "Joylashuvingiz aniqlanmadi. Qayta urinib ko'ring."
+          }
+        }
+      },
+      "error_page": {
+        "terminal": {
+          "title": "Bizning kassada muammo yuz berdi",
+          "message": "Bu sahifani yangilang yoki bir necha daqiqadan so‘ng qayta urinib ko‘ring",
+          "action": {
+            "cta": "Sahifani yangilash"
+          },
+          "request_id": "So‘rov identifikatori: {{requestId}}"
         }
       }
     },
