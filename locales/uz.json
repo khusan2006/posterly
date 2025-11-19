@@ -3908,7 +3908,15 @@
         "replace_payment_method": "To'lov usulini almashtiring",
         "checkout_card_banner": "Ushbu to'lov usuli faqat oldindan ruxsat berilgan to'lovlar uchun ishlatilishi mumkin. Agar siz ushbu doʻkonga kirgan boʻlsangiz, u toʻlov vaqtida koʻrinmaydi. ",
         "default_checkbox": "Standart sifatida o'rnating",
-        "default_checkbox_accessibility_label": "Ushbu toʻlov usulini birlamchi qilib oʻrnating"
+        "default_checkbox_accessibility_label": "Ushbu toʻlov usulini birlamchi qilib oʻrnating",
+        "title": "To'lov usuli tafsilotlari",
+        "credit_card_details_accessibility_label": "{{lastDigits}} bilan tugaydi",
+        "billing_title": "To'lovchi; to'lovni qabul qiladigan manzil",
+        "card_info_title": "Karta ma'lumotlari",
+        "payment_method_expiring_on": "Muddati {{expiryDate}} da tugaydi",
+        "payment_method_expired_on": "Muddati {{expiryDate}} sanasida tugagan",
+        "preauthorized_payments": "Oldindan ruxsat etilgan to'lovlar",
+        "replace_payment_method_button": "O'zgartiring"
       },
       "edit_payment_method": {
         "title": "Toʻlov usulini tahrirlash",
@@ -3985,7 +3993,111 @@
           "choose_billing_address_from_list_button_accessibility_label": "Ro'yxatdan hisob-kitob manzilini tanlang",
           "missing_billing_address_error_message": "Iltimos, hisob-kitob manzilini belgilang",
           "default_checkbox": "Standart toʻlov usuli sifatida oʻrnating"
+        },
+        "replace_mode_warning": "Bu toʻlov usulini oʻchirish obunalar yoki oldindan buyurtmalarga taʼsir qiladi. Kelgusi buyurtmalarni olishni davom ettirish uchun uni muqobil toʻlov usuli bilan almashtiring.",
+        "choose_from_list": "Ro'yxatdan tanlang",
+        "add_new_button": "Yangi qo'shing"
+      },
+      "replacement_payment_method_title": "To'lovni almashtirish usuli",
+      "title": "To'lov usullari",
+      "add_payment_method_button": "Toʻlov usulini qoʻshing",
+      "add_payment_method_dropdown": {
+        "bank_account_consent": "Toʻlov usulini qoʻshish orqali siz bekor qilguningizcha, siz maʼqullagan kelajakdagi xaridlaringiz uchun kartangizdan toʻlov olinishiga yoki bank hisobingizdan yechib olinishiga ruxsat berasiz."
+      },
+      "bank_account": {
+        "loading_accessibility_message": "Bank hisobi tugmasi yuklanmoqda",
+        "iframe_title_accessibility_label": "Bank hisobini sozlash",
+        "display_name": "Bank hisobi",
+        "generic_error": "Bank hisobini qo‘shib bo‘lmadi. Keyinroq qayta urinib ko‘ring."
+      },
+      "add_payment_method_banner": "Tezroq to‘lov yoki oldindan avtorizatsiya xizmatlari uchun to‘lov usulini qo‘shing",
+      "no_payment_methods_banner": "Hech qanday toʻlov usullari qoʻshilmagan",
+      "edit_payment_method_button_accessibility_label": "{ {{lastDigits}} bilan tugaydigan {{paymentMethodName}} ni tahrirlash",
+      "edit_payment_method_brand_button_accessibility_label": "{{paymentMethodName}} ni tahrirlash",
+      "delete_payment_method_button": "Oʻchirish",
+      "delete_payment_method_button_accessibility_label": "{{paymentMethodName}} ni oʻchirish",
+      "back_button": "Orqaga",
+      "back_button_accessibility_label": "{{paymentMethodStepTitle}} sahifasiga qaytish",
+      "default": "Standart",
+      "generic_card": "Karta",
+      "expiration_warning_button_accessibility_label": "{{lastDigits}} bilan tugaydigan {{paymentMethodName}} uchun amal qilish muddati haqida ogohlantirishni ko‘rsatish",
+      "expires_soon": "Bu kartaning amal qilish muddati tez orada tugaydi",
+      "expired": "Ushbu karta foydalanish muddati eskirgan",
+      "card_update_consent": "Bu toʻlov usuli kelgusi xaridlar uchun saqlanadi.",
+      "card_update_consent_subscriptions": "Bu toʻlov usuli kelajakdagi xaridlar uchun saqlanadi va har qanday takroriy yoki kechiktirilgan xaridlar uchun ishlatilishi mumkin.",
+      "digital_wallet_title": "Raqamli hamyon",
+      "credit_or_debit_card_title": "Kredit yoki debet karta",
+      "google_pay": {
+        "iframe_title_accessibility_label": "Google Pay toʻlov usulini qoʻshing",
+        "loading_accessibility_message": "Google Pay yuklanmoqda",
+        "loading": "Google Pay yuklanmoqda",
+        "errors": {
+          "generic": "Google Pay bilan muammo yuz berdi. Qaytadan urining yoki boshqa toʻlov usulidan foydalaning.",
+          "missing_billing_address": "Google Pay hisob-kitob manzilini talab qiladi. Iltimos, hisobingizga bittasini qo'shing."
         }
+      },
+      "pay_pal": {
+        "iframe_title_accessibility_label": "PayPal to'lov usulini qo'shing",
+        "loading_accessibility_message": "PayPal yuklanmoqda",
+        "errors": {
+          "generic": "PayPal bilan muammo yuz berdi. Qaytadan urining yoki boshqa toʻlov usulidan foydalaning."
+        }
+      },
+      "apple_pay": {
+        "loading": "Apple Pay yuklanmoqda",
+        "errors": {
+          "generic": "Apple Pay bilan muammo yuz berdi. Qaytadan urining yoki boshqa toʻlov usulidan foydalaning.",
+          "not_available": "Apple Pay bu qurilmada mavjud emas.",
+          "missing_billing_address": "Apple Pay hisob-kitob manzilini talab qiladi. Iltimos, hisobingizga bittasini qo'shing."
+        }
+      },
+      "store_credit": {
+        "label": "Do'kon krediti",
+        "accesibility_label": "Do'kon krediti - {{formattedBalance}}",
+        "expirable_amounts_button": "Muddati tugaydigan miqdorlarni ko'ring",
+        "expirable_amounts_label": "Muddati tugaydigan miqdorlar",
+        "details_modal": {
+          "title": "Muddati tugaydigan do'kon krediti",
+          "balance_label": "Balans",
+          "expiration_date_label": "Tugash muddati",
+          "amount_label": "Miqdori",
+          "date_label": "Sana",
+          "event_label": "Tadbir",
+          "events": {
+            "adjustment": "Sozlash",
+            "order_payment": "Buyurtma to'lash",
+            "order_refund": "Buyurtmani qaytarish",
+            "payment_failure": "To'lov muvaffaqiyatsizligi",
+            "payment_returned": "To'lov qaytarildi",
+            "order_cancellation": "Buyurtmani bekor qilish",
+            "tax_finalization": "Soliqlarni yakunlash"
+          },
+          "expirable_balance_info": "Balansingizning bir qismi keyingi sanada tugaydi",
+          "expirable_amount_label": "Jami amal qilish muddati",
+          "expirable_amounts_info": "Muddati tezroq tugaydigan summalar birinchi navbatda kassada qo'llaniladi",
+          "expirable_amounts_button": "Ko‘rish",
+          "expired_amounts_button": "Muddati o'tgan summalarni ko'rish",
+          "pagination": {
+            "load_more_label": "Ko'proq yuklash",
+            "load_more_accessibility_label": "Ko'proq muddati tugaydigan miqdorlarni yuklang"
+          }
+        }
+      },
+      "update_payment_method": {
+        "title": "Toʻlov usulini yangilang",
+        "button_title": "Yangilash",
+        "billing_address": "To'lovchi; to'lovni qabul qiladigan manzil",
+        "disclaimer": "Bu toʻlov usuli kelajakdagi xaridlar uchun saqlanadi va har qanday takroriy yoki kechiktirilgan xaridlar uchun ishlatilishi mumkin.",
+        "error_message": "Toʻlov usulini yangilab boʻlmadi",
+        "current": "Hozirgi"
+      },
+      "link_expired": {
+        "message": "Toʻlov usulingizni yangilash uchun bu havola muddati tugagan.",
+        "return_home_button": "Bosh sahifaga qaytish"
+      },
+      "update_success": {
+        "title": "Toʻlov usuli yangilandi",
+        "done_button": "Xarid qilishda davom eting"
       }
     },
     "payment_method_brands": {
@@ -4102,7 +4214,30 @@
         "title": "Bu sahifani yuklashda muammo yuz berdi"
       },
       "order_not_found": {
-        "description": "Bu buyurtma mavjud emas yoki uni koʻrish uchun ruxsatingiz yoʻq."
+        "description": "Bu buyurtma mavjud emas yoki uni koʻrish uchun ruxsatingiz yoʻq.",
+        "title": "Buyurtma topilmadi"
+      },
+      "profile_update_error": {
+        "description": "Profilingizni yangilashda muammo yuz berdi. Ushbu sahifani yangilab koʻring yoki internet aloqangizni tekshiring."
+      },
+      "profile_name_update_error": {
+        "description": "Ismingizni yangilashda muammo yuz berdi. Ushbu sahifani yangilab koʻring yoki internet aloqangizni tekshiring."
+      },
+      "retry_action_label": "Qayta urinish",
+      "resend_link": {
+        "too_many_requests": "Juda koʻp soʻrovlar. Keyinroq qayta urinib ko‘ring.",
+        "generic": "Muvaffaqiyatsiz so‘rov"
+      },
+      "load_extension_error": {
+        "title": "Xato",
+        "description": "Bu sahifani yangilang yoki bir necha daqiqadan so‘ng qayta urinib ko‘ring.",
+        "refresh_button": "Sahifani yangilash"
+      }
+    },
+    "throttle": {
+      "too_many_attempts": {
+        "message": "Juda koʻp urinishlar",
+        "description": "Iltimos, bir necha daqiqadan so‘ng qayta urinib ko‘ring"
       }
     }
   }
