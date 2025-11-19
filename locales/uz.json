@@ -2875,7 +2875,13 @@
       "order_list": {
         "payment_status": {
           "gallery_view": {
-            "payment_not_due": "Toʻlov hali toʻlanmagan"
+            "payment_not_due": "Toʻlov hali toʻlanmagan",
+            "overdue": "To'lov muddati o'tgan",
+            "due": "Toʻlov muddati {{date}}",
+            "due_today": "To'lov bugun to'lanadi",
+            "due_without_date": "To'lov muddati",
+            "due_on_fulfillment": "Bajarilganidan keyin to'lov",
+            "pay_to_confirm": "Tasdiqlash uchun to'lang"
           },
           "list_view": {
             "overdue": "Muddati o'tgan",
@@ -2933,8 +2939,78 @@
             "custom": "Maxsus"
           }
         },
-        "show_order_actions_accessibility_label": "{{name}} buyurtmasi uchun buyurtma amallarini koʻrsatish"
-      }
+        "show_order_actions_accessibility_label": "{{name}} buyurtmasi uchun buyurtma amallarini koʻrsatish",
+        "column_headers": {
+          "order": "Buyurtma",
+          "total": "Jami",
+          "actions_accessibility_label": "Harakatlar",
+          "products_accessibility_label": "Mahsulotlar"
+        },
+        "delivered": "Yetkazib berilgan: {{date}}",
+        "empty_state_order_source_description": "Bu yerda faqat {{email}} tomonidan berilgan buyurtmalar koʻrsatiladi.",
+        "empty_state_subtitle": "Buyurtma berish uchun do'konga boring.",
+        "empty_state_title": "Hozircha buyurtmalar yo'q",
+        "empty_state_with_location_title": "{{locationName}} uchun buyurtma berilmagan",
+        "empty_state_title_for_pending_orders": "Kutilayotgan buyurtmalar yo'q",
+        "no_order_banner": "Buyurtma holati sahifasida kengaytmangizni sinab ko'rish uchun buyurtma yarating.",
+        "estimated_shortform": "Est. {{date}}",
+        "estimated_delivery": "Kutilayotgan {{date}}",
+        "one_images_accessibility_label": "Buyurtmaga {{lineItemName1}} kiradi",
+        "two_images_accessibility_label": "Buyurtmaga {{lineItemName1}} , {{lineItemName2}} kiradi",
+        "three_images_accessibility_label": "Buyurtmaga {{lineItemName1}} , {{lineItemName2}} , {{lineItemName3}} kiradi",
+        "four_images_accessibility_label": "Buyurtmaga {{lineItemName1}} , {{lineItemName2}} , {{lineItemName3}} , {{lineItemName4}} kiradi",
+        "more_than_three_products_accessibility_label": "Buyurtmaga {{lineItemName1}} , {{lineItemName2}} va yana {{numberOfAdditionalProducts}} ta mahsulotlar kiradi",
+        "more_than_four_products_accessibility_label": "Buyurtmaga {{lineItemName1}} , {{lineItemName2}} , {{lineItemName3}} va yana {{numberOfAdditionalProducts}} ta mahsulotlar kiradi",
+        "plus_more": "+ {{numberOfAdditionalProducts}}",
+        "plus_more_products": "+ {{numberOfAdditionalProducts}} mahsulot",
+        "carousel": {
+          "one_products_accessibility_label": "Buyurtmaga {{lineItemName1}} miqdori {{lineItemQuantity1}} kiradi",
+          "two_products_accessibility_label": "Buyurtmada {{lineItemName1}} miqdori {{lineItemQuantity1}} , {{lineItemName2}} miqdori {{lineItemQuantity2}}",
+          "three_products_accessibility_label": "Buyurtmada {{lineItemName1}} miqdori {{lineItemQuantity1}} , {{lineItemName2}} miqdori {{lineItemQuantity2}} , {{lineItemName3}} miqdori {{lineItemQuantity3}}",
+          "four_products_accessibility_label": "Buyurtmada {{lineItemName1}} miqdori {{lineItemQuantity1}} , {{lineItemName2}} miqdori {{lineItemQuantity2}} , {{lineItemName3}} miqdori {{lineItemQuantity3}} , {{lineItemName4}} miqdori {{lineItemQuantity4}}",
+          "five_products_accessibility_label": "Buyurtma tarkibiga {{lineItemName1}} miqdori {{lineItemQuantity1}} , {{lineItemName2}} miqdori {{lineItemQuantity2}} , {{lineItemName3}} miqdori {{lineItemQuantity3}} , {{lineItemName4}} miqdori {{lineItemQuantity4}} , miqdori {{lineItemName5}} miqdor {{lineItemQuantity5}}",
+          "six_products_accessibility_label": "Buyurtma tarkibiga {{lineItemName1}} miqdori {{lineItemQuantity1}} , {{lineItemName2}} miqdori {{lineItemQuantity2}} , {{lineItemName3}} miqdori {{lineItemQuantity3}} , {{lineItemName4}} miqdori {{lineItemQuantity4}} , miqdori {{lineItemName5}} miqdori {{lineItemQuantity5}} , {{lineItemName6}} miqdori {{lineItemQuantity6}}",
+          "six_and_more_products_accessibility_label": "Buyurtma tarkibiga {{lineItemName1}} miqdori {{lineItemQuantity1}} , {{lineItemName2}} miqdori {{lineItemQuantity2}} , {{lineItemName3}} miqdori {{lineItemQuantity3}} , {{lineItemName4}} miqdori {{lineItemQuantity4}} , miqdori {{lineItemName5}} miqdori {{lineItemQuantity5}} , {{lineItemName6}} miqdori {{lineItemQuantity6}} va boshqalar",
+          "view_order_details": "Buyurtma tafsilotlarini ko'rish",
+          "previous": "Oldingi",
+          "next": "Keyingisi"
+        },
+        "items": {
+          "one": "{{count}} ta element",
+          "other": "{{count}} ta element"
+        },
+        "no_filtered_results_description": "Buyurtmalaringizni ko'rish uchun filtrlarni olib tashlang yoki sozlang",
+        "no_filtered_results_title": "Filtrlangan natijalar yo‘q",
+        "order_link": "Buyurtmani ko'rish {{name}}",
+        "order_number": "Buyurtma {{name}}",
+        "orders_title": "Tasdiqlangan",
+        "pagination": {
+          "nav_accessibility_label": "Navigatsiya tugmalariga buyurtma berish",
+          "next": "Keyingisi",
+          "next_accessibility_label": "Keyingi buyurtmalar",
+          "previous": "Oldingi",
+          "previous_accessibility_label": "Oldingi buyurtmalar",
+          "load_more": "Ko'proq yuklash",
+          "load_more_accessibility_label": "Ko'proq buyurtmalarni yuklang"
+        },
+        "order_status_message": {
+          "list_view": {
+            "view_order_for_details": "Tafsilotlar uchun buyurtmani ko'ring",
+            "estimated_delivery": "Kutilayotgan {{date}}",
+            "last_updated": "Oxirgi yangilangan {{date}}"
+          },
+          "table_view": {
+            "estimated_delivery": "Est. yetkazib berish {{date}}"
+          }
+        }
+      },
+      "list_layout_accessibility_label": "Tartib variantlari",
+      "list_title": "Buyurtmalar",
+      "list_title_with_pending_orders": "Buyurtmalar:",
+      "list_title_confirmed_orders_accessibility_label": "Buyurtmalar: tasdiqlangan",
+      "list_title_pending_orders_accessibility_label": "Buyurtmalar: kutilmoqda",
+      "switch_order_type_pending_orders_accessibility_label": "Buyurtma turini almashtiring, hozir kutilayotgan buyurtmalar ko‘rilmoqda",
+      "switch_order_type_confirmed_orders_accessibility_label": "Buyurtma turini almashtiring, hozirda tasdiqlangan buyurtmalar koʻrilmoqda"
     },
     "order_details": {
       "shipment_timeline": {
@@ -3077,7 +3153,8 @@
         "summary": "yuk tashish; yetkazib berish",
         "free": "Bepul",
         "one_time": "Bir martalik etkazib berish",
-        "subscription": "Obuna yetkazib berish"
+        "subscription": "Obuna yetkazib berish",
+        "free_shipping_discount": "Yetkazib berish bepul"
       },
       "pickup": {
         "pickup": "Olib ketish; ko'tarish",
@@ -3387,8 +3464,24 @@
           "description_with_replacement": "Bu toʻlov usulini oʻchirish ushbu joy uchun oldindan ruxsat berilgan toʻlovlarga taʼsir qiladi. Kelgusi buyurtmalarni olishni davom ettirish uchun uni muqobil toʻlov usuli bilan almashtiring."
         },
         "payment_details": {
-          "order_label": "Buyurtma {{name}}"
+          "order_label": "Buyurtma {{name}}",
+          "draft_label": "Buyurtma loyihasi {{name}}"
         }
+      },
+      "purchase_order_number": {
+        "add_accessibility_label": "PO raqamini qo'shing",
+        "add_modal_title": "PO raqamini qo'shing",
+        "cancel": "Bekor qilish",
+        "close_modal_accessibility_label": "PO raqami modalini yoping",
+        "discard": "Bekor qilish",
+        "discard_changes_modal_title": "O'zgarishlar bekor qilinsinmi?",
+        "edit_accessibility_label": "PO raqamini tahrirlash",
+        "edit_modal_title": "PO raqamini tahrirlash",
+        "empty_state": "PO raqami yo'q",
+        "modal_po_number_input_label": "PO raqami",
+        "modal_po_number_input_max_length_error": "PO raqamlari maksimal {{maxLength}} ta belgidan iborat.",
+        "save": "Saqlash",
+        "title": "PO # {{poNumber}}"
       }
     },
     "ui_components": {
@@ -3686,6 +3779,59 @@
       "no_locations_found": "Hech qanday joy topilmadi",
       "try_new_search": "Yangi qidiruvni sinab ko'ring",
       "view_details": "Tafsilotlarni ko'rish"
+    },
+    "account_information": {
+      "people": {
+        "pagination": {
+          "load_more_accessibility_label": "Ko'proq odamni yuklang",
+          "loading_accessibility_label": "Odamlar yuklanmoqda"
+        }
+      },
+      "add_button": "Qo'shish"
+    },
+    "errors": {
+      "address_deletion_error": {
+        "description": "Bu manzilni oʻchirishda muammo yuz berdi. Qayta urinib ko'ring yoki sahifani yangilang."
+      },
+      "addresses_loading_issue": {
+        "description": "Ulanish xatosi. Internet aloqangizni tekshiring va qayta urinib ko'ring."
+      },
+      "banner_title": {
+        "one": "{{count}} xatolik bor",
+        "other": "{{count}} ta xato bor"
+      },
+      "failed_address_creation": {
+        "description": "Manzilni yaratishda muammo yuz berdi. Ushbu sahifani yangilab koʻring yoki internet aloqangizni tekshiring."
+      },
+      "failed_address_update": {
+        "description": "Manzilingizni yangilashda muammo yuz berdi. Ushbu sahifani yangilab koʻring yoki internet aloqangizni tekshiring."
+      },
+      "load_address_form_error": {
+        "title": "Manzil formasini yuklab bo‘lmadi",
+        "description": "Manzil formasini yuklab bo‘lmadi.",
+        "refresh_button": "Sahifani yangilash"
+      },
+      "load_orders_error": {
+        "title": "Buyurtmalarni yuklab bo‘lmadi",
+        "description": "Qayta urining yoki keyinroq qayting.",
+        "retry_button": "Qayta urinish"
+      },
+      "load_paypal_error": {
+        "description": "PayPalni yuklashda muammo yuz berdi. Iltimos, qayta urinib koʻring."
+      },
+      "logout_everywhere": {
+        "description": "Hisobdan chiqish vaqtida nimadir xato ketdi. Iltimos, qayta urinib koʻring."
+      },
+      "no_access_to_locations": {
+        "description": "Siz hech qanday manzilga kira olmaysiz"
+      },
+      "not_found": {
+        "description": "URL manzilini tekshiring yoki bir necha daqiqadan so‘ng qayta urinib ko‘ring.",
+        "title": "Bu sahifani yuklashda muammo yuz berdi"
+      },
+      "order_not_found": {
+        "description": "Bu buyurtma mavjud emas yoki uni koʻrish uchun ruxsatingiz yoʻq."
+      }
     }
   }
 }
