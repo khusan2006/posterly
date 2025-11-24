@@ -215,7 +215,7 @@
         "view_all_url": "shopify://collections",
         "enable_auto_scroll": false,
         "auto_scroll_speed": 5000,
-        "color_scheme": "background-1",
+        "color_scheme": "accent-2",
         "padding_top": 52,
         "padding_bottom": 52
       }
