@@ -99,7 +99,7 @@
                     endif
                   -%}
                   {% assign first_val = section.blocks | first %} 
-                  <div>test {{ first_val }}</div>  
+                  <div>test {{ first_val.type }}</div>  
 
                   <div class="custom-mega-menu__grid{%- unless has_any_promos -%} custom-mega-menu__grid--no-feature{%- endunless -%}">
                     {%- if promos_left != '' -%}
