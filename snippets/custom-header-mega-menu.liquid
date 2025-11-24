@@ -21,7 +21,6 @@
                     class="header__active-menu-item"
                   {% endif %}
                 >
-                  {{  link.handle }}
                   {{- link.title | escape -}}
                 </span>
                 {{- 'icon-caret.svg' | inline_asset_content -}}
@@ -39,7 +38,7 @@
                     assign promos_right_count = 0
 
                     for b in section.blocks
-                      if b.type == 'mega_menu_promo' and b.settings.parent_link != blank and b.settings.parent_link == link.handle and b.settings.image != blank
+                      if b.type == 'mega_menu_promo' and b.settings.parent_link != blank and b.settings.parent_link == link.title and b.settings.image != blank
                         assign cta_style_class = 'custom-mega-menu__feature-cta'
                         if b.settings.cta_style == 'button'
                           assign cta_style_class = cta_style_class | append: ' custom-mega-menu__feature-cta--button'
@@ -98,9 +97,6 @@
                       assign has_any_promos = true
                     endif
                   -%}
-                  {% assign first_val = section.blocks | first %} 
-                  <div>test {{ first_val.settings.parent_link }} {{ link.handle }}</div>  
-
                   <div class="custom-mega-menu__grid{%- unless has_any_promos -%} custom-mega-menu__grid--no-feature{%- endunless -%}">
                     {%- if promos_left != '' -%}
                       <div class="custom-mega-menu__features custom-mega-menu__features--left" data-count="{{ promos_left_count }}">{{ promos_left }}</div>
