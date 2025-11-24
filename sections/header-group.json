@@ -49,7 +49,7 @@
         "mega_menu_promo_4WwBCw": {
           "type": "mega_menu_promo",
           "settings": {
-            "parent_link": "posters",
+            "parent_link": "Posters",
             "image": "shopify://shop_images/67.png",
             "url": "",
             "cta": "Shop now",
@@ -64,7 +64,7 @@
         "mega_menu_promo_xgQHUX": {
           "type": "mega_menu_promo",
           "settings": {
-            "parent_link": "posters",
+            "parent_link": "Posters",
             "image": "shopify://shop_images/105.png",
             "url": "",
             "cta": "Shop now",
