@@ -11,6 +11,7 @@
   "current": {
     "logo": "shopify://shop_images/logo.png",
     "logo_width": 50,
+    "favicon": "shopify://shop_images/favicon-96x96.png",
     "type_header_font": "oswald_n4",
     "heading_scale": 100,
     "type_body_font": "oswald_n4",
@@ -138,35 +139,6 @@
       }
     },
     "content_for_index": [],
-    "blocks": {
-      "7570552984445421165": {
-        "type": "shopify://apps/yotpo-product-reviews/blocks/settings/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
-        "disabled": false,
-        "settings": {}
-      },
-      "14339172867238703359": {
-        "type": "shopify://apps/yotpo-product-reviews/blocks/reviews_tab/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
-        "disabled": false,
-        "settings": {
-          "product": ""
-        }
-      },
-      "12741885996470144523": {
-        "type": "shopify://apps/enorm-image-gallery-video/blocks/embed-js/01219f89-c8d0-40c2-a0ff-1987199e84a2",
-        "disabled": false,
-        "settings": {}
-      },
-      "855628211100114053": {
-        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
-        "disabled": false,
-        "settings": {}
-      },
-      "6143736321357441667": {
-        "type": "shopify://apps/tidio-live-chat-chatbots/blocks/app-embed/1002274d-fb18-4939-98f6-5f05a8deeadc",
-        "disabled": false,
-        "settings": {}
-      }
-    },
     "color_schemes": {
       "scheme-1": {
         "settings": {
