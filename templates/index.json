@@ -249,44 +249,33 @@
         "padding_bottom": 64
       }
     },
-    "collage": {
-      "type": "collage",
-      "blocks": {
-        "collection-0": {
-          "type": "collection",
-          "settings": {
-            "collection": "frontpage"
-          }
-        },
-        "product": {
-          "type": "product",
-          "settings": {
-            "product": "poster-porsche-235",
-            "second_image": false
-          }
-        },
-        "collection-1": {
-          "type": "collection",
-          "settings": {
-            "collection": "frontpage"
-          }
-        }
-      },
-      "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
-      ],
-      "disabled": true,
+    "featured_collection_cGjxMN": {
+      "type": "featured-collection",
       "settings": {
-        "heading": "Featured Products & Collections",
+        "collection": "trending-now",
+        "products_to_show": 15,
+        "title_position": "center",
+        "title": "Trending Now",
         "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "card_styles": "product-card-wrapper",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 5,
+        "enable_desktop_slider": true,
+        "full_width": true,
+        "show_view_all": true,
+        "view_all_style": "solid",
         "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "quick_add": "drawer",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     },
     "featured_product_banner_E4ztVU": {
@@ -451,7 +440,7 @@
     "featured_collection",
     "featured_collections_yWhxw7",
     "featured_collection_49Vn9D",
-    "collage",
+    "featured_collection_cGjxMN",
     "featured_product_banner_E4ztVU",
     "image_banner_UrEHAU",
     "multicolumn",
