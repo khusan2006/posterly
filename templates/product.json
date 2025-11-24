@@ -172,11 +172,74 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "collapsible_content_bLJANj": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_pJpNaD": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What materials are your posters printed on?",
+            "icon": "question_mark",
+            "row_content": "<p>We print all posters on high-quality, premium paper designed to deliver sharp detail, vibrant colors, and long-lasting durability.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_46xCJJ": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do you offer different sizes for each poster?",
+            "icon": "question_mark",
+            "row_content": "<p>Yes! Most of our designs are available in multiple sizes. The available dimensions are listed on each product page so you can choose the perfect fit for your space.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_kEXYNe": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How long does shipping take?",
+            "icon": "question_mark",
+            "row_content": "<p>Orders are usually processed within 1–2 business days. Delivery times vary based on your location, but most orders arrive within 5–10 business days.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_qCjwyp": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is your return or refund policy?",
+            "icon": "question_mark",
+            "row_content": "<p>If your poster arrives damaged or incorrect, we’ll replace it at no cost. For other issues, you can contact our support team within 14 days for help with returns or refunds.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_pJpNaD",
+        "collapsible_row_46xCJJ",
+        "collapsible_row_kEXYNe",
+        "collapsible_row_qCjwyp"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "FAQ",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
     "multicolumn",
+    "collapsible_content_bLJANj",
     "related-products"
   ]
 }
