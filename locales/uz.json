@@ -775,7 +775,9 @@
             "token_missing": "Hisob-kitobni yakunlash uchun captcha tokeni taqdim etilishi kerak.",
             "job_enqueue_failed": "Captcha tekshirish vazifasini navbatga qo‘yib bo‘lmadi.",
             "job_already_queued": "Bu captcha tokeni uchun Captcha tekshiruvi allaqachon navbatga qo‘yilgan.",
-            "token_expired": "Taqdim etilgan captcha tokeni muddati tugagan. To‘lovni davom ettirish uchun yangi captcha-ni to‘ldiring."
+            "token_expired": "Taqdim etilgan captcha tokeni muddati tugagan. To‘lovni davom ettirish uchun yangi captcha-ni to‘ldiring.",
+            "token_invalid": "Taqdim etilgan captcha tokeni yaroqsiz. To‘lovni davom ettirish uchun yangi captcha-ni to‘ldiring.",
+            "token_not_valid_for_session": "Taqdim etilgan captcha-dan bu hisob-kitob bilan foydalanib bo‘lmaydi."
           }
         },
         "full_price": "To'liq narx:",
@@ -1996,7 +1998,8 @@
         "bank_account_connect": "Bank hisobini ulang",
         "clear": "Tozalash",
         "preview_not_available": {
-          "button": "Kelishdikmi"
+          "button": "Kelishdikmi",
+          "content": "Xavotir olmang, bu tezkor to‘lov mijozlaringiz uchun ishlaydi."
         },
         "saved_credit_card_actions": {
           "edit": "Tahrirlash",
@@ -2012,14 +2015,16 @@
         },
         "delete_credit_card_modal": {
           "cancel": "Bekor qilish",
-          "delete": "Oʻchirish"
+          "delete": "Oʻchirish",
+          "confirmation": "Haqiqatan ham {{lastDigits}} bilan tugaydigan {{brandName}} ni oʻchirib tashlamoqchimisiz?"
         },
         "edit_credit_card_modal": {
           "done": "Bajarildi",
           "cancel": "Bekor qilish",
           "fields": {
             "billing": "hisob kimning nomiga"
-          }
+          },
+          "description": "Siz faqat kartangizning hisob-kitob manzilini o'zgartirishingiz mumkin."
         },
         "order_edit_banner_items_added": {
           "one": "Qo'shilgan"
@@ -2029,7 +2034,36 @@
         },
         "order_edit_banner_single_item_added": "Qo'shilgan",
         "order_edit_banner_single_item_removed": "Oʻchirildi",
-        "markets_pro_disclaimer_express_terms_and_conditions": "shartlari"
+        "markets_pro_disclaimer_express_terms_and_conditions": "shartlari",
+        "crypto_payment_method": {
+          "tooltip": "Sizning hamyon balansingiz va manzilingiz baham ko'rilmaydi va faqat so'ralgan miqdorni yechib olish mumkin"
+        },
+        "store_credit": {
+          "no_fixed_selling_plans": "Kechiktirilgan xarid imkoniyatlari bilan doʻkon kreditidan foydalana olmaysiz"
+        },
+        "billing_must_match_shipping_notice": "Toʻlov usulingizning hisob-kitob manzili yetkazib berish manziliga mos kelishi kerak.",
+        "no_working_method_error": "Bu doʻkon hozir toʻlovlarni qabul qila olmaydi. Ushbu sahifani yangilang yoki keyinroq qayting.",
+        "brand_not_available": "Bu doʻkon {{brand}} qabul qilmaydi. Toʻlash uchun boshqa kartadan foydalaning.",
+        "shipping_rate_updated": "Mavjud yuk tashish usullari yangilandi. Tekshirishdan oldin tanlovingizni tasdiqlang.",
+        "billing_address_invalid_phone": "Davom etish uchun {{label}} {{last_digits}} uchun hisob-kitob manzilingizdagi telefon raqamini yangilang.",
+        "billing_address_invalid_phone_no_card": "Davom etish uchun hisob-kitob manzilingizdagi telefon raqamini yangilang.",
+        "simulated_express_checkout": "Hududingiz yoki brauzeringiz tufayli hamyonlar muharrirni ko‘rib chiqishda mavjud emas",
+        "vaulting_agreement_label": "Tezroq hisob-kitob qilish uchun toʻlov maʼlumotlarimni %{company} bilan saqlang.",
+        "business_customer_vaulting_payment_label": "Toʻlov vaqtida ushbu toʻlov usulini saqlang va %{company} kompaniyasiga kelgusida ushbu joydan xarid qilish uchun undan toʻlov olishga ruxsat bering. Bu joyga tayinlangan barcha kontaktlar toʻlov usulidan foydalanishi mumkin.",
+        "business_customer_with_bank_account_vaulting_payment_label": "Toʻlov vaqtida ushbu toʻlov usulini saqlang va bekor qilmaguningizcha %{company} kompaniyasiga ushbu joy uchun maʼqullagan kelajakdagi xaridlaringiz uchun hisobingizdan debet qilishga ruxsat bering. Bu joyga tayinlangan barcha kontaktlar toʻlov usulidan foydalanishi mumkin.",
+        "purchase_options_and_vaulting_agreement_label": "Savatingizdagi bir yoki bir nechta mahsulot kechiktirilgan yoki obuna sotib olingan. Toʻlovni davom ettirish orqali siz toʻlov usulidan toʻlov tugaguncha yoki bekor qilmaguningizcha ushbu sahifada koʻrsatilgan narx va chastota boʻyicha avtomatik ravishda toʻlov olinishiga rozilik bildirasiz. Barcha bekor qilishlar %{cancellation_policy_label} bo‘ysunadi.",
+        "saved_credit_card_cvv_verification": "Tasdiqlash uchun kartangizning xavfsizlik kodini kiriting.",
+        "expired_cards_info": {
+          "one": "Hisobingizda ko‘rishingiz va tahrirlashingiz mumkin bo‘lgan muddati o‘tgan %{count} karta bor.",
+          "other": "Hisobingizda ko‘rishingiz va tahrirlashingiz mumkin bo‘lgan muddati o‘tgan %{count} ta karta bor."
+        },
+        "local_payment_method_receiver_notice": "Buyurtmani joylashtirgandan so'ng, siz to'lov ma'lumotlarini olasiz. Toʻlovni {{dueDays}} kun ichida bankomat yoki onlayn tarzda amalga oshiring.",
+        "order_edit_banner_subtitle": "Buyurtmangiz {{order_number}} yangilandi. Bu oʻzgarishlarni koʻrib chiqing, soʻngra buyurtmangizni tasdiqlash uchun toʻlang.",
+        "markets_pro_disclaimer_label": "Pastdagi tugmani bosish va buyurtmani bajarish orqali siz mahsulot(lar)ingizni Global-e’dan ushbu tranzaksiya uchun rekord sotuvchi sifatida Global-e’ning %{markets_pro_terms} va %{privacy_policy} asosida sotib olishga rozilik bildirasiz. Global-e bu %{shop_name} uchun xalqaro toʻlov xizmati provayderi.",
+        "markets_pro_disclaimer_label_express_checkout": "Xarid qilish orqali siz global xizmat koʻrsatuvchi provayderimiz %{markets_pro_terms} va %{privacy_policy}ga rozilik bildirasiz.",
+        "new_bank_account_disclaimer": "Buyurtmani bajarish orqali siz %{shop_name} kompaniyasiga quyidagi hisobdan ACH orqali ko‘rsatilgan miqdor va vaqtda debet qilishga ruxsat berasiz.",
+        "bank_account_disclaimer": "ACH toʻlovlarini qayta ishlash uchun 4 ish kunigacha vaqt ketishi mumkin.",
+        "separate_payments_label": "Mahsulotlaringiz bir nechta doʻkondan. Sizdan %{separate_payments_link} to‘lovi olinadi."
       },
       "order_summary": {
         "price_after_discount_aria_text": "Chegirmali narx",
@@ -2307,7 +2341,49 @@
         "split_shipping_option_fastest": "Eng tez",
         "split_shipping_option_recommended": "Tavsiya etilgan",
         "split_shipping_option_custom": "Maxsus",
-        "free_rate_label": "Bepul"
+        "free_rate_label": "Bepul",
+        "no_rates_for_cart_or_destination_notice": "Savatingiz yoki manzilingiz uchun yetkazib berish usullari mavjud emas",
+        "no_pickup_location_notice": "Mahsulotlaringizdan kamida bittasini olib ketish mumkin emas",
+        "shipping_line_delivery_instructions": "Eshik kodlari yoki o'chirish ko'rsatmalari kabi kerakli ma'lumotlarni kiriting.",
+        "prime_not_available": {
+          "default": "Buyurtmangiz uchun asosiy yetkazib berish mavjud emas. Yetkazib berish opsiyalaringiz yangilandi."
+        },
+        "subscription_delivery_description": {
+          "first_n_order_free_with_cycle": {
+            "one": "Yana %{count} yetkazib berish uchun bepul yetkazib berish, keyin %{recurring_order_shipping_price}",
+            "other": "Yana %{count} ta yetkazib berish uchun bepul yetkazib berish, keyin %{recurring_order_shipping_price}"
+          },
+          "first_n_order_free_with_cycle_delivery_not_included": {
+            "one": "%{count} yetkazib berish uchun bepul yetkazib berish, keyin %{recurring_order_shipping_price}",
+            "other": "%{count} ta yetkazib berish uchun bepul yetkazib berish, keyin %{recurring_order_shipping_price}"
+          },
+          "prepaid_free_shipping_with_cycles": {
+            "one": "Birinchi %{cycle} uchun bepul yetkazib berish, keyin esa %{recurring_order_shipping_price}",
+            "other": "Birinchi %{cycle} uchun bepul yetkazib berish, keyin esa %{recurring_order_shipping_price}"
+          },
+          "prepaid_order_one_cycle": {
+            "other": "Yana %{count} ta yetkazib berish uchun %{shipping_price} (%{per_delivery_cost})"
+          },
+          "prepaid_order_one_cycle_delivery_not_included": {
+            "other": "%{count} ta yetkazib berish uchun %{shipping_price} (%{per_delivery_cost})"
+          },
+          "prepaid_order_no_cycle": {
+            "one": "Yana %{count} ta yetkazib berish uchun %{shipping_price}, keyin esa %{recurring_order_shipping_price}.",
+            "other": "Yana %{count} ta yetkazib berish uchun %{shipping_price} (%{per_delivery_cost}), keyin esa %{recurring_order_shipping_price}"
+          },
+          "prepaid_order_no_cycle_delivery_not_included": {
+            "one": "%{count} yetkazib berish uchun %{shipping_price}, keyin esa %{recurring_order_shipping_price}",
+            "other": "%{count} ta yetkazib berish uchun %{shipping_price} (%{per_delivery_cost}), keyin esa %{recurring_order_shipping_price}"
+          },
+          "prepaid_shipping_price_label": "Yetkazib berish uchun %{shipping_price} x %{delivery_interval_count}",
+          "initial_order_discounted": "Avval yetkazib berish narxi %{discounted_shipping_cost}, keyin %{frequency_description}",
+          "prepaid_initial_order_discounted": "Birinchi yetkazib berish narxi %{discounted_shipping_price} %{prepaid_delivery_frequency}",
+          "prepaid_initial_order_discounted_with_per_delivery_price": "Birinchi yetkazib berish narxi %{discounted_shipping_price} %{prepaid_delivery_frequency} (%{discounted_cost_per_delivery})",
+          "prepaid_initial_order_discounted_with_renewal": "Avval yetkazib berish narxi %{discounted_shipping_price} %{prepaid_delivery_frequency}, keyin %{shipping_price} %{billing_cycle}",
+          "prepaid_initial_order_discounted_with_per_delivery_price_and_renewal": "Avval yetkazib berish narxi %{discounted_shipping_price} %{prepaid_delivery_frequency} (%{discounted_cost_per_delivery}), keyin %{shipping_price} %{billing_cycle}",
+          "first_order_shipping_price_included": "Birinchi buyurtma kiritilgan, keyin %{recurring_order_shipping_price}",
+          "first_order_different_shipping_price": "%{first_order_shipping_price} (har bir yetkazib berish uchun %{per_delivery_price}), keyin esa %{recurring_order_shipping_price}"
+        }
       },
       "localized_fields": {
         "additional_information": {
@@ -2847,6 +2923,10 @@
         "payment_not_processed_title": "Toʻlovingizni amalga oshirib boʻlmadi",
         "payment_not_processed_text": "Sizdan to‘lov olinmagan. Xaridni yakunlash uchun savatga qayting.",
         "return_to_cart_button_label": "Savatga qaytish"
+      },
+      "remote_merchandise_only": {
+        "remote_only_notice": "Ushbu mahsulotlar boshqa do'konlar tomonidan sotiladi va jo'natiladi. Xaridingizni yakunlash uchun har bir do'konni tekshiring.",
+        "single_shop_transition": "Xaridingizni yakunlash uchun sizni %{advertiser} saytiga yo‘naltirilmoqda."
       }
     },
     "email_marketing": {
@@ -3145,6 +3225,16 @@
         "cancel_reason": {
           "other": "Boshqa"
         }
+      },
+      "cart": {
+        "only_one_added_to_cart": "Mavjudligi sababli savatingizga faqat 1 ta mahsulot qo'shildi.",
+        "only_n_added_to_cart": "Mavjudligi sababli savatga faqat %{quantity} ta mahsulot qo‘shildi.",
+        "maximum_available_quantity_reached": "Bu mahsulotning maksimal miqdori allaqachon savatda.",
+        "stock_problems_html": "Bir yoki bir nechta element endi mavjud emas. Biz <a href=\"%{link}\">yangilangan savatni</a> taqdim etdik.",
+        "shipping_address_invalid": "Yetkazib berish tariflaringizni hisoblashda muammo yuz berdi. Buyurtmani yakunlashdan oldin etkazib berish narxini tanlash uchun to'lovni davom ettiring.",
+        "bundle_requires_components": "'%{name}' to'plami mahsulotini savatga qo'shib bo'lmaydi.",
+        "gift_card_with_components_not_supported": "'%{name}' to'plami mahsulotini savatga qo'shib bo'lmaydi.",
+        "gift_card_price_must_be_greater_than_zero": "'%{name}' to'plami mahsulotini savatga qo'shib bo'lmaydi."
       }
     }
   },
@@ -4354,7 +4444,10 @@
         "edit": "Tahrirlash",
         "email": "Elektron pochta",
         "save": "Saqlash",
-        "title": "Profil"
+        "title": "Profil",
+        "errors": {
+          "name_too_long": "{{fieldName}} juda uzun (maksimal 255 belgi)"
+        }
       },
       "verify_new_email_modal": {
         "verify_button": "Tasdiqlash",
@@ -4434,6 +4527,9 @@
         "current_method": "Hozirgi",
         "cancel": "Bekor qilish",
         "save": "Saqlash"
+      },
+      "contracts_updated": {
+        "other": "{{count}} ta obuna shartnomasi muvaffaqiyatli yangilandi"
       }
     }
   }
