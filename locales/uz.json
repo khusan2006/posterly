@@ -918,7 +918,8 @@
         "different_shipping_address_text": "Bu buyurtma uchun bir martalik manzildan foydalaning",
         "change_company_location_link_label": "Kompaniyaning manzilini o'zgartiring",
         "change_location_link_label": "Joylashuvni o'zgartirish",
-        "ship_to_company": "{{companyName}} manziliga jo‘natish"
+        "ship_to_company": "{{companyName}} manziliga jo‘natish",
+        "contact_method_title": "Aloqa"
       },
       "payment_gateway": {
         "generic_payment_terms": "Siz {{translatedName}} shartlaridasiz. Toʻlovingiz {{dueDate}} sanasida toʻlanadi.",
@@ -1538,7 +1539,8 @@
           "other": "Sizda saqlangan {{count}} ta manzil bor."
         },
         "saved_address_option_link": "Saqlangan manzildan foydalaning",
-        "saved_address_modal_title": "Saqlangan manzilimdan foydalaning"
+        "saved_address_modal_title": "Saqlangan manzilimdan foydalaning",
+        "rollup_label": "Hisob"
       },
       "stock": {
         "page_title": "Inventarizatsiya muammolari",
@@ -1613,7 +1615,8 @@
           "description": "Bu mahsulotlar endi mavjud emas va savatdan olib tashlandi.",
           "items_unavailable": "Ayrim mahsulotlar endi mavjud emas va savatdan olib tashlandi."
         },
-        "out_of_stock_in_context_label": "Bu mahsulot mamlakatingizda/mintaqada mavjud emas."
+        "out_of_stock_in_context_label": "Bu mahsulot mamlakatingizda/mintaqada mavjud emas.",
+        "price_column_header": "Narxi"
       },
       "vaulted": {
         "change_button": "O'zgartirish"
@@ -1920,7 +1923,9 @@
           "due_notice": "%{amount_due} toʻlovingiz %{due_date} sanasida toʻlanadi.",
           "multibanco": {
             "buyer_action_info": "%{amount_due} toʻlash kerak.",
-            "instruction_html": "Toʻlovni Multibanco yoki quyidagi maʼlumotlardan foydalanib onlayn amalga oshiring. Savollar yoki toʻlov tafsilotlarini yangilash uchun %{contact_us}."
+            "instruction_html": "Toʻlovni Multibanco yoki quyidagi maʼlumotlardan foydalanib onlayn amalga oshiring. Savollar yoki toʻlov tafsilotlarini yangilash uchun %{contact_us}.",
+            "entity": "Shaxs",
+            "amount": "Miqdori"
           }
         },
         "network_card_payment_options": "Karta tarmog'ini tanlang",
@@ -1988,7 +1993,43 @@
         },
         "bank_account_choose": "Xaridingizni xavfsiz bajarish uchun hisobni tanlang",
         "bank_account_connect_another": "Boshqa bank hisobini ulang",
-        "bank_account_connect": "Bank hisobini ulang"
+        "bank_account_connect": "Bank hisobini ulang",
+        "clear": "Tozalash",
+        "preview_not_available": {
+          "button": "Kelishdikmi"
+        },
+        "saved_credit_card_actions": {
+          "edit": "Tahrirlash",
+          "delete": "Oʻchirish"
+        },
+        "saved_credit_cards_modal": {
+          "done": "Bajarildi",
+          "cancel": "Bekor qilish"
+        },
+        "add_credit_card_modal": {
+          "save": "Saqlash",
+          "cancel": "Bekor qilish"
+        },
+        "delete_credit_card_modal": {
+          "cancel": "Bekor qilish",
+          "delete": "Oʻchirish"
+        },
+        "edit_credit_card_modal": {
+          "done": "Bajarildi",
+          "cancel": "Bekor qilish",
+          "fields": {
+            "billing": "hisob kimning nomiga"
+          }
+        },
+        "order_edit_banner_items_added": {
+          "one": "Qo'shilgan"
+        },
+        "order_edit_banner_items_removed": {
+          "in_full": "Oʻchirildi"
+        },
+        "order_edit_banner_single_item_added": "Qo'shilgan",
+        "order_edit_banner_single_item_removed": "Oʻchirildi",
+        "markets_pro_disclaimer_express_terms_and_conditions": "shartlari"
       },
       "order_summary": {
         "price_after_discount_aria_text": "Chegirmali narx",
@@ -2120,7 +2161,8 @@
         "more_items_modal": {
           "clear_search": "Qidiruvni tozalash",
           "empty_results": "“%{searchText}” uchun hech qanday natija topilmadi. Imloni tekshiring yoki boshqa so'z yoki iboradan foydalaning.",
-          "number_items_shown": "%{shownNumber} of %{totalNumber} ta element"
+          "number_items_shown": "%{shownNumber} of %{totalNumber} ta element",
+          "search_item": "Qidiruv"
         },
         "order_name_label": "Buyurtma %{name}",
         "shopping_cart_label": "Xarid savati",
@@ -2195,7 +2237,8 @@
         "information_estimated_taxes_label": "Soliqlar (taxminiy)",
         "estimated_taxes_finalization_tooltip_content": "Buyurtmani joylashtirganingizdan so'ng, yakuniy soliq va jami elektron pochta yoki matn orqali tasdiqlanadi.",
         "order_total_label": "Buyurtma jami",
-        "price_before_discount_aria_text": "Asl narxi"
+        "price_before_discount_aria_text": "Asl narxi",
+        "price_label": "Narxi"
       },
       "shipping": {
         "title": "yuk tashish; yetkazib berish",
@@ -2263,7 +2306,8 @@
         "split_shipping_option_lowest_price": "Eng past narx",
         "split_shipping_option_fastest": "Eng tez",
         "split_shipping_option_recommended": "Tavsiya etilgan",
-        "split_shipping_option_custom": "Maxsus"
+        "split_shipping_option_custom": "Maxsus",
+        "free_rate_label": "Bepul"
       },
       "localized_fields": {
         "additional_information": {
@@ -2877,7 +2921,9 @@
       },
       "not_found": "404 topilmadi",
       "challenge": "Challenj",
-      "checkpoint": "Tekshirish punkti"
+      "checkpoint": "Tekshirish punkti",
+      "account": "Hisob",
+      "search": "Qidiruv"
     },
     "cart": {
       "discounts_with_count": "%{count} chegirma qo‘llanildi"
@@ -3095,6 +3141,9 @@
           "pending": "Kutilmoqda",
           "failure": "Muvaffaqiyatsizlik",
           "error": "Xato"
+        },
+        "cancel_reason": {
+          "other": "Boshqa"
         }
       }
     }
@@ -4257,7 +4306,8 @@
         "nav_accessibility_label": "Hisob navigatsiyasi",
         "open_menu_accessibility_label": "Hisob navigatsiyasini oching",
         "close_menu_accessibility_label": "Hisob navigatsiyasini yoping",
-        "loading_message": "Hisob navigatsiyasi yuklanmoqda"
+        "loading_message": "Hisob navigatsiyasi yuklanmoqda",
+        "label": "Hisob"
       },
       "action_menu_accessibility_label": "Ko'proq harakatlar",
       "close_menu_accessibility_label": "Asosiy navigatsiyani yoping",
@@ -4287,7 +4337,9 @@
       "switch_location": "Joyni almashtirish",
       "no_locations_found": "Hech qanday joy topilmadi",
       "try_new_search": "Yangi qidiruvni sinab ko'ring",
-      "view_details": "Tafsilotlarni ko'rish"
+      "view_details": "Tafsilotlarni ko'rish",
+      "orders_link_label": "Buyurtmalar",
+      "search": "Qidiruv"
     },
     "account_information": {
       "people": {
@@ -4296,7 +4348,19 @@
           "loading_accessibility_label": "Odamlar yuklanmoqda"
         }
       },
-      "add_button": "Qo'shish"
+      "add_button": "Qo'shish",
+      "profile_card": {
+        "cancel": "Bekor qilish",
+        "edit": "Tahrirlash",
+        "email": "Elektron pochta",
+        "save": "Saqlash",
+        "title": "Profil"
+      },
+      "verify_new_email_modal": {
+        "verify_button": "Tasdiqlash",
+        "cancel_button": "Bekor qilish"
+      },
+      "title": "Profil"
     },
     "errors": {
       "address_deletion_error": {
@@ -4363,6 +4427,13 @@
       "too_many_attempts": {
         "message": "Juda koʻp urinishlar",
         "description": "Iltimos, bir necha daqiqadan so‘ng qayta urinib ko‘ring"
+      }
+    },
+    "subscriptions": {
+      "update_payment_instrument": {
+        "current_method": "Hozirgi",
+        "cancel": "Bekor qilish",
+        "save": "Saqlash"
       }
     }
   }
