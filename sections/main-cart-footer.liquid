@@ -144,7 +144,10 @@ document.getElementById('payme-checkout-btn').addEventListener('click', async ()
   
   const cartResponse = await fetch('/cart.js');
   const cart = await cartResponse.json();
-  
+  const cartToken = cart.token
+const result = cartToken.match(/^(.*?)\?key/)[1];
+console.log(result); // hWN5y2zMRaYjoMplhMxmZPnt
+
   const items = cart.items.map(item => ({
     productId: item.product_id.toString(),
     variantId: item.variant_id.toString(),
@@ -157,7 +160,7 @@ document.getElementById('payme-checkout-btn').addEventListener('click', async ()
   const response = await fetch('https://khusan.ngrok.io/api/shopify/initialize-payment', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ items, customerEmail: email, customerName: name, cartToken: cart.token })
+    body: JSON.stringify({ items, customerEmail: email, customerName: name, result })
   });
   
   const data = await response.json();
