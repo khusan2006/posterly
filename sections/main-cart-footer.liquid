@@ -144,7 +144,7 @@ document.getElementById('payme-checkout-btn').addEventListener('click', async ()
   
   const cartResponse = await fetch('/cart.js');
   const cart = await cartResponse.json();
-  
+  console.log(cart);
   const items = cart.items.map(item => ({
     productId: item.product_id.toString(),
     variantId: item.variant_id.toString(),
