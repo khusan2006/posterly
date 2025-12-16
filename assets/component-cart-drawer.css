@@ -403,3 +403,10 @@ cart-drawer-items::-webkit-scrollbar-track-piece {
     margin-left: 0;
   }
 }
+
+/* Full width button for cart drawer */
+.cart__checkout-button--full-width {
+  width: 100%;
+  display: block;
+  text-align: center;
+}

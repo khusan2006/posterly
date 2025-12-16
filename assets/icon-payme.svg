@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-payme" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="paymeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00b4d8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0077b6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="95" fill="url(#paymeGradient)"/>
+  <!-- P Letter -->
+  <path fill="#ffffff" d="M65 60 L100 60 Q130 60 130 85 Q130 110 100 110 L80 110 L80 140 L65 140 Z M80 75 L80 95 L100 95 Q115 95 115 85 Q115 75 100 75 Z"/>
+  <!-- Payment Card Icon -->
+  <rect x="110" y="90" width="50" height="35" rx="4" fill="#ffffff" opacity="0.9"/>
+  <rect x="110" y="98" width="50" height="8" fill="#00b4d8"/>
+  <circle cx="125" cy="115" r="3" fill="#00b4d8"/>
+  <circle cx="135" cy="115" r="3" fill="#0077b6"/>
+</svg>

@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "payme-checkout-page",
+      "settings": {
+        "heading": "Complete Your Payme Checkout",
+        "description": "<p>Enter your details below to complete your purchase using Payme.</p>",
+        "color_scheme": "scheme-1",
+        "show_security_badge": true,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

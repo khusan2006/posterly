@@ -1,0 +1,103 @@
+<payme-checkout-form class="payme-checkout-form__container">
+  <form id="PaymeCheckoutForm" class="payme-form">
+    <div class="payme-checkout-form__error" role="alert" aria-live="polite"></div>
+
+    <div class="payme-checkout-form__fields">
+      <div class="field">
+        <input
+          class="field__input"
+          autocomplete="tel"
+          type="tel"
+          id="Payme-phone"
+          name="phone"
+          pattern="^\+998\d{9}$"
+          required
+          placeholder="+998 XX XXX XX XX"
+          aria-required="true"
+        >
+        <label class="field__label" for="Payme-phone">
+          Phone Number
+          <span aria-hidden="true">*</span>
+        </label>
+      </div>
+
+      <div class="field">
+        <input
+          class="field__input"
+          autocomplete="name"
+          type="text"
+          id="Payme-name"
+          name="name"
+          minlength="2"
+          required
+          placeholder="Full Name"
+          aria-required="true"
+          value="{% if customer %}{{ customer.name }}{% endif %}"
+        >
+        <label class="field__label" for="Payme-name">
+          Full Name
+          <span aria-hidden="true">*</span>
+        </label>
+      </div>
+
+      <div class="field">
+        <input
+          class="field__input"
+          autocomplete="address-level2"
+          type="text"
+          id="Payme-location"
+          name="location"
+          minlength="2"
+          required
+          placeholder="City"
+          list="Payme-cities"
+          aria-required="true"
+        >
+        <label class="field__label" for="Payme-location">
+          Location (City)
+          <span aria-hidden="true">*</span>
+        </label>
+        <datalist id="Payme-cities">
+          <option value="Tashkent">
+          <option value="Samarkand">
+          <option value="Bukhara">
+          <option value="Andijan">
+          <option value="Namangan">
+          <option value="Fergana">
+          <option value="Nukus">
+          <option value="Qarshi">
+          <option value="Termez">
+          <option value="Urgench">
+          <option value="Jizzakh">
+          <option value="Gulistan">
+        </datalist>
+      </div>
+
+      <div class="field">
+        <input
+          class="field__input"
+          autocomplete="email"
+          type="email"
+          id="Payme-email"
+          name="email"
+          spellcheck="false"
+          autocapitalize="off"
+          placeholder="Email (optional)"
+          value="{% if customer %}{{ customer.email }}{% endif %}"
+        >
+        <label class="field__label" for="Payme-email">
+          Email (optional)
+        </label>
+      </div>
+    </div>
+
+    <div class="payme-checkout-form__actions">
+      <button type="submit" class="button" id="Payme-submit">
+        Submit Order
+      </button>
+      <button type="button" class="button button--secondary" id="Payme-cancel">
+        Cancel
+      </button>
+    </div>
+  </form>
+</payme-checkout-form>
