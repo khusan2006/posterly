@@ -141,10 +141,9 @@ cart-items {
     padding-top: 0;
   }
 
-  .cart__footer > * {
-    width: 35rem;
-  }
-
+.cart__footer-grid {
+  width: 100%;
+}
   .cart__footer > * + * {
     margin-left: 4rem;
     margin-top: 0;
@@ -184,7 +183,6 @@ cart-items {
 
 .tax-note {
   margin: 2.2rem 0 1.6rem auto;
-  text-align: center;
   display: block;
 }
 
@@ -284,7 +282,6 @@ cart-items {
 
   .tax-note {
     margin-bottom: 2.2rem;
-    text-align: right;
   }
 
   [data-shopify-buttoncontainer] {
