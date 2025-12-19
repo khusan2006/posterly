@@ -39,8 +39,8 @@ class CardVariantPicker {
         });
       }
 
-      // Add click handlers to swatches
-      container.querySelectorAll('.card__variant-swatch').forEach((swatch) => {
+      // Add click handlers to swatches (support both old and new class names)
+      container.querySelectorAll('.card__variant-swatch, .card__swatch').forEach((swatch) => {
         swatch.addEventListener('click', (e) => {
           e.preventDefault();
           e.stopPropagation();
@@ -90,13 +90,15 @@ class CardVariantPicker {
     const data = container._variantData;
     const selections = container._currentSelections;
 
-    container.querySelectorAll('.card__variant-swatch').forEach((swatch) => {
+    container.querySelectorAll('.card__variant-swatch, .card__swatch').forEach((swatch) => {
       const optionName = swatch.dataset.optionName;
       const optionValue = swatch.dataset.optionValue;
 
       // Update selected state
       const isSelected = selections[optionName] === optionValue;
+      // Support both old and new class names
       swatch.classList.toggle('card__variant-swatch--selected', isSelected);
+      swatch.classList.toggle('card__swatch--active', isSelected);
 
       // Check availability
       const testSelections = { ...selections, [optionName]: optionValue };
@@ -104,6 +106,7 @@ class CardVariantPicker {
       const isAvailable = matchingVariant ? matchingVariant.available : false;
 
       swatch.classList.toggle('card__variant-swatch--unavailable', !isAvailable);
+      swatch.classList.toggle('card__swatch--unavailable', !isAvailable);
     });
   }
 

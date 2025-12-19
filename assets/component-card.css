@@ -723,92 +723,121 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Variant Options for Product Cards */
+/* Compact Variant Options for Product Cards - Hyperlite Style */
 .card__variant-options {
-  margin-top: 0.8rem;
+  margin-top: 0.6rem;
   position: relative;
   z-index: 5;
 }
 
-.card__variant-option-group {
-  margin-bottom: 0.6rem;
+.card__variant-options--compact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.card__variant-option-group:last-child {
-  margin-bottom: 0;
-}
-
-.card__variant-option-label {
-  display: block;
-  font-size: 1.1rem;
-  color: rgba(var(--color-foreground), 0.7);
-  margin-bottom: 0.4rem;
-  font-weight: 500;
+.card__variant-row {
+  display: flex;
+  align-items: center;
 }
 
 .card__variant-swatches {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.4rem;
+  align-items: center;
 }
 
-.card__variant-swatch {
+.card__variant-swatches--colors {
+  gap: 0.3rem;
+}
+
+/* Text swatches - compact pill style */
+.card__swatch {
   position: relative;
-  min-width: 2.8rem;
-  min-height: 2.8rem;
-  padding: 0.4rem 0.6rem;
-  border: 1px solid rgba(var(--color-foreground), 0.2);
-  border-radius: 0.4rem;
-  background: rgb(var(--color-background));
+  border: none;
+  background: transparent;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
+  padding: 0;
+  margin: 0;
+}
+
+.card__swatch--text {
+  padding: 0.3rem 0.7rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: rgba(var(--color-foreground), 0.7);
+  border-radius: 0.3rem;
+  background: rgba(var(--color-foreground), 0.06);
+}
+
+.card__swatch--text:hover {
+  color: rgb(var(--color-foreground));
+  background: rgba(var(--color-foreground), 0.12);
+}
+
+.card__swatch--text.card__swatch--active {
+  color: rgb(var(--color-foreground));
+  background: rgba(var(--color-foreground), 0.15);
+  font-weight: 600;
+}
+
+/* Color swatches - minimal circle */
+.card__swatch--color {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
 }
 
-.card__variant-swatch:hover {
-  border-color: rgba(var(--color-foreground), 0.5);
+.card__swatch--color::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  border: 1.5px solid transparent;
+  transition: border-color 0.15s ease;
 }
 
-.card__variant-swatch--selected {
+.card__swatch--color:hover::before {
+  border-color: rgba(var(--color-foreground), 0.3);
+}
+
+.card__swatch--color.card__swatch--active::before {
   border-color: rgb(var(--color-foreground));
-  background: rgba(var(--color-foreground), 0.05);
 }
 
-.card__variant-swatch--unavailable {
-  opacity: 0.4;
+.card__swatch-color-dot {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid rgba(var(--color-foreground), 0.12);
+}
+
+.card__swatch-label {
+  display: block;
+  white-space: nowrap;
+}
+
+/* Unavailable state */
+.card__swatch--unavailable {
+  opacity: 0.35;
   cursor: not-allowed;
 }
 
-.card__variant-swatch--unavailable::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: rgba(var(--color-foreground), 0.5);
-  transform: rotate(-45deg);
-}
-
-.card__variant-swatch-color {
-  width: 1.8rem;
-  height: 1.8rem;
-  border-radius: 50%;
-  border: 1px solid rgba(var(--color-foreground), 0.15);
-}
-
-.card__variant-swatch-text {
-  font-size: 1.1rem;
-  line-height: 1;
-  color: rgb(var(--color-foreground));
-  white-space: nowrap;
+.card__swatch--text.card__swatch--unavailable {
+  text-decoration: line-through;
 }
 
 /* Price wrapper for dynamic updates */
 .card__price-wrapper {
-  transition: opacity 0.2s ease;
+  margin-top: 0.5rem;
+  transition: opacity 0.15s ease;
 }
 
 .card__price-wrapper.loading {
@@ -820,25 +849,20 @@
   display: none;
 }
 
-/* Responsive adjustments for variant options */
+/* Responsive adjustments for compact variant options */
 @media screen and (max-width: 749px) {
-  .card__variant-option-label {
+  .card__variant-options--compact {
+    gap: 0.4rem;
+  }
+
+  .card__swatch--text {
+    padding: 0.25rem 0.5rem;
     font-size: 1rem;
   }
 
-  .card__variant-swatch {
-    min-width: 2.4rem;
-    min-height: 2.4rem;
-    padding: 0.3rem 0.5rem;
-  }
-
-  .card__variant-swatch-text {
-    font-size: 1rem;
-  }
-
-  .card__variant-swatch-color {
-    width: 1.6rem;
-    height: 1.6rem;
+  .card__swatch--color {
+    width: 1.4rem;
+    height: 1.4rem;
   }
 }
 

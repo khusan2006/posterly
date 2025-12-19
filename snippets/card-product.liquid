@@ -270,18 +270,17 @@
               </div>
             {%- endif -%}
 
-            {%- comment -%} Dynamic Price Display - shows selected variant price {%- endcomment -%}
-            <div class="card__price-wrapper" data-product-id="{{ card_product.id }}">
-              {% render 'price', product: card_product, price_class: '', show_compare_at_price: true, use_variant: true %}
-            </div>
-
-            {%- comment -%} Variant Options Selector for Product Cards {%- endcomment -%}
+            {%- comment -%} Variant Options Selector for Product Cards - Compact Design {%- endcomment -%}
             {%- if card_product.has_only_default_variant == false and card_product.variants.size > 1 -%}
-              <div class="card__variant-options" data-product-id="{{ card_product.id }}" data-product-url="{{ card_product.url }}">
+              <div class="card__variant-options card__variant-options--compact" data-product-id="{{ card_product.id }}" data-product-url="{{ card_product.url }}">
                 {%- for option in card_product.options_with_values -%}
-                  <div class="card__variant-option-group">
-                    <span class="card__variant-option-label">{{ option.name }}:</span>
-                    <div class="card__variant-swatches">
+                  <div class="card__variant-row">
+                    {%- assign option_name_lower = option.name | downcase -%}
+                    {%- assign is_color = false -%}
+                    {%- if option_name_lower == 'color' or option_name_lower == 'colour' or option_name_lower == 'rang' -%}
+                      {%- assign is_color = true -%}
+                    {%- endif -%}
+                    <div class="card__variant-swatches{% if is_color %} card__variant-swatches--colors{% endif %}">
                       {%- for value in option.values -%}
                         {%- assign option_index = 'option' | append: forloop.parentloop.index -%}
                         {%- assign is_selected = false -%}
@@ -290,18 +289,17 @@
                         {%- endif -%}
                         <button
                           type="button"
-                          class="card__variant-swatch{% if is_selected %} card__variant-swatch--selected{% endif %}"
+                          class="card__swatch{% if is_color %} card__swatch--color{% else %} card__swatch--text{% endif %}{% if is_selected %} card__swatch--active{% endif %}"
                           data-option-name="{{ option.name }}"
                           data-option-value="{{ value }}"
                           data-option-index="{{ forloop.parentloop.index }}"
                           aria-label="{{ option.name }}: {{ value }}"
                           title="{{ value }}"
                         >
-                          {%- assign option_name_lower = option.name | downcase -%}
-                          {%- if option_name_lower == 'color' or option_name_lower == 'colour' -%}
-                            <span class="card__variant-swatch-color" style="background-color: {{ value | handleize }};"></span>
+                          {%- if is_color -%}
+                            <span class="card__swatch-color-dot" style="background-color: {{ value | handleize }};"></span>
                           {%- else -%}
-                            <span class="card__variant-swatch-text">{{ value | truncate: 10 }}</span>
+                            <span class="card__swatch-label">{{ value }}</span>
                           {%- endif -%}
                         </button>
                       {%- endfor -%}
@@ -330,6 +328,11 @@
                 </script>
               </div>
             {%- endif -%}
+
+            {%- comment -%} Dynamic Price Display - shows selected variant price {%- endcomment -%}
+            <div class="card__price-wrapper" data-product-id="{{ card_product.id }}">
+              {% render 'price', product: card_product, price_class: '', show_compare_at_price: true, use_variant: true %}
+            </div>
             {%- if card_product.quantity_price_breaks_configured? -%}
               {% if card_product.variants_count == 1 and quick_add == 'bulk' %}
                 {% liquid
