@@ -3,9 +3,14 @@
     <div class="payme-checkout-form__error" role="alert" aria-live="polite"></div>
 
     <div class="payme-checkout-form__fields">
-      <div class="field">
+      <div class="field payme-field">
+        <div class="payme-field__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+        </div>
         <input
-          class="field__input"
+          class="field__input payme-field__input"
           autocomplete="tel"
           type="tel"
           id="Payme-phone"
@@ -19,11 +24,18 @@
           Phone Number
           <span aria-hidden="true">*</span>
         </label>
+        <span class="payme-field__hint">Uzbekistan phone number format</span>
       </div>
 
-      <div class="field">
+      <div class="field payme-field">
+        <div class="payme-field__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
         <input
-          class="field__input"
+          class="field__input payme-field__input"
           autocomplete="name"
           type="text"
           id="Payme-name"
@@ -40,21 +52,27 @@
         </label>
       </div>
 
-      <div class="field">
+      <div class="field payme-field">
+        <div class="payme-field__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+        </div>
         <input
-          class="field__input"
+          class="field__input payme-field__input"
           autocomplete="address-level2"
           type="text"
           id="Payme-location"
           name="location"
           minlength="2"
           required
-          placeholder="City"
+          placeholder="Select or type your city"
           list="Payme-cities"
           aria-required="true"
         >
         <label class="field__label" for="Payme-location">
-          Location (City)
+          Delivery City
           <span aria-hidden="true">*</span>
         </label>
         <datalist id="Payme-cities">
@@ -70,34 +88,67 @@
           <option value="Urgench">
           <option value="Jizzakh">
           <option value="Gulistan">
+          <option value="Navoi">
+          <option value="Kokand">
+          <option value="Margilan">
+          <option value="Chirchiq">
+          <option value="Almalyk">
         </datalist>
       </div>
 
-      <div class="field">
+      <div class="field payme-field payme-field--optional">
+        <div class="payme-field__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+        </div>
         <input
-          class="field__input"
+          class="field__input payme-field__input"
           autocomplete="email"
           type="email"
           id="Payme-email"
           name="email"
           spellcheck="false"
           autocapitalize="off"
-          placeholder="Email (optional)"
+          placeholder="your@email.com"
           value="{% if customer %}{{ customer.email }}{% endif %}"
         >
         <label class="field__label" for="Payme-email">
-          Email (optional)
+          Email
+          <span class="payme-field__optional-tag">(optional)</span>
         </label>
+        <span class="payme-field__hint">For order confirmation and updates</span>
       </div>
     </div>
 
     <div class="payme-checkout-form__actions">
-      <button type="submit" class="button" id="Payme-submit">
-        Submit Order
+      <button type="submit" class="button payme-submit-btn" id="Payme-submit">
+        <span class="payme-submit-btn__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+            <line x1="1" y1="10" x2="23" y2="10"></line>
+          </svg>
+        </span>
+        <span class="payme-submit-btn__text">Complete Order with Payme</span>
+        <span class="payme-submit-btn__loading">
+          <svg class="payme-submit-btn__spinner" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" fill="none" stroke-dasharray="31.4 31.4" />
+          </svg>
+          Processing...
+        </span>
       </button>
-      <button type="button" class="button button--secondary" id="Payme-cancel">
-        Cancel
-      </button>
+      <a href="{{ routes.cart_url }}" class="button button--secondary payme-cancel-btn" id="Payme-cancel">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Cart
+      </a>
+    </div>
+
+    <div class="payme-checkout-form__footer">
+      <p>By completing this order, you agree to our <a href="/policies/terms-of-service">Terms of Service</a> and <a href="/policies/privacy-policy">Privacy Policy</a></p>
     </div>
   </form>
 </payme-checkout-form>

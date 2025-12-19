@@ -410,3 +410,146 @@ cart-drawer-items::-webkit-scrollbar-track-piece {
   display: block;
   text-align: center;
 }
+
+/* Cart Drawer CTA Buttons */
+.cart__ctas {
+  padding-top: 1.5rem;
+}
+
+.cart__ctas-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cart__cta-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  width: 100%;
+  padding: 1.4rem 2rem;
+  border-radius: 0.6rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.cart__cta-button--secondary {
+  background-color: rgba(var(--color-foreground), 0.08);
+  color: rgb(var(--color-foreground));
+  border: 1px solid rgba(var(--color-foreground), 0.15);
+}
+
+.cart__cta-button--secondary:hover {
+  background-color: rgba(var(--color-foreground), 0.12);
+  border-color: rgba(var(--color-foreground), 0.25);
+}
+
+.cart__cta-button--payme {
+  background: linear-gradient(135deg, #00b4d8 0%, #0096c7 100%);
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 150, 199, 0.3);
+}
+
+.cart__cta-button--payme:hover {
+  background: linear-gradient(135deg, #0096c7 0%, #0077b6 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 150, 199, 0.4);
+}
+
+.cart__cta-button--payme:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(0, 150, 199, 0.3);
+}
+
+.cart__cta-button[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.cart__cta-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart__cta-icon svg {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.cart__cta-badge {
+  position: absolute;
+  top: -0.2rem;
+  right: 1rem;
+  background: #ff6b35;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  animation: pulse-badge 2s infinite;
+}
+
+@keyframes pulse-badge {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.cart__ctas-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+  font-size: 1.2rem;
+  color: rgba(var(--color-foreground), 0.6);
+}
+
+.cart__ctas-note svg {
+  width: 1.4rem;
+  height: 1.4rem;
+  color: #22c55e;
+}
+
+/* Mobile adjustments for cart CTA buttons */
+@media screen and (max-width: 749px) {
+  .cart__cta-button {
+    padding: 1.2rem 1.5rem;
+    font-size: 1.4rem;
+  }
+
+  .cart__cta-icon svg {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  .cart__cta-badge {
+    font-size: 0.9rem;
+    padding: 0.2rem 0.5rem;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .cart__cta-button--payme:hover {
+    transform: none;
+  }
+
+  .cart__cta-badge {
+    animation: none;
+  }
+}

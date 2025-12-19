@@ -41,6 +41,7 @@
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
   {{ 'quick-order-list.css' | asset_url | stylesheet_tag }}
   {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'card-variant-picker.js' | asset_url }}" defer="defer"></script>
 {%- endunless -%}
   {%- liquid
     assign ratio = 1
@@ -216,7 +217,7 @@
               </div>
             {%- endif -%}
             
-            {%- comment -%} Mobile Quick Add Icon for Drawer {%- endcomment -%}
+            {%- comment -%} Mobile Quick Add Icon for Drawer - Enhanced size for better tap target {%- endcomment -%}
             {%- if quick_add == 'drawer' -%}
               <div class="card__mobile-quick-add">
                 <drawer-opener data-drawer="#QuickAddDrawer">
@@ -227,7 +228,11 @@
                     data-product-url="{{ card_product.url }}"
                     data-product-id="{{ card_product.id }}"
                   >
-                    {%- render 'icon' with 'shopping-cart', width: '8px', height: '8px' -%}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="9" cy="21" r="1"></circle>
+                      <circle cx="20" cy="21" r="1"></circle>
+                      <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
                   </button>
                 </drawer-opener>
               </div>
@@ -261,11 +266,70 @@
             <span class="caption-large light">{{ block.settings.description | escape }}</span>
             {%- if show_rating -%}
               <div class="yotpo-rating-container">
-                <div class="yotpo bottomLine" data-product-id="{{ card_product.id }}"></div>            
+                <div class="yotpo bottomLine" data-product-id="{{ card_product.id }}"></div>
               </div>
             {%- endif -%}
 
-            {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
+            {%- comment -%} Dynamic Price Display - shows selected variant price {%- endcomment -%}
+            <div class="card__price-wrapper" data-product-id="{{ card_product.id }}">
+              {% render 'price', product: card_product, price_class: '', show_compare_at_price: true, use_variant: true %}
+            </div>
+
+            {%- comment -%} Variant Options Selector for Product Cards {%- endcomment -%}
+            {%- if card_product.has_only_default_variant == false and card_product.variants.size > 1 -%}
+              <div class="card__variant-options" data-product-id="{{ card_product.id }}" data-product-url="{{ card_product.url }}">
+                {%- for option in card_product.options_with_values -%}
+                  <div class="card__variant-option-group">
+                    <span class="card__variant-option-label">{{ option.name }}:</span>
+                    <div class="card__variant-swatches">
+                      {%- for value in option.values -%}
+                        {%- assign option_index = 'option' | append: forloop.parentloop.index -%}
+                        {%- assign is_selected = false -%}
+                        {%- if card_product.selected_or_first_available_variant[option_index] == value -%}
+                          {%- assign is_selected = true -%}
+                        {%- endif -%}
+                        <button
+                          type="button"
+                          class="card__variant-swatch{% if is_selected %} card__variant-swatch--selected{% endif %}"
+                          data-option-name="{{ option.name }}"
+                          data-option-value="{{ value }}"
+                          data-option-index="{{ forloop.parentloop.index }}"
+                          aria-label="{{ option.name }}: {{ value }}"
+                          title="{{ value }}"
+                        >
+                          {%- assign option_name_lower = option.name | downcase -%}
+                          {%- if option_name_lower == 'color' or option_name_lower == 'colour' -%}
+                            <span class="card__variant-swatch-color" style="background-color: {{ value | handleize }};"></span>
+                          {%- else -%}
+                            <span class="card__variant-swatch-text">{{ value | truncate: 10 }}</span>
+                          {%- endif -%}
+                        </button>
+                      {%- endfor -%}
+                    </div>
+                  </div>
+                {%- endfor -%}
+
+                {%- comment -%} Store variant data for JavaScript {%- endcomment -%}
+                <script type="application/json" class="card__variant-data">
+                  {
+                    "variants": [
+                      {%- for variant in card_product.variants -%}
+                        {
+                          "id": {{ variant.id }},
+                          "available": {{ variant.available }},
+                          "price": {{ variant.price }},
+                          "compare_at_price": {{ variant.compare_at_price | default: 'null' }},
+                          "price_formatted": "{{ variant.price | money }}",
+                          "compare_at_price_formatted": "{{ variant.compare_at_price | money }}",
+                          "options": {{ variant.options | json }}
+                        }{% unless forloop.last %},{% endunless %}
+                      {%- endfor -%}
+                    ],
+                    "options": {{ card_product.options | json }}
+                  }
+                </script>
+              </div>
+            {%- endif -%}
             {%- if card_product.quantity_price_breaks_configured? -%}
               {% if card_product.variants_count == 1 and quick_add == 'bulk' %}
                 {% liquid
