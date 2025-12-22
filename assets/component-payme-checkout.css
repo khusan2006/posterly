@@ -74,7 +74,7 @@
 }
 
 /* Shopify Button - Green Theme */
-.payment-option--shopify {
+/* .payment-option--shopify {
   background: linear-gradient(135deg, #96bf48 0%, #7ab800 100%);
   color: #fff;
   border: none;
@@ -84,10 +84,10 @@
   background: linear-gradient(135deg, #7ab800 0%, #669900 100%);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(122, 184, 0, 0.3);
-}
+} */
 
 /* Payme Button - Payme Brand Colors */
-.payment-option--payme {
+/* .payment-option--payme {
   background: linear-gradient(135deg, #00b4d8 0%, #0096c7 100%);
   color: #fff;
   border: none;
@@ -97,13 +97,13 @@
   background: linear-gradient(135deg, #0096c7 0%, #0077b6 100%);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 150, 199, 0.3);
-}
+} */
 
 /* Icon Styling */
 .payment-option__icon {
   flex-shrink: 0;
-  width: 4rem;
-  height: 4rem;
+  width: 5rem;
+  height: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
