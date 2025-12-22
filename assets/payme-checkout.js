@@ -91,7 +91,7 @@ class PaymeCheckoutForm extends HTMLElement {
         customerPhone: this.phoneInput.value.trim(),
         customerLocation: this.locationInput.value.trim(),
         cartToken: cartToken,
-        url: window.location.origin
+        url: 'https://posterly.uz'
       };
 
       // Call Payme API
