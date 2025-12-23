@@ -5,6 +5,12 @@
   color: rgb(var(--color-foreground));
 }
 
+@media screen and (max-width: 750px) {
+  .price {
+    font-size: 14px;
+  }
+}
+
 .price > * {
   display: inline-block;
   vertical-align: top;
