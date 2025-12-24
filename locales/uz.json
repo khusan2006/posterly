@@ -319,7 +319,25 @@
       "login": {
         "title": "Hisobingiz bormi?",
         "paragraph_html": "Tezroq to'lash uchun <a href=\"{{ link }}\" class=\"link underlined-link\">kiring</a>."
-      }
+      },
+      "checkout_with_payme": "Payme orqali to'lash",
+      "fast_secure_payment": "Tez va xavfsiz to'lov",
+      "secure_payment": "Xavfsiz to'lov",
+      "instant_confirmation": "Tezkor tasdiqlash",
+      "accepted_payment_note": "Biz O'zbekistonda barcha to'lovlarni Payme orqali qabul qilamiz",
+      "back_to_cart": "Savatga qaytish",
+      "order_summary": "Buyurtma tafsilotlari",
+      "payment_information": "To'lov ma'lumotlari",
+      "secure_payment_payme": "Xavfsiz to'lov - Payme orqali",
+      "phone_number": "Telefon raqami",
+      "full_name": "To'liq ism",
+      "full_name_placeholder": "Ismingizni kiriting",
+      "city": "Shahar",
+      "city_placeholder": "Shahringizni tanlang",
+      "email_optional": "Email (ixtiyoriy)",
+      "email_placeholder": "email@example.com",
+      "submit_order": "Buyurtmani tasdiqlash",
+      "view_cart": "Savatni ko'rish"
     },
     "footer": {
       "payment": "To'lov usullari"

@@ -580,19 +580,39 @@
           </small>
         </div>
 
-        <!-- CTAs -->
+        <!-- CTAs - Payme Focused -->
+        <div class="cart__ctas">
+          {%- if cart != empty -%}
+            <a href="/pages/payme-checkout" class="cart-drawer__checkout-btn">
+              <span class="cart-drawer__checkout-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                  <line x1="1" y1="10" x2="23" y2="10"/>
+                </svg>
+              </span>
+              <span class="cart-drawer__checkout-text">
+                <span class="cart-drawer__checkout-title">{{ 'sections.cart.checkout_with_payme' | t | default: 'Checkout with Payme' }}</span>
+                <span class="cart-drawer__checkout-subtitle">{{ 'sections.cart.fast_secure_payment' | t | default: 'Fast & secure payment' }}</span>
+              </span>
+              <span class="cart-drawer__checkout-arrow">→</span>
+            </a>
+          {%- else -%}
+            <button class="cart-drawer__checkout-btn cart-drawer__checkout-btn--disabled" disabled>
+              <span class="cart-drawer__checkout-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                  <line x1="1" y1="10" x2="23" y2="10"/>
+                </svg>
+              </span>
+              <span class="cart-drawer__checkout-text">
+                <span class="cart-drawer__checkout-title">{{ 'sections.cart.checkout_with_payme' | t | default: 'Checkout with Payme' }}</span>
+                <span class="cart-drawer__checkout-subtitle">{{ 'sections.cart.fast_secure_payment' | t | default: 'Fast & secure payment' }}</span>
+              </span>
+            </button>
+          {%- endif -%}
 
-        <div class="cart__ctas" {{ block.shopify_attributes }}>
-          <a
-            href="{{ routes.cart_url }}"
-            id="CartDrawer-ViewCart"
-            {% if cart == empty %}
-              role="button"
-              aria-disabled="true"
-              tabindex="-1"
-            {% endif %}
-          >
-            View Cart
+          <a href="{{ routes.cart_url }}" class="cart-drawer__view-cart-link">
+            {{ 'sections.cart.view_cart' | t | default: 'View full cart' }}
           </a>
         </div>
       </div>

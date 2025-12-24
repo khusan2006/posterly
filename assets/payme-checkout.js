@@ -292,9 +292,17 @@ class PaymeCartSummary extends HTMLElement {
     this.loadCartSummary();
   }
 
+  hideLoadingSpinner() {
+    const loadingEl = this.parentElement?.querySelector('.payme-cart-summary__loading');
+    if (loadingEl) {
+      loadingEl.style.display = 'none';
+    }
+  }
+
   async loadCartSummary() {
     try {
       const cart = await fetch('/cart.js').then(r => r.json());
+      this.hideLoadingSpinner();
 
       if (!cart || !cart.items || cart.items.length === 0) {
         this.showEmptyCart();
@@ -304,12 +312,14 @@ class PaymeCartSummary extends HTMLElement {
       this.renderCartItems(cart);
     } catch (error) {
       console.error('Error loading cart:', error);
-      this.showError('Failed to load cart. Please try again.');
+      this.hideLoadingSpinner();
+      this.showError("Savatni yuklashda xatolik. Qayta urinib ko'ring.");
     }
   }
 
   renderCartItems(cart) {
     const currencySymbol = cart.currency || 'UZS';
+    const itemCount = cart.item_count;
 
     const itemsHTML = cart.items.map(item => {
       const itemTotal = (item.price * item.quantity) / 100;
@@ -318,14 +328,14 @@ class PaymeCartSummary extends HTMLElement {
       return `
         <div class="payme-cart-item">
           <div class="payme-cart-item__image">
-            ${item.image ? `<img src="${item.image}" alt="${item.title}" loading="lazy">` : '<div class="payme-cart-item__placeholder"></div>'}
+            ${item.image ? `<img src="${item.image}" alt="${this.escapeHtml(item.title)}" loading="lazy">` : '<div class="payme-cart-item__placeholder"></div>'}
           </div>
           <div class="payme-cart-item__details">
-            <h3 class="payme-cart-item__title">${item.title}</h3>
-            ${item.variant_title ? `<p class="payme-cart-item__variant">${item.variant_title}</p>` : ''}
+            <h3 class="payme-cart-item__title">${this.escapeHtml(item.title)}</h3>
+            ${item.variant_title ? `<p class="payme-cart-item__variant">${this.escapeHtml(item.variant_title)}</p>` : ''}
             <div class="payme-cart-item__meta">
-              <span class="payme-cart-item__quantity">Qty: ${item.quantity}</span>
-              <span class="payme-cart-item__price">${this.formatMoney(itemPrice, currencySymbol)} each</span>
+              <span class="payme-cart-item__quantity">${item.quantity} dona</span>
+              <span class="payme-cart-item__price">${this.formatMoney(itemPrice, currencySymbol)}</span>
             </div>
           </div>
           <div class="payme-cart-item__total">
@@ -336,27 +346,31 @@ class PaymeCartSummary extends HTMLElement {
     }).join('');
 
     const subtotal = cart.total_price / 100;
+    const finalTotal = subtotal - (cart.total_discount / 100);
 
     this.innerHTML = `
+      <div class="payme-cart-summary__header">
+        <span class="payme-cart-summary__count">${itemCount} ta mahsulot</span>
+      </div>
       <div class="payme-cart-items">
         ${itemsHTML}
       </div>
       <div class="payme-cart-totals">
         <div class="payme-cart-total-row">
-          <span class="payme-cart-total-label">Subtotal</span>
+          <span class="payme-cart-total-label">Jami</span>
           <span class="payme-cart-total-value">${this.formatMoney(subtotal, currencySymbol)}</span>
         </div>
         ${cart.total_discount > 0 ? `
           <div class="payme-cart-total-row payme-cart-total-row--discount">
-            <span class="payme-cart-total-label">Discount</span>
+            <span class="payme-cart-total-label">Chegirma</span>
             <span class="payme-cart-total-value">-${this.formatMoney(cart.total_discount / 100, currencySymbol)}</span>
           </div>
         ` : ''}
         <div class="payme-cart-total-row payme-cart-total-row--final">
-          <span class="payme-cart-total-label">Total</span>
-          <span class="payme-cart-total-value">${this.formatMoney(subtotal - (cart.total_discount / 100), currencySymbol)}</span>
+          <span class="payme-cart-total-label">To'lov summasi</span>
+          <span class="payme-cart-total-value">${this.formatMoney(finalTotal, currencySymbol)}</span>
         </div>
-        <p class="payme-cart-note">Shipping and taxes calculated by Payme</p>
+        <p class="payme-cart-note">Yetkazib berish narxi Payme orqali hisoblanadi</p>
       </div>
     `;
   }
@@ -364,8 +378,13 @@ class PaymeCartSummary extends HTMLElement {
   showEmptyCart() {
     this.innerHTML = `
       <div class="payme-cart-empty">
-        <p>Your cart is empty</p>
-        <a href="/collections/all" class="button">Continue Shopping</a>
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="9" cy="21" r="1"/>
+          <circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </svg>
+        <p>Savatingiz bo'sh</p>
+        <a href="/collections/all" class="button button--secondary">Xarid qilishni boshlash</a>
       </div>
     `;
   }
@@ -373,14 +392,24 @@ class PaymeCartSummary extends HTMLElement {
   showError(message) {
     this.innerHTML = `
       <div class="payme-cart-error">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="8" x2="12" y2="12"/>
+          <line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
         <p>${message}</p>
-        <button class="button" onclick="location.reload()">Retry</button>
+        <button class="button button--secondary" onclick="location.reload()">Qayta urinish</button>
       </div>
     `;
   }
 
+  escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  }
+
   formatMoney(amount, currency) {
-    // Format money based on currency
     if (currency === 'UZS') {
       return `${Math.round(amount).toLocaleString('uz-UZ')} so'm`;
     } else {

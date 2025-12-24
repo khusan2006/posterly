@@ -410,3 +410,108 @@ cart-drawer-items::-webkit-scrollbar-track-piece {
   display: block;
   text-align: center;
 }
+
+/* ===========================================
+   Payme Checkout Button - Cart Drawer
+   =========================================== */
+.cart__ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.cart-drawer__checkout-btn {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  width: 100%;
+  padding: 1.4rem 1.6rem;
+  background: linear-gradient(135deg, #00CCCC 0%, #00A5A5 100%);
+  border: none;
+  border-radius: 1.2rem;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 204, 204, 0.25);
+}
+
+.cart-drawer__checkout-btn:hover {
+  background: linear-gradient(135deg, #00A5A5 0%, #008080 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 204, 204, 0.35);
+}
+
+.cart-drawer__checkout-btn:active {
+  transform: translateY(0);
+}
+
+.cart-drawer__checkout-btn--disabled {
+  background: rgba(var(--color-foreground), 0.1);
+  color: rgba(var(--color-foreground), 0.4);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.cart-drawer__checkout-btn--disabled:hover {
+  background: rgba(var(--color-foreground), 0.1);
+  transform: none;
+  box-shadow: none;
+}
+
+.cart-drawer__checkout-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 0.8rem;
+  flex-shrink: 0;
+}
+
+.cart-drawer__checkout-icon svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.cart-drawer__checkout-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  flex: 1;
+}
+
+.cart-drawer__checkout-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.cart-drawer__checkout-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.85;
+  font-weight: 400;
+}
+
+.cart-drawer__checkout-arrow {
+  font-size: 2rem;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+.cart-drawer__view-cart-link {
+  display: block;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.4rem;
+  color: rgb(var(--color-foreground));
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+  transition: opacity 0.2s ease;
+}
+
+.cart-drawer__view-cart-link:hover {
+  opacity: 0.7;
+}

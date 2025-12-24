@@ -16,7 +16,7 @@
           aria-required="true"
         >
         <label class="field__label" for="Payme-phone">
-          Phone Number
+          {{ 'sections.cart.phone_number' | t | default: 'Telefon raqami' }}
           <span aria-hidden="true">*</span>
         </label>
       </div>
@@ -30,12 +30,12 @@
           name="name"
           minlength="2"
           required
-          placeholder="Full Name"
+          placeholder="{{ 'sections.cart.full_name_placeholder' | t | default: 'Ismingizni kiriting' }}"
           aria-required="true"
           value="{% if customer %}{{ customer.name }}{% endif %}"
         >
         <label class="field__label" for="Payme-name">
-          Full Name
+          {{ 'sections.cart.full_name' | t | default: "To'liq ism" }}
           <span aria-hidden="true">*</span>
         </label>
       </div>
@@ -49,27 +49,32 @@
           name="location"
           minlength="2"
           required
-          placeholder="City"
+          placeholder="{{ 'sections.cart.city_placeholder' | t | default: 'Shahringizni tanlang' }}"
           list="Payme-cities"
           aria-required="true"
         >
         <label class="field__label" for="Payme-location">
-          Location (City)
+          {{ 'sections.cart.city' | t | default: 'Shahar' }}
           <span aria-hidden="true">*</span>
         </label>
         <datalist id="Payme-cities">
-          <option value="Tashkent">
-          <option value="Samarkand">
-          <option value="Bukhara">
-          <option value="Andijan">
+          <option value="Toshkent">
+          <option value="Samarqand">
+          <option value="Buxoro">
+          <option value="Andijon">
           <option value="Namangan">
-          <option value="Fergana">
+          <option value="Farg'ona">
           <option value="Nukus">
           <option value="Qarshi">
-          <option value="Termez">
-          <option value="Urgench">
-          <option value="Jizzakh">
-          <option value="Gulistan">
+          <option value="Termiz">
+          <option value="Urganch">
+          <option value="Jizzax">
+          <option value="Guliston">
+          <option value="Navoiy">
+          <option value="Chirchiq">
+          <option value="Olmaliq">
+          <option value="Marg'ilon">
+          <option value="Qo'qon">
         </datalist>
       </div>
 
@@ -82,21 +87,24 @@
           name="email"
           spellcheck="false"
           autocapitalize="off"
-          placeholder="Email (optional)"
+          placeholder="{{ 'sections.cart.email_placeholder' | t | default: 'email@example.com' }}"
           value="{% if customer %}{{ customer.email }}{% endif %}"
         >
         <label class="field__label" for="Payme-email">
-          Email (optional)
+          {{ 'sections.cart.email_optional' | t | default: "Email (ixtiyoriy)" }}
         </label>
       </div>
     </div>
 
     <div class="payme-checkout-form__actions">
-      <button type="submit" class="button" id="Payme-submit">
-        Submit Order
-      </button>
-      <button type="button" class="button button--secondary" id="Payme-cancel">
-        Cancel
+      <button type="submit" class="button button--primary payme-submit-btn" id="Payme-submit">
+        <span class="payme-submit-btn__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
+        </span>
+        <span class="payme-submit-btn__text">{{ 'sections.cart.submit_order' | t | default: "Buyurtmani tasdiqlash" }}</span>
       </button>
     </div>
   </form>

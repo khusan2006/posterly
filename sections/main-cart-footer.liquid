@@ -109,56 +109,53 @@
                 </div>
               </div>
             {%- when 'buttons' -%}
-              <!-- RIGHT COLUMN: Payment Options Card -->
+              <!-- RIGHT COLUMN: Payme Checkout -->
               <div class="cart__checkout-column">
-                <div class="payment-options-card" {{ block.shopify_attributes }}>
-                  <h3 class="payment-options-title">Choose Payment Method</h3>
+                <div class="payme-checkout-card" {{ block.shopify_attributes }}>
+                  <!-- Primary Payme Button -->
+                  <a
+                    href="/pages/payme-checkout"
+                    class="payme-primary-btn{% if cart == empty %} payme-primary-btn--disabled{% endif %}"
+                    {% if cart == empty %}
+                      aria-disabled="true"
+                      tabindex="-1"
+                    {% endif %}
+                  >
+                    <span class="payme-primary-btn__icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                        <line x1="1" y1="10" x2="23" y2="10"/>
+                      </svg>
+                    </span>
+                    <span class="payme-primary-btn__content">
+                      <span class="payme-primary-btn__title">{{ 'sections.cart.checkout_with_payme' | t | default: 'Checkout with Payme' }}</span>
+                      <span class="payme-primary-btn__subtitle">{{ 'sections.cart.fast_secure_payment' | t | default: 'Fast & secure payment in Uzbekistan' }}</span>
+                    </span>
+                    <span class="payme-primary-btn__arrow">→</span>
+                  </a>
 
-                  <div class="payment-options-list">
-                    <!-- Shopify Checkout Button -->
-                    <button
-                      type="submit"
-                      id="checkout"
-                      class="payment-option payment-option--shopify"
-                      name="checkout"
-                      form="cart"
-                      {% if cart == empty %}
-                        disabled
-                      {% endif %}
-                    >
-                      <span class="payment-option__icon">
-                        {{ 'icon-shopify.svg' | inline_asset_content }}
-                      </span>
-                      <span class="payment-option__content">
-                        <span class="payment-option__title">Shopify Checkout</span>
-                        <span class="payment-option__desc">Secure payment with Shopify</span>
-                      </span>
-                    </button>
-
-                    <!-- Payme Checkout Button -->
-                    <a
-                      href="/pages/payme-checkout"
-                      class="payment-option payment-option--payme{% if cart == empty %} payment-option--disabled{% endif %}"
-                      {% if cart == empty %}
-                        aria-disabled="true"
-                        tabindex="-1"
-                      {% endif %}
-                    >
-                      <span class="payment-option__icon">
-                        <img src="https://api.logobank.uz/media/logos_png/payme-01.png" width="50" height="50" />
-                      </span>
-                      <span class="payment-option__content">
-                        <span class="payment-option__title">Pay with Payme</span>
-                        <span class="payment-option__desc">Fast checkout with Payme</span>
-                      </span>
-                    </a>
+                  <!-- Trust Badges -->
+                  <div class="payme-trust-badges">
+                    <div class="payme-trust-badge">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <path d="M9 12l2 2 4-4"/>
+                      </svg>
+                      <span>{{ 'sections.cart.secure_payment' | t | default: 'Secure Payment' }}</span>
+                    </div>
+                    <div class="payme-trust-badge">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                      </svg>
+                      <span>{{ 'sections.cart.instant_confirmation' | t | default: 'Instant Confirmation' }}</span>
+                    </div>
                   </div>
 
-                  {%- if additional_checkout_buttons -%}
-                    <div class="cart__dynamic-checkout-buttons additional-checkout-buttons">
-                      {{ content_for_additional_checkout_buttons }}
-                    </div>
-                  {%- endif -%}
+                  <!-- Accepted Payment Note -->
+                  <p class="payme-accepted-note">
+                    {{ 'sections.cart.accepted_payment_note' | t | default: 'We accept Payme for all payments in Uzbekistan' }}
+                  </p>
                 </div>
               </div>
           {%- endcase -%}
