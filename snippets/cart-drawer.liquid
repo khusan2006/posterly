@@ -585,10 +585,7 @@
           {%- if cart != empty -%}
             <a href="/pages/payme-checkout" class="cart-drawer__checkout-btn">
               <span class="cart-drawer__checkout-icon">
-                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="40" height="40" rx="8" fill="rgba(255,255,255,0.2)"/>
-                  <path d="M12 10H22C26.4183 10 30 13.5817 30 18C30 22.4183 26.4183 26 22 26H17V32H12V10ZM17 14V22H22C24.2091 22 26 20.2091 26 18C26 15.7909 24.2091 14 22 14H17Z" fill="white"/>
-                </svg>
+                <img src="{{ 'payme.png' | asset_url }}" alt="Payme" width="80" height="28">
               </span>
               <span class="cart-drawer__checkout-text">
                 <span class="cart-drawer__checkout-title">{{ 'sections.cart.checkout_with_payme' | t | default: 'Payme orqali to\'lash' }}</span>
@@ -599,10 +596,7 @@
           {%- else -%}
             <button class="cart-drawer__checkout-btn cart-drawer__checkout-btn--disabled" disabled>
               <span class="cart-drawer__checkout-icon">
-                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="40" height="40" rx="8" fill="rgba(255,255,255,0.2)"/>
-                  <path d="M12 10H22C26.4183 10 30 13.5817 30 18C30 22.4183 26.4183 26 22 26H17V32H12V10ZM17 14V22H22C24.2091 22 26 20.2091 26 18C26 15.7909 24.2091 14 22 14H17Z" fill="white"/>
-                </svg>
+                <img src="{{ 'payme.png' | asset_url }}" alt="Payme" width="80" height="28">
               </span>
               <span class="cart-drawer__checkout-text">
                 <span class="cart-drawer__checkout-title">{{ 'sections.cart.checkout_with_payme' | t | default: 'Payme orqali to\'lash' }}</span>

@@ -464,11 +464,15 @@ cart-drawer-items::-webkit-scrollbar-track-piece {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  background: #fff;
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.6rem;
 }
 
-.cart-drawer__checkout-icon svg {
-  width: 4rem;
-  height: 4rem;
+.cart-drawer__checkout-icon img {
+  width: auto;
+  height: 2rem;
+  object-fit: contain;
 }
 
 .cart-drawer__checkout-text {

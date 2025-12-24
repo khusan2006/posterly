@@ -122,10 +122,7 @@
                     {% endif %}
                   >
                     <span class="payme-primary-btn__icon">
-                      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="48" height="48" rx="10" fill="rgba(255,255,255,0.2)"/>
-                        <path d="M14 12H26C31.5228 12 36 16.4772 36 22C36 27.5228 31.5228 32 26 32H20V38H14V12ZM20 17V27H26C28.7614 27 31 24.7614 31 22C31 19.2386 28.7614 17 26 17H20Z" fill="white"/>
-                      </svg>
+                      <img src="{{ 'payme.png' | asset_url }}" alt="Payme" width="100" height="35">
                     </span>
                     <span class="payme-primary-btn__content">
                       <span class="payme-primary-btn__title">{{ 'sections.cart.checkout_with_payme' | t | default: 'Payme orqali to\'lash' }}</span>
