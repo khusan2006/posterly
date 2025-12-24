@@ -1,5 +1,4 @@
 {{ 'section-featured-collections.css' | asset_url | stylesheet_tag }}
-<script src="{{ 'horizontal-scroll-carousel.js' | asset_url }}" defer="defer"></script>
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -15,119 +14,69 @@
   }
 
   .featured-collections-{{ section.id }} {
-    {% if section.settings.color_scheme != 'background-1' %}
-      --color-background: var(--color-base-{{ section.settings.color_scheme | remove: 'background-' }});
-      --color-foreground: var(--color-base-text-{{ section.settings.color_scheme | remove: 'background-' }});
-    {% endif %}
-    --card-content-padding: {{ section.settings.card_padding }}rem;
-    --card-text-alignment: {{ section.settings.text_alignment }};
-    --card-background-color: {{ section.settings.card_background_color | default: 'rgb(var(--color-background))' }};
-    --collection-title-color: {{ section.settings.collection_title_color | default: 'rgb(var(--color-foreground))' }};
+    --fc-card-bg: {{ section.settings.card_background_color }};
+    --fc-title-color: {{ section.settings.collection_title_color }};
+    --fc-card-padding: {{ section.settings.card_padding }}rem;
+    --fc-text-align: {{ section.settings.text_alignment }};
+    --fc-items-desktop: {{ section.settings.cards_per_row_desktop | default: 4 }};
+    --fc-items-tablet: {{ section.settings.cards_per_row_tablet | default: 2 }};
+    --fc-items-mobile: {{ section.settings.cards_per_row_mobile | default: 1.2 }};
   }
 {%- endstyle -%}
 
-{%- liquid
-  # Set responsive items per view based on settings
-  assign items_desktop = section.settings.cards_per_row_desktop | default: 4
-  assign items_tablet = section.settings.cards_per_row_tablet | default: 2
-  assign items_mobile = section.settings.cards_per_row_mobile | default: 1
-  
-  # Build items per view JSON
-  assign items_per_view = '{"desktop":' | append: items_desktop | append: ',"tablet":' | append: items_tablet | append: ',"mobile":' | append: items_mobile | append: '}'
-  
-  # Calculate gap
-  assign gap = '1.5rem'
-  
-  # Auto-scroll settings
-  assign auto_scroll = section.settings.enable_auto_scroll
-  assign scroll_speed = section.settings.auto_scroll_speed | default: 5000
-  
-  # Check if we have collections to display
-  assign has_collections = false
-  if section.blocks.size > 0
-    assign has_collections = true
-  endif
--%}
-
-<section 
+<section
   class="featured-collections featured-collections-{{ section.id }} color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding"
   id="featured-collections-{{ section.id }}"
-  {% if settings.animations_reveal_on_scroll %}
-    data-cascade
-  {% endif %}
 >
-  <div class="featured-collections__inner page-width">
-    
-    {%- # Section Header -%}
+  <div class="page-width">
+    {%- comment -%} Section Header {%- endcomment -%}
     {%- if section.settings.title != blank or section.settings.description != blank -%}
-      <div class="featured-collections__header featured-collections__header--{{ section.settings.title_alignment }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-        <div class="featured-collections__header-content">
+      <div class="fc-header fc-header--{{ section.settings.title_alignment }}">
+        <div class="fc-header__text">
           {%- if section.settings.title != blank -%}
-            <h2 class="featured-collections__title {{ section.settings.heading_size }} inline-richtext">
+            <h2 class="fc-header__title {{ section.settings.heading_size }}">
               {{ section.settings.title }}
             </h2>
           {%- endif -%}
-          
           {%- if section.settings.description != blank -%}
-            <div class="featured-collections__description rte">
-              {{ section.settings.description }}
-            </div>
+            <div class="fc-header__description rte">{{ section.settings.description }}</div>
           {%- endif -%}
         </div>
-        
-        {%- # Navigation arrows and view all button in header -%}
-        {%- if has_collections -%}
-          <div class="featured-collections__header-controls">
-            <div class="featured-collections__header-navigation" id="header-nav-{{ section.id }}">
-              <button
-                type="button"
-                class="featured-collections__nav-btn featured-collections__nav-btn--prev"
-                data-carousel-target="featured-collections-carousel-{{ section.id }}"
-                data-action="prev"
-                aria-label="{{ 'general.slider.previous_slide' | t }}"
-              >
-                <span class="featured-collections__nav-icon">‹</span>
+
+        <div class="fc-header__controls">
+          {%- if section.blocks.size > 1 -%}
+            <div class="fc-nav" data-carousel-nav="{{ section.id }}">
+              <button type="button" class="fc-nav__btn fc-nav__btn--prev" data-action="prev" aria-label="{{ 'general.slider.previous_slide' | t }}" disabled>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
               </button>
-              <button
-                type="button"
-                class="featured-collections__nav-btn featured-collections__nav-btn--next"
-                data-carousel-target="featured-collections-carousel-{{ section.id }}"
-                data-action="next"
-                aria-label="{{ 'general.slider.next_slide' | t }}"
-              >
-                <span class="featured-collections__nav-icon">›</span>
+              <button type="button" class="fc-nav__btn fc-nav__btn--next" data-action="next" aria-label="{{ 'general.slider.next_slide' | t }}">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
               </button>
             </div>
-            
-            {%- if section.settings.show_view_all and section.settings.view_all_url != blank -%}
-              <a 
-                href="{{ section.settings.view_all_url }}" 
-                class="featured-collections__view-all-btn"
-                aria-label="{{ 'sections.collection_list.view_all' | t }}"
-              >
-                {{ 'sections.collection_list.view_all' | t }}
-              </a>
-            {%- endif -%}
-          </div>
-        {%- endif -%}
+          {%- endif -%}
+
+          {%- if section.settings.show_view_all and section.settings.view_all_url != blank -%}
+            <a href="{{ section.settings.view_all_url }}" class="fc-header__view-all">
+              {{ 'sections.collection_list.view_all' | t }}
+            </a>
+          {%- endif -%}
+        </div>
       </div>
     {%- endif -%}
-    
-    {%- # Collections Carousel -%}
-    {%- if has_collections -%}
-      <horizontal-scroll-carousel
-        id="featured-collections-carousel-{{ section.id }}"
-        items-per-view='{{ items_per_view }}'
-        gap="{{ gap }}"
-        show-arrows="false"
-        auto-scroll="{{ auto_scroll }}"
-        scroll-speed="{{ scroll_speed }}"
-        data-external-nav="header-nav-{{ section.id }}"
-        class="{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+
+    {%- comment -%} Collections Carousel {%- endcomment -%}
+    {%- if section.blocks.size > 0 -%}
+      <div
+        class="fc-carousel"
+        id="fc-carousel-{{ section.id }}"
+        data-carousel
+        data-section-id="{{ section.id }}"
       >
-        <div class="horizontal-scroll-carousel__container">
-          
-          {%- # Render collections from blocks first -%}
+        <div class="fc-carousel__track">
           {%- for block in section.blocks -%}
             {%- case block.type -%}
               {%- when 'collection' -%}
@@ -136,65 +85,261 @@
                   assign custom_title = block.settings.custom_title
                   assign custom_image = block.settings.custom_image
                   assign custom_bg_color = block.settings.background_color
+
+                  assign card_title = custom_title | default: collection.title | default: 'Collection'
+                  assign card_image = custom_image | default: collection.featured_image
+                  assign card_url = collection.url | default: '#'
                 -%}
-                
-                <div 
-                  class="featured-collections__item"
-                  {{ block.shopify_attributes }}
-                  {% if settings.animations_reveal_on_scroll %}
-                    style="--animation-order: {{ forloop.index }};"
-                  {% endif %}
-                >
-                  {%- render 'collection-card-featured',
-                    collection: collection,
-                    title_override: custom_title,
-                    image_override: custom_image,
-                    background_color: custom_bg_color,
-                    show_description: section.settings.show_descriptions,
-                    size: 'medium',
-                    loading: 'lazy'
-                  -%}
+
+                <div class="fc-carousel__slide" {{ block.shopify_attributes }}>
+                  <a href="{{ card_url }}" class="fc-card" {% if custom_bg_color != blank %}style="--fc-card-bg: {{ custom_bg_color }};"{% endif %}>
+                    <div class="fc-card__content">
+                      <h3 class="fc-card__title">{{ card_title }}</h3>
+                    </div>
+                    <div class="fc-card__media">
+                      {%- if card_image -%}
+                        <img
+                          src="{{ card_image | image_url: width: 600 }}"
+                          srcset="{{ card_image | image_url: width: 300 }} 300w,
+                                  {{ card_image | image_url: width: 450 }} 450w,
+                                  {{ card_image | image_url: width: 600 }} 600w"
+                          sizes="(min-width: 990px) 25vw, (min-width: 750px) 33vw, 80vw"
+                          alt="{{ card_image.alt | escape | default: card_title }}"
+                          loading="lazy"
+                          width="300"
+                          height="300"
+                          class="fc-card__image"
+                        >
+                      {%- else -%}
+                        <div class="fc-card__placeholder">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                            <circle cx="8.5" cy="8.5" r="1.5"/>
+                            <path d="M21 15l-5-5L5 21"/>
+                          </svg>
+                        </div>
+                      {%- endif -%}
+                    </div>
+                    {%- if section.settings.show_descriptions and collection.description != blank -%}
+                      <p class="fc-card__description">{{ collection.description | strip_html | truncatewords: 10 }}</p>
+                    {%- endif -%}
+                  </a>
                 </div>
-                
             {%- endcase -%}
           {%- endfor -%}
-          
-          {%- # Placeholder collections for theme editor -%}
-          {%- if section.blocks.size == 0 -%}
-            {%- for i in (1..4) -%}
-              <div 
-                class="featured-collections__item"
-                {% if settings.animations_reveal_on_scroll %}
-                  style="--animation-order: {{ forloop.index }};"
-                {% endif %}
-              >
-                {%- render 'collection-card-featured',
-                  collection: null,
-                  show_description: section.settings.show_descriptions,
-                  size: 'medium',
-                  loading: 'lazy'
-                -%}
-              </div>
-            {%- endfor -%}
-          {%- endif -%}
-          
         </div>
-      </horizontal-scroll-carousel>
-      
+
+        {%- comment -%} Mobile Pagination Dots {%- endcomment -%}
+        {%- if section.blocks.size > 1 -%}
+          <div class="fc-carousel__dots" data-carousel-dots="{{ section.id }}">
+            {%- for block in section.blocks -%}
+              <button
+                type="button"
+                class="fc-carousel__dot{% if forloop.first %} is-active{% endif %}"
+                data-index="{{ forloop.index0 }}"
+                aria-label="{{ 'general.slider.slide' | t }} {{ forloop.index }}"
+              ></button>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+
     {%- else -%}
-      {%- # Empty State -%}
-      <div class="featured-collections__empty">
-        <h3 class="featured-collections__empty-title">{{ 'sections.collection_list.view_all' | t }}</h3>
-        <p class="featured-collections__empty-description">
-          Add collections to display them in this section.
-        </p>
+      {%- comment -%} Placeholder State {%- endcomment -%}
+      <div class="fc-carousel" id="fc-carousel-{{ section.id }}">
+        <div class="fc-carousel__track">
+          {%- for i in (1..4) -%}
+            <div class="fc-carousel__slide">
+              <div class="fc-card">
+                <div class="fc-card__content">
+                  <h3 class="fc-card__title">{{ 'onboarding.collection_title' | t }}</h3>
+                </div>
+                <div class="fc-card__media">
+                  <div class="fc-card__placeholder">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                      <circle cx="8.5" cy="8.5" r="1.5"/>
+                      <path d="M21 15l-5-5L5 21"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
       </div>
     {%- endif -%}
-    
   </div>
 </section>
 
-{%- # Schema Configuration -%}
+<script>
+  // Featured Collections Carousel - Simple & Mobile-Friendly
+  (function() {
+    const initCarousel = (carousel) => {
+      const sectionId = carousel.dataset.sectionId;
+      const track = carousel.querySelector('.fc-carousel__track');
+      const slides = carousel.querySelectorAll('.fc-carousel__slide');
+      const nav = document.querySelector(`[data-carousel-nav="${sectionId}"]`);
+      const dots = document.querySelector(`[data-carousel-dots="${sectionId}"]`);
+
+      if (!track || slides.length === 0) return;
+
+      let currentIndex = 0;
+      let startX = 0;
+      let currentX = 0;
+      let isDragging = false;
+
+      // Get items per view based on screen size
+      const getItemsPerView = () => {
+        const style = getComputedStyle(carousel.closest('.featured-collections'));
+        if (window.innerWidth >= 990) {
+          return parseInt(style.getPropertyValue('--fc-items-desktop')) || 4;
+        } else if (window.innerWidth >= 750) {
+          return parseInt(style.getPropertyValue('--fc-items-tablet')) || 2;
+        }
+        return parseFloat(style.getPropertyValue('--fc-items-mobile')) || 1.2;
+      };
+
+      // Get max scroll index
+      const getMaxIndex = () => {
+        const itemsPerView = getItemsPerView();
+        return Math.max(0, slides.length - Math.floor(itemsPerView));
+      };
+
+      // Update navigation state
+      const updateNav = () => {
+        if (nav) {
+          const prevBtn = nav.querySelector('[data-action="prev"]');
+          const nextBtn = nav.querySelector('[data-action="next"]');
+          if (prevBtn) prevBtn.disabled = currentIndex <= 0;
+          if (nextBtn) nextBtn.disabled = currentIndex >= getMaxIndex();
+        }
+
+        // Update dots
+        if (dots) {
+          const allDots = dots.querySelectorAll('.fc-carousel__dot');
+          allDots.forEach((dot, i) => {
+            dot.classList.toggle('is-active', i === currentIndex);
+          });
+        }
+      };
+
+      // Scroll to index
+      const scrollToIndex = (index) => {
+        const maxIndex = getMaxIndex();
+        currentIndex = Math.max(0, Math.min(index, maxIndex));
+
+        const slide = slides[currentIndex];
+        if (slide) {
+          const scrollLeft = slide.offsetLeft - track.offsetLeft;
+          track.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+        }
+
+        updateNav();
+      };
+
+      // Navigation click handlers
+      if (nav) {
+        nav.addEventListener('click', (e) => {
+          const btn = e.target.closest('[data-action]');
+          if (!btn) return;
+
+          if (btn.dataset.action === 'prev') {
+            scrollToIndex(currentIndex - 1);
+          } else if (btn.dataset.action === 'next') {
+            scrollToIndex(currentIndex + 1);
+          }
+        });
+      }
+
+      // Dots click handler
+      if (dots) {
+        dots.addEventListener('click', (e) => {
+          const dot = e.target.closest('.fc-carousel__dot');
+          if (dot) {
+            scrollToIndex(parseInt(dot.dataset.index));
+          }
+        });
+      }
+
+      // Touch/swipe support
+      track.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+      }, { passive: true });
+
+      track.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        currentX = e.touches[0].clientX;
+      }, { passive: true });
+
+      track.addEventListener('touchend', () => {
+        if (!isDragging) return;
+        isDragging = false;
+
+        const diff = startX - currentX;
+        const threshold = 50;
+
+        if (Math.abs(diff) > threshold) {
+          if (diff > 0) {
+            scrollToIndex(currentIndex + 1);
+          } else {
+            scrollToIndex(currentIndex - 1);
+          }
+        }
+
+        startX = 0;
+        currentX = 0;
+      });
+
+      // Scroll event to sync current index
+      let scrollTimeout;
+      track.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          const slideWidth = slides[0]?.offsetWidth || 0;
+          const gap = parseFloat(getComputedStyle(track).gap) || 0;
+          const scrollLeft = track.scrollLeft;
+          currentIndex = Math.round(scrollLeft / (slideWidth + gap));
+          updateNav();
+        }, 100);
+      }, { passive: true });
+
+      // Handle resize
+      let resizeTimeout;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+          updateNav();
+        }, 250);
+      });
+
+      // Initial state
+      updateNav();
+    };
+
+    // Initialize all carousels
+    const init = () => {
+      document.querySelectorAll('[data-carousel]').forEach(initCarousel);
+    };
+
+    // Run on DOM ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+
+    // Re-init for Shopify theme editor
+    if (Shopify.designMode) {
+      document.addEventListener('shopify:section:load', (e) => {
+        const carousel = e.target.querySelector('[data-carousel]');
+        if (carousel) initCarousel(carousel);
+      });
+    }
+  })();
+</script>
+
 {% schema %}
 {
   "name": "Featured Collections",
@@ -215,90 +360,59 @@
       "id": "description",
       "label": "Section description"
     },
-         {
-       "type": "select",
-       "id": "heading_size",
-       "options": [
-         {
-           "value": "h2",
-           "label": "Small"
-         },
-         {
-           "value": "h1",
-           "label": "Medium"
-         },
-         {
-           "value": "h0",
-           "label": "Large"
-         }
-       ],
-       "default": "h1",
-       "label": "Heading size"
-     },
-     {
-       "type": "select",
-       "id": "title_alignment",
-       "options": [
-         {
-           "value": "left",
-           "label": "Left"
-         },
-         {
-           "value": "center",
-           "label": "Center"
-         },
-         {
-           "value": "right",
-           "label": "Right"
-         }
-       ],
-       "default": "left",
-       "label": "Title alignment"
-     },
-    
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        { "value": "h3", "label": "Small" },
+        { "value": "h2", "label": "Medium" },
+        { "value": "h1", "label": "Large" }
+      ],
+      "default": "h2",
+      "label": "Heading size"
+    },
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" }
+      ],
+      "default": "left",
+      "label": "Title alignment"
+    },
     {
       "type": "header",
       "content": "Card Settings"
     },
-
-         {
-       "type": "color",
-       "id": "collection_title_color",
-       "label": "Collection title color",
-       "default": "#000000"
-     },
+    {
+      "type": "color",
+      "id": "collection_title_color",
+      "label": "Collection title color",
+      "default": "#121212"
+    },
     {
       "type": "color",
       "id": "card_background_color",
       "label": "Card background color",
-      "default": "#ffffff"
+      "default": "#f6f6f6"
     },
-         {
-       "type": "range",
-       "id": "card_padding",
-       "min": 1,
-       "max": 4.8,
-       "step": 0.2,
-       "default": 2.4,
-       "unit": "rem",
-       "label": "Card padding"
-     },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "min": 1,
+      "max": 4,
+      "step": 0.2,
+      "default": 2,
+      "unit": "rem",
+      "label": "Card padding"
+    },
     {
       "type": "select",
       "id": "text_alignment",
       "options": [
-        {
-          "value": "left",
-          "label": "Left"
-        },
-        {
-          "value": "center",
-          "label": "Center"
-        },
-        {
-          "value": "right",
-          "label": "Right"
-        }
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" }
       ],
       "default": "center",
       "label": "Text alignment"
@@ -311,7 +425,7 @@
     },
     {
       "type": "header",
-      "content": "Responsive Layout"
+      "content": "Layout"
     },
     {
       "type": "range",
@@ -320,7 +434,7 @@
       "max": 6,
       "step": 1,
       "default": 4,
-      "label": "Cards per row on desktop"
+      "label": "Cards per row (desktop)"
     },
     {
       "type": "range",
@@ -328,79 +442,47 @@
       "min": 2,
       "max": 4,
       "step": 1,
-      "default": 2,
-      "label": "Cards per row on tablet"
+      "default": 3,
+      "label": "Cards per row (tablet)"
     },
     {
       "type": "range",
       "id": "cards_per_row_mobile",
       "min": 1,
-      "max": 3,
-      "step": 1,
-      "default": 1,
-      "label": "Cards per row on mobile"
+      "max": 2,
+      "step": 0.1,
+      "default": 1.2,
+      "label": "Cards per row (mobile)",
+      "info": "Use 1.2 to show peek of next card"
     },
     {
       "type": "header",
       "content": "Navigation"
     },
-    
-     {
-       "type": "checkbox",
-       "id": "show_view_all",
-       "default": true,
-       "label": "Show view all button"
-     },
-     {
-       "type": "url",
-       "id": "view_all_url",
-       "label": "View all URL",
-       "info": "Link for the view all button"
-     },
-{
+    {
       "type": "checkbox",
-      "id": "enable_auto_scroll",
-      "default": false,
-      "label": "Enable auto-scroll"
+      "id": "show_view_all",
+      "default": true,
+      "label": "Show view all button"
     },
     {
-      "type": "range",
-      "id": "auto_scroll_speed",
-      "min": 2000,
-      "max": 5000,
-      "step": 500,
-      "default": 5000,
-      "unit": "ms",
-      "label": "Auto-scroll speed"
+      "type": "url",
+      "id": "view_all_url",
+      "label": "View all URL"
     },
     {
       "type": "header",
-      "content": "Section Styling"
+      "content": "Section"
     },
     {
       "type": "select",
       "id": "color_scheme",
       "options": [
-        {
-          "value": "background-1",
-          "label": "Background 1"
-        },
-        {
-          "value": "background-2",
-          "label": "Background 2"
-        },
-        {
-          "value": "inverse",
-          "label": "Inverse"
-        },
-        {
-          "value": "accent-1",
-          "label": "Accent 1"
-        },
-        {
-          "value": "accent-2",
-          "label": "Accent 2"
-        }
+        { "value": "background-1", "label": "Background 1" },
+        { "value": "background-2", "label": "Background 2" },
+        { "value": "inverse", "label": "Inverse" },
+        { "value": "accent-1", "label": "Accent 1" },
+        { "value": "accent-2", "label": "Accent 2" }
       ],
       "default": "background-1",
       "label": "Color scheme"
@@ -412,8 +494,8 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "Section padding top",
-      "default": 36
+      "label": "Padding top",
+      "default": 40
     },
     {
       "type": "range",
@@ -422,8 +504,8 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "Section padding bottom",
-      "default": 36
+      "label": "Padding bottom",
+      "default": 40
     }
   ],
   "blocks": [
@@ -446,13 +528,13 @@
           "type": "image_picker",
           "id": "custom_image",
           "label": "Custom image",
-          "info": "Override the collection featured image"
+          "info": "Override the collection image"
         },
         {
           "type": "color",
           "id": "background_color",
           "label": "Card background color",
-          "info": "Override the default card background color"
+          "info": "Override default card color"
         }
       ]
     }
@@ -461,20 +543,12 @@
     {
       "name": "Featured Collections",
       "blocks": [
-        {
-          "type": "collection"
-        },
-        {
-          "type": "collection"
-        },
-        {
-          "type": "collection"
-        },
-        {
-          "type": "collection"
-        }
+        { "type": "collection" },
+        { "type": "collection" },
+        { "type": "collection" },
+        { "type": "collection" }
       ]
     }
   ]
 }
-{% endschema %} 
+{% endschema %}
