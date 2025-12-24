@@ -463,16 +463,12 @@ cart-drawer-items::-webkit-scrollbar-track-piece {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 4rem;
-  height: 4rem;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 0.8rem;
   flex-shrink: 0;
 }
 
 .cart-drawer__checkout-icon svg {
-  width: 2rem;
-  height: 2rem;
+  width: 4rem;
+  height: 4rem;
 }
 
 .cart-drawer__checkout-text {

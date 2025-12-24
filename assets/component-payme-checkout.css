@@ -81,16 +81,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 4.8rem;
-  height: 4.8rem;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 1rem;
   flex-shrink: 0;
 }
 
 .payme-primary-btn__icon svg {
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 4.8rem;
+  height: 4.8rem;
 }
 
 .payme-primary-btn__content {
@@ -162,14 +158,9 @@
     gap: 1.2rem;
   }
 
-  .payme-primary-btn__icon {
+  .payme-primary-btn__icon svg {
     width: 4rem;
     height: 4rem;
-  }
-
-  .payme-primary-btn__icon svg {
-    width: 2rem;
-    height: 2rem;
   }
 
   .payme-primary-btn__title {
@@ -609,11 +600,16 @@ payme-checkout-form {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 0.6rem;
+  flex-shrink: 0;
 }
 
 .payme-submit-btn__icon svg {
-  width: 2rem;
-  height: 2rem;
+  width: 2.2rem;
+  height: 2.2rem;
 }
 
 .payme-submit-btn.loading .payme-submit-btn__icon,
