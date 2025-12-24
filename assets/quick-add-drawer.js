@@ -220,30 +220,48 @@ if (!customElements.get('quick-add-drawer')) {
         if (sectionId) {
           const oldId = sectionId;
           const newId = `quickadd-drawer-${sectionId}`;
-          productElement.innerHTML = productElement.innerHTML.replaceAll(oldId, newId);
-          
-          // Update attributes that reference the old ID
-          Array.from(productElement.attributes).forEach((attribute) => {
-            if (attribute.value.includes(oldId)) {
-              productElement.setAttribute(attribute.name, attribute.value.replace(oldId, newId));
+
+          // Update IDs using DOM manipulation to avoid HTML entity encoding issues
+          // Update all elements with IDs containing the section ID
+          productElement.querySelectorAll('[id]').forEach(el => {
+            if (el.id.includes(oldId)) {
+              el.id = el.id.replaceAll(oldId, newId);
             }
           });
-          
+
+          // Update all attributes that reference the section ID
+          const attributesToCheck = ['for', 'aria-describedby', 'aria-labelledby', 'aria-controls', 'data-section', 'data-section-id', 'form', 'href'];
+          attributesToCheck.forEach(attr => {
+            productElement.querySelectorAll(`[${attr}]`).forEach(el => {
+              const value = el.getAttribute(attr);
+              if (value && value.includes(oldId)) {
+                el.setAttribute(attr, value.replaceAll(oldId, newId));
+              }
+            });
+          });
+
+          // Update attributes on the productElement itself
+          Array.from(productElement.attributes).forEach((attribute) => {
+            if (attribute.value.includes(oldId)) {
+              productElement.setAttribute(attribute.name, attribute.value.replaceAll(oldId, newId));
+            }
+          });
+
           productElement.dataset.originalSection = sectionId;
         }
-        
+
         // Only remove elements that are definitely not needed in drawer
         const elementsToRemove = [
           '.product__media-item:not(:first-child)', // Extra product images
           '.quick-add-hidden', // Elements marked to hide in quick add
           '.breadcrumb' // Navigation breadcrumbs
         ];
-        
+
         elementsToRemove.forEach(selector => {
           const elements = productElement.querySelectorAll(selector);
           elements.forEach(el => el.remove());
         });
-        
+
         // Remove product description only if it's very long (keep short descriptions)
         const description = productElement.querySelector('.product__description');
         if (description && description.textContent.length > 200) {
@@ -253,25 +271,44 @@ if (!customElements.get('quick-add-drawer')) {
 
       renderDrawerContent(productElement, productInfo) {
         // Only render product info header and product content (no close button or handle)
-        const content = `
-          <div class="quick-add-drawer__wrapper">
-            <div class="quick-add-drawer__product-header">
-              ${productInfo.vendor ? `<div class="quick-add-drawer__vendor">${productInfo.vendor}</div>` : ''}
-              <h2 class="quick-add-drawer__title">${productInfo.title}</h2>
-              <a href="${productInfo.url}" class="quick-add-drawer__view-details">View full details →</a>
-            </div>
-            <div class="quick-add-drawer__product-content">
-              ${productElement.outerHTML}
-            </div>
-          </div>
-        `;
+        // Create wrapper structure
+        const wrapper = document.createElement('div');
+        wrapper.className = 'quick-add-drawer__wrapper';
+
+        // Create header
+        const header = document.createElement('div');
+        header.className = 'quick-add-drawer__product-header';
+
+        if (productInfo.vendor) {
+          const vendorDiv = document.createElement('div');
+          vendorDiv.className = 'quick-add-drawer__vendor';
+          vendorDiv.textContent = productInfo.vendor;
+          header.appendChild(vendorDiv);
+        }
+
+        const title = document.createElement('h2');
+        title.className = 'quick-add-drawer__title';
+        title.textContent = productInfo.title;
+        header.appendChild(title);
+
+        const viewDetails = document.createElement('a');
+        viewDetails.href = productInfo.url;
+        viewDetails.className = 'quick-add-drawer__view-details';
+        viewDetails.textContent = 'View full details →';
+        header.appendChild(viewDetails);
+
+        wrapper.appendChild(header);
+
+        // Create product content container and append the actual element (not outerHTML)
+        const productContent = document.createElement('div');
+        productContent.className = 'quick-add-drawer__product-content';
+        productContent.appendChild(productElement);
+        wrapper.appendChild(productContent);
 
         if (this.drawerBody) {
-          this.drawerBody.innerHTML = content;
-          // Initialize Shopify features after content is loaded
-          if (window.Shopify && Shopify.PaymentButton) {
-            Shopify.PaymentButton.init();
-          }
+          this.drawerBody.innerHTML = '';
+          this.drawerBody.appendChild(wrapper);
+          // Initialize Shopify 3D model viewer if present
           if (window.ProductModel) window.ProductModel.loadShopifyXR();
         }
       }
