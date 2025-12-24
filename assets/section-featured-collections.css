@@ -121,20 +121,36 @@
    =========================================== */
 .fc-carousel {
   position: relative;
+  /* Allow overflow on mobile for edge-to-edge scrolling */
+  margin: 0 calc(-1 * var(--page-width-margin, 1.5rem));
+  padding: 0 var(--page-width-margin, 1.5rem);
+}
+
+@media screen and (min-width: 750px) {
+  .fc-carousel {
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .fc-carousel__track {
   display: flex;
-  gap: 1.6rem;
+  gap: 1.2rem;
   overflow-x: auto;
   overflow-y: hidden;
-  scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  padding-bottom: 0.5rem;
-  margin-bottom: -0.5rem;
+  /* Remove smooth scroll for more native feel on touch */
+}
+
+/* Only use smooth scroll on non-touch devices */
+@media (hover: hover) {
+  .fc-carousel__track {
+    scroll-behavior: smooth;
+  }
 }
 
 .fc-carousel__track::-webkit-scrollbar {
@@ -142,12 +158,17 @@
 }
 
 .fc-carousel__slide {
-  flex: 0 0 calc((100% - 1.6rem * (var(--fc-items-mobile) - 1)) / var(--fc-items-mobile));
+  flex: 0 0 75%;
   min-width: 0;
   scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 @media screen and (min-width: 750px) {
+  .fc-carousel__track {
+    gap: 1.6rem;
+  }
+
   .fc-carousel__slide {
     flex: 0 0 calc((100% - 1.6rem * (var(--fc-items-tablet) - 1)) / var(--fc-items-tablet));
   }
@@ -326,18 +347,26 @@
     height: 1.8rem;
   }
 
+  /* Larger cards on mobile */
   .fc-card {
-    padding: 1.6rem;
-    gap: 1.2rem;
-    border-radius: 1.2rem;
+    padding: 2rem;
+    gap: 1.6rem;
+    border-radius: 1.6rem;
+    min-height: 32rem;
   }
 
   .fc-card__media {
-    max-width: 16rem;
+    max-width: 20rem;
+    flex-shrink: 0;
   }
 
   .fc-card__title {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
+  }
+
+  /* Pagination dots spacing */
+  .fc-carousel__dots {
+    margin-top: 1.6rem;
   }
 }
 

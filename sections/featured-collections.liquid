@@ -173,7 +173,7 @@
 </section>
 
 <script>
-  // Featured Collections Carousel - Simple & Mobile-Friendly
+  // Featured Collections Carousel - Native Scroll with Nav Sync
   (function() {
     const initCarousel = (carousel) => {
       const sectionId = carousel.dataset.sectionId;
@@ -185,152 +185,105 @@
       if (!track || slides.length === 0) return;
 
       let currentIndex = 0;
-      let startX = 0;
-      let currentX = 0;
-      let isDragging = false;
 
-      // Get items per view based on screen size
-      const getItemsPerView = () => {
-        const style = getComputedStyle(carousel.closest('.featured-collections'));
-        if (window.innerWidth >= 990) {
-          return parseInt(style.getPropertyValue('--fc-items-desktop')) || 4;
-        } else if (window.innerWidth >= 750) {
-          return parseInt(style.getPropertyValue('--fc-items-tablet')) || 2;
-        }
-        return parseFloat(style.getPropertyValue('--fc-items-mobile')) || 1.2;
-      };
-
-      // Get max scroll index
+      // Get max scroll index based on visible slides
       const getMaxIndex = () => {
-        const itemsPerView = getItemsPerView();
-        return Math.max(0, slides.length - Math.floor(itemsPerView));
+        return Math.max(0, slides.length - 1);
       };
 
-      // Update navigation state
-      const updateNav = () => {
+      // Update navigation and dots state
+      const updateState = () => {
+        // Calculate current index from scroll position
+        const slideWidth = slides[0]?.offsetWidth || 0;
+        const gap = parseFloat(getComputedStyle(track).gap) || 0;
+        const scrollLeft = track.scrollLeft;
+        currentIndex = Math.round(scrollLeft / (slideWidth + gap));
+        currentIndex = Math.max(0, Math.min(currentIndex, getMaxIndex()));
+
+        // Update nav buttons
         if (nav) {
           const prevBtn = nav.querySelector('[data-action="prev"]');
           const nextBtn = nav.querySelector('[data-action="next"]');
-          if (prevBtn) prevBtn.disabled = currentIndex <= 0;
-          if (nextBtn) nextBtn.disabled = currentIndex >= getMaxIndex();
+          const isAtStart = track.scrollLeft <= 5;
+          const isAtEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 5;
+          if (prevBtn) prevBtn.disabled = isAtStart;
+          if (nextBtn) nextBtn.disabled = isAtEnd;
         }
 
         // Update dots
         if (dots) {
-          const allDots = dots.querySelectorAll('.fc-carousel__dot');
-          allDots.forEach((dot, i) => {
+          dots.querySelectorAll('.fc-carousel__dot').forEach((dot, i) => {
             dot.classList.toggle('is-active', i === currentIndex);
           });
         }
       };
 
-      // Scroll to index
-      const scrollToIndex = (index) => {
-        const maxIndex = getMaxIndex();
-        currentIndex = Math.max(0, Math.min(index, maxIndex));
-
-        const slide = slides[currentIndex];
+      // Scroll to specific slide
+      const scrollToSlide = (index) => {
+        const slide = slides[index];
         if (slide) {
-          const scrollLeft = slide.offsetLeft - track.offsetLeft;
-          track.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+          track.scrollTo({
+            left: slide.offsetLeft - track.offsetLeft,
+            behavior: 'smooth'
+          });
         }
-
-        updateNav();
       };
 
-      // Navigation click handlers
+      // Nav button clicks
       if (nav) {
         nav.addEventListener('click', (e) => {
           const btn = e.target.closest('[data-action]');
           if (!btn) return;
 
-          if (btn.dataset.action === 'prev') {
-            scrollToIndex(currentIndex - 1);
-          } else if (btn.dataset.action === 'next') {
-            scrollToIndex(currentIndex + 1);
+          const action = btn.dataset.action;
+          if (action === 'prev' && currentIndex > 0) {
+            scrollToSlide(currentIndex - 1);
+          } else if (action === 'next' && currentIndex < getMaxIndex()) {
+            scrollToSlide(currentIndex + 1);
           }
         });
       }
 
-      // Dots click handler
+      // Dots click
       if (dots) {
         dots.addEventListener('click', (e) => {
           const dot = e.target.closest('.fc-carousel__dot');
           if (dot) {
-            scrollToIndex(parseInt(dot.dataset.index));
+            scrollToSlide(parseInt(dot.dataset.index));
           }
         });
       }
 
-      // Touch/swipe support
-      track.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].clientX;
-        isDragging = true;
-      }, { passive: true });
-
-      track.addEventListener('touchmove', (e) => {
-        if (!isDragging) return;
-        currentX = e.touches[0].clientX;
-      }, { passive: true });
-
-      track.addEventListener('touchend', () => {
-        if (!isDragging) return;
-        isDragging = false;
-
-        const diff = startX - currentX;
-        const threshold = 50;
-
-        if (Math.abs(diff) > threshold) {
-          if (diff > 0) {
-            scrollToIndex(currentIndex + 1);
-          } else {
-            scrollToIndex(currentIndex - 1);
-          }
-        }
-
-        startX = 0;
-        currentX = 0;
-      });
-
-      // Scroll event to sync current index
-      let scrollTimeout;
+      // Native scroll listener - let browser handle touch scrolling
+      let scrollRAF;
       track.addEventListener('scroll', () => {
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(() => {
-          const slideWidth = slides[0]?.offsetWidth || 0;
-          const gap = parseFloat(getComputedStyle(track).gap) || 0;
-          const scrollLeft = track.scrollLeft;
-          currentIndex = Math.round(scrollLeft / (slideWidth + gap));
-          updateNav();
-        }, 100);
+        if (scrollRAF) cancelAnimationFrame(scrollRAF);
+        scrollRAF = requestAnimationFrame(updateState);
       }, { passive: true });
 
       // Handle resize
-      let resizeTimeout;
+      let resizeRAF;
       window.addEventListener('resize', () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
-          updateNav();
-        }, 250);
+        if (resizeRAF) cancelAnimationFrame(resizeRAF);
+        resizeRAF = requestAnimationFrame(updateState);
       });
 
       // Initial state
-      updateNav();
+      updateState();
     };
 
-    // Initialize all carousels
+    // Initialize
     const init = () => {
       document.querySelectorAll('[data-carousel]').forEach(initCarousel);
     };
 
-    // Run on DOM ready
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', init);
     } else {
       init();
     }
 
-    // Re-init for Shopify theme editor
+    // Shopify theme editor support
     if (Shopify.designMode) {
       document.addEventListener('shopify:section:load', (e) => {
         const carousel = e.target.querySelector('[data-carousel]');

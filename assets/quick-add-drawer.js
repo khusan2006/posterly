@@ -224,8 +224,9 @@ if (!customElements.get('quick-add-drawer')) {
           // Update IDs using DOM manipulation to avoid HTML entity encoding issues
           // Update all elements with IDs containing the section ID
           productElement.querySelectorAll('[id]').forEach(el => {
-            if (el.id.includes(oldId)) {
-              el.id = el.id.replaceAll(oldId, newId);
+            const currentId = el.getAttribute('id');
+            if (currentId && typeof currentId === 'string' && currentId.includes(oldId)) {
+              el.setAttribute('id', currentId.replaceAll(oldId, newId));
             }
           });
 
