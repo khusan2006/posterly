@@ -130,31 +130,7 @@
             "background_color": ""
           }
         },
-        "collection_gyYqgN": {
-          "type": "collection",
-          "settings": {
-            "collection": "motobikes-collection",
-            "custom_title": "",
-            "background_color": ""
-          }
-        },
         "collection_HXiwMH": {
-          "type": "collection",
-          "settings": {
-            "collection": "car-collection",
-            "custom_title": "",
-            "background_color": ""
-          }
-        },
-        "collection_jNLNQ7": {
-          "type": "collection",
-          "settings": {
-            "collection": "car-collection",
-            "custom_title": "",
-            "background_color": ""
-          }
-        },
-        "collection_Tdd8JX": {
           "type": "collection",
           "settings": {
             "collection": "car-collection",
@@ -170,14 +146,6 @@
             "background_color": ""
           }
         },
-        "collection_rKahnV": {
-          "type": "collection",
-          "settings": {
-            "collection": "car-collection",
-            "custom_title": "",
-            "background_color": ""
-          }
-        },
         "collection_hzMMDY": {
           "type": "collection",
           "settings": {
@@ -189,12 +157,8 @@
       },
       "block_order": [
         "collection_KFrC6R",
-        "collection_gyYqgN",
         "collection_HXiwMH",
-        "collection_jNLNQ7",
-        "collection_Tdd8JX",
         "collection_7XcJka",
-        "collection_rKahnV",
         "collection_hzMMDY"
       ],
       "name": "Featured Collections",
