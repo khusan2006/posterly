@@ -282,6 +282,64 @@
   margin: 1.3rem;
 }
 
+/* Tag-based badge colors */
+.badge--new {
+  background-color: #10b981;
+  color: #ffffff;
+  border-color: #10b981;
+}
+
+.badge--popular,
+.badge--most-popular {
+  background-color: #f59e0b;
+  color: #ffffff;
+  border-color: #f59e0b;
+}
+
+.badge--sale {
+  background-color: #ef4444;
+  color: #ffffff;
+  border-color: #ef4444;
+}
+
+.badge--bestseller,
+.badge--best-seller {
+  background-color: #8b5cf6;
+  color: #ffffff;
+  border-color: #8b5cf6;
+}
+
+.badge--limited {
+  background-color: #ec4899;
+  color: #ffffff;
+  border-color: #ec4899;
+}
+
+.badge--exclusive {
+  background-color: #0ea5e9;
+  color: #ffffff;
+  border-color: #0ea5e9;
+}
+
+.badge--trending {
+  background-color: #f97316;
+  color: #ffffff;
+  border-color: #f97316;
+}
+
+.badge--featured {
+  background-color: #6366f1;
+  color: #ffffff;
+  border-color: #6366f1;
+}
+
+/* Stack multiple badges */
+.card__badge {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 .card__media .media img {
   height: 100%;
   object-fit: cover;
