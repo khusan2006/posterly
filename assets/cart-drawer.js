@@ -71,26 +71,53 @@ class CartDrawer extends HTMLElement {
   }
 
   renderContents(parsedState) {
-    this.querySelector('.drawer__inner').classList.contains('is-empty') &&
-      this.querySelector('.drawer__inner').classList.remove('is-empty');
-    this.productId = parsedState.id;
-    this.getSectionsToRender().forEach((section) => {
-      const sectionElement = section.selector
-        ? document.querySelector(section.selector)
-        : document.getElementById(section.id);
+    try {
+      const drawerInner = this.querySelector('.drawer__inner');
+      if (drawerInner && drawerInner.classList.contains('is-empty')) {
+        drawerInner.classList.remove('is-empty');
+      }
+      if (parsedState) {
+        this.productId = parsedState.id;
+      }
 
-      if (!sectionElement) return;
-      sectionElement.innerHTML = this.getSectionInnerHTML(parsedState.sections[section.id], section.selector);
-    });
+      if (parsedState && parsedState.sections) {
+        this.getSectionsToRender().forEach((section) => {
+          const sectionElement = section.selector
+            ? document.querySelector(section.selector)
+            : document.getElementById(section.id);
 
-    setTimeout(() => {
-      this.querySelector('#CartDrawer-Overlay').addEventListener('click', this.close.bind(this));
+          if (!sectionElement) return;
+
+          const sectionHtml = parsedState.sections[section.id];
+          if (sectionHtml) {
+            // Use the section's selector, or fallback to .shopify-section for non-selector sections
+            const selectorToUse = section.selector || '.shopify-section';
+            const newInnerHTML = this.getSectionInnerHTML(sectionHtml, selectorToUse);
+            if (newInnerHTML !== null) {
+              sectionElement.innerHTML = newInnerHTML;
+            }
+          }
+        });
+      }
+
+      setTimeout(() => {
+        const overlay = this.querySelector('#CartDrawer-Overlay');
+        if (overlay) {
+          overlay.addEventListener('click', this.close.bind(this));
+        }
+        this.open();
+      });
+    } catch (e) {
+      console.error('Cart drawer renderContents error:', e);
+      // Still try to open the drawer
       this.open();
-    });
+    }
   }
 
   getSectionInnerHTML(html, selector = '.shopify-section') {
-    return new DOMParser().parseFromString(html, 'text/html').querySelector(selector).innerHTML;
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    const element = doc.querySelector(selector);
+    return element ? element.innerHTML : null;
   }
 
   getSectionsToRender() {
