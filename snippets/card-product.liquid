@@ -121,7 +121,29 @@
                 >
               {%- endif -%}
             </a>
-            
+
+            {%- comment -%} Product Badges - positioned on top of image {%- endcomment -%}
+            <div class="card__badge-overlay">
+              {%- if card_product.available == false -%}
+                <span class="badge badge--sold-out">
+                  {{- 'products.product.sold_out' | t -}}
+                </span>
+              {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
+                <span class="badge badge--sale">
+                  {{- 'products.product.on_sale' | t -}}
+                </span>
+              {%- endif -%}
+              {%- for tag in card_product.tags -%}
+                {%- if tag contains 'badge:' -%}
+                  {%- assign badge_text = tag | split: ':' | last | strip -%}
+                  {%- assign badge_class = badge_text | handleize -%}
+                  <span class="badge badge--{{ badge_class }}">
+                    {{- badge_text | capitalize -}}
+                  </span>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+
             {%- comment -%} Quick Add Button Overlay {%- endcomment -%}
             {%- if quick_add != 'none' -%}
               {% assign product_form_id = 'quick-add-' | append: section_id | append: card_product.id %}
@@ -634,34 +656,6 @@
           {% endif %}
           </div>
         {% endif %}
-        <div class="card__badge {{ settings.badge_position }}">
-          {%- if card_product.available == false -%}
-            <span
-              id="Badge-{{ section_id }}-{{ card_product.id }}"
-              class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}"
-            >
-              {{- 'products.product.sold_out' | t -}}
-            </span>
-          {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
-            <span
-              id="Badge-{{ section_id }}-{{ card_product.id }}"
-              class="badge badge--bottom-left badge--sale"
-            >
-              {{- 'products.product.on_sale' | t -}}
-            </span>
-          {%- endif -%}
-
-          {%- comment -%} Display badges based on product tags with format badge:tagname {%- endcomment -%}
-          {%- for tag in card_product.tags -%}
-            {%- if tag contains 'badge:' -%}
-              {%- assign badge_text = tag | split: ':' | last | strip -%}
-              {%- assign badge_class = badge_text | handleize -%}
-              <span class="badge badge--bottom-left badge--{{ badge_class }}">
-                {{- badge_text | capitalize -}}
-              </span>
-            {%- endif -%}
-          {%- endfor -%}
-        </div>
       </div>
     </div>
   </div>
