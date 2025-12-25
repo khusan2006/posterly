@@ -1,0 +1,74 @@
+{% comment %}
+  Floating Help Button
+  Renders a floating button at the bottom-right corner that links to Telegram support
+
+  Usage:
+  {% render 'floating-help-button' %}
+{% endcomment %}
+
+{%- if settings.floating_help_enabled and settings.floating_help_url != blank -%}
+  <style>
+    .floating-help-btn {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 999;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background-color: #0088cc;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .floating-help-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      background-color: #0077b5;
+    }
+
+    .floating-help-btn:active {
+      transform: scale(0.95);
+    }
+
+    .floating-help-btn svg {
+      width: 28px;
+      height: 28px;
+      fill: currentColor;
+    }
+
+    @media screen and (max-width: 749px) {
+      .floating-help-btn {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 50px;
+        height: 50px;
+      }
+
+      .floating-help-btn svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  </style>
+
+  <a
+    href="{{ settings.floating_help_url }}"
+    class="floating-help-btn"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="{{ 'general.help' | t | default: 'Yordam' }}"
+    title="{{ 'general.help' | t | default: 'Yordam' }}"
+  >
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/>
+    </svg>
+  </a>
+{%- endif -%}

@@ -1356,6 +1356,29 @@
         "id": "social_vimeo_link",
         "label": "t:settings_schema.social-media.settings.social_vimeo_link.label",
         "placeholder": "t:settings_schema.social-media.settings.social_vimeo_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_telegram_link",
+        "label": "Telegram",
+        "placeholder": "https://t.me/username"
+      }
+    ]
+  },
+  {
+    "name": "Floating Help Button",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "floating_help_enabled",
+        "label": "Enable floating help button",
+        "default": true
+      },
+      {
+        "type": "url",
+        "id": "floating_help_url",
+        "label": "Help button URL",
+        "info": "Usually your Telegram support link"
       }
     ]
   },
