@@ -79,27 +79,14 @@ class CartDrawer extends HTMLElement {
       if (parsedState && parsedState.sections) {
         const cartDrawerHtml = parsedState.sections['cart-drawer'];
 
-        console.log('Cart drawer HTML received:', !!cartDrawerHtml);
-        console.log('parsedState.item_count:', parsedState.item_count);
-
         if (cartDrawerHtml) {
           const doc = new DOMParser().parseFromString(cartDrawerHtml, 'text/html');
-
-          // Debug: log what elements exist in the response
-          console.log('Response has cart-drawer:', !!doc.querySelector('cart-drawer'));
-          console.log('Response has #CartDrawer:', !!doc.querySelector('#CartDrawer'));
-          console.log('Response has .drawer__inner:', !!doc.querySelector('.drawer__inner'));
-          console.log('First 500 chars of HTML:', cartDrawerHtml.substring(0, 500));
 
           // Update the entire .drawer__inner content to handle empty/non-empty state changes
           const targetDrawerInner = this.querySelector('.drawer__inner');
           const sourceDrawerInner = doc.querySelector('.drawer__inner');
 
-          console.log('Target drawer inner found:', !!targetDrawerInner);
-          console.log('Source drawer inner found:', !!sourceDrawerInner);
-
           if (targetDrawerInner && sourceDrawerInner) {
-            console.log('Source innerHTML length:', sourceDrawerInner.innerHTML.length);
             targetDrawerInner.innerHTML = sourceDrawerInner.innerHTML;
           }
         }
