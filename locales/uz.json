@@ -335,8 +335,11 @@
       "city": "Shahar",
       "city_placeholder": "Shahringizni tanlang",
       "email_optional": "Email (ixtiyoriy)",
+      "email": "Email",
       "email_placeholder": "email@example.com",
       "submit_order": "Buyurtmani tasdiqlash",
+      "payme_checkout_title": "Payme orqali to'lov",
+      "payme_checkout_description": "Buyurtmangizni yakunlash uchun quyidagi ma'lumotlarni kiriting.",
       "view_cart": "Savatni ko'rish"
     },
     "footer": {

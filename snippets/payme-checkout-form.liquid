@@ -85,13 +85,16 @@
           type="email"
           id="Payme-email"
           name="email"
+          required
           spellcheck="false"
           autocapitalize="off"
           placeholder="{{ 'sections.cart.email_placeholder' | t | default: 'email@example.com' }}"
+          aria-required="true"
           value="{% if customer %}{{ customer.email }}{% endif %}"
         >
         <label class="field__label" for="Payme-email">
-          {{ 'sections.cart.email_optional' | t | default: "Email (ixtiyoriy)" }}
+          {{ 'sections.cart.email' | t | default: "Email" }}
+          <span aria-hidden="true">*</span>
         </label>
       </div>
     </div>
