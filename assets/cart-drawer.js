@@ -72,33 +72,46 @@ class CartDrawer extends HTMLElement {
 
   renderContents(parsedState) {
     try {
-      const drawerInner = this.querySelector('.drawer__inner');
-      if (drawerInner && drawerInner.classList.contains('is-empty')) {
-        drawerInner.classList.remove('is-empty');
-      }
       if (parsedState) {
         this.productId = parsedState.id;
       }
 
       if (parsedState && parsedState.sections) {
-        this.getSectionsToRender().forEach((section) => {
-          const sectionElement = section.selector
-            ? document.querySelector(section.selector)
-            : document.getElementById(section.id);
+        const cartDrawerHtml = parsedState.sections['cart-drawer'];
+        if (cartDrawerHtml) {
+          const doc = new DOMParser().parseFromString(cartDrawerHtml, 'text/html');
 
-          if (!sectionElement) return;
-
-          const sectionHtml = parsedState.sections[section.id];
-          if (sectionHtml) {
-            // Use the section's selector, or fallback to .shopify-section for non-selector sections
-            const selectorToUse = section.selector || '.shopify-section';
-            const newInnerHTML = this.getSectionInnerHTML(sectionHtml, selectorToUse);
-            if (newInnerHTML !== null) {
-              sectionElement.innerHTML = newInnerHTML;
-            }
+          // Update cart-drawer-items inner content (preserves event bindings)
+          const targetCartItems = document.querySelector('cart-drawer-items');
+          const sourceCartItems = doc.querySelector('cart-drawer-items');
+          if (targetCartItems && sourceCartItems) {
+            targetCartItems.innerHTML = sourceCartItems.innerHTML;
+            // Update is-empty class
+            targetCartItems.classList.toggle('is-empty', sourceCartItems.classList.contains('is-empty'));
           }
-        });
+
+          // Update footer
+          const targetFooter = document.querySelector('.cart-drawer__footer');
+          const sourceFooter = doc.querySelector('.cart-drawer__footer');
+          if (targetFooter && sourceFooter) {
+            targetFooter.innerHTML = sourceFooter.innerHTML;
+          }
+        }
+
+        // Update cart icon bubble
+        const cartIconHtml = parsedState.sections['cart-icon-bubble'];
+        if (cartIconHtml) {
+          const iconDoc = new DOMParser().parseFromString(cartIconHtml, 'text/html');
+          const targetIcon = document.getElementById('cart-icon-bubble');
+          const sourceIcon = iconDoc.querySelector('.shopify-section');
+          if (targetIcon && sourceIcon) {
+            targetIcon.innerHTML = sourceIcon.innerHTML;
+          }
+        }
       }
+
+      // Update is-empty state on the drawer itself
+      this.classList.toggle('is-empty', parsedState.item_count === 0);
 
       setTimeout(() => {
         const overlay = this.querySelector('#CartDrawer-Overlay');
@@ -128,6 +141,7 @@ class CartDrawer extends HTMLElement {
       },
       {
         id: 'cart-icon-bubble',
+        selector: '.shopify-section',
       },
     ];
   }
