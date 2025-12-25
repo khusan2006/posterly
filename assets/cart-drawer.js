@@ -81,20 +81,11 @@ class CartDrawer extends HTMLElement {
         if (cartDrawerHtml) {
           const doc = new DOMParser().parseFromString(cartDrawerHtml, 'text/html');
 
-          // Update cart-drawer-items inner content (preserves event bindings)
-          const targetCartItems = document.querySelector('cart-drawer-items');
-          const sourceCartItems = doc.querySelector('cart-drawer-items');
-          if (targetCartItems && sourceCartItems) {
-            targetCartItems.innerHTML = sourceCartItems.innerHTML;
-            // Update is-empty class
-            targetCartItems.classList.toggle('is-empty', sourceCartItems.classList.contains('is-empty'));
-          }
-
-          // Update footer
-          const targetFooter = document.querySelector('.cart-drawer__footer');
-          const sourceFooter = doc.querySelector('.cart-drawer__footer');
-          if (targetFooter && sourceFooter) {
-            targetFooter.innerHTML = sourceFooter.innerHTML;
+          // Update the entire .drawer__inner content to handle empty/non-empty state changes
+          const targetDrawerInner = this.querySelector('.drawer__inner');
+          const sourceDrawerInner = doc.querySelector('.drawer__inner');
+          if (targetDrawerInner && sourceDrawerInner) {
+            targetDrawerInner.innerHTML = sourceDrawerInner.innerHTML;
           }
         }
 
