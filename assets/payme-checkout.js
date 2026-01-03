@@ -1,3 +1,27 @@
+// Shipping zones configuration - single price per zone
+const SHIPPING_ZONES = {
+  tashkent: {
+    name: "Toshkent shahri",
+    price: 25000,
+    days: "1-2 kun"
+  },
+  tashkent_region: {
+    name: "Toshkent viloyati",
+    price: 35000,
+    days: "2-3 kun"
+  },
+  nearby: {
+    name: "Yaqin viloyatlar",
+    price: 45000,
+    days: "3-5 kun"
+  },
+  distant: {
+    name: "Uzoq viloyatlar",
+    price: 55000,
+    days: "4-7 kun"
+  }
+};
+
 class PaymeCheckoutForm extends HTMLElement {
   constructor() {
     super();
@@ -9,8 +33,13 @@ class PaymeCheckoutForm extends HTMLElement {
 
     this.phoneInput = this.querySelector('#Payme-phone');
     this.nameInput = this.querySelector('#Payme-name');
-    this.locationInput = this.querySelector('#Payme-location');
+    this.cityInput = this.querySelector('#Payme-city');
+    this.addressInput = this.querySelector('#Payme-address');
     this.emailInput = this.querySelector('#Payme-email');
+
+    this.selectedShipping = null;
+    this.selectedCity = null;
+    this.selectedZone = null;
 
     this.setupEventListeners();
   }
@@ -28,6 +57,61 @@ class PaymeCheckoutForm extends HTMLElement {
     if (this.phoneInput) {
       this.phoneInput.addEventListener('input', this.formatPhoneNumber.bind(this));
     }
+
+    // City change handler for shipping options
+    if (this.cityInput) {
+      this.cityInput.addEventListener('change', this.handleCityChange.bind(this));
+    }
+  }
+
+  handleCityChange(event) {
+    const selectedOption = event.target.options[event.target.selectedIndex];
+    const zone = selectedOption.dataset.zone;
+    const cityName = selectedOption.text;
+    const cityValue = event.target.value;
+    const regionName = selectedOption.parentElement.label;
+
+    this.selectedCity = {
+      value: cityValue,
+      name: cityName,
+      regionName: regionName
+    };
+    this.selectedZone = zone;
+
+    // Dispatch city change event
+    window.dispatchEvent(new CustomEvent('city:changed', {
+      detail: this.selectedCity
+    }));
+
+    this.updateShippingOptions(zone);
+  }
+
+  updateShippingOptions(zone) {
+    const zoneData = SHIPPING_ZONES[zone];
+
+    if (!zoneData) {
+      this.selectedShipping = null;
+      this.dispatchShippingChange();
+      return;
+    }
+
+    // Set shipping data based on selected zone
+    this.selectedShipping = {
+      id: zone,
+      name: "Yetkazib berish",
+      price: zoneData.price,
+      days: zoneData.days,
+      zone: zone,
+      zoneName: zoneData.name
+    };
+    this.dispatchShippingChange();
+  }
+
+  dispatchShippingChange() {
+    // Dispatch custom event for cart summary to update
+    window.dispatchEvent(new CustomEvent('shipping:changed', {
+      detail: this.selectedShipping
+    }));
   }
 
   formatPhoneNumber(event) {
@@ -76,7 +160,7 @@ class PaymeCheckoutForm extends HTMLElement {
       // Extract cart token
       const cartToken = this.extractCartToken(cart.token);
 
-      // Prepare payload
+      // Prepare payload with shipping information
       const payload = {
         items: cart.items.map(item => ({
           productId: item.product_id.toString(),
@@ -89,9 +173,26 @@ class PaymeCheckoutForm extends HTMLElement {
         customerName: this.nameInput.value.trim(),
         customerEmail: this.emailInput.value.trim() || '',
         customerPhone: this.phoneInput.value.trim(),
-        customerLocation: this.locationInput.value.trim(),
+        // Address information
+        customerCity: this.selectedCity ? this.selectedCity.name : '',
+        customerCityValue: this.selectedCity ? this.selectedCity.value : '',
+        customerRegion: this.selectedCity ? this.selectedCity.regionName : '',
+        customerAddress: this.addressInput ? this.addressInput.value.trim() : '',
+        // Full formatted address for order
+        customerFullAddress: this.selectedCity
+          ? `${this.addressInput.value.trim()}, ${this.selectedCity.name}, ${this.selectedCity.regionName}`
+          : this.addressInput.value.trim(),
         cartToken: cartToken,
-        url: 'https://posterly.uz'
+        url: 'https://posterly.uz',
+        // Shipping information for order creation
+        shipping: this.selectedShipping ? {
+          id: this.selectedShipping.id,
+          name: this.selectedShipping.name,
+          price: this.selectedShipping.price,
+          deliveryDays: this.selectedShipping.days,
+          zone: this.selectedZone,
+          zoneName: SHIPPING_ZONES[this.selectedZone]?.name || ''
+        } : null
       };
 
       // Call Payme API
@@ -153,24 +254,41 @@ class PaymeCheckoutForm extends HTMLElement {
     const phoneValue = this.phoneInput.value.trim();
 
     if (!phoneValue) {
-      this.showFieldError('phone', 'Phone number is required');
+      this.showFieldError('phone', 'Telefon raqami kiritilishi shart');
       isValid = false;
     } else if (!phonePattern.test(phoneValue)) {
-      this.showFieldError('phone', 'Please enter a valid Uzbek phone number: +998 XX XXX XX XX');
+      this.showFieldError('phone', "To'g'ri telefon raqamini kiriting: +998 XX XXX XX XX");
       isValid = false;
     }
 
     // Validate name
     const nameValue = this.nameInput.value.trim();
     if (!nameValue || nameValue.length < 2) {
-      this.showFieldError('name', 'Please enter your full name');
+      this.showFieldError('name', "To'liq ismingizni kiriting");
       isValid = false;
     }
 
-    // Validate location
-    const locationValue = this.locationInput.value.trim();
-    if (!locationValue || locationValue.length < 2) {
-      this.showFieldError('location', 'Please enter your location');
+    // Validate city selection
+    if (this.cityInput) {
+      const cityValue = this.cityInput.value;
+      if (!cityValue) {
+        this.showFieldError('city', 'Shahar yoki tumanni tanlang');
+        isValid = false;
+      }
+    }
+
+    // Validate address
+    if (this.addressInput) {
+      const addressValue = this.addressInput.value.trim();
+      if (!addressValue || addressValue.length < 5) {
+        this.showFieldError('address', "Manzilingizni to'liq kiriting (ko'cha, uy raqami)");
+        isValid = false;
+      }
+    }
+
+    // Validate shipping selection
+    if (!this.selectedShipping) {
+      this.showError('Yetkazib berish usulini tanlang');
       isValid = false;
     }
 
@@ -179,7 +297,7 @@ class PaymeCheckoutForm extends HTMLElement {
     if (emailValue) {
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailPattern.test(emailValue)) {
-        this.showFieldError('email', 'Please enter a valid email address');
+        this.showFieldError('email', "To'g'ri email manzilini kiriting");
         isValid = false;
       }
     }
@@ -289,7 +407,27 @@ customElements.define('payme-checkout-form', PaymeCheckoutForm);
 class PaymeCartSummary extends HTMLElement {
   constructor() {
     super();
+    this.cart = null;
+    this.selectedShipping = null;
+    this.selectedCity = null;
     this.loadCartSummary();
+    this.setupShippingListener();
+  }
+
+  setupShippingListener() {
+    window.addEventListener('shipping:changed', (event) => {
+      this.selectedShipping = event.detail;
+      if (this.cart) {
+        this.renderCartItems(this.cart);
+      }
+    });
+
+    window.addEventListener('city:changed', (event) => {
+      this.selectedCity = event.detail;
+      if (this.cart) {
+        this.renderCartItems(this.cart);
+      }
+    });
   }
 
   hideLoadingSpinner() {
@@ -302,6 +440,7 @@ class PaymeCartSummary extends HTMLElement {
   async loadCartSummary() {
     try {
       const cart = await fetch('/cart.js').then(r => r.json());
+      this.cart = cart;
       this.hideLoadingSpinner();
 
       if (!cart || !cart.items || cart.items.length === 0) {
@@ -346,7 +485,9 @@ class PaymeCartSummary extends HTMLElement {
     }).join('');
 
     const subtotal = cart.total_price / 100;
-    const finalTotal = subtotal - (cart.total_discount / 100);
+    const discount = cart.total_discount / 100;
+    const shippingCost = this.selectedShipping ? this.selectedShipping.price : 0;
+    const finalTotal = subtotal - discount + shippingCost;
 
     this.innerHTML = `
       <div class="payme-cart-summary__header">
@@ -357,20 +498,40 @@ class PaymeCartSummary extends HTMLElement {
       </div>
       <div class="payme-cart-totals">
         <div class="payme-cart-total-row">
-          <span class="payme-cart-total-label">Jami</span>
+          <span class="payme-cart-total-label">Mahsulotlar</span>
           <span class="payme-cart-total-value">${this.formatMoney(subtotal, currencySymbol)}</span>
         </div>
         ${cart.total_discount > 0 ? `
           <div class="payme-cart-total-row payme-cart-total-row--discount">
             <span class="payme-cart-total-label">Chegirma</span>
-            <span class="payme-cart-total-value">-${this.formatMoney(cart.total_discount / 100, currencySymbol)}</span>
+            <span class="payme-cart-total-value">-${this.formatMoney(discount, currencySymbol)}</span>
+          </div>
+        ` : ''}
+        ${this.selectedCity ? `
+          <div class="payme-cart-delivery-location">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>${this.escapeHtml(this.selectedCity.name)}, ${this.escapeHtml(this.selectedCity.regionName)}</span>
+          </div>
+          <div class="payme-cart-total-row payme-cart-total-row--shipping">
+            <span class="payme-cart-total-label">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="1" y="3" width="15" height="13"></rect>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+              </svg>
+              Yetkazib berish
+            </span>
+            <span class="payme-cart-total-value">${this.formatMoney(shippingCost, currencySymbol)}</span>
           </div>
         ` : ''}
         <div class="payme-cart-total-row payme-cart-total-row--final">
-          <span class="payme-cart-total-label">To'lov summasi</span>
+          <span class="payme-cart-total-label">Jami to'lov</span>
           <span class="payme-cart-total-value">${this.formatMoney(finalTotal, currencySymbol)}</span>
         </div>
-        <p class="payme-cart-note">Yetkazib berish narxi Payme orqali hisoblanadi</p>
       </div>
     `;
   }

@@ -3,7 +3,10 @@
     <div class="payme-checkout-form__error" role="alert" aria-live="polite"></div>
 
     <div class="payme-checkout-form__fields">
-      <div class="field">
+      <div class="field field--static-label">
+        <label class="field__label field__label--static" for="Payme-phone">
+          Telefon raqami <span aria-hidden="true">*</span>
+        </label>
         <input
           class="field__input"
           autocomplete="tel"
@@ -15,13 +18,12 @@
           placeholder="+998 XX XXX XX XX"
           aria-required="true"
         >
-        <label class="field__label" for="Payme-phone">
-          {{ 'sections.cart.phone_number' | t | default: 'Telefon raqami' }}
-          <span aria-hidden="true">*</span>
-        </label>
       </div>
 
-      <div class="field">
+      <div class="field field--static-label">
+        <label class="field__label field__label--static" for="Payme-name">
+          To'liq ism <span aria-hidden="true">*</span>
+        </label>
         <input
           class="field__input"
           autocomplete="name"
@@ -30,55 +32,16 @@
           name="name"
           minlength="2"
           required
-          placeholder="{{ 'sections.cart.full_name_placeholder' | t | default: 'Ismingizni kiriting' }}"
+          placeholder="Ismingizni kiriting"
           aria-required="true"
           value="{% if customer %}{{ customer.name }}{% endif %}"
         >
-        <label class="field__label" for="Payme-name">
-          {{ 'sections.cart.full_name' | t | default: "To'liq ism" }}
-          <span aria-hidden="true">*</span>
-        </label>
       </div>
 
-      <div class="field">
-        <input
-          class="field__input"
-          autocomplete="address-level2"
-          type="text"
-          id="Payme-location"
-          name="location"
-          minlength="2"
-          required
-          placeholder="{{ 'sections.cart.city_placeholder' | t | default: 'Shahringizni tanlang' }}"
-          list="Payme-cities"
-          aria-required="true"
-        >
-        <label class="field__label" for="Payme-location">
-          {{ 'sections.cart.city' | t | default: 'Shahar' }}
-          <span aria-hidden="true">*</span>
+      <div class="field field--static-label">
+        <label class="field__label field__label--static" for="Payme-email">
+          Email <span aria-hidden="true">*</span>
         </label>
-        <datalist id="Payme-cities">
-          <option value="Toshkent">
-          <option value="Samarqand">
-          <option value="Buxoro">
-          <option value="Andijon">
-          <option value="Namangan">
-          <option value="Farg'ona">
-          <option value="Nukus">
-          <option value="Qarshi">
-          <option value="Termiz">
-          <option value="Urganch">
-          <option value="Jizzax">
-          <option value="Guliston">
-          <option value="Navoiy">
-          <option value="Chirchiq">
-          <option value="Olmaliq">
-          <option value="Marg'ilon">
-          <option value="Qo'qon">
-        </datalist>
-      </div>
-
-      <div class="field">
         <input
           class="field__input"
           autocomplete="email"
@@ -88,14 +51,104 @@
           required
           spellcheck="false"
           autocapitalize="off"
-          placeholder="{{ 'sections.cart.email_placeholder' | t | default: 'email@example.com' }}"
+          placeholder="email@example.com"
           aria-required="true"
           value="{% if customer %}{{ customer.email }}{% endif %}"
         >
-        <label class="field__label" for="Payme-email">
-          {{ 'sections.cart.email' | t | default: "Email" }}
-          <span aria-hidden="true">*</span>
+      </div>
+
+      <div class="field field--full-width field--static-label">
+        <label class="field__label field__label--static" for="Payme-city">
+          Shahar/Tuman <span aria-hidden="true">*</span>
         </label>
+        <select
+          class="field__input field__input--select"
+          id="Payme-city"
+          name="city"
+          required
+          aria-required="true"
+        >
+          <option value="" disabled selected>Shahar yoki tumanni tanlang</option>
+          <optgroup label="Toshkent shahri">
+            <option value="toshkent" data-zone="tashkent">Toshkent</option>
+          </optgroup>
+          <optgroup label="Toshkent viloyati">
+            <option value="chirchiq" data-zone="tashkent_region">Chirchiq</option>
+            <option value="olmaliq" data-zone="tashkent_region">Olmaliq</option>
+            <option value="angren" data-zone="tashkent_region">Angren</option>
+            <option value="nurafshon" data-zone="tashkent_region">Nurafshon</option>
+            <option value="bekobod" data-zone="tashkent_region">Bekobod</option>
+            <option value="ohangaron" data-zone="tashkent_region">Ohangaron</option>
+          </optgroup>
+          <optgroup label="Samarqand viloyati">
+            <option value="samarqand" data-zone="nearby">Samarqand</option>
+            <option value="kattaqorgon" data-zone="nearby">Kattaqo'rg'on</option>
+          </optgroup>
+          <optgroup label="Jizzax viloyati">
+            <option value="jizzax" data-zone="nearby">Jizzax</option>
+          </optgroup>
+          <optgroup label="Sirdaryo viloyati">
+            <option value="guliston" data-zone="nearby">Guliston</option>
+            <option value="sirdaryo" data-zone="nearby">Sirdaryo</option>
+            <option value="yangiyer" data-zone="nearby">Yangiyer</option>
+          </optgroup>
+          <optgroup label="Navoiy viloyati">
+            <option value="navoiy" data-zone="nearby">Navoiy</option>
+            <option value="zarafshon" data-zone="nearby">Zarafshon</option>
+          </optgroup>
+          <optgroup label="Buxoro viloyati">
+            <option value="buxoro" data-zone="distant">Buxoro</option>
+            <option value="kogon" data-zone="distant">Kogon</option>
+          </optgroup>
+          <optgroup label="Qashqadaryo viloyati">
+            <option value="qarshi" data-zone="distant">Qarshi</option>
+            <option value="shahrisabz" data-zone="distant">Shahrisabz</option>
+          </optgroup>
+          <optgroup label="Surxondaryo viloyati">
+            <option value="termiz" data-zone="distant">Termiz</option>
+            <option value="denov" data-zone="distant">Denov</option>
+          </optgroup>
+          <optgroup label="Farg'ona viloyati">
+            <option value="fargona" data-zone="distant">Farg'ona</option>
+            <option value="qoqon" data-zone="distant">Qo'qon</option>
+            <option value="margilan" data-zone="distant">Marg'ilon</option>
+            <option value="quvasoy" data-zone="distant">Quvasoy</option>
+          </optgroup>
+          <optgroup label="Andijon viloyati">
+            <option value="andijon" data-zone="distant">Andijon</option>
+            <option value="asaka" data-zone="distant">Asaka</option>
+            <option value="xonobod" data-zone="distant">Xonobod</option>
+          </optgroup>
+          <optgroup label="Namangan viloyati">
+            <option value="namangan" data-zone="distant">Namangan</option>
+            <option value="chortoq" data-zone="distant">Chortoq</option>
+          </optgroup>
+          <optgroup label="Xorazm viloyati">
+            <option value="urganch" data-zone="distant">Urganch</option>
+            <option value="xiva" data-zone="distant">Xiva</option>
+          </optgroup>
+          <optgroup label="Qoraqalpog'iston Respublikasi">
+            <option value="nukus" data-zone="distant">Nukus</option>
+            <option value="moynoq" data-zone="distant">Mo'ynoq</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <div class="field field--full-width field--static-label">
+        <label class="field__label field__label--static" for="Payme-address">
+          Manzil <span aria-hidden="true">*</span>
+        </label>
+        <input
+          class="field__input"
+          autocomplete="street-address"
+          type="text"
+          id="Payme-address"
+          name="address"
+          minlength="5"
+          required
+          placeholder="Ko'cha, uy raqami, xonadon"
+          aria-required="true"
+        >
       </div>
     </div>
 
