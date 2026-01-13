@@ -1,24 +1,25 @@
-// Shipping zones configuration - single price per zone
+// Shipping zones configuration
+// Tashkent city: flat rate 45,000 UZS
+// Regional delivery (BTS Express): price based on largest poster format in cart
 const SHIPPING_ZONES = {
   tashkent: {
     name: "Toshkent shahri",
-    price: 1000,
-    days: "1-2 kun"
-  },
-  tashkent_region: {
-    name: "Toshkent viloyati",
-    price: 35000,
-    days: "2-3 kun"
-  },
-  nearby: {
-    name: "Yaqin viloyatlar",
     price: 45000,
-    days: "3-5 kun"
+    days: "1-2 kun",
+    isRegional: false
   },
-  distant: {
-    name: "Uzoq viloyatlar",
-    price: 55000,
-    days: "4-7 kun"
+  regional: {
+    name: "Viloyatlar (BTS Express)",
+    days: "3-5 kun",
+    isRegional: true,
+    // Prices based on poster format dimensions
+    formatPrices: {
+      A4: 55000,  // 210 x 297 mm
+      A3: 55000,  // 297 x 420 mm
+      A2: 70000,  // 420 x 594 mm
+      A1: 80000   // 594 x 841 mm
+    },
+    defaultPrice: 55000 // Default to smallest format price
   }
 };
 
@@ -86,7 +87,7 @@ class PaymeCheckoutForm extends HTMLElement {
     this.updateShippingOptions(zone);
   }
 
-  updateShippingOptions(zone) {
+  async updateShippingOptions(zone) {
     const zoneData = SHIPPING_ZONES[zone];
 
     if (!zoneData) {
@@ -95,16 +96,66 @@ class PaymeCheckoutForm extends HTMLElement {
       return;
     }
 
+    let shippingPrice = zoneData.price;
+
+    // For regional zones, calculate price based on largest poster format in cart
+    if (zoneData.isRegional) {
+      shippingPrice = await this.calculateRegionalShippingPrice(zoneData);
+    }
+
     // Set shipping data based on selected zone
     this.selectedShipping = {
       id: zone,
       name: "Yetkazib berish",
-      price: zoneData.price,
+      price: shippingPrice,
       days: zoneData.days,
       zone: zone,
-      zoneName: zoneData.name
+      zoneName: zoneData.name,
+      isRegional: zoneData.isRegional || false
     };
     this.dispatchShippingChange();
+  }
+
+  async calculateRegionalShippingPrice(zoneData) {
+    try {
+      const cart = await this.getCart();
+      if (!cart || !cart.items || cart.items.length === 0) {
+        return zoneData.defaultPrice;
+      }
+
+      // Format hierarchy (largest to smallest)
+      const formatHierarchy = ['A1', 'A2', 'A3', 'A4'];
+      let largestFormat = null;
+
+      // Check each item's variant title for format
+      for (const item of cart.items) {
+        const variantTitle = (item.variant_title || '').toUpperCase();
+        const title = (item.title || '').toUpperCase();
+        const combinedText = `${title} ${variantTitle}`;
+
+        for (const format of formatHierarchy) {
+          if (combinedText.includes(format)) {
+            if (!largestFormat || formatHierarchy.indexOf(format) < formatHierarchy.indexOf(largestFormat)) {
+              largestFormat = format;
+            }
+            break;
+          }
+        }
+
+        // If we found A1 (largest), no need to continue
+        if (largestFormat === 'A1') break;
+      }
+
+      // Return price for the largest format found, or default
+      if (largestFormat && zoneData.formatPrices[largestFormat]) {
+        return zoneData.formatPrices[largestFormat];
+      }
+
+      return zoneData.defaultPrice;
+    } catch (error) {
+      console.error('Error calculating regional shipping price:', error);
+      return zoneData.defaultPrice;
+    }
   }
 
   dispatchShippingChange() {
@@ -527,11 +578,45 @@ class PaymeCartSummary extends HTMLElement {
             </span>
             <span class="payme-cart-total-value">${this.formatMoney(shippingCost, currencySymbol)}</span>
           </div>
+          ${this.getShippingWarningHTML(cart.item_count)}
         ` : ''}
         <div class="payme-cart-total-row payme-cart-total-row--final">
           <span class="payme-cart-total-label">Jami to'lov</span>
           <span class="payme-cart-total-value">${this.formatMoney(finalTotal, currencySymbol)}</span>
         </div>
+      </div>
+    `;
+  }
+
+  getShippingWarningHTML(itemCount) {
+    // Get translations from data attributes or fallback to defaults
+    const warningEl = document.querySelector('[data-shipping-warning-single]');
+    const singlePosterText = warningEl?.dataset.shippingWarningSingle || "Yuqoridagi narxlar bitta poster buyurtmalariga tegishli.";
+    const multiPosterText = warningEl?.dataset.shippingWarningMulti || "2 va undan ko'p posterli buyurtmalar uchun jamoamiz buyurtmadan so'ng siz bilan bog'lanib, yakuniy og'irlik va qadoq o'lchamiga qarab maxsus yetkazib berish narxini taqdim etadi.";
+
+    // Show multi-poster warning if more than 1 item
+    if (itemCount > 1) {
+      return `
+        <div class="payme-shipping-warning payme-shipping-warning--multi">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+            <line x1="12" y1="9" x2="12" y2="13"></line>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+          </svg>
+          <span>${multiPosterText}</span>
+        </div>
+      `;
+    }
+
+    // Show single poster note for single item
+    return `
+      <div class="payme-shipping-warning payme-shipping-warning--single">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+        <span>${singlePosterText}</span>
       </div>
     `;
   }

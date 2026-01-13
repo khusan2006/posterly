@@ -836,6 +836,49 @@ payme-checkout-form {
   color: #E86E2C;
 }
 
+/* Shipping Warning Note */
+.payme-shipping-warning {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.2rem 1.4rem;
+  margin: 1.2rem 0 0 0;
+  border-radius: 0.8rem;
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+
+.payme-shipping-warning svg {
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.payme-shipping-warning span {
+  flex: 1;
+}
+
+/* Single poster info note */
+.payme-shipping-warning--single {
+  background: rgba(var(--color-foreground), 0.04);
+  color: rgba(var(--color-foreground), 0.7);
+  border: 1px solid rgba(var(--color-foreground), 0.08);
+}
+
+.payme-shipping-warning--single svg {
+  color: rgba(var(--color-foreground), 0.5);
+}
+
+/* Multi-poster warning (more prominent) */
+.payme-shipping-warning--multi {
+  background: rgba(232, 110, 44, 0.08);
+  color: rgb(var(--color-foreground));
+  border: 1px solid rgba(232, 110, 44, 0.2);
+}
+
+.payme-shipping-warning--multi svg {
+  color: #E86E2C;
+}
+
 
 /* ===============================================
    REDUCED MOTION SUPPORT

@@ -340,7 +340,9 @@
       "submit_order": "Buyurtmani tasdiqlash",
       "payme_checkout_title": "Payme orqali to'lov",
       "payme_checkout_description": "Buyurtmangizni yakunlash uchun quyidagi ma'lumotlarni kiriting.",
-      "view_cart": "Savatni ko'rish"
+      "view_cart": "Savatni ko'rish",
+      "shipping_warning_single": "Yuqoridagi narxlar bitta poster buyurtmalariga tegishli.",
+      "shipping_warning_multi": "2 va undan ko'p posterli buyurtmalar uchun jamoamiz buyurtmadan so'ng siz bilan bog'lanib, yakuniy og'irlik va qadoq o'lchamiga qarab maxsus yetkazib berish narxini taqdim etadi."
     },
     "footer": {
       "payment": "To'lov usullari"

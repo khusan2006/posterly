@@ -35,6 +35,12 @@
       </div>
     </div>
 
+    <!-- Shipping Warning Translations (hidden, used by JS) -->
+    <div hidden
+      data-shipping-warning-single="{{ 'sections.cart.shipping_warning_single' | t | default: "Yuqoridagi narxlar bitta poster buyurtmalariga tegishli." }}"
+      data-shipping-warning-multi="{{ 'sections.cart.shipping_warning_multi' | t | default: "2 va undan ko'p posterli buyurtmalar uchun jamoamiz buyurtmadan so'ng siz bilan bog'lanib, yakuniy og'irlik va qadoq o'lchamiga qarab maxsus yetkazib berish narxini taqdim etadi." }}"
+    ></div>
+
     <!-- Main Content Grid -->
     <div class="payme-checkout-grid">
       <!-- Left Column: Order Summary -->

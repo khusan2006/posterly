@@ -311,7 +311,22 @@
       "login": {
         "title": "Have an account?",
         "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Log in</a> to check out faster."
-      }
+      },
+      "checkout_with_payme": "Pay with Payme",
+      "fast_secure_payment": "Fast and secure payment",
+      "secure_payment": "Secure payment",
+      "instant_confirmation": "Instant confirmation",
+      "accepted_payment_note": "We accept all payments in Uzbekistan via Payme",
+      "back_to_cart": "Back to cart",
+      "order_summary": "Order summary",
+      "payment_information": "Payment information",
+      "secure_payment_payme": "Secure payment - via Payme",
+      "submit_order": "Confirm order",
+      "payme_checkout_title": "Pay with Payme",
+      "payme_checkout_description": "Enter your details to complete your order.",
+      "view_cart": "View cart",
+      "shipping_warning_single": "The prices listed above apply to single poster orders.",
+      "shipping_warning_multi": "For orders with 2 or more posters, our team will contact you after placing your order to provide a custom shipping quote based on the final weight and package size."
     },
     "footer": {
       "payment": "Payment methods"
