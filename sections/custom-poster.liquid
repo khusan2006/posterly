@@ -4,48 +4,6 @@
 {{ 'component-swatch.css' | asset_url | stylesheet_tag }}
 {{ 'component-swatch-input.css' | asset_url | stylesheet_tag }}
 
-<!-- Firebase SDK and Configuration -->
-<script>
-  // Firebase configuration
-  window.firebaseConfig = {
-    apiKey: "AIzaSyD6DBUGfDlHyzQY7_f5sgZqxkEhOgSp6IM",
-    authDomain: "poster-90252.firebaseapp.com",
-    projectId: "poster-90252",
-    storageBucket: "poster-90252.appspot.com",
-    messagingSenderId: "1012468324012",
-    appId: "1:1012468324012:web:2bc33fa376edef493d7109"
-  };
-
-  // Load Firebase SDK and initialize
-  function loadFirebase() {
-    const script1 = document.createElement('script');
-    script1.src = 'https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js';
-    script1.onload = function() {
-      const script2 = document.createElement('script');
-      script2.src = 'https://www.gstatic.com/firebasejs/9.22.2/firebase-storage-compat.js';
-      script2.onload = function() {
-        // Initialize Firebase after both scripts are loaded
-        if (typeof firebase !== 'undefined' && !firebase.apps.length) {
-          firebase.initializeApp(window.firebaseConfig);
-          console.log('Firebase initialized successfully');
-          
-          // Dispatch custom event to notify that Firebase is ready
-          document.dispatchEvent(new CustomEvent('firebaseReady'));
-        }
-      };
-      document.head.appendChild(script2);
-    };
-    document.head.appendChild(script1);
-  }
-
-  // Load Firebase when DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', loadFirebase);
-  } else {
-    loadFirebase();
-  }
-</script>
-
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;

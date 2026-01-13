@@ -4,9 +4,9 @@ class CustomPosterForm extends HTMLElement {
   static CONFIG = {
     MAX_FILE_SIZE: 10 * 1024 * 1024, // 10MB
     ALLOWED_TYPES: ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'],
-    FIREBASE_TIMEOUT: 10000, // 10 seconds
+    UPLOAD_TIMEOUT: 30000, // 30 seconds for backend upload
     AUTO_HIDE_MESSAGES: 5000, // 5 seconds
-    UPLOAD_PATH: 'custom-posters/',
+    UPLOAD_API_URL: 'https://still-river-95661-5a9729d2ab3c.herokuapp.com/api/upload/image',
     RETRY_ATTEMPTS: 3,
     RETRY_DELAY: 1000
   };
@@ -340,7 +340,7 @@ class CustomPosterForm extends HTMLElement {
   }
 
   /**
-   * Upload file with improved error handling and fallback
+   * Upload file to backend API
    */
   async uploadFile(file) {
     try {
@@ -349,31 +349,31 @@ class CustomPosterForm extends HTMLElement {
         this.uploadProgress.style.display = 'block';
       }
 
-      // Try Firebase upload
-      const firebaseUrl = await this.uploadToFirebase(file);
-      
-      if (firebaseUrl) {
-        this.state.uploadedImageUrl = firebaseUrl;
+      // Upload via backend API
+      const imageUrl = await this.uploadToBackend(file);
+
+      if (imageUrl) {
+        this.state.uploadedImageUrl = imageUrl;
         if (this.uploadedImageUrlInput) {
-          this.uploadedImageUrlInput.value = firebaseUrl;
+          this.uploadedImageUrlInput.value = imageUrl;
         }
         this.showProgress(100);
       } else {
-        throw new Error('Firebase upload failed');
+        throw new Error('Upload failed');
       }
-      
+
     } catch (error) {
-      console.warn('Firebase upload failed, using placeholder:', error);
-      
+      console.warn('Upload failed, using placeholder:', error);
+
       // Fallback: store placeholder for backend processing
       this.state.uploadedImageUrl = 'custom-poster-uploaded';
-      
+
       if (this.uploadedImageUrlInput) {
         this.uploadedImageUrlInput.value = 'custom-poster-uploaded';
       }
-      
+
       this.showMessage('warning', 'Image will be processed during order fulfillment.');
-      
+
     } finally {
       this.hideProgress();
       this.validateForm();
@@ -381,91 +381,62 @@ class CustomPosterForm extends HTMLElement {
   }
 
   /**
-   * Upload to Firebase with better error handling
+   * Upload file to backend API with progress tracking
    */
-  async uploadToFirebase(file) {
-    try {
-      await this.ensureFirebaseInitialized();
-      
-      // Create unique filename
-      const timestamp = Date.now();
-      const randomString = Math.random().toString(36).substring(2, 15);
-      const sanitizedName = file.name.replace(/[^a-zA-Z0-9.-]/g, '_');
-      const filename = `${CustomPosterForm.CONFIG.UPLOAD_PATH}${timestamp}-${randomString}-${sanitizedName}`;
-      
-      // Get storage reference
-      const storageRef = firebase.storage().ref();
-      const fileRef = storageRef.child(filename);
-      
-      // Upload with progress tracking
-      const uploadTask = fileRef.put(file);
-      
-      return new Promise((resolve, reject) => {
-        uploadTask.on('state_changed',
-          // Progress callback
-          (snapshot) => {
-            const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-            this.showProgress(Math.round(progress * 0.8)); // Reserve 20% for URL generation
-          },
-          // Error callback
-          (error) => {
-            console.error('Firebase upload error:', error);
-            reject(error);
-          },
-          // Success callback
-          async () => {
-            try {
-              const downloadURL = await fileRef.getDownloadURL();
-              this.showProgress(100);
-              resolve(downloadURL);
-            } catch (error) {
-              reject(error);
-            }
-          }
-        );
-      });
-      
-    } catch (error) {
-      console.error('Firebase upload failed:', error);
-      throw error;
-    }
-  }
-
-  /**
-   * Ensure Firebase is initialized with timeout
-   */
-  async ensureFirebaseInitialized() {
+  async uploadToBackend(file) {
     return new Promise((resolve, reject) => {
-      // Check if already initialized
-      if (typeof firebase !== 'undefined' && firebase.apps && firebase.apps.length > 0) {
-        resolve();
-        return;
-      }
-      
-      const timeout = setTimeout(() => {
-        reject(new Error('Firebase initialization timeout'));
-      }, CustomPosterForm.CONFIG.FIREBASE_TIMEOUT);
-      
-      const handleReady = () => {
-        clearTimeout(timeout);
-        document.removeEventListener('firebaseReady', handleReady);
-        resolve();
-      };
-      
-      document.addEventListener('firebaseReady', handleReady);
-      
-      // Periodic check as fallback
-      const checkPeriodically = () => {
-        if (typeof firebase !== 'undefined' && firebase.apps && firebase.apps.length > 0) {
-          clearTimeout(timeout);
-          document.removeEventListener('firebaseReady', handleReady);
-          resolve();
-        } else {
-          setTimeout(checkPeriodically, 100);
+      const formData = new FormData();
+      formData.append('image', file);
+
+      const xhr = new XMLHttpRequest();
+
+      // Set timeout
+      xhr.timeout = CustomPosterForm.CONFIG.UPLOAD_TIMEOUT;
+
+      // Track upload progress
+      xhr.upload.addEventListener('progress', (event) => {
+        if (event.lengthComputable) {
+          const progress = Math.round((event.loaded / event.total) * 90); // Reserve 10% for server processing
+          this.showProgress(progress);
         }
-      };
-      
-      setTimeout(checkPeriodically, 100);
+      });
+
+      // Handle completion
+      xhr.addEventListener('load', () => {
+        if (xhr.status >= 200 && xhr.status < 300) {
+          try {
+            const response = JSON.parse(xhr.responseText);
+            if (response.success && response.url) {
+              this.showProgress(100);
+              resolve(response.url);
+            } else {
+              reject(new Error(response.error || 'Upload failed'));
+            }
+          } catch (e) {
+            reject(new Error('Invalid server response'));
+          }
+        } else {
+          try {
+            const errorResponse = JSON.parse(xhr.responseText);
+            reject(new Error(errorResponse.error || `Upload failed with status ${xhr.status}`));
+          } catch (e) {
+            reject(new Error(`Upload failed with status ${xhr.status}`));
+          }
+        }
+      });
+
+      // Handle errors
+      xhr.addEventListener('error', () => {
+        reject(new Error('Network error during upload'));
+      });
+
+      xhr.addEventListener('timeout', () => {
+        reject(new Error('Upload timed out'));
+      });
+
+      // Send request
+      xhr.open('POST', CustomPosterForm.CONFIG.UPLOAD_API_URL);
+      xhr.send(formData);
     });
   }
 
