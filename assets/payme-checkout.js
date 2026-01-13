@@ -212,10 +212,10 @@ class PaymeCheckoutForm extends HTMLElement {
       }
 
       const data = await response.json();
-
+      console.log(data)
       if (data.success && data.paymeUrl) {
         // Redirect to Payme payment page
-        window.location.href = data.paymeUrl;
+        // window.location.href = data.paymeUrl;
       } else {
         this.showError(data.message || 'Payment initialization failed. Please try again.');
       }
