@@ -12,10 +12,37 @@
     "slideshow_6iDaHq": {
       "type": "slideshow",
       "blocks": {
+        "slide_bGcMfH": {
+          "type": "slide",
+          "settings": {
+            "media_type": "video",
+            "video": "shopify://files/videos/IMG_1627.MP4",
+            "video_url": "",
+            "enable_video_looping": true,
+            "enable_video_autoplay": true,
+            "image_overlay_opacity": 0,
+            "text_color": "",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-1"
+          }
+        },
         "slide_44w6pQ": {
           "type": "slide",
           "settings": {
+            "media_type": "image",
             "image": "shopify://shop_images/Banner_maybe.jpg",
+            "video_url": "",
+            "enable_video_looping": false,
+            "enable_video_autoplay": true,
             "image_overlay_opacity": 10,
             "text_color": "#ffffff",
             "heading": "Car Albom is here",
@@ -34,7 +61,11 @@
         "slide_gVecV4": {
           "type": "slide",
           "settings": {
+            "media_type": "image",
             "image": "shopify://shop_images/Banner_maybe2.jpg",
+            "video_url": "",
+            "enable_video_looping": false,
+            "enable_video_autoplay": true,
             "image_overlay_opacity": 10,
             "text_color": "#ffffff",
             "heading": "New motobikes collection",
@@ -52,6 +83,7 @@
         }
       },
       "block_order": [
+        "slide_bGcMfH",
         "slide_44w6pQ",
         "slide_gVecV4"
       ],
