@@ -1,6 +1,7 @@
 {{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 {{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
+{{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
 
 {%- if section.settings.slide_height == 'adapt_image' and section.blocks.first.settings.image != blank -%}
   {%- style -%}
@@ -125,8 +126,143 @@
         aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
         tabindex="-1"
       >
-        <div class="slideshow__media banner__media media{% if block.settings.image == blank %} placeholder{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}">
-          {%- if block.settings.image -%}
+        <div class="slideshow__media banner__media media{% if block.settings.media_type == 'image' and block.settings.image == blank %} placeholder{% endif %}{% if block.settings.media_type == 'video' and block.settings.video == blank and block.settings.video_url == blank %} placeholder{% endif %}{% if section.settings.image_behavior != 'none' and block.settings.media_type == 'image' %} animate--{{ section.settings.image_behavior }}{% endif %}">
+          {%- if block.settings.media_type == 'video' -%}
+            {%- liquid
+              assign video_id = block.settings.video.id | default: block.settings.video_url.id
+              assign video_alt = block.settings.video.alt | default: block.settings.heading
+              assign alt = 'sections.video.load_video' | t: description: video_alt | escape
+              assign poster = block.settings.video.preview_image | default: block.settings.video_cover_image
+            -%}
+            {%- if block.settings.enable_video_autoplay -%}
+              {%- comment -%} Autoplay video (muted, no deferred media) {%- endcomment -%}
+              <div class="slideshow__video-wrapper" style="position: absolute; inset: 0; width: 100%; height: 100%;">
+                {%- if block.settings.video != null -%}
+                  {{
+                    block.settings.video
+                    | video_tag:
+                      image_size: '1100x',
+                      autoplay: true,
+                      loop: block.settings.enable_video_looping,
+                      controls: false,
+                      muted: true,
+                      playsinline: true
+                  }}
+                {%- elsif block.settings.video_url != null -%}
+                  {%- liquid
+                    assign loop_param = ''
+                    if block.settings.enable_video_looping
+                      if block.settings.video_url.type == 'youtube'
+                        assign loop_param = '&loop=1&playlist=' | append: video_id
+                      else
+                        assign loop_param = '&loop=1'
+                      endif
+                    endif
+                  -%}
+                  {%- if block.settings.video_url.type == 'youtube' -%}
+                    <iframe
+                      src="https://www.youtube.com/embed/{{ video_id }}?autoplay=1&mute=1&controls=0&playsinline=1{{ loop_param }}"
+                      class="js-youtube slideshow__video-iframe"
+                      allow="autoplay; encrypted-media"
+                      allowfullscreen
+                      title="{{ block.settings.heading | escape }}"
+                      style="position: absolute; inset: 0; width: 100%; height: 100%; border: none; object-fit: cover;"
+                    ></iframe>
+                  {%- else -%}
+                    <iframe
+                      src="https://player.vimeo.com/video/{{ video_id }}?autoplay=1&muted=1&controls=0&playsinline=1&background=1{{ loop_param }}"
+                      class="js-vimeo slideshow__video-iframe"
+                      allow="autoplay; encrypted-media"
+                      allowfullscreen
+                      title="{{ block.settings.heading | escape }}"
+                      style="position: absolute; inset: 0; width: 100%; height: 100%; border: none; object-fit: cover;"
+                    ></iframe>
+                  {%- endif -%}
+                {%- else -%}
+                  {{ 'hero-apparel-3' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
+                {%- endif -%}
+              </div>
+            {%- else -%}
+              {%- comment -%} Click-to-play video (with poster and deferred media) {%- endcomment -%}
+              <deferred-media
+                class="slideshow__deferred-media deferred-media"
+                data-media-id="{{ video_id }}"
+                style="position: absolute; inset: 0; width: 100%; height: 100%;"
+              >
+                <button
+                  id="Deferred-Poster-{{ section.id }}-{{ forloop.index }}"
+                  class="slideshow__poster deferred-media__poster"
+                  type="button"
+                  aria-label="{{ alt }}"
+                  style="position: absolute; inset: 0; width: 100%; height: 100%; border: none; background: transparent; cursor: pointer;"
+                >
+                  {%- if poster != null -%}
+                    {{
+                      poster
+                      | image_url: width: 3840
+                      | image_tag: sizes: '100vw', widths: '375, 750, 1100, 1500, 1780, 2000, 3000, 3840', alt: alt, style: 'width: 100%; height: 100%; object-fit: cover;'
+                    }}
+                  {%- elsif block.settings.image != null -%}
+                    {{
+                      block.settings.image
+                      | image_url: width: 3840
+                      | image_tag: sizes: '100vw', widths: '375, 750, 1100, 1500, 1780, 2000, 3000, 3840', alt: alt, style: 'width: 100%; height: 100%; object-fit: cover;'
+                    }}
+                  {%- else -%}
+                    {{ 'hero-apparel-3' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
+                  {%- endif -%}
+                  <span class="deferred-media__poster-button motion-reduce" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                    <span class="svg-wrapper">
+                      {{- 'icon-play.svg' | inline_asset_content -}}
+                    </span>
+                  </span>
+                </button>
+                <template>
+                  {%- if block.settings.video != null -%}
+                    {{
+                      block.settings.video
+                      | video_tag:
+                        image_size: '1100x',
+                        autoplay: true,
+                        loop: block.settings.enable_video_looping,
+                        controls: true,
+                        muted: false
+                    }}
+                  {%- elsif block.settings.video_url != null -%}
+                    {%- liquid
+                      assign loop_param = ''
+                      if block.settings.enable_video_looping
+                        if block.settings.video_url.type == 'youtube'
+                          assign loop_param = '&loop=1&playlist=' | append: video_id
+                        else
+                          assign loop_param = '&loop=1'
+                        endif
+                      endif
+                    -%}
+                    {%- if block.settings.video_url.type == 'youtube' -%}
+                      <iframe
+                        src="https://www.youtube.com/embed/{{ video_id }}?enablejsapi=1&autoplay=1{{ loop_param }}"
+                        class="js-youtube"
+                        allow="autoplay; encrypted-media"
+                        allowfullscreen
+                        title="{{ block.settings.heading | escape }}"
+                        style="position: absolute; inset: 0; width: 100%; height: 100%; border: none;"
+                      ></iframe>
+                    {%- else -%}
+                      <iframe
+                        src="https://player.vimeo.com/video/{{ video_id }}?autoplay=1{{ loop_param }}"
+                        class="js-vimeo"
+                        allow="autoplay; encrypted-media"
+                        allowfullscreen
+                        title="{{ block.settings.heading | escape }}"
+                        style="position: absolute; inset: 0; width: 100%; height: 100%; border: none;"
+                      ></iframe>
+                    {%- endif -%}
+                  {%- endif -%}
+                </template>
+              </deferred-media>
+            {%- endif -%}
+          {%- elsif block.settings.image -%}
             {%- liquid
               assign height = block.settings.image.width | divided_by: block.settings.image.aspect_ratio | round
               if section.settings.image_behavior == 'ambient'
@@ -396,9 +532,63 @@
       "limit": 5,
       "settings": [
         {
+          "type": "select",
+          "id": "media_type",
+          "options": [
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "video",
+              "label": "Video"
+            }
+          ],
+          "default": "image",
+          "label": "Media type"
+        },
+        {
           "type": "image_picker",
           "id": "image",
           "label": "t:sections.slideshow.blocks.slide.settings.image.label"
+        },
+        {
+          "type": "header",
+          "content": "Video"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "t:sections.video.settings.video.label"
+        },
+        {
+          "type": "video_url",
+          "id": "video_url",
+          "accept": ["youtube", "vimeo"],
+          "label": "t:sections.video.settings.video_url.label",
+          "info": "t:sections.video.settings.video_url.info"
+        },
+        {
+          "type": "image_picker",
+          "id": "video_cover_image",
+          "label": "Video cover image"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_video_looping",
+          "label": "t:sections.video.settings.enable_video_looping.label",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_video_autoplay",
+          "label": "Enable video autoplay",
+          "default": true,
+          "info": "Video will autoplay muted when enabled"
+        },
+        {
+          "type": "header",
+          "content": "Image"
         },
         {
           "type": "range",
