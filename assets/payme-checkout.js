@@ -4,7 +4,7 @@
 const SHIPPING_ZONES = {
   tashkent: {
     name: "Toshkent shahri",
-    price: 45000,
+    price: 1000,
     days: "1-2 kun",
     isRegional: false
   },
